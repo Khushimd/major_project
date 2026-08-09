@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Model Comparison — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Model comparison</h2>
+      <p>EfficientNetB0 vs MobileNetV2 vs Ensemble — metrics from the latest training run.</p>
+    </div>
+
+    {% if metrics and metrics.metrics %}
+    <p class="mb-4">Auto-selected best model: <strong>{{ metrics.best_model }}</strong></p>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <canvas id="compareChart" height="280"></canvas>
+      </div>
+      <div class="col-lg-5">
+        <canvas id="aucChart" height="280"></canvas>
+      </div>
+    </div>
+    <div class="metrics-grid mt-5">
+      {% for name, m in metrics.metrics.items() %}
+      <div class="metric-block {% if metrics.best_model == name %}is-best{% endif %}">
+        <h3>{{ name|title }}{% if metrics.best_model == name %} ★{% endif %}</h3>
+        <ul>
+          <li>Accuracy <b>{{ '%.2f'|format(m.accuracy * 100) }}%</b></li>
+          <li>Precision <b>{{ '%.2f'|format(m.precision * 100) }}%</b></li>
+          <li>Recall <b>{{ '%.2f'|format(m.recall * 100) }}%</b></li>
+          <li>F1 <b>{{ '%.2f'|format(m.f1 * 100) }}%</b></li>
+          <li>ROC-AUC <b>{{ '%.4f'|format(m.auc) }}</b></li>
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <p>No evaluation metrics found. Train models first:</p>
+      <pre class="code-block">python -m training.train --synthetic
+# or with SIIM-ISIC 2020:
+python -m training.train --dataset siim_isic_2020</pre>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% if metrics and metrics.metrics %}
+<script>
+  window.CDSS_METRICS = {{ metrics.metrics | tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/comparison.js') }}"></script>
+{% endif %}
+{% endblock %}

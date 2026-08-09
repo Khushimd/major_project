@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}AJCC Staging — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head">
+      <h2>AJCC staging</h2>
+      <p>Enter clinical values manually, or upload a clinical report to auto-fill them.</p>
+    </div>
+
+    <div class="prediction-hero verdict-malignant mb-4">
+      <p class="prediction-kicker">Current classification</p>
+      <h2 class="prediction-label">Malignant</h2>
+      <p class="prediction-confidence">
+        {{ '%.0f'|format((record.confidence or 0) * 100) }}% confidence
+      </p>
+    </div>
+
+    <div class="form-pane mb-4">
+      <h3 class="staging-section-title">Option 1 — Upload clinical report</h3>
+      <form method="POST" enctype="multipart/form-data" action="{{ url_for('ajcc_staging', pred_id=record.id) }}">
+        <input type="hidden" name="action" value="parse_report" />
+        <label class="form-label">Pathology / clinical report</label>
+        <div class="upload-zone compact-upload">
+          <input type="file" name="clinical_report" accept=".pdf,.txt,.docx,.doc,.png,.jpg,.jpeg,.webp,.tif,.tiff,.bmp" required />
+          <div class="upload-prompt">
+            <i class="bi bi-file-earmark-medical"></i>
+            <p>PDF, TXT, DOCX, or image</p>
+            <small>We extract Breslow, ulceration, mitotic rate, nodes, metastasis</small>
+          </div>
+        </div>
+        {% if extract_info %}
+        <div class="extract-note mt-3">
+          <strong>Found {{ extract_info.fields_found }} field(s)</strong> in the report.
+          {% if extract_info.raw_excerpt %}
+          <p class="excerpt">“{{ extract_info.raw_excerpt }}{% if extract_info.text_length > 500 %}…{% endif %}”</p>
+          {% endif %}
+          <p class="hint">Review Option 2 below, edit anything incorrect, then predict stage.</p>
+        </div>
+        {% endif %}
+        <button type="submit" class="btn btn-ghost w-100 mt-3">Extract values from report</button>
+      </form>
+    </div>
+
+    <div class="form-pane">
+      <h3 class="staging-section-title">Option 2 — Enter or review values</h3>
+      <form method="POST" action="{{ url_for('ajcc_staging', pred_id=record.id) }}">
+        <input type="hidden" name="action" value="predict" />
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Breslow thickness (mm){% if prefill_found and prefill_found.breslow_thickness_mm %} <span class="tag-found">from report</span>{% endif %}</label>
+            <input type="number" step="0.01" min="0" name="breslow_thickness_mm" class="form-control" required
+                   value="{{ prefill.breslow_thickness_mm if prefill else (record.breslow_thickness if record.breslow_thickness is not none else '') }}" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Mitotic rate (/mm²){% if prefill_found and prefill_found.mitotic_rate %} <span class="tag-found">from report</span>{% endif %}</label>
+            <input type="number" step="0.1" min="0" name="mitotic_rate" class="form-control"
+                   value="{{ prefill.mitotic_rate if prefill else (record.mitotic_rate or 0) }}" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Ulceration{% if prefill_found and prefill_found.ulceration %} <span class="tag-found">from report</span>{% endif %}</label>
+            {% set ulcer = prefill.ulceration if prefill else ('yes' if record.ulceration else 'no') %}
+            <select name="ulceration" class="form-select">
+              <option value="no" {% if ulcer == 'no' %}selected{% endif %}>No</option>
+              <option value="yes" {% if ulcer == 'yes' %}selected{% endif %}>Yes</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Lymph node involvement{% if prefill_found and prefill_found.lymph_node_involvement %} <span class="tag-found">from report</span>{% endif %}</label>
+            {% set nodes = prefill.lymph_node_involvement if prefill else ('yes' if record.lymph_node_involvement else 'no') %}
+            <select name="lymph_node_involvement" class="form-select">
+              <option value="no" {% if nodes == 'no' %}selected{% endif %}>No</option>
+              <option value="yes" {% if nodes == 'yes' %}selected{% endif %}>Yes</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Distant metastasis{% if prefill_found and prefill_found.metastasis %} <span class="tag-found">from report</span>{% endif %}</label>
+            {% set mets = prefill.metastasis if prefill else ('yes' if record.metastasis else 'no') %}
+            <select name="metastasis" class="form-select">
+              <option value="no" {% if mets == 'no' %}selected{% endif %}>No</option>
+              <option value="yes" {% if mets == 'yes' %}selected{% endif %}>Yes</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Number of positive nodes{% if prefill_found and prefill_found.num_positive_nodes %} <span class="tag-found">from report</span>{% endif %}</label>
+            <input type="number" min="0" name="num_positive_nodes" class="form-control"
+                   value="{{ prefill.num_positive_nodes if prefill else 0 }}" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Doctor notes (optional)</label>
+            <textarea name="doctor_notes" class="form-control" rows="2">{{ record.doctor_notes or '' }}</textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-cta btn-lg w-100 mt-4">Predict AJCC stage</button>
+        <a class="btn btn-ghost w-100 mt-2" href="{{ url_for('prediction', pred_id=record.id) }}">Back to prediction</a>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

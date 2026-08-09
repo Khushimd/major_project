@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Report — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head d-flex flex-wrap justify-content-between align-items-end gap-3">
+      <div>
+        <h2>Diagnostic report</h2>
+        <p>Structured clinical summary for record #{{ record.id }}</p>
+      </div>
+      <a class="btn btn-cta" href="{{ url_for('download_report', pred_id=record.id) }}">
+        <i class="bi bi-filetype-pdf"></i> Download PDF
+      </a>
+    </div>
+
+    <article class="report-sheet">
+      <header>
+        <h1>Melanoma CDSS Diagnostic Report</h1>
+        <p class="text-danger small">{{ disclaimer }}</p>
+      </header>
+
+      <h3>Patient</h3>
+      <table class="report-table">
+        <tr><th>Patient ID</th><td>{{ record.patient_id }}</td></tr>
+        <tr><th>Name</th><td>{{ record.patient_name or 'N/A' }}</td></tr>
+        <tr><th>Age / Sex</th><td>{{ record.age or 'N/A' }} / {{ record.sex or 'N/A' }}</td></tr>
+        <tr><th>Date</th><td>{{ record.created_at }}</td></tr>
+      </table>
+
+      <h3>Prediction</h3>
+      <table class="report-table">
+        <tr><th>Classification</th><td><strong>{{ record.prediction }}</strong></td></tr>
+        <tr><th>Confidence</th><td>{{ '%.2f'|format((record.confidence or 0) * 100) }}%</td></tr>
+        <tr><th>Model Used</th><td>{{ record.model_used }}</td></tr>
+      </table>
+
+      <h3>AJCC Staging</h3>
+      {% if record.prediction == 'Malignant' %}
+      <table class="report-table">
+        <tr><th>Stage</th><td>{{ record.ajcc_stage or 'Pending' }}</td></tr>
+        <tr><th>Risk Level</th><td>{{ record.risk_level or '—' }}</td></tr>
+        <tr><th>TNM</th><td>{{ record.t_category or '—' }} {{ record.n_category or '' }} {{ record.m_category or '' }}</td></tr>
+        <tr><th>Breslow</th><td>{{ record.breslow_thickness or 0 }} mm</td></tr>
+        <tr><th>Ulceration</th><td>{{ 'Yes' if record.ulceration else 'No' }}</td></tr>
+        <tr><th>Mitotic Rate</th><td>{{ record.mitotic_rate or 0 }}/mm²</td></tr>
+      </table>
+      {% else %}
+      <p>AJCC staging not applicable for benign classification.</p>
+      {% endif %}
+
+      <h3>Grad-CAM</h3>
+      {% if record.prediction == 'Malignant' and record.gradcam_path %}
+      <p>Malignant regions highlighted — see PDF attachment / prediction page overlay.</p>
+      {% else %}
+      <p><em>No malignant regions detected.</em></p>
+      {% endif %}
+
+      <h3>Doctor Notes</h3>
+      <div class="notes-box">{{ record.doctor_notes or '—' }}</div>
+
+      <div class="mt-4 d-flex gap-2">
+        <a class="btn btn-ghost" href="{{ url_for('prediction', pred_id=record.id) }}">Back to Prediction</a>
+        <a class="btn btn-ghost" href="{{ url_for('history') }}">History</a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

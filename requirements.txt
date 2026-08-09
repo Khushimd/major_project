@@ -1,0 +1,20 @@
+# Melanoma CDSS — Python 3.10–3.13
+# Prefer Python 3.10 or 3.11 for widest ecosystem compatibility.
+
+Flask>=3.0.0
+Werkzeug>=3.0.0
+tensorflow>=2.15.0
+numpy>=1.26.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+scikit-learn>=1.3.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+pandas>=2.1.0
+reportlab>=4.0.0
+pypdf>=4.0.0
+python-docx>=1.1.0
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+gunicorn>=21.0.0
+pytest>=7.4.0

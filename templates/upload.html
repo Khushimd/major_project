@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Analyze — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head">
+      <h2>Analyze lesion</h2>
+      <p>Upload a dermoscopic photo for Benign / Malignant prediction.</p>
+    </div>
+
+    <form id="analyzeForm" class="simple-form" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+      <div class="form-pane">
+        <label class="form-label">Patient name (optional)</label>
+        <input type="text" name="patient_name" class="form-control mb-3" placeholder="e.g. John Doe" />
+
+        <div class="row g-3 mb-3">
+          <div class="col-6">
+            <label class="form-label">Age</label>
+            <input type="number" name="age" class="form-control" min="0" max="120" placeholder="—" />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Sex</label>
+            <select name="sex" class="form-select">
+              <option value="N/A">N/A</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="form-label">Lesion image</label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" name="image" id="imageInput" accept=".png,.jpg,.jpeg,.bmp,.tif,.tiff,.webp" required />
+          <div class="upload-prompt">
+            <i class="bi bi-cloud-arrow-up"></i>
+            <p>Click or drop image here</p>
+            <small>JPG / PNG · max 16 MB</small>
+          </div>
+          <img id="imagePreview" class="d-none preview-img" alt="Preview" />
+        </div>
+
+        <button type="submit" class="btn btn-cta btn-lg w-100 mt-4" id="submitBtn">
+          Analyze image
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.getElementById('analyzeForm').addEventListener('submit', function () {
+    document.getElementById('loadingOverlay').classList.remove('d-none');
+  });
+</script>
+{% endblock %}

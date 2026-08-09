@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Home — {{ app_title }}{% endblock %}
+{% block main_class %}home-main{% endblock %}
+
+{% block content %}
+<section class="hero hero-simple">
+  <div class="container">
+    <p class="eyebrow">Clinical Decision Support</p>
+    <h1 class="brand-hero">Melanoma<em>CDSS</em></h1>
+    <p class="lead">
+      Upload a skin lesion image to check if it looks benign or malignant.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('upload') }}" class="btn btn-cta btn-lg">Start analysis</a>
+      <a href="{{ url_for('history') }}" class="btn btn-ghost btn-lg">View history</a>
+    </div>
+    <ol class="simple-steps">
+      <li><span>1</span> Upload image</li>
+      <li><span>2</span> Get result</li>
+      <li><span>3</span> Download report</li>
+    </ol>
+  </div>
+</section>
+{% endblock %}

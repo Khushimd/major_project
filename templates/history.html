@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}History — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-head d-flex flex-wrap justify-content-between align-items-end gap-3">
+      <div>
+        <h2>Prediction history</h2>
+        <p>{{ total }} record{{ 's' if total != 1 else '' }} stored in SQLite.</p>
+      </div>
+      <a class="btn btn-cta" href="{{ url_for('upload') }}">New Analysis</a>
+    </div>
+
+    {% if records %}
+    <div class="table-responsive history-table-wrap">
+      <table class="table history-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Stage</th>
+            <th>Risk</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in records %}
+          <tr>
+            <td>#{{ r.id }}</td>
+            <td>
+              <div class="fw-semibold">{{ r.patient_name or 'Anonymous' }}</div>
+              <small class="text-muted">{{ r.patient_id }}</small>
+            </td>
+            <td>
+              <span class="pill pill-{{ r.prediction|lower }}">{{ r.prediction }}</span>
+            </td>
+            <td>{{ '%.1f'|format((r.confidence or 0) * 100) }}%</td>
+            <td>{{ r.ajcc_stage or '—' }}</td>
+            <td>{{ r.risk_level or '—' }}</td>
+            <td>{{ r.created_at }}</td>
+            <td class="text-end text-nowrap">
+              <a href="{{ url_for('prediction', pred_id=r.id) }}" class="btn btn-sm btn-ghost">View</a>
+              <a href="{{ url_for('download_report', pred_id=r.id) }}" class="btn btn-sm btn-ghost">PDF</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% set pages = ((total - 1) // per_page) + 1 %}
+    {% if pages > 1 %}
+    <nav class="mt-4">
+      <ul class="pagination">
+        {% for p in range(1, pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link" href="{{ url_for('history', page=p) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    {% else %}
+    <div class="empty-state">
+      <p>No predictions yet.</p>
+      <a href="{{ url_for('upload') }}" class="btn btn-cta">Run your first analysis</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

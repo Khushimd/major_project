@@ -1,0 +1,16 @@
+{
+  "weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "method": "soft_voting",
+  "type": "hybrid",
+  "description": "Combination of EfficientNetB0 and MobileNetV2",
+  "metrics": {
+    "accuracy": 0.7923123364862146,
+    "precision": 0.0390625,
+    "recall": 0.45454545454545453,
+    "f1": 0.07194244604316546,
+    "auc": 0.6688923655733735
+  }
+}

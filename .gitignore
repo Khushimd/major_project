@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Data & artifacts (keep structure, ignore heavy files)
+dataset/raw/**
+!dataset/raw/.gitkeep
+dataset/processed/**
+!dataset/processed/.gitkeep
+static/uploads/**
+!static/uploads/.gitkeep
+static/results/**
+!static/results/.gitkeep
+reports/generated/**
+!reports/generated/.gitkeep
+logs/**
+!logs/.gitkeep
+
+# Models are large — keep meta JSON, ignore weight binaries
+models/saved/*.keras
+models/checkpoints/**
+!models/checkpoints/.gitkeep
+static/uploads/clinical_reports/**
+
+# Database
+database/*.db
+
+# Secrets
+.env
+*.pem

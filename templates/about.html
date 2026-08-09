@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}About — {{ app_title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head">
+      <h2>About Melanoma CDSS</h2>
+      <p>An AI-powered clinical decision support system for melanoma detection and AJCC stage prediction.</p>
+    </div>
+
+    <article class="prose">
+      <h3>Objective</h3>
+      <p>
+        Support clinicians with deep-learning classification of dermoscopic lesions
+        (Benign vs Malignant), visual explanations via Grad-CAM, rule-based AJCC staging,
+        and automatic diagnostic PDF reports.
+      </p>
+
+      <h3>Models</h3>
+      <ul>
+        <li><strong>EfficientNetB0</strong> — transfer learning + fine-tuning</li>
+        <li><strong>MobileNetV2</strong> — lightweight transfer learning + fine-tuning</li>
+        <li><strong>Hybrid</strong> — combines both models (soft vote 0.7 × EfficientNet + 0.3 × MobileNet; optional majority / highest-frequency voting)</li>
+      </ul>
+
+      <h3>Dataset</h3>
+      <p>
+        Primary: <strong>SIIM-ISIC 2020</strong>. The data layer is modular so
+        <strong>HAM10000</strong> can be added by switching <code>ACTIVE_DATASET</code> in config.
+      </p>
+
+      <h3>Explainability</h3>
+      <p>
+        Grad-CAM heatmaps are generated <em>only</em> when the prediction is Malignant.
+        Benign predictions display: “No malignant regions detected.”
+      </p>
+
+      <h3>AJCC Staging</h3>
+      <p>
+        If malignant, clinical parameters (Breslow thickness, ulceration, mitotic rate,
+        lymph node involvement, metastasis) drive AJCC 8th Edition stage groups
+        (Stage 0–IV) with risk level, recommendation, and follow-up guidance.
+      </p>
+
+      <h3>Disclaimer</h3>
+      <p class="text-danger">{{ disclaimer }}</p>
+    </article>
+  </div>
+</section>
+{% endblock %}

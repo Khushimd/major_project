@@ -1,0 +1,30 @@
+{
+  "best_model": "ensemble",
+  "selection_criteria": [
+    "f1",
+    "auc"
+  ],
+  "metrics": {
+    "efficientnet": {
+      "accuracy": 0.6365465888508754,
+      "precision": 0.030087527352297593,
+      "recall": 0.625,
+      "f1": 0.05741127348643006,
+      "auc": 0.6668738708535882
+    },
+    "mobilenet": {
+      "accuracy": 0.9822901992352586,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6385742023802873
+    },
+    "ensemble": {
+      "accuracy": 0.7923123364862146,
+      "precision": 0.0390625,
+      "recall": 0.45454545454545453,
+      "f1": 0.07194244604316546,
+      "auc": 0.6688923655733735
+    }
+  }
+}
