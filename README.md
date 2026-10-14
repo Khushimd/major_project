@@ -16,7 +16,7 @@ Production-ready final-year engineering project: deep learning melanoma classifi
 | Reports | PDF with patient details, confidence, Grad-CAM, stage, recommendations |
 | Web app | Home, About, Upload, Prediction, Report, History, Model Comparison |
 | Extras | Dark mode, confidence gauge, charts, TTA, image quality / blur checks, U-Net segmentation hook |
-| Data | SIIM-ISIC 2020 primary; HAM10000-ready modular loader |
+| Data | DICM + ISIC 2020 for the frozen 92.28% Exp2-C model |
 
 ---
 
@@ -27,7 +27,7 @@ Production-ready final-year engineering project: deep learning melanoma classifi
 ├── config.py              # Central configuration
 ├── requirements.txt
 ├── README.md
-├── dataset/               # SIIM-ISIC / HAM10000 data
+├── dataset/               # DICM metadata, ISIC 2020 labels, frozen splits
 ├── models/                # Architectures + saved .keras weights
 ├── training/              # Dataset loader, train, evaluate, callbacks
 ├── preprocessing/         # Hair removal, CLAHE, augment, quality
@@ -84,39 +84,82 @@ python scripts/initialize_models.py --quick-train --epochs 3
 
 ---
 
-## Dataset setup (SIIM-ISIC 2020)
+## Dataset setup (92.28% Exp2-C: DICM + ISIC 2020)
 
-1. Download **SIIM-ISIC Melanoma Classification 2020** from Kaggle.
-2. Place files under `dataset/raw/`:
+The frozen **92.28%** model is Exp2-C (BCE + label smoothing 0.05). It uses **DICM + ISIC 2020**.
+
+| Class | Source | Rule |
+|-------|--------|------|
+| 0 | ISIC 2020 | Official benign (`benign_malignant=benign`). DICM class=0 was **not** used. |
+| 1 | DICM (ISIC-DICM-17K) | Official `class=1`. This is **not** `diagnosis == melanoma` only (BCC, SCC, and others are included). |
+
+JPEG images are local-only (not on GitHub). Metadata and frozen splits **are** in the repo.
+
+### 1. DICM (class 1)
+
+Place official metadata and lesion JPEGs:
+
+```
+dataset/isic_dicm_17k/
+├── train-set-metadata.csv
+└── valid-set-metadata.csv
+
+images/
+└── *.jpg                 # DICM / ISIC-DICM-17K images
+```
+
+### 2. ISIC 2020 (class 0)
+
+Download **SIIM-ISIC Melanoma Classification 2020** and keep official-benign images:
 
 ```
 dataset/raw/
-├── train.csv
-└── train/          # or jpeg/train/ — *.jpg images
-    ├── ISIC_xxxx.jpg
-    └── ...
+├── train.csv             # ISIC 2020 labels
+└── train/
+    └── ISIC_xxxx.jpg     # official-benign JPEGs used for class 0
 ```
 
-3. Train:
+Optional extract:
 
 ```bash
-python -m training.train --dataset siim_isic_2020
+python scripts/extract_isic.py
 ```
 
-### HAM10000 (later)
+### 3. Frozen splits (already in the repo)
 
-Place metadata + images under `dataset/ham10000/`, then:
+Do **not** retune these. Grouped 70 / 15 / 15, seed 42, total 16,529 images:
+
+| Split | n | Class 1 | Class 0 |
+|-------|--:|--------:|--------:|
+| Train | 11,611 | 5,966 | 5,645 |
+| Val | 2,445 | 1,240 | 1,205 |
+| Test | 2,473 | 1,324 | 1,149 |
+
+Files: `dataset/processed/melanoma_benign/{train,val,test,manifest}.csv`
+
+To rebuild the CSVs only (does not train, does not touch production):
 
 ```bash
-python -m training.train --dataset ham10000
+python scripts/prepare_melanoma_benign.py
 ```
 
-Or set `ACTIVE_DATASET = "ham10000"` in `config.py`.
+### 4. Frozen 92.28% weights
 
-### Smoke training without Kaggle data
+```
+models/experiments/internal_optimization/exp2_loss_comparison/exp2c_bce_smooth/
+├── efficientnetb0_bce_smooth.keras
+├── mobilenetv2_bce_smooth.keras
+└── EXP2C_FROZEN_LOCK.md
+```
+
+Ensemble **0.75 / 0.25**, threshold **0.30**. Frozen internal test: accuracy 92.28%, recall 95.24%, specificity 88.86%, precision 90.78%, F1 0.9296.
+
+Do **not** overwrite these files. Do **not** replace production weights in `models/saved/`. This is **not** a clean melanoma-vs-benign result and is **not** clinically validated.
+
+To reproduce Exp2-C (writes only under that experiment folder; needs Exp1 as the BCE control):
 
 ```bash
-python -m training.train --synthetic --epochs 5
+python scripts/exp2_loss_comparison.py
 ```
 
 ---
@@ -129,14 +172,14 @@ The trainer:
 2. Applies augmentation + class weights / focal loss  
 3. Trains **EfficientNetB0** (transfer → fine-tune)  
 4. Trains **MobileNetV2** (transfer → fine-tune)  
-5. Evaluates **ensemble** soft voting (`0.6 × Eff + 0.4 × Mob`)  
-6. Writes metrics, ROC, confusion matrices, and auto-selects the best model  
+5. Evaluates **ensemble** soft voting (Exp2-C: `0.75 × Eff + 0.25 × Mob`, threshold 0.30)  
+6. Writes metrics under the experiment folder only — production `models/saved/` is not overwritten  
 
 Callbacks: `EarlyStopping`, `ReduceLROnPlateau`, `ModelCheckpoint`, TensorBoard, CSV logger. Mixed precision enables automatically when a GPU is present.
 
 Key knobs live in `config.py`: `EPOCHS`, `BATCH_SIZE`, `LEARNING_RATE`, `ENSEMBLE_WEIGHTS`, `USE_FOCAL_LOSS`, `USE_TTA`.
 
-**Target metrics** (with full SIIM-ISIC training + tuning): Accuracy / Precision / Recall / F1 &gt; 95%, ROC-AUC &gt; 0.97.
+**Frozen Exp2-C internal test (as labeled):** accuracy 92.28%, precision 90.78%, recall 95.24%, F1 0.9296, ROC-AUC 0.9799. Class 1 is DICM official `class=1`, not melanoma-only.
 
 ---
 
@@ -209,7 +252,7 @@ See `config.py` for paths, image size (224×224), ensemble weights, Flask settin
 
 ## Deployment checklist
 
-1. Train on SIIM-ISIC and confirm metrics under `models/saved/evaluation_metrics.json`  
+1. Keep Exp2-C frozen under `models/experiments/internal_optimization/exp2_loss_comparison/exp2c_bce_smooth/` (do not overwrite production `models/saved/`)  
 2. Keep only best weights in `models/saved/`  
 3. Set `FLASK_DEBUG=0` and a secure `FLASK_SECRET_KEY`  
 4. Serve behind HTTPS reverse proxy (nginx)  
