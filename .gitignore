@@ -28,8 +28,7 @@ database/*.db
 .env
 *.pem
 
-# Weight binaries (reports/json stay tracked)
-*.keras
+# Intermediate training checkpoints (keep final saved .keras below)
 *.h5
 *.hdf5
 *.pt
@@ -37,6 +36,7 @@ database/*.db
 *.onnx
 models/checkpoints/**
 !models/checkpoints/.gitkeep
+models/experiments/**/checkpoints/**
 **/preprocessed/
 **/preprocessed_cache/
 models/experiments/**/cache/
