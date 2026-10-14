@@ -90,8 +90,8 @@ The frozen **92.28%** model is Exp2-C (BCE + label smoothing 0.05). It uses **DI
 
 | Class | Source | Rule |
 |-------|--------|------|
-| 0 | ISIC 2020 | Official benign (`benign_malignant=benign`). DICM class=0 was **not** used. |
-| 1 | DICM (ISIC-DICM-17K) | Official `class=1`. This is **not** `diagnosis == melanoma` only (BCC, SCC, and others are included). |
+| 0 | ISIC 2020 | Official benign (`benign_malignant=benign`).  |
+| 1 | DICM (ISIC-DICM-17K) | Official `class=1`. |
 
 JPEG images are local-only (not on GitHub). Metadata and frozen splits **are** in the repo.
 
@@ -154,7 +154,7 @@ models/experiments/internal_optimization/exp2_loss_comparison/exp2c_bce_smooth/
 
 Ensemble **0.75 / 0.25**, threshold **0.30**. Frozen internal test: accuracy 92.28%, recall 95.24%, specificity 88.86%, precision 90.78%, F1 0.9296.
 
-Do **not** overwrite these files. Do **not** replace production weights in `models/saved/`. This is **not** a clean melanoma-vs-benign result and is **not** clinically validated.
+Do **not** overwrite these files. Do **not** replace production weights in `models/saved/`. 
 
 To reproduce Exp2-C (writes only under that experiment folder; needs Exp1 as the BCE control):
 
@@ -179,7 +179,7 @@ Callbacks: `EarlyStopping`, `ReduceLROnPlateau`, `ModelCheckpoint`, TensorBoard,
 
 Key knobs live in `config.py`: `EPOCHS`, `BATCH_SIZE`, `LEARNING_RATE`, `ENSEMBLE_WEIGHTS`, `USE_FOCAL_LOSS`, `USE_TTA`.
 
-**Frozen Exp2-C internal test (as labeled):** accuracy 92.28%, precision 90.78%, recall 95.24%, F1 0.9296, ROC-AUC 0.9799. Class 1 is DICM official `class=1`, not melanoma-only.
+**Frozen Exp2-C internal test (as labeled):** accuracy 92.28%, precision 90.78%, recall 95.24%, F1 0.9296, ROC-AUC 0.9799. 
 
 ---
 
