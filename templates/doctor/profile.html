@@ -1,0 +1,49 @@
+{% extends "dash_base.html" %}
+{% from "macros/hospitals.html" import picker %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('settings') }}{% endblock %}
+{% block heading %}Settings{% endblock %}
+{% block content %}
+<form method="post" class="form-pane" style="max-width:560px">
+  <label class="form-label">Name</label>
+  <input class="form-control mb-3" name="full_name" value="{{ user.full_name }}" required />
+  <label class="form-label">Email</label>
+  <input class="form-control mb-3" value="{{ user.email }}" disabled />
+  <label class="form-label">Phone</label>
+  <input class="form-control mb-3" name="phone" value="{{ user.phone or '' }}" />
+  <label class="form-label">Experience</label>
+  <input class="form-control mb-3" name="experience" value="{{ (user.profile or {}).experience or '' }}" placeholder="e.g. 8 years in dermatology" />
+  <label class="form-label">Medical registration number</label>
+  <input class="form-control mb-3" name="medical_registration" value="{{ (user.profile or {}).medical_registration or '' }}" />
+  <label class="form-label">Qualification (what you studied)</label>
+  <select class="form-select mb-3" name="specialization" required>
+    {% set current_qual = (user.profile or {}).specialization or '' %}
+    <option value="" disabled {% if not current_qual %}selected{% endif %}>Select qualification</option>
+    {% for q in qualifications %}
+    <option value="{{ q }}" {% if q == current_qual %}selected{% endif %}>{{ q }}</option>
+    {% endfor %}
+  </select>
+  <label class="form-label">Hospital / clinic</label>
+  {{ picker(hospitals, value=(user.profile or {}).hospital or '', placeholder='Type Kidwai, HCG, Cytecare, Manipal…') }}
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Available from</label>
+      <select class="form-select" name="hours_from" required>
+        {% for h in hour_choices %}
+        <option value="{{ '%02d'|format(h) }}:00" {% if h == hours_from %}selected{% endif %}>{{ h }}:00</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Available until</label>
+      <select class="form-select" name="hours_until" required>
+        {% for h in hour_choices %}
+        <option value="{{ '%02d'|format(h) }}:00" {% if h == hours_until %}selected{% endif %}>{{ h }}:00</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <p class="hint">Patients only see one-hour boxes within these hours, for example 9–10, 10–11.</p>
+  <button class="btn btn-cta" type="submit">Save</button>
+</form>
+{% endblock %}

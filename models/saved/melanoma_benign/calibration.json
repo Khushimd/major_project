@@ -1,0 +1,35 @@
+{
+  "status": "implemented",
+  "method": "isotonic regression",
+  "fitted_on": "validation ensemble raw probabilities only",
+  "validation_only_fitting": true,
+  "test_used_for_fitting": false,
+  "raw_brier": 0.10739252156573145,
+  "calibrated_brier": 0.07358609559062394,
+  "reliability_raw": {
+    "mean_predicted": [
+      0.1831780302077532,
+      0.25964818878436635,
+      0.34137059824461,
+      0.4475579154505218,
+      0.5515246306033057,
+      0.6501332912657218,
+      0.7528561566745383,
+      0.8557363794868802,
+      0.9656608137600836
+    ],
+    "fraction_positive": [
+      0.04,
+      0.02952755905511811,
+      0.06698564593301436,
+      0.2824074074074074,
+      0.5989304812834224,
+      0.8022598870056498,
+      0.9060773480662984,
+      0.9605911330049262,
+      0.9849056603773585
+    ]
+  },
+  "operating_threshold_uses_raw_scores": true,
+  "note": "Displayed probability is an AI-estimated model score. It is not a clinically calibrated medical probability."
+}

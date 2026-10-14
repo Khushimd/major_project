@@ -1,0 +1,88 @@
+{
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign",
+  "seed": 42,
+  "label_smoothing": 0.05,
+  "class_weight": {
+    "formula": "weight(class) = N / (number_of_classes * class_count)",
+    "source": "training set only",
+    "N": 11379,
+    "n_classes": 2,
+    "benign_count": 6676,
+    "melanoma_count": 4703,
+    "benign_weight": 0.8522318753744758,
+    "melanoma_weight": 1.2097597278332979,
+    "keras_class_weight": {
+      "0": 0.8522318753744758,
+      "1": 1.2097597278332979
+    },
+    "oversampling": false,
+    "undersampling": false,
+    "validation_or_test_used": false
+  },
+  "oversampling": false,
+  "only_intended_change": "class weighting from training set",
+  "stages": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "weight_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "threshold_grid": [
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7
+  ],
+  "ensemble_rule": "max validation ROC-AUC then F1 at 0.50",
+  "threshold_rule": "max validation F1 on 0.20-0.70 grid",
+  "test_used_for_tuning": false,
+  "preprocessing": "hair removal + denoise + 224 + /255; max-side 1024 before hair; no CLAHE; no crop",
+  "preprocess_cache": "read-only reuse of frozen baseline JPEG cache",
+  "augmentation": "get_tf_data_augmentation_fn train only",
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "seed": 42,
+    "gpu": []
+  }
+}

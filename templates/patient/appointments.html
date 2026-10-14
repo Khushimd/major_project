@@ -1,0 +1,130 @@
+{% extends "dash_base.html" %}
+{% from "macros/patient_nav.html" import nav %}
+{% block sidebar %}{{ nav('appointments') }}{% endblock %}
+{% block heading %}Appointments{% endblock %}
+{% block subhead %}Search a hospital, choose a doctor, and request a visit.{% endblock %}
+{% block content %}
+<div class="form-pane mb-4">
+  <h3>1. Search hospital</h3>
+  <form method="get" class="row g-2 align-items-end">
+    <div class="col-md-8">
+      <label class="form-label">Hospital name or city</label>
+      <input class="form-control" name="q" value="{{ query }}" placeholder="Type Kidwai, HCG, Cytecare, Manipal…" />
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-cta w-100" type="submit">Search</button>
+    </div>
+  </form>
+  {% if not selected_hospital %}
+  <div class="pick-grid mt-3">
+    {% for h in hospitals %}
+    <article class="pick-card">
+      <h4>{{ h.name }}</h4>
+      {% if h.address %}<p class="hint mb-2">{{ h.address }}</p>{% endif %}
+      <p class="hint">{{ h.doctor_count }} doctor{{ 's' if h.doctor_count != 1 else '' }}</p>
+      <a class="btn btn-ghost btn-sm" href="{{ url_for('patient.appointments', hospital_id=h.id) }}">View doctors</a>
+    </article>
+    {% else %}
+    <p class="mb-0">No matching hospital with available doctors. Try another name or city.</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% if selected_hospital %}
+<div class="form-pane mb-4">
+  <h3>2. Doctors at {{ selected_hospital.name }}</h3>
+  <p class="hint"><a href="{{ url_for('patient.appointments') }}">Change hospital</a></p>
+  <div class="pick-grid">
+    {% for d in doctors %}
+    <article class="pick-card {% if selected_doctor and selected_doctor.id == d.id %}is-selected{% endif %}">
+      <h4>{{ d.full_name }}</h4>
+      <p class="lp-team-role mb-2">{{ d.specialization or 'Dermatology' }}</p>
+      <p class="hint">{{ d.description }}</p>
+      <a class="btn btn-cta btn-sm" href="{{ url_for('patient.appointments', hospital_id=selected_hospital.id, doctor_id=d.id) }}">Book appointment</a>
+    </article>
+    {% else %}
+    <p class="mb-0">No doctors listed at this hospital yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if selected_doctor %}
+<div class="form-pane mb-4">
+  <h3>3. Book with {{ selected_doctor.full_name }}</h3>
+  <p class="hint">{{ selected_doctor.description }}</p>
+  <form method="get" class="mb-3">
+    <input type="hidden" name="hospital_id" value="{{ selected_hospital.id if selected_hospital else '' }}" />
+    <input type="hidden" name="doctor_id" value="{{ selected_doctor.id }}" />
+    <label class="form-label">Date</label>
+    <select name="date" class="form-select" onchange="this.form.submit()">
+      {% for dt in dates %}
+      <option value="{{ dt }}" {% if dt==selected_date %}selected{% endif %}>{{ dt }}</option>
+      {% endfor %}
+    </select>
+  </form>
+  <form method="post">
+    <input type="hidden" name="hospital_id" value="{{ selected_hospital.id if selected_hospital else '' }}" />
+    <input type="hidden" name="doctor_id" value="{{ selected_doctor.id }}" />
+    <input type="hidden" name="appt_date" value="{{ selected_date }}" />
+    <label class="form-label">Choose a 1-hour slot</label>
+    <div class="slot-grid mb-3">
+      {% for s in hour_slots %}
+      <label class="slot-btn {% if s.value in taken %}is-taken{% endif %}">
+        <input
+          type="radio"
+          name="appt_time"
+          value="{{ s.value }}"
+          {% if s.value in taken %}disabled{% else %}required{% endif %}
+        >
+        <span>{{ s.label }}</span>
+        {% if s.value in taken %}<small>Booked</small>{% endif %}
+      </label>
+      {% else %}
+      <p class="mb-0">This doctor has no bookable hours set.</p>
+      {% endfor %}
+    </div>
+    {% if taken %}
+    <p class="hint">Grey boxes are already booked with this doctor.</p>
+    {% endif %}
+    <label class="form-label">Reason for consultation</label>
+    <textarea name="reason" class="form-control mb-3" rows="2" required></textarea>
+    <button class="btn btn-cta" type="submit" {% if not slots %}disabled{% endif %}>Request appointment</button>
+  </form>
+</div>
+{% endif %}
+
+<h3 class="section-title">Your appointments</h3>
+<div class="history-table-wrap mb-4">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Doctor</th><th>Hospital</th><th>Date</th><th>Time</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for a in upcoming %}
+      <tr>
+        <td>{{ a.doctor_name }}</td>
+        <td>{{ a.doctor_hospital or '—' }}</td>
+        <td>{{ a.appt_date }}</td>
+        <td>{{ a.time_label or a.appt_time }}</td>
+        <td>{{ 'Waiting for doctor' if a.status == 'requested' else a.status }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5">No upcoming appointments.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<h3 class="section-title">Previous</h3>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for a in past %}
+      <tr><td>{{ a.doctor_name }}</td><td>{{ a.appt_date }}</td><td>{{ a.time_label or a.appt_time }}</td><td>{{ a.status }}</td></tr>
+      {% else %}
+      <tr><td colspan="4">No past appointments.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

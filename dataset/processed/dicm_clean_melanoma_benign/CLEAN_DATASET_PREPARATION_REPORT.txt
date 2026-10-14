@@ -1,0 +1,56 @@
+CLEAN DATASET CREATED
+
+Total: 11373
+Melanoma: 6787
+Benign: 4586
+
+Train:
+  total: 7961
+  melanoma: 4747
+  benign: 3214
+
+Validation:
+  total: 1706
+  melanoma: 1016
+  benign: 690
+
+Test:
+  total: 1706
+  melanoma: 1024
+  benign: 682
+
+Grouping:
+  patient: 4315
+  lesion fallback: 5257
+  image fallback: 1801
+
+Leakage:
+  patient overlap between new splits: 0
+  lesion overlap between new splits: 0
+  image overlap between new splits: 0
+
+Overlap with OLD experiment:
+  total: 6930
+  old train: 4834
+  old validation: 981
+  old test: 1115
+
+Shared patients with old experiment: 1403
+  patients in multiple NEW splits: 0
+  patients in multiple OLD splits: 0
+  old membership: train 971 / val 217 / test 215
+  new membership: train 974 / val 228 / test 201
+  full per-patient list: leakage_report.json
+
+Files created:
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\manifest.csv
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\train.csv
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\val.csv
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\test.csv
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\split_detail.json
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\leakage_report.json
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\dataset_report.json
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\CLEAN_DATASET_README.txt
+  C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign\CLEAN_DATASET_PREPARATION_REPORT.txt
+
+TRAINING STARTED: NO

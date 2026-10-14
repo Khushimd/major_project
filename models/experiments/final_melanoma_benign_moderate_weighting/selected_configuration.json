@@ -1,0 +1,7 @@
+{
+  "feasible": false,
+  "n_feasible": 0,
+  "selected_id": "retained_baseline",
+  "selected": null,
+  "rule": "No moderate-weighting configuration met specificity>=0.82, precision>=0.78, F1>=0.80, and accuracy>=0.82 on validation at threshold 0.50. Constraints were not relaxed. Retain the frozen 83.42% baseline."
+}

@@ -1,0 +1,21 @@
+{% extends "dash_base.html" %}
+{% block sidebar %}
+  <a class="active" href="{{ url_for('admin.dashboard') }}"><i class="bi bi-shield-lock"></i> Admin</a>
+{% endblock %}
+{% block heading %}{{ patient.full_name }}{% endblock %}
+{% block subhead %}Patient profile{% endblock %}
+{% block content %}
+<p class="mb-3"><a class="btn btn-ghost btn-sm" href="{{ url_for('admin.dashboard') }}">&larr; Back to admin</a></p>
+<article class="form-pane" style="max-width:720px">
+  <h3 class="mb-3">Patient details</h3>
+  <table class="report-table">
+    <tr><th>Name</th><td>{{ patient.full_name }}</td></tr>
+    <tr><th>Phone</th><td>{{ patient.phone or '—' }}</td></tr>
+    <tr><th>Email</th><td>{{ patient.email or '—' }}</td></tr>
+    <tr><th>Age</th><td>{{ profile.age or '—' }}</td></tr>
+    <tr><th>Sex</th><td>{{ profile.sex or '—' }}</td></tr>
+    <tr><th>Date of birth</th><td>{{ profile.date_of_birth or '—' }}</td></tr>
+    <tr><th>Assigned doctor</th><td>{{ assigned.full_name if assigned else '—' }}</td></tr>
+  </table>
+</article>
+{% endblock %}

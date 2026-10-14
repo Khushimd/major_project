@@ -1,0 +1,22 @@
+{% extends "dash_base.html" %}
+{% from "macros/patient_nav.html" import nav %}
+{% block sidebar %}{{ nav('profile') }}{% endblock %}
+{% block heading %}Profile{% endblock %}
+{% block content %}
+<form method="post" class="form-pane" style="max-width:520px">
+  <label class="form-label">Full name</label>
+  <input class="form-control mb-3" name="full_name" value="{{ user.full_name }}" required />
+  <label class="form-label">Phone</label>
+  <input class="form-control mb-3" name="phone" value="{{ user.phone or '' }}" />
+  <label class="form-label">Age</label>
+  <input class="form-control mb-3" type="number" name="age" value="{{ (user.profile or {}).age or '' }}" />
+  <label class="form-label">Gender</label>
+  <select class="form-select mb-3" name="sex">
+    {% set sx = (user.profile or {}).sex or 'N/A' %}
+    {% for opt in ['N/A','Female','Male','Other'] %}
+    <option {% if opt==sx %}selected{% endif %}>{{ opt }}</option>
+    {% endfor %}
+  </select>
+  <button class="btn btn-cta" type="submit">Save</button>
+</form>
+{% endblock %}

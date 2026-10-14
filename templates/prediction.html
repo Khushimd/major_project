@@ -1,80 +1,46 @@
 {% extends "base.html" %}
-{% block title %}Prediction — {{ app_title }}{% endblock %}
+{% block title %}Result — Melanoma Detection{% endblock %}
 
 {% block content %}
-<section class="section">
-  <div class="container narrow-result">
-    <div class="prediction-hero verdict-{{ record.prediction|lower }}">
-      <p class="prediction-kicker">Result</p>
-      <h2 class="prediction-label">{{ record.prediction }}</h2>
-      <p class="prediction-confidence">
-        {{ '%.0f'|format((record.confidence or 0) * 100) }}% confidence
-      </p>
-    </div>
+<section class="page">
+  <p class="kicker">Result</p>
+  <h1 class="verdict verdict-{{ record.prediction|lower }}">{{ record.prediction }}</h1>
 
-    <div class="heatmap-compare">
-      {% if images.original %}
-      <figure class="heatmap-card">
-        <img src="{{ images.original }}" alt="Uploaded lesion" />
-        <figcaption>Lesion image</figcaption>
-      </figure>
-      {% endif %}
+  <ul class="metrics">
+    <li>
+      <span>Melanoma probability</span>
+      <strong>{{ '%.1f'|format((record.malignant_prob or 0) * 100) }}%</strong>
+    </li>
+    <li>
+      <span>Decision threshold</span>
+      <strong>{{ '%.2f'|format(threshold) }}</strong>
+    </li>
+    <li>
+      <span>Predicted class</span>
+      <strong>{{ record.prediction }}</strong>
+    </li>
+  </ul>
 
-      {% if record.prediction == 'Malignant' and images.gradcam %}
-      <figure class="heatmap-card heatmap-card-focus">
-        <img src="{{ images.gradcam }}" alt="Attention heatmap" />
-        <figcaption>Attention heatmap — warmer colors mark suspicious regions</figcaption>
-      </figure>
-      {% else %}
-      <div class="benign-note heatmap-card">
-        <i class="bi bi-check2-circle"></i>
-        <p>No malignant regions detected.</p>
-      </div>
-      {% endif %}
-    </div>
-
-    {% if record.prediction == 'Malignant' %}
-      {% if record.ajcc_stage and record.ajcc_stage != 'Pending clinical data' %}
-      <div class="stage-card print-area">
-        <h3>AJCC stage</h3>
-        <p class="stage-value">{{ record.ajcc_stage }}</p>
-        <dl class="stage-meta">
-          <div><dt>TNM</dt><dd>{{ record.t_category }} {{ record.n_category }} {{ record.m_category }}</dd></div>
-          <div><dt>Risk</dt><dd>{{ record.risk_level }}</dd></div>
-          {% if record.staging_details %}
-          <div><dt>Details</dt><dd>{{ record.staging_details }}</dd></div>
-          {% endif %}
-          {% if record.staging_recommendation %}
-          <div><dt>Recommendation</dt><dd>{{ record.staging_recommendation }}</dd></div>
-          {% endif %}
-          {% if record.staging_follow_up %}
-          <div><dt>Follow-up</dt><dd>{{ record.staging_follow_up }}</dd></div>
-          {% endif %}
-        </dl>
-      </div>
-      {% endif %}
+  <div class="images">
+    {% if images.original %}
+    <figure>
+      <img src="{{ images.original }}" alt="Uploaded lesion" />
+      <figcaption>Uploaded image</figcaption>
+    </figure>
     {% endif %}
-
-    <div class="prediction-actions no-print">
-      <a class="btn btn-ghost" href="{{ url_for('upload') }}">Analyze another</a>
-      {% if record.prediction == 'Malignant' %}
-        {% if not record.ajcc_stage or record.ajcc_stage == 'Pending clinical data' %}
-        <a class="btn btn-cta" href="{{ url_for('ajcc_staging', pred_id=record.id) }}">
-          Enter AJCC clinical values
-        </a>
-        {% else %}
-        <a class="btn btn-ghost" href="{{ url_for('ajcc_staging', pred_id=record.id) }}">Update staging</a>
-        <button type="button" class="btn btn-ghost" onclick="window.print()">Print</button>
-        <a class="btn btn-cta" href="{{ url_for('download_report', pred_id=record.id) }}">
-          <i class="bi bi-download"></i> Download PDF
-        </a>
-        {% endif %}
-      {% else %}
-        <a class="btn btn-cta" href="{{ url_for('download_report', pred_id=record.id) }}">
-          <i class="bi bi-download"></i> Download PDF
-        </a>
-      {% endif %}
-    </div>
+    {% if images.gradcam %}
+    <figure>
+      <img src="{{ images.gradcam }}" alt="Grad-CAM heatmap" />
+      <figcaption>Grad-CAM heatmap</figcaption>
+    </figure>
+    {% endif %}
   </div>
+
+  <p class="note">
+    This is research decision support, not a diagnosis.
+    A dermatologist should review any concerning lesion.
+  </p>
+
+  <a class="btn btn-ghost" href="{{ url_for('home') }}">Check another image</a>
 </section>
 {% endblock %}

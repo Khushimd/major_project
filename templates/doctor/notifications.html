@@ -1,0 +1,9 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('notifications') }}{% endblock %}
+{% block heading %}Notifications{% endblock %}
+{% block content %}
+{% for n in items %}
+<div class="form-pane mb-2"><strong>{{ n.title }}</strong><p class="mb-1">{{ n.body }}</p><small>{{ n.created_at }}</small></div>
+{% else %}<p>No notifications.</p>{% endfor %}
+{% endblock %}

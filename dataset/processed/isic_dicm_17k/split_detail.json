@@ -1,0 +1,163 @@
+{
+  "splits": {
+    "train": {
+      "images": 11859,
+      "melanoma": 5875,
+      "non_melanoma": 5984,
+      "melanoma_pct": 49.54,
+      "patients": 2662,
+      "lesions": 6476,
+      "groups": 6636
+    },
+    "val": {
+      "images": 2616,
+      "melanoma": 1334,
+      "non_melanoma": 1282,
+      "melanoma_pct": 50.99,
+      "patients": 579,
+      "lesions": 1365,
+      "groups": 1422
+    },
+    "test": {
+      "images": 2585,
+      "melanoma": 1321,
+      "non_melanoma": 1264,
+      "melanoma_pct": 51.1,
+      "patients": 569,
+      "lesions": 1347,
+      "groups": 1422
+    }
+  },
+  "overlaps": {
+    "train_vs_val": {
+      "patient_id": {
+        "left": "train",
+        "right": "val",
+        "left_n": 2662,
+        "right_n": 579,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "lesion_id": {
+        "left": "train",
+        "right": "val",
+        "left_n": 6476,
+        "right_n": 1365,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_id": {
+        "left": "train",
+        "right": "val",
+        "left_n": 11859,
+        "right_n": 2616,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_path": {
+        "left": "train",
+        "right": "val",
+        "left_n": 11859,
+        "right_n": 2616,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "group_id": {
+        "left": "train",
+        "right": "val",
+        "left_n": 6636,
+        "right_n": 1422,
+        "overlap_n": 0,
+        "overlap_examples": []
+      }
+    },
+    "train_vs_test": {
+      "patient_id": {
+        "left": "train",
+        "right": "test",
+        "left_n": 2662,
+        "right_n": 569,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "lesion_id": {
+        "left": "train",
+        "right": "test",
+        "left_n": 6476,
+        "right_n": 1347,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_id": {
+        "left": "train",
+        "right": "test",
+        "left_n": 11859,
+        "right_n": 2585,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_path": {
+        "left": "train",
+        "right": "test",
+        "left_n": 11859,
+        "right_n": 2585,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "group_id": {
+        "left": "train",
+        "right": "test",
+        "left_n": 6636,
+        "right_n": 1422,
+        "overlap_n": 0,
+        "overlap_examples": []
+      }
+    },
+    "val_vs_test": {
+      "patient_id": {
+        "left": "val",
+        "right": "test",
+        "left_n": 579,
+        "right_n": 569,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "lesion_id": {
+        "left": "val",
+        "right": "test",
+        "left_n": 1365,
+        "right_n": 1347,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_id": {
+        "left": "val",
+        "right": "test",
+        "left_n": 2616,
+        "right_n": 2585,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "image_path": {
+        "left": "val",
+        "right": "test",
+        "left_n": 2616,
+        "right_n": 2585,
+        "overlap_n": 0,
+        "overlap_examples": []
+      },
+      "group_id": {
+        "left": "val",
+        "right": "test",
+        "left_n": 1422,
+        "right_n": 1422,
+        "overlap_n": 0,
+        "overlap_examples": []
+      }
+    }
+  },
+  "patient_overlap": 0,
+  "lesion_overlap": 0,
+  "image_overlap": 0,
+  "clean": true
+}

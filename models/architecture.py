@@ -101,6 +101,7 @@ def build_mobilenetv2(
         input_shape=input_shape,
     )
     base.trainable = trainable_base
+    base._name = "mobilenetv2_backbone"
     # Apply backbone to preprocessed tensor
     x = base(x)
     outputs = _classification_head(x, dropout_rate=dropout_rate, name_prefix="mob")
@@ -113,86 +114,150 @@ def build_mobilenetv2(
     return model
 
 
+def _is_classification_head_layer(name: str) -> bool:
+    lname = name.lower()
+    return (
+        lname in {"malignant_prob", "input_image"}
+        or lname.startswith(("eff_", "mob_", "head_"))
+        or "global_average_pooling" in lname
+        or (lname.startswith("dense") and "block" not in lname)
+        or (lname.startswith("dropout") and "block" not in lname)
+    )
+
+
+def _unfreeze_flat_model(model: keras.Model, n_unfreeze_layers: int) -> keras.Model:
+    """Fine-tune top backbone layers when weights were saved without a nested submodel."""
+    for layer in model.layers:
+        layer.trainable = False
+
+    backbone_indices = [
+        i
+        for i, layer in enumerate(model.layers)
+        if not _is_classification_head_layer(layer.name)
+        and not layer.name.lower().startswith("rescale")
+    ]
+    for i in backbone_indices[-n_unfreeze_layers:]:
+        model.layers[i].trainable = True
+
+    trainable = sum(1 for i in backbone_indices if model.layers[i].trainable)
+    logger.info(
+        "Fine-tuning flat model: unfroze %d / %d backbone layers",
+        trainable,
+        len(backbone_indices),
+    )
+    return model
+
+
+def find_backbone_model(model: keras.Model) -> Optional[keras.Model]:
+    """Locate EfficientNet / MobileNet backbone inside a saved classifier."""
+    for name in ("efficientnetb0_backbone", "mobilenetv2_backbone"):
+        try:
+            return model.get_layer(name)
+        except ValueError:
+            pass
+
+    for layer in model.layers:
+        lname = layer.name.lower()
+        if isinstance(layer, keras.Model) and (
+            "efficientnet" in lname or "mobilenet" in lname or "backbone" in lname
+        ):
+            return layer
+
+    best: Optional[keras.Model] = None
+    best_n = 0
+    for layer in model.layers:
+        if isinstance(layer, keras.Model) and len(layer.layers) > best_n:
+            best, best_n = layer, len(layer.layers)
+    return best
+
+
 def unfreeze_for_finetuning(
     model: keras.Model,
     n_unfreeze_layers: int = 30,
 ) -> keras.Model:
     """
-    Unfreeze the top N layers of the backbone for fine-tuning.
+    Unfreeze the top N backbone layers for fine-tuning.
 
-    Args:
-        model: Existing transfer-learning model.
-        n_unfreeze_layers: Number of top backbone layers to unfreeze.
+    The classification head stays trainable so it can adapt with the
+    unfrozen backbone. BatchNorm in frozen blocks stays frozen.
     """
-    backbone = None
-    for layer in model.layers:
-        if "backbone" in layer.name or isinstance(
-            layer, (keras.Model,)
-        ) and layer.name.endswith("backbone"):
-            backbone = layer
-            break
-
-    # Fallback: find nested application model
+    backbone = find_backbone_model(model)
     if backbone is None:
+        model = _unfreeze_flat_model(model, n_unfreeze_layers)
         for layer in model.layers:
-            if isinstance(layer, keras.Model) and len(layer.layers) > 10:
-                backbone = layer
-                break
-
-    if backbone is None:
-        logger.warning("Could not locate backbone; unfreezing entire model.")
-        model.trainable = True
+            if _is_classification_head_layer(layer.name):
+                layer.trainable = True
         return model
 
     backbone.trainable = True
     freeze_until = max(0, len(backbone.layers) - n_unfreeze_layers)
     for i, layer in enumerate(backbone.layers):
-        layer.trainable = i >= freeze_until
+        if i < freeze_until:
+            layer.trainable = False
+        elif isinstance(layer, layers.BatchNormalization):
+            layer.trainable = False
+        else:
+            layer.trainable = True
 
-    trainable = sum(1 for l in backbone.layers if l.trainable)
-    logger.info("Fine-tuning: unfroze %d / %d backbone layers", trainable, len(backbone.layers))
+    for layer in model.layers:
+        if _is_classification_head_layer(layer.name):
+            layer.trainable = True
+
+    trainable = sum(1 for layer in backbone.layers if layer.trainable)
+    logger.info(
+        "Fine-tuning backbone '%s': unfroze %d / %d layers (head trainable)",
+        backbone.name,
+        trainable,
+        len(backbone.layers),
+    )
     return model
 
 
 def get_last_conv_layer_name(model: keras.Model) -> str:
     """
-    Heuristically find the last convolutional layer name for Grad-CAM.
-    """
-    conv_names = []
-    for layer in model.layers:
-        if isinstance(layer, keras.Model):
-            for sub in layer.layers:
-                if isinstance(
-                    sub,
-                    (
-                        layers.Conv2D,
-                        layers.DepthwiseConv2D,
-                        layers.SeparableConv2D,
-                    ),
-                ):
-                    conv_names.append(sub.name)
-        elif isinstance(
-            layer,
-            (layers.Conv2D, layers.DepthwiseConv2D, layers.SeparableConv2D),
-        ):
-            conv_names.append(layer.name)
+    Find a convolutional layer suitable for Grad-CAM.
 
-    if not conv_names:
-        # Search all nested layers
+    Prefer the deepest conv with spatial size >= 14 so the heatmap
+    localizes the lesion instead of a 7x7 blob.
+    """
+    conv_layers = []
+    for layer in model.layers:
+        candidates = []
+        if isinstance(layer, keras.Model):
+            candidates.extend(layer.layers)
+        else:
+            candidates.append(layer)
+        for sub in candidates:
+            if isinstance(
+                sub,
+                (layers.Conv2D, layers.DepthwiseConv2D, layers.SeparableConv2D),
+            ):
+                conv_layers.append(sub)
+
+    if not conv_layers:
         for layer in model.layers:
             try:
                 for sub in layer.submodules:
-                    if isinstance(
-                        sub,
-                        (layers.Conv2D, layers.DepthwiseConv2D),
-                    ):
-                        conv_names.append(sub.name)
+                    if isinstance(sub, (layers.Conv2D, layers.DepthwiseConv2D)):
+                        conv_layers.append(sub)
             except Exception:
                 continue
 
-    if not conv_names:
+    if not conv_layers:
         raise ValueError("No convolutional layer found for Grad-CAM.")
-    return conv_names[-1]
+
+    def _spatial(layer) -> int:
+        shape = getattr(layer, "output_shape", None)
+        if not shape or len(shape) < 3:
+            return 0
+        try:
+            return int(shape[1] or 0)
+        except (TypeError, ValueError):
+            return 0
+
+    fine = [layer for layer in conv_layers if _spatial(layer) >= 14]
+    chosen = fine[-1] if fine else conv_layers[-1]
+    return chosen.name
 
 
 def compile_model(
@@ -230,6 +295,7 @@ def compile_model(
             keras.metrics.Precision(name="precision"),
             keras.metrics.Recall(name="recall"),
             keras.metrics.AUC(name="auc"),
+            keras.metrics.AUC(curve="PR", name="pr_auc"),
         ],
     )
     return model

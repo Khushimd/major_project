@@ -1,0 +1,176 @@
+{
+  "efficientnet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\efficientnetb0_final_baseline.keras",
+  "mobilenet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\mobilenetv2_final_baseline.keras",
+  "ensemble": {
+    "efficientnet_weight": 0.7,
+    "mobilenet_weight": 0.3,
+    "selection_rule": "max validation ROC-AUC, then validation F1 at 0.50",
+    "roc_auc": 0.911757853173744,
+    "f1_at_0.5": 0.8022440392706872
+  },
+  "threshold": {
+    "threshold": 0.5,
+    "rule": "max validation F1 on the predefined 0.20-0.70 grid; ties by ROC-AUC then closeness to 0.50"
+  },
+  "validation": {
+    "efficientnet": {
+      "threshold": 0.5,
+      "accuracy": 0.8096800656275636,
+      "precision": 0.7367130008176614,
+      "recall": 0.8638542665388304,
+      "sensitivity": 0.8638542665388304,
+      "specificity": 0.7691756272401433,
+      "f1": 0.795233892321271,
+      "auc": 0.9093671068773905,
+      "pr_auc": 0.8863814155428249,
+      "tp": 901,
+      "fp": 322,
+      "tn": 1073,
+      "fn": 142,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    "mobilenet": {
+      "threshold": 0.5,
+      "accuracy": 0.8162428219852338,
+      "precision": 0.8471411901983664,
+      "recall": 0.6960690316395014,
+      "sensitivity": 0.6960690316395014,
+      "specificity": 0.9060931899641577,
+      "f1": 0.7642105263157895,
+      "auc": 0.8967563239483569,
+      "pr_auc": 0.8741194473812097,
+      "tp": 726,
+      "fp": 131,
+      "tn": 1264,
+      "fn": 317,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    "ensemble_operating": {
+      "threshold": 0.5,
+      "accuracy": 0.8264971287940935,
+      "precision": 0.7828467153284672,
+      "recall": 0.822627037392138,
+      "sensitivity": 0.822627037392138,
+      "specificity": 0.8293906810035843,
+      "f1": 0.8022440392706872,
+      "auc": 0.911757853173744,
+      "pr_auc": 0.8893139033924969,
+      "tp": 858,
+      "fp": 238,
+      "tn": 1157,
+      "fn": 185,
+      "n_positive": 1043,
+      "n_negative": 1395
+    }
+  },
+  "test": {
+    "efficientnet": {
+      "threshold": 0.5,
+      "accuracy": 0.8198604842018876,
+      "precision": 0.7508333333333334,
+      "recall": 0.8655139289145053,
+      "sensitivity": 0.8655139289145053,
+      "specificity": 0.7858166189111748,
+      "f1": 0.8041053101294066,
+      "auc": 0.9092545876925702,
+      "pr_auc": 0.8818625249654634,
+      "tp": 901,
+      "fp": 299,
+      "tn": 1097,
+      "fn": 140,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "mobilenet": {
+      "threshold": 0.5,
+      "accuracy": 0.8067295855560115,
+      "precision": 0.8544776119402985,
+      "recall": 0.659942363112392,
+      "sensitivity": 0.659942363112392,
+      "specificity": 0.916189111747851,
+      "f1": 0.7447154471544716,
+      "auc": 0.9004593885645552,
+      "pr_auc": 0.8760760448738362,
+      "tp": 687,
+      "fp": 117,
+      "tn": 1279,
+      "fn": 354,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "ensemble": {
+      "threshold": 0.5,
+      "accuracy": 0.8342224045958145,
+      "precision": 0.8007554296506137,
+      "recall": 0.8146013448607109,
+      "sensitivity": 0.8146013448607109,
+      "specificity": 0.8488538681948424,
+      "f1": 0.8076190476190476,
+      "auc": 0.9126790142826079,
+      "pr_auc": 0.8884757664753524,
+      "tp": 848,
+      "fp": 211,
+      "tn": 1185,
+      "fn": 193,
+      "n_positive": 1041,
+      "n_negative": 1396
+    }
+  },
+  "timing": {
+    "efficientnet_seconds": 15898.828543186188,
+    "mobilenet_seconds": 11245.609152793884,
+    "total_seconds": 27274.614400863647
+  },
+  "efficientnet_best_epoch": 38,
+  "mobilenet_best_epoch": 38,
+  "score_distributions": {
+    "test_all": {
+      "n": 2437,
+      "mean": 0.4959849608254955,
+      "median": 0.4164717495441437,
+      "min": 0.05592103023082018,
+      "max": 0.999763125181198,
+      "p10": 0.13868916034698486,
+      "p90": 0.9894790840148926
+    },
+    "test_melanoma": {
+      "n": 1041,
+      "mean": 0.7679014662425611,
+      "median": 0.876115882396698,
+      "min": 0.07539543174207211,
+      "max": 0.999763125181198,
+      "p10": 0.3798557668924331,
+      "p90": 0.9960374653339386
+    },
+    "test_benign": {
+      "n": 1396,
+      "mean": 0.293216277344718,
+      "median": 0.20452514514327047,
+      "min": 0.05592103023082018,
+      "max": 0.9970026016235352,
+      "p10": 0.12441799007356166,
+      "p90": 0.605585116147995
+    },
+    "predicted_counts": {
+      "melanoma": 1059,
+      "benign": 1378
+    },
+    "true_counts": {
+      "melanoma": 1041,
+      "benign": 1396
+    }
+  },
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "seed": 42,
+    "gpu": []
+  },
+  "test_used_for_tuning": false,
+  "post_test_tuning": false
+}

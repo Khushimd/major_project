@@ -1,0 +1,17 @@
+{
+  "formula": "weight(class) = N / (number_of_classes * class_count)",
+  "source": "training set only",
+  "N": 11379,
+  "n_classes": 2,
+  "benign_count": 6676,
+  "melanoma_count": 4703,
+  "benign_weight": 0.8522318753744758,
+  "melanoma_weight": 1.2097597278332979,
+  "keras_class_weight": {
+    "0": 0.8522318753744758,
+    "1": 1.2097597278332979
+  },
+  "oversampling": false,
+  "undersampling": false,
+  "validation_or_test_used": false
+}

@@ -1,0 +1,65 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('dashboard') }}{% endblock %}
+{% block heading %}Dashboard{% endblock %}
+{% block subhead %}In-person consultation support — start an analysis while the patient is with you.{% endblock %}
+{% block content %}
+<div class="stat-row dash-stats">
+  <div class="stat"><span class="stat-value">{{ stats.today_analyses }}</span><span class="stat-label">Today's Analyses</span></div>
+  <div class="stat"><span class="stat-value">{{ stats.analyses_completed }}</span><span class="stat-label">Analyses Completed</span></div>
+  <div class="stat"><span class="stat-value">{{ stats.melanoma_predictions }}</span><span class="stat-label">Melanoma Predictions</span></div>
+  <div class="stat"><span class="stat-value">{{ stats.reports_generated }}</span><span class="stat-label">Reports Generated</span></div>
+</div>
+
+<div class="hero-action">
+  <a class="btn btn-cta btn-lg" href="{{ url_for('doctor.analyze') }}">Start New Patient Analysis</a>
+  <p class="hint mb-0">Enter patient details, upload a dermoscopic image, and run analysis immediately.</p>
+</div>
+
+{% if appointment_requests %}
+<h3 class="section-title">Appointment requests</h3>
+<div class="history-table-wrap mb-4">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Patient</th><th>Phone</th><th>Date</th><th>Time</th><th>Reason</th><th></th></tr></thead>
+    <tbody>
+      {% for a in appointment_requests %}
+      <tr>
+        <td>{{ a.patient_name }}</td>
+        <td>{{ a.patient_phone or '—' }}</td>
+        <td>{{ a.appt_date }}</td>
+        <td>{{ a.time_label or a.appt_time }}</td>
+        <td>{{ a.reason or '—' }}</td>
+        <td>
+          <form method="post" action="{{ url_for('doctor.appointments') }}" class="d-flex gap-1">
+            <input type="hidden" name="appt_id" value="{{ a.id }}" />
+            <button class="btn btn-cta btn-sm" name="status" value="accepted">Accept</button>
+            <button class="btn btn-ghost btn-sm" name="status" value="declined">Decline</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="hint mb-4"><a href="{{ url_for('doctor.appointments') }}">Open all appointments</a></p>
+{% endif %}
+
+{% if recent %}
+<h3 class="section-title">Recent analyses</h3>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Patient</th><th>Date</th><th>AI prediction</th><th>Report</th></tr></thead>
+    <tbody>
+      {% for c in recent %}
+      <tr>
+        <td><a href="{{ url_for('doctor.case_review', case_id=c.id) }}">{{ c.patient_name or c.patient_id }}</a></td>
+        <td>{{ c.created_at }}</td>
+        <td>{{ c.prediction|ai_label }}</td>
+        <td>{% if c.review_status == 'finalized' %}Generated{% else %}In consultation{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{
+  "efficientnet_weight": 0.5,
+  "mobilenet_weight": 0.5,
+  "selection_rule": "max validation ROC-AUC, then validation F1 at 0.50",
+  "roc_auc": 0.9091770705539919,
+  "f1_at_0.5": 0.7984969469234382
+}

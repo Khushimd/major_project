@@ -1,0 +1,685 @@
+{
+  "objective": "Validation-only FN analysis of the frozen 83.42% baseline",
+  "retrain": false,
+  "test_used_for_development": false,
+  "threshold": 0.5,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "validation_metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.8264971287940935,
+    "precision": 0.7828467153284672,
+    "recall": 0.822627037392138,
+    "sensitivity": 0.822627037392138,
+    "specificity": 0.8293906810035843,
+    "f1": 0.8022440392706872,
+    "auc": 0.911757853173744,
+    "pr_auc": 0.8893139033924969,
+    "tp": 858,
+    "fp": 238,
+    "tn": 1157,
+    "fn": 185,
+    "n_positive": 1043,
+    "n_negative": 1395
+  },
+  "n_fn": 185,
+  "n_tp": 858,
+  "score_distribution": {
+    "tp": {
+      "n": 858,
+      "mean": 0.8737913138018205,
+      "median": 0.9485057920217514,
+      "std": 0.14848670423598748,
+      "min": 0.502732554078102,
+      "max": 0.9999374330043792,
+      "q1": 0.782503954321146,
+      "q3": 0.9925177022814751
+    },
+    "fn": {
+      "n": 185,
+      "mean": 0.3450553738627884,
+      "median": 0.3653564184904098,
+      "std": 0.10255661556458494,
+      "min": 0.1098253719508647,
+      "max": 0.4993993312120437,
+      "q1": 0.2697331964969635,
+      "q3": 0.4338692307472228
+    },
+    "fn_bins": [
+      {
+        "range": "0.00\u20130.10",
+        "low": 0.0,
+        "high": 0.1,
+        "count": 0,
+        "percent": 0.0
+      },
+      {
+        "range": "0.10\u20130.20",
+        "low": 0.1,
+        "high": 0.2,
+        "count": 21,
+        "percent": 11.351351351351353
+      },
+      {
+        "range": "0.20\u20130.30",
+        "low": 0.2,
+        "high": 0.3,
+        "count": 40,
+        "percent": 21.62162162162162
+      },
+      {
+        "range": "0.30\u20130.40",
+        "low": 0.3,
+        "high": 0.4,
+        "count": 58,
+        "percent": 31.351351351351354
+      },
+      {
+        "range": "0.40\u20130.50",
+        "low": 0.4,
+        "high": 0.5,
+        "count": 66,
+        "percent": 35.67567567567568
+      }
+    ],
+    "fn_borderline_ge_0.40": 66,
+    "fn_very_low_lt_0.20": 21
+  },
+  "disagreement": {
+    "fn_both_below_0.50": 133,
+    "fn_efficientnet_ge_0.50_mobilenet_lt_0.50": 48,
+    "fn_mobilenet_ge_0.50_efficientnet_lt_0.50": 4,
+    "fn_mean_abs_score_diff": 0.19800131929729728,
+    "tp_mean_efficientnet": 0.9093759533799534,
+    "tp_mean_mobilenet": 0.7907604858275058,
+    "fn_mean_efficientnet": 0.397830015027027,
+    "fn_mean_mobilenet": 0.22191454545945943,
+    "tp_mean_ensemble": 0.8737913138018205,
+    "fn_mean_ensemble": 0.3450553738627884
+  },
+  "metadata_findings": {
+    "all_validation_melanoma_source": "ISIC-DICM-17K",
+    "source_contrast_among_melanoma": "None. Every validation melanoma row is ISIC-DICM-17K, so FN vs TP cannot show a source/domain split.",
+    "patient_id_missing_fn_percent": 45.40540540540541,
+    "lesion_id_missing_fn_percent": 31.891891891891895,
+    "age_fn": {
+      "n": 179,
+      "mean": 58.324022346368714,
+      "median": 60.0,
+      "std": 15.533075746831381,
+      "min": 15.0,
+      "max": 85.0,
+      "q1": 47.5,
+      "q3": 70.0
+    },
+    "age_tp": {
+      "n": 830,
+      "mean": 61.60843373493976,
+      "median": 60.0,
+      "std": 14.8262043050106,
+      "min": 25.0,
+      "max": 85.0,
+      "q1": 50.0,
+      "q3": 75.0
+    },
+    "sex_fn_percent": {
+      "male": 49.19,
+      "female": 47.57,
+      "NA": 3.24
+    },
+    "sex_tp_percent": {
+      "male": 60.72,
+      "female": 35.78,
+      "NA": 3.5
+    },
+    "site_frequency_notes": [
+      "TPs were more frequent in anterior torso (FN share lower by 12.1 pp)",
+      "TPs were more frequent in head/neck (FN share lower by 5.7 pp)",
+      "FNs were more frequent in lower extremity (23.2% of FN vs 16.6% of TP)",
+      "TPs were more frequent in palms/soles (FN share lower by 6.5 pp)",
+      "FNs were more frequent in posterior torso (19.5% of FN vs 9.3% of TP)",
+      "FNs were more frequent in upper extremity (19.5% of FN vs 12.2% of TP)"
+    ],
+    "missingness": {
+      "patient_id": {
+        "fn_percent": 45.40540540540541,
+        "tp_percent": 83.1002331002331
+      },
+      "lesion_id": {
+        "fn_percent": 31.891891891891895,
+        "tp_percent": 15.268065268065268
+      },
+      "sex": {
+        "fn_percent": 3.2432432432432434,
+        "tp_percent": 3.4965034965034967
+      },
+      "age_approx": {
+        "fn_percent": 3.2432432432432434,
+        "tp_percent": 3.263403263403263
+      },
+      "anatom_site": {
+        "fn_percent": 6.486486486486487,
+        "tp_percent": 7.226107226107226
+      }
+    }
+  },
+  "image_quality": {
+    "pixels_analyzed": "Frozen baseline 224x224 cache (what the model received). Original file size recorded separately when the path existed.",
+    "lesion_area": "Lesion area could not be reliably quantified from the available data.",
+    "fn": {
+      "brightness": {
+        "n": 185,
+        "mean": 155.2991187018317,
+        "median": 155.0108184814453,
+        "std": 24.280741534384777,
+        "min": 73.1744384765625,
+        "max": 219.69802856445312,
+        "q1": 139.3317108154297,
+        "q3": 171.9432830810547
+      },
+      "contrast": {
+        "n": 185,
+        "mean": 24.70281228761415,
+        "median": 25.097280502319336,
+        "std": 10.614771293744418,
+        "min": 6.612983703613281,
+        "max": 66.97686004638672,
+        "q1": 15.872515678405762,
+        "q3": 31.086624145507812
+      },
+      "color_variation": {
+        "n": 185,
+        "mean": 25.458038201203216,
+        "median": 25.72850227355957,
+        "std": 10.463949371787816,
+        "min": 7.025712490081787,
+        "max": 67.67637634277344,
+        "q1": 16.495208740234375,
+        "q3": 31.887060165405273
+      },
+      "orig_width": {
+        "n": 185,
+        "mean": 2656.0162162162164,
+        "median": 2801.0,
+        "std": 1552.9998826803464,
+        "min": 600.0,
+        "max": 6668.0,
+        "q1": 1024.0,
+        "q3": 3264.0
+      },
+      "orig_height": {
+        "n": 185,
+        "mean": 1894.5837837837837,
+        "median": 2000.0,
+        "std": 1046.4772088529442,
+        "min": 450.0,
+        "max": 4459.0,
+        "q1": 1024.0,
+        "q3": 2448.0
+      }
+    },
+    "tp": {
+      "brightness": {
+        "n": 858,
+        "mean": 137.11213429324278,
+        "median": 141.3959503173828,
+        "std": 31.141367022350032,
+        "min": 44.27350616455078,
+        "max": 222.20616149902344,
+        "q1": 120.19705200195312,
+        "q3": 158.60992813110352
+      },
+      "contrast": {
+        "n": 858,
+        "mean": 48.01523640216925,
+        "median": 44.71780204772949,
+        "std": 21.587251994579706,
+        "min": 10.125974655151367,
+        "max": 97.32463073730469,
+        "q1": 30.65618658065796,
+        "q3": 65.52938270568848
+      },
+      "color_variation": {
+        "n": 858,
+        "mean": 48.66259499196406,
+        "median": 45.42901611328125,
+        "std": 21.481312523603535,
+        "min": 11.219943046569824,
+        "max": 97.54864501953125,
+        "q1": 31.430131912231445,
+        "q3": 66.33134651184082
+      },
+      "orig_width": {
+        "n": 858,
+        "mean": 1386.6025641025642,
+        "median": 1024.0,
+        "std": 1171.0349766507868,
+        "min": 371.0,
+        "max": 6708.0,
+        "q1": 1024.0,
+        "q3": 1024.0
+      },
+      "orig_height": {
+        "n": 858,
+        "mean": 1192.6958041958042,
+        "median": 1024.0,
+        "std": 802.7805947577441,
+        "min": 441.0,
+        "max": 4499.0,
+        "q1": 1024.0,
+        "q3": 1024.0
+      }
+    }
+  },
+  "gradcam": {
+    "disclaimer": "Grad-CAM highlights image regions that contributed to the model's prediction. It provides a visual explanation of the regions influencing the model output and should not be interpreted as definitive evidence of malignancy.",
+    "model": "efficientnetb0_final_baseline.keras",
+    "n_fn": 20,
+    "n_tp": 20,
+    "mean_center_share_fn": 0.49604793041944506,
+    "mean_center_share_tp": 0.4005941728129983,
+    "cases": [
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0000294",
+        "ensemble_prob": 0.3241261661052703,
+        "efficientnet_prob": 0.36113727,
+        "mobilenet_prob": 0.23776692,
+        "center_heatmap_share": 0.5963832139968872,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0000294.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0000434",
+        "ensemble_prob": 0.4004253447055816,
+        "efficientnet_prob": 0.47448498,
+        "mobilenet_prob": 0.22761953,
+        "center_heatmap_share": 0.6817007064819336,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0000434.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0001121",
+        "ensemble_prob": 0.4006343275308608,
+        "efficientnet_prob": 0.49496162,
+        "mobilenet_prob": 0.18053731,
+        "center_heatmap_share": 0.6642765402793884,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0001121.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010241",
+        "ensemble_prob": 0.3265950590372085,
+        "efficientnet_prob": 0.39936358,
+        "mobilenet_prob": 0.15680185,
+        "center_heatmap_share": 0.4503079056739807,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010241.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010313",
+        "ensemble_prob": 0.3177146837115288,
+        "efficientnet_prob": 0.38504544,
+        "mobilenet_prob": 0.16060959,
+        "center_heatmap_share": 0.4434492290019989,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010313.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010441",
+        "ensemble_prob": 0.4449751928448677,
+        "efficientnet_prob": 0.53070414,
+        "mobilenet_prob": 0.24494098,
+        "center_heatmap_share": 0.7213325500488281,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010441.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010514",
+        "ensemble_prob": 0.2475572764873504,
+        "efficientnet_prob": 0.27515054,
+        "mobilenet_prob": 0.183173,
+        "center_heatmap_share": 0.6634345054626465,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010514.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010707",
+        "ensemble_prob": 0.3983511582016945,
+        "efficientnet_prob": 0.50288785,
+        "mobilenet_prob": 0.15443222,
+        "center_heatmap_share": 0.7044402360916138,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010707.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010770",
+        "ensemble_prob": 0.302687332034111,
+        "efficientnet_prob": 0.28105143,
+        "mobilenet_prob": 0.3531711,
+        "center_heatmap_share": 0.0,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010770.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010791",
+        "ensemble_prob": 0.4174475029110908,
+        "efficientnet_prob": 0.52983296,
+        "mobilenet_prob": 0.15521477,
+        "center_heatmap_share": 0.561862051486969,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010791.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010803",
+        "ensemble_prob": 0.2699519470334053,
+        "efficientnet_prob": 0.31882888,
+        "mobilenet_prob": 0.15590577,
+        "center_heatmap_share": 0.3428349792957306,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010803.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0010979",
+        "ensemble_prob": 0.2422277122735977,
+        "efficientnet_prob": 0.26916683,
+        "mobilenet_prob": 0.17936978,
+        "center_heatmap_share": 0.4314153492450714,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0010979.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0011056",
+        "ensemble_prob": 0.2567358896136283,
+        "efficientnet_prob": 0.20586349,
+        "mobilenet_prob": 0.37543815,
+        "center_heatmap_share": 0.22946009039878845,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0011056.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0011267",
+        "ensemble_prob": 0.4330625638365745,
+        "efficientnet_prob": 0.512476,
+        "mobilenet_prob": 0.24776448,
+        "center_heatmap_share": 0.5413675308227539,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0011267.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0012592",
+        "ensemble_prob": 0.2893688574433326,
+        "efficientnet_prob": 0.34578747,
+        "mobilenet_prob": 0.15772544,
+        "center_heatmap_share": 0.3247872591018677,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0012592.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0013644",
+        "ensemble_prob": 0.1297764115035533,
+        "efficientnet_prob": 0.11023521,
+        "mobilenet_prob": 0.17537256,
+        "center_heatmap_share": 0.4272402226924896,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0013644.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0026314",
+        "ensemble_prob": 0.1716899827122688,
+        "efficientnet_prob": 0.18039148,
+        "mobilenet_prob": 0.1513865,
+        "center_heatmap_share": 0.45698946714401245,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0026314.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0833889",
+        "ensemble_prob": 0.198808316886425,
+        "efficientnet_prob": 0.22260451,
+        "mobilenet_prob": 0.14328386,
+        "center_heatmap_share": 0.5752454400062561,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0833889.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_0946787",
+        "ensemble_prob": 0.1181098453700542,
+        "efficientnet_prob": 0.10859058,
+        "mobilenet_prob": 0.14032146,
+        "center_heatmap_share": 0.9967828392982483,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_0946787.png"
+      },
+      {
+        "cohort": "FN",
+        "image_id": "ISIC_3389695",
+        "ensemble_prob": 0.1889983385801315,
+        "efficientnet_prob": 0.20986742,
+        "mobilenet_prob": 0.14030382,
+        "center_heatmap_share": 0.10764849185943604,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\fn\\ISIC_3389695.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000046",
+        "ensemble_prob": 0.7674739778041839,
+        "efficientnet_prob": 0.7770595,
+        "mobilenet_prob": 0.74510777,
+        "center_heatmap_share": 0.5778340697288513,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000046.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000151",
+        "ensemble_prob": 0.6194360807538032,
+        "efficientnet_prob": 0.78950995,
+        "mobilenet_prob": 0.22259705,
+        "center_heatmap_share": 0.33246996998786926,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000151.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000162",
+        "ensemble_prob": 0.8938231945037841,
+        "efficientnet_prob": 0.9208097,
+        "mobilenet_prob": 0.8308547,
+        "center_heatmap_share": 0.362625390291214,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000162.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000171",
+        "ensemble_prob": 0.7429177045822143,
+        "efficientnet_prob": 0.7654884,
+        "mobilenet_prob": 0.6902528,
+        "center_heatmap_share": 0.1973644345998764,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000171.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000277",
+        "ensemble_prob": 0.9934058010578156,
+        "efficientnet_prob": 0.9991488,
+        "mobilenet_prob": 0.9800055,
+        "center_heatmap_share": 0.24894727766513824,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000277.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000278",
+        "ensemble_prob": 0.5274521589279175,
+        "efficientnet_prob": 0.40557712,
+        "mobilenet_prob": 0.81182724,
+        "center_heatmap_share": 0.5959029793739319,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000278.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000284",
+        "ensemble_prob": 0.9920344829559326,
+        "efficientnet_prob": 0.99296653,
+        "mobilenet_prob": 0.9898597,
+        "center_heatmap_share": 0.23399582505226135,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000284.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000297",
+        "ensemble_prob": 0.5380277544260025,
+        "efficientnet_prob": 0.41691467,
+        "mobilenet_prob": 0.82062495,
+        "center_heatmap_share": 0.04747812822461128,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000297.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000305",
+        "ensemble_prob": 0.930151617527008,
+        "efficientnet_prob": 0.9425275,
+        "mobilenet_prob": 0.9012746,
+        "center_heatmap_share": 0.3426606059074402,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000305.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000406",
+        "ensemble_prob": 0.651469412446022,
+        "efficientnet_prob": 0.7243725,
+        "mobilenet_prob": 0.4813622,
+        "center_heatmap_share": 0.5522080063819885,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000406.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000414",
+        "ensemble_prob": 0.8745517551898956,
+        "efficientnet_prob": 0.9742636,
+        "mobilenet_prob": 0.64189076,
+        "center_heatmap_share": 0.48712289333343506,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000414.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000450",
+        "ensemble_prob": 0.8647664844989775,
+        "efficientnet_prob": 0.8758927,
+        "mobilenet_prob": 0.8388053,
+        "center_heatmap_share": 0.4689851701259613,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000450.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000462",
+        "ensemble_prob": 0.5823271036148071,
+        "efficientnet_prob": 0.60048044,
+        "mobilenet_prob": 0.5399693,
+        "center_heatmap_share": 0.6393072009086609,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000462.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000552",
+        "ensemble_prob": 0.9231224298477172,
+        "efficientnet_prob": 0.93970156,
+        "mobilenet_prob": 0.8844378,
+        "center_heatmap_share": 0.3451780676841736,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000552.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0000555",
+        "ensemble_prob": 0.583559662103653,
+        "efficientnet_prob": 0.62531817,
+        "mobilenet_prob": 0.48612314,
+        "center_heatmap_share": 0.6221106052398682,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0000555.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0009908",
+        "ensemble_prob": 0.866419118642807,
+        "efficientnet_prob": 0.8479196,
+        "mobilenet_prob": 0.9095847,
+        "center_heatmap_share": 0.26468223333358765,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0009908.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0009913",
+        "ensemble_prob": 0.6004032969474793,
+        "efficientnet_prob": 0.74733406,
+        "mobilenet_prob": 0.25756484,
+        "center_heatmap_share": 0.49674907326698303,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0009913.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0010194",
+        "ensemble_prob": 0.7891470402479172,
+        "efficientnet_prob": 0.9861736,
+        "mobilenet_prob": 0.32941833,
+        "center_heatmap_share": 0.3829028606414795,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0010194.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0010240",
+        "ensemble_prob": 0.644846773147583,
+        "efficientnet_prob": 0.7971837,
+        "mobilenet_prob": 0.28939396,
+        "center_heatmap_share": 0.5282766819000244,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0010240.png"
+      },
+      {
+        "cohort": "TP",
+        "image_id": "ISIC_0010783",
+        "ensemble_prob": 0.7241223752498627,
+        "efficientnet_prob": 0.62815213,
+        "mobilenet_prob": 0.94805294,
+        "center_heatmap_share": 0.28508198261260986,
+        "path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_fn_analysis\\gradcam\\tp\\ISIC_0010783.png"
+      }
+    ]
+  },
+  "failure_patterns": {
+    "borderline_score_fn": 66,
+    "very_low_score_fn": 21,
+    "model_agreement_fn": 133,
+    "model_disagreement_fn": 52,
+    "possible_image_quality_related_fn": 89,
+    "possible_source_domain_related_fn": 0,
+    "possible_small_subtle_lesion_fn": 0,
+    "no_clear_identifiable_pattern": 46,
+    "notes": {
+      "source_domain": "Not identifiable among validation melanoma (single source).",
+      "small_subtle_lesion": "Not used. Lesion area could not be reliably quantified from the available data."
+    }
+  },
+  "questions": {
+    "1_most_fns_borderline_around_0.50": false,
+    "1_borderline_count_pct": [
+      66,
+      35.67567567567568
+    ],
+    "2_most_fns_confidently_benign": false,
+    "2_very_low_count_pct": [
+      21,
+      11.35135135135135
+    ],
+    "3_models_usually_agree_on_fns": true,
+    "3_both_miss": 133,
+    "4_identifiable_source_domain_patterns": false,
+    "5_image_quality_patterns": true,
+    "6_gradcam_irrelevant_regions": false,
+    "7_enough_patterns_to_justify_targeted_retraining": true
+  },
+  "recommendation": {
+    "choice": "B",
+    "label": "Targeted augmentation",
+    "reason": "Most validation FNs are missed by both models. Threshold search and moderate class weighting already failed to keep an acceptable spec/prec band. A next training test, if any, should target hard melanoma appearance (subtle/low-contrast/borderline scores) via training-time augmentation only \u2014 not TTA-max and not another weight grid. Do not train it in this run."
+  },
+  "production_unchanged": true,
+  "baseline_unchanged": true
+}

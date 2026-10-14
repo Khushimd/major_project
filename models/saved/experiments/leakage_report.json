@@ -1,0 +1,123 @@
+{
+  "counts": {
+    "train": {
+      "rows": 12960,
+      "malignant": 1196,
+      "benign": 11764,
+      "unique_image_ids": 12960,
+      "unique_groups": 6523,
+      "unique_paths": 12960
+    },
+    "val": {
+      "rows": 2779,
+      "malignant": 250,
+      "benign": 2529,
+      "unique_image_ids": 2779,
+      "unique_groups": 1398,
+      "unique_paths": 2779
+    },
+    "test": {
+      "rows": 2860,
+      "malignant": 251,
+      "benign": 2609,
+      "unique_image_ids": 2860,
+      "unique_groups": 1398,
+      "unique_paths": 2860
+    }
+  },
+  "image_id_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 12960,
+      "right_n": 2779,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 12960,
+      "right_n": 2860,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 2779,
+      "right_n": 2860,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "group_id_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 6523,
+      "right_n": 1398,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 6523,
+      "right_n": 1398,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 1398,
+      "right_n": 1398,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "path_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 12960,
+      "right_n": 2779,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 12960,
+      "right_n": 2860,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 2779,
+      "right_n": 2860,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "near_duplicates": {
+    "enabled": false
+  },
+  "clean": true,
+  "ham_isic_image_id_overlap": {
+    "ham10000_ids": 10015,
+    "siim_isic_2020_ids": 8584,
+    "shared_image_ids": 0,
+    "shared_examples": []
+  },
+  "notes": {
+    "val_augmented": false,
+    "test_augmented": false,
+    "val_oversampled": false,
+    "test_oversampled": false,
+    "split": "patient_id (ISIC) / lesion_id (HAM) grouped, stratified on group melanoma flag"
+  }
+}

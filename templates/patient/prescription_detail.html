@@ -1,0 +1,24 @@
+{% extends "dash_base.html" %}
+{% block sidebar %}
+  <a href="{{ url_for('patient.dashboard') }}"><i class="bi bi-grid"></i> Dashboard</a>
+  <a href="{{ url_for('patient.reports') }}"><i class="bi bi-file-earmark-text"></i> My Reports</a>
+  <a href="{{ url_for('patient.appointments') }}"><i class="bi bi-calendar-check"></i> Appointments</a>
+  <a href="{{ url_for('patient.my_doctor') }}"><i class="bi bi-person-badge"></i> My Doctor</a>
+  <a class="active" href="{{ url_for('patient.prescriptions') }}"><i class="bi bi-capsule"></i> Prescriptions</a>
+  <a href="{{ url_for('patient.notifications') }}"><i class="bi bi-bell"></i> Notifications</a>
+  <a href="{{ url_for('patient.profile') }}"><i class="bi bi-person"></i> Profile</a>
+{% endblock %}
+{% block heading %}Prescription {{ rx.code or rx.id }}{% endblock %}
+{% block content %}
+<div class="form-pane">
+  <p>Doctor: {{ rx.doctor_name }}</p>
+  <p>Date: {{ rx.created_at }}</p>
+  <p>Diagnosis: {{ rx.diagnosis or '—' }}</p>
+  {% for item in rx['items'] %}
+  <hr />
+  <p>Medicine: {{ item.medicine }}<br/>Dosage: {{ item.dosage }}<br/>Frequency: {{ item.frequency }}<br/>Duration: {{ item.duration }}<br/>Instructions: {{ item.instructions }}</p>
+  {% endfor %}
+  <p>Notes: {{ rx.notes or '—' }}</p>
+  <a class="btn btn-cta" href="{{ url_for('patient.download_prescription', rx_id=rx.id) }}">Download PDF</a>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{
+  "experiment": "clean_dicm_melanoma_benign",
+  "seed": 42,
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign",
+  "reuse": {
+    "architecture": "models.architecture build_efficientnetb0 / build_mobilenetv2 / shared head",
+    "schedule": "Experiment 2 3-stage finetune",
+    "augmentation": "preprocessing.augmentation.get_tf_data_augmentation_fn",
+    "preprocess": "ImagePreprocessor.process_for_model after optional max-side-1024 downscale",
+    "ensemble_search": "validation-only weighted soft voting",
+    "threshold_search": "validation-only sensitivity/specificity tiers then max F1"
+  },
+  "not_reused": {
+    "old_ensemble_weights": "0.75/0.25 not copied",
+    "old_threshold": "0.30 not copied",
+    "old_dataset": "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign",
+    "production_models": [
+      "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+      "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+      "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\efficientnetb0_melanoma_benign.keras",
+      "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma_benign.keras",
+      "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma_benign.keras",
+      "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\mobilenetv2_melanoma_benign.keras",
+      "C:\\Projects\\major-project\\models\\saved\\inference_config.json"
+    ]
+  },
+  "class_weights_train_only": {
+    "0": 1.2384878655880522,
+    "1": 0.8385295976406151
+  },
+  "weight_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "threshold_grid": [
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8
+  ],
+  "test_used_for_tuning": false,
+  "ph2_used": false
+}

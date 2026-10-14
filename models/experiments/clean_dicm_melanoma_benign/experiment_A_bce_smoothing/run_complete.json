@@ -1,0 +1,230 @@
+{
+  "key": "experiment_A_bce_smoothing",
+  "label": "Experiment A: BCE + label smoothing 0.05, no class weighting",
+  "evaluated_on": "validation_only",
+  "test_used": false,
+  "ph2_used": false,
+  "wall_seconds": 25237.240780353546,
+  "class_weight": null,
+  "efficientnet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\experiment_A_bce_smoothing\\efficientnetb0.keras",
+    "training_seconds": 14987.494567871094,
+    "best_epoch_val_pr_auc": 43,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 25
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 12
+      },
+      {
+        "stage": "final",
+        "epochs_run": 12
+      }
+    ],
+    "validation_at_selected_threshold": {
+      "threshold": 0.5,
+      "accuracy": 0.7801875732708089,
+      "precision": 0.8026440037771483,
+      "recall": 0.8366141732283464,
+      "sensitivity": 0.8366141732283464,
+      "specificity": 0.6971014492753623,
+      "f1": 0.8192771084337349,
+      "auc": 0.8655797101449274,
+      "pr_auc": 0.9048472390760478,
+      "tp": 850,
+      "fp": 209,
+      "tn": 481,
+      "fn": 166,
+      "n_positive": 1016,
+      "n_negative": 690
+    }
+  },
+  "mobilenet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\experiment_A_bce_smoothing\\mobilenetv2.keras",
+    "training_seconds": 10248.662180662155,
+    "best_epoch_val_pr_auc": 46,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 25
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 12
+      },
+      {
+        "stage": "final",
+        "epochs_run": 12
+      }
+    ],
+    "validation_at_selected_threshold": {
+      "threshold": 0.5,
+      "accuracy": 0.7532239155920282,
+      "precision": 0.7497900923593619,
+      "recall": 0.8789370078740157,
+      "sensitivity": 0.8789370078740157,
+      "specificity": 0.5681159420289855,
+      "f1": 0.8092433167195288,
+      "auc": 0.846649977176766,
+      "pr_auc": 0.8961303519886654,
+      "tp": 893,
+      "fp": 298,
+      "tn": 392,
+      "fn": 123,
+      "n_positive": 1016,
+      "n_negative": 690
+    }
+  },
+  "ensemble": {
+    "efficientnet_weight": 0.6,
+    "mobilenet_weight": 0.4,
+    "selection_rule": "max validation ROC-AUC, then PR-AUC; weights searched at 0.1 steps",
+    "roc_auc": 0.8706678648864544,
+    "pr_auc": 0.9112694045319568,
+    "threshold": 0.5,
+    "threshold_rule": "sens>=0.80 and spec>=0.65, max F1",
+    "validation": {
+      "threshold": 0.5,
+      "accuracy": 0.7784290738569754,
+      "precision": 0.7894736842105263,
+      "recall": 0.8562992125984252,
+      "sensitivity": 0.8562992125984252,
+      "specificity": 0.663768115942029,
+      "f1": 0.8215297450424929,
+      "auc": 0.8706678648864544,
+      "pr_auc": 0.9112694045319568,
+      "tp": 870,
+      "fp": 232,
+      "tn": 458,
+      "fn": 146,
+      "n_positive": 1016,
+      "n_negative": 690
+    }
+  },
+  "weight_candidates": [
+    {
+      "efficientnet_weight": 0.0,
+      "mobilenet_weight": 1.0,
+      "roc_auc": 0.846649977176766,
+      "pr_auc": 0.8961303519886654,
+      "accuracy_at_0.5": 0.7532239155920282,
+      "sensitivity_at_0.5": 0.8789370078740157,
+      "specificity_at_0.5": 0.5681159420289855,
+      "precision_at_0.5": 0.7497900923593619,
+      "f1_at_0.5": 0.8092433167195288
+    },
+    {
+      "efficientnet_weight": 0.1,
+      "mobilenet_weight": 0.9,
+      "roc_auc": 0.8551323747575033,
+      "pr_auc": 0.9030619849703865,
+      "accuracy_at_0.5": 0.7626025791324736,
+      "sensitivity_at_0.5": 0.8769685039370079,
+      "specificity_at_0.5": 0.5942028985507246,
+      "precision_at_0.5": 0.7608881298035867,
+      "f1_at_0.5": 0.8148148148148148
+    },
+    {
+      "efficientnet_weight": 0.2,
+      "mobilenet_weight": 0.8,
+      "roc_auc": 0.8614230286431587,
+      "pr_auc": 0.9074439413516008,
+      "accuracy_at_0.5": 0.7678780773739742,
+      "sensitivity_at_0.5": 0.8769685039370079,
+      "specificity_at_0.5": 0.6072463768115942,
+      "precision_at_0.5": 0.7667814113597247,
+      "f1_at_0.5": 0.8181818181818182
+    },
+    {
+      "efficientnet_weight": 0.3,
+      "mobilenet_weight": 0.7,
+      "roc_auc": 0.8659063676823006,
+      "pr_auc": 0.9100871575010008,
+      "accuracy_at_0.5": 0.7731535756154748,
+      "sensitivity_at_0.5": 0.875,
+      "specificity_at_0.5": 0.6231884057971014,
+      "precision_at_0.5": 0.7737162750217581,
+      "f1_at_0.5": 0.8212471131639723
+    },
+    {
+      "efficientnet_weight": 0.4,
+      "mobilenet_weight": 0.6,
+      "roc_auc": 0.8685652744493895,
+      "pr_auc": 0.9111525833292391,
+      "accuracy_at_0.5": 0.7784290738569754,
+      "sensitivity_at_0.5": 0.8710629921259843,
+      "specificity_at_0.5": 0.6420289855072464,
+      "precision_at_0.5": 0.7818021201413428,
+      "f1_at_0.5": 0.8240223463687151
+    },
+    {
+      "efficientnet_weight": 0.5,
+      "mobilenet_weight": 0.5,
+      "roc_auc": 0.8699261097797558,
+      "pr_auc": 0.9113543332468612,
+      "accuracy_at_0.5": 0.7819460726846424,
+      "sensitivity_at_0.5": 0.8661417322834646,
+      "specificity_at_0.5": 0.6579710144927536,
+      "precision_at_0.5": 0.7885304659498208,
+      "f1_at_0.5": 0.8255159474671669
+    },
+    {
+      "efficientnet_weight": 0.6,
+      "mobilenet_weight": 0.4,
+      "roc_auc": 0.8706678648864544,
+      "pr_auc": 0.9112694045319568,
+      "accuracy_at_0.5": 0.7784290738569754,
+      "sensitivity_at_0.5": 0.8562992125984252,
+      "specificity_at_0.5": 0.663768115942029,
+      "precision_at_0.5": 0.7894736842105263,
+      "f1_at_0.5": 0.8215297450424929
+    },
+    {
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "roc_auc": 0.870398265434212,
+      "pr_auc": 0.9106212260768175,
+      "accuracy_at_0.5": 0.7831184056271981,
+      "sensitivity_at_0.5": 0.8533464566929134,
+      "specificity_at_0.5": 0.6797101449275362,
+      "precision_at_0.5": 0.796875,
+      "f1_at_0.5": 0.8241444866920152
+    },
+    {
+      "efficientnet_weight": 0.8,
+      "mobilenet_weight": 0.2,
+      "roc_auc": 0.8694753509072235,
+      "pr_auc": 0.909380909757252,
+      "accuracy_at_0.5": 0.783704572098476,
+      "sensitivity_at_0.5": 0.8484251968503937,
+      "specificity_at_0.5": 0.6884057971014492,
+      "precision_at_0.5": 0.8003714020427113,
+      "f1_at_0.5": 0.8236980410893454
+    },
+    {
+      "efficientnet_weight": 0.9,
+      "mobilenet_weight": 0.1,
+      "roc_auc": 0.8677250941458404,
+      "pr_auc": 0.9073357194600974,
+      "accuracy_at_0.5": 0.7831184056271981,
+      "sensitivity_at_0.5": 0.84251968503937,
+      "specificity_at_0.5": 0.6956521739130435,
+      "precision_at_0.5": 0.8030018761726079,
+      "f1_at_0.5": 0.8222862632084534
+    },
+    {
+      "efficientnet_weight": 1.0,
+      "mobilenet_weight": 0.0,
+      "roc_auc": 0.8655797101449274,
+      "pr_auc": 0.9048472390760478,
+      "accuracy_at_0.5": 0.7801875732708089,
+      "sensitivity_at_0.5": 0.8366141732283464,
+      "specificity_at_0.5": 0.6971014492753623,
+      "precision_at_0.5": 0.8026440037771483,
+      "f1_at_0.5": 0.8192771084337349
+    }
+  ]
+}

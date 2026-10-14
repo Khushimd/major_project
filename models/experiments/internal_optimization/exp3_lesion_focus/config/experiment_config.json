@@ -1,0 +1,42 @@
+{
+  "experiment": "exp3_lesion_focus",
+  "seed": 42,
+  "loss": "BCE + label_smoothing=0.05",
+  "input_size": 224,
+  "finetune": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "variant_a": {
+    "preprocessing": "process_for_model: hair + denoise + 224 + /255; existing cache",
+    "models": "reused Experiment 2-C (not retrained)"
+  },
+  "variant_b": {
+    "preprocessing": "downscale max-side 512; existing hair removal; existing denoise; LAB-L Otsu from existing lesion_focused_view; keep interior component nearest center; reject vignette-like border blobs; crop with 20% margin; expand if crop < 25% of frame; fallback to full frame if localization fails; resize 224; /255; no CLAHE; no U-Net weights",
+    "margin": 0.2,
+    "min_crop_frac": 0.25,
+    "localize_max_side": 512
+  },
+  "test_loaded": false,
+  "ph2_used": false,
+  "overwrites_experiment_1_or_2": false
+}

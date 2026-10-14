@@ -1,0 +1,17 @@
+{
+  "threshold": 0.3,
+  "accuracy": 0.205,
+  "precision": 0.20100502512562815,
+  "recall": 1.0,
+  "sensitivity": 1.0,
+  "specificity": 0.00625,
+  "f1": 0.33472803347280333,
+  "auc": 0.65734375,
+  "pr_auc": 0.43084022554005486,
+  "tp": 40,
+  "fp": 159,
+  "tn": 1,
+  "fn": 0,
+  "n_positive": 40,
+  "n_negative": 160
+}

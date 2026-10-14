@@ -1,0 +1,156 @@
+{
+  "status": "FROZEN",
+  "replace_production": false,
+  "replace_83_42_melanoma_benign_baseline": false,
+  "not_clinically_validated": true,
+  "not_pure_melanoma_vs_benign": true,
+  "model": {
+    "name": "Exp2-C BCE + label smoothing 0.05",
+    "efficientnet": "c:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\efficientnetb0_bce_smooth.keras",
+    "efficientnet_sha256": "02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87",
+    "mobilenet": "c:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\mobilenetv2_bce_smooth.keras",
+    "mobilenet_sha256": "ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f",
+    "ensemble_weights": {
+      "efficientnet": 0.75,
+      "mobilenet": 0.25
+    },
+    "threshold": 0.3,
+    "loss": "BCE + label_smoothing 0.05"
+  },
+  "labels": {
+    "class_0": "ISIC 2020 official benign (benign_malignant=benign); DICM official class=0 was NOT used",
+    "class_1": "DICM official class=1 (not diagnosis==melanoma only)",
+    "class_0_n_full": 7999,
+    "class_1_n_full": 8530,
+    "class_1_diagnosis_melanoma_full": 6787
+  },
+  "frozen_internal_test_as_labeled": {
+    "n": 2473,
+    "n_class_1": 1324,
+    "n_class_0": 1149,
+    "accuracy": 0.9227658714112414,
+    "sensitivity": 0.952416918429003,
+    "specificity": 0.8885987815491732,
+    "precision": 0.9078473722102232,
+    "f1": 0.9295982307408772,
+    "roc_auc": 0.9799372368984983,
+    "pr_auc": 0.983594112309723,
+    "tp": 1261,
+    "tn": 1021,
+    "fp": 128,
+    "fn": 63,
+    "note": "Positives are official class=1, not clean melanoma."
+  },
+  "class_1_test_by_diagnosis": {
+    "<MISSING>": {
+      "n": 7,
+      "called_positive": 6,
+      "called_negative": 1,
+      "mean_ensemble_score": 0.7451337937797818,
+      "median_ensemble_score": 0.8237235099077225,
+      "min_ensemble_score": 0.2612386792898178,
+      "max_ensemble_score": 0.9536276906728745
+    },
+    "AIMP": {
+      "n": 4,
+      "called_positive": 4,
+      "called_negative": 0,
+      "mean_ensemble_score": 0.44530146196484566,
+      "median_ensemble_score": 0.4276081472635269,
+      "min_ensemble_score": 0.3563136756420135,
+      "max_ensemble_score": 0.5696758776903152
+    },
+    "atypical melanocytic proliferation": {
+      "n": 1,
+      "called_positive": 1,
+      "called_negative": 0,
+      "mean_ensemble_score": 0.4848604798316955,
+      "median_ensemble_score": 0.4848604798316955,
+      "min_ensemble_score": 0.4848604798316955,
+      "max_ensemble_score": 0.4848604798316955
+    },
+    "basal cell carcinoma": {
+      "n": 132,
+      "called_positive": 127,
+      "called_negative": 5,
+      "mean_ensemble_score": 0.6544999610632658,
+      "median_ensemble_score": 0.6071538180112839,
+      "min_ensemble_score": 0.246901985257864,
+      "max_ensemble_score": 0.9999717026948928
+    },
+    "melanoma": {
+      "n": 1092,
+      "called_positive": 1035,
+      "called_negative": 57,
+      "mean_ensemble_score": 0.7725494225738031,
+      "median_ensemble_score": 0.9537014290690422,
+      "min_ensemble_score": 0.1880852133035659,
+      "max_ensemble_score": 0.9999778419733047
+    },
+    "melanoma metastasis": {
+      "n": 10,
+      "called_positive": 10,
+      "called_negative": 0,
+      "mean_ensemble_score": 0.7878580972552299,
+      "median_ensemble_score": 0.7577246129512787,
+      "min_ensemble_score": 0.4977693110704422,
+      "max_ensemble_score": 0.9945668280124664
+    },
+    "seborrheic keratosis": {
+      "n": 3,
+      "called_positive": 3,
+      "called_negative": 0,
+      "mean_ensemble_score": 0.441198227306207,
+      "median_ensemble_score": 0.4592433497309685,
+      "min_ensemble_score": 0.393844686448574,
+      "max_ensemble_score": 0.4705066457390785
+    },
+    "squamous cell carcinoma": {
+      "n": 75,
+      "called_positive": 75,
+      "called_negative": 0,
+      "mean_ensemble_score": 0.6417290175954501,
+      "median_ensemble_score": 0.591662809252739,
+      "min_ensemble_score": 0.3160484954714775,
+      "max_ensemble_score": 0.9999524056911469
+    }
+  },
+  "class_1_test_summary": {
+    "diagnosis_melanoma": {
+      "n": 1092,
+      "called_positive": 1035,
+      "called_negative": 57,
+      "mean_ensemble_score": 0.7725494225738031,
+      "median_ensemble_score": 0.9537014290690422,
+      "min_ensemble_score": 0.1880852133035659,
+      "max_ensemble_score": 0.9999778419733047
+    },
+    "not_diagnosis_melanoma": {
+      "n": 232,
+      "called_positive": 226,
+      "called_negative": 6,
+      "mean_ensemble_score": 0.6517579729251307,
+      "median_ensemble_score": 0.6106149554252625,
+      "min_ensemble_score": 0.246901985257864,
+      "max_ensemble_score": 0.9999717026948928
+    },
+    "melanoma_or_metastasis": {
+      "n": 1102,
+      "called_positive": 1045,
+      "called_negative": 57,
+      "mean_ensemble_score": 0.7726883397669195,
+      "median_ensemble_score": 0.952503427863121,
+      "min_ensemble_score": 0.1880852133035659,
+      "max_ensemble_score": 0.9999778419733047
+    },
+    "non_melanoma_class_1": {
+      "n": 222,
+      "called_positive": 216,
+      "called_negative": 6,
+      "mean_ensemble_score": 0.6456273366940452,
+      "median_ensemble_score": 0.6040159538388252,
+      "min_ensemble_score": 0.246901985257864,
+      "max_ensemble_score": 0.9999717026948928
+    }
+  }
+}

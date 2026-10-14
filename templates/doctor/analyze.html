@@ -1,0 +1,65 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('analyze') }}{% endblock %}
+{% block heading %}New Patient Analysis{% endblock %}
+{% block subhead %}The patient is present. Enter details, upload the dermoscopic image, and analyze immediately.{% endblock %}
+{% block content %}
+{% set sel = selected.profile if selected else {} %}
+<form class="form-pane" method="post" enctype="multipart/form-data" id="analyzeForm">
+  <h3>Patient details</h3>
+  <p class="hint">The phone number is how the patient later opens their report.</p>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Patient name</label>
+      <input class="form-control" name="full_name" value="{{ selected.full_name if selected else '' }}" required />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Patient ID</label>
+      <input class="form-control" name="chart_id" value="{{ sel.chart_id if sel else '' }}" placeholder="Optional clinic ID" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Phone number</label>
+      <input class="form-control" type="tel" name="phone" value="{{ selected.phone if selected else '' }}" required placeholder="10-digit mobile number" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Age</label>
+      <input class="form-control" name="age" type="number" min="0" max="120" value="{{ sel.age if sel and sel.age else '' }}" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Gender</label>
+      <select class="form-select" name="sex">
+        {% set sx = sel.sex if sel else 'N/A' %}
+        {% for opt in ['N/A','Female','Male','Other'] %}
+        <option {% if opt==sx %}selected{% endif %}>{{ opt }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Lesion location</label>
+      <input class="form-control" name="lesion_location" placeholder="e.g. left forearm" />
+    </div>
+  </div>
+
+  <h3 class="mt-4">Upload Dermoscopic Image</h3>
+  <label class="file-drop" id="uploadZone">
+    <input type="file" name="image" id="imageInput" accept=".png,.jpg,.jpeg,.bmp,.tif,.tiff,.webp" required />
+    <span class="upload-prompt">
+      <strong>Choose a dermoscopic image</strong>
+      <small>JPG or PNG · max 16 MB</small>
+    </span>
+    <img id="imagePreview" class="preview hidden" alt="Selected lesion" />
+  </label>
+  <button type="submit" class="btn btn-cta mt-3">Analyze Image</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script>
+  const form = document.getElementById("analyzeForm");
+  if (form) {
+    form.addEventListener("submit", function () {
+      const overlay = document.getElementById("loadingOverlay");
+      if (overlay) overlay.classList.remove("hidden");
+    });
+  }
+</script>
+{% endblock %}

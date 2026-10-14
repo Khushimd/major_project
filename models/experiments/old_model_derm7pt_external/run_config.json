@@ -1,0 +1,48 @@
+{
+  "task": "old_model_derm7pt_external_validation",
+  "phase_completed": "frozen_external_inference",
+  "inference_run": true,
+  "training_run": false,
+  "model_files": {
+    "efficientnetb0": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\efficientnetb0_bce_smooth.keras",
+      "sha256": "02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87"
+    },
+    "mobilenetv2": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\mobilenetv2_bce_smooth.keras",
+      "sha256": "ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f"
+    }
+  },
+  "preprocessing_implementation": "ImagePreprocessor.process_for_model: hair removal + light denoise + resize 224 + /255; no CLAHE; no lesion crop; ImageNet preprocess inside the saved models. Cache format matches the original Exp2-C frozen-test evaluation (JPEG of the processed array, then TF decode/resize/255).",
+  "ensemble_weights": {
+    "efficientnet": 0.75,
+    "mobilenet": 0.25
+  },
+  "threshold": 0.3,
+  "threshold_optimization_on_derm7pt": false,
+  "ensemble_weight_optimization_on_derm7pt": false,
+  "calibration_on_derm7pt": false,
+  "derm7pt_dataset_path": "C:\\Projects\\major-project\\dataset\\external\\derm7pt",
+  "old_development_path": "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign",
+  "n_input_cases": 1011,
+  "n_excluded_cases": 24,
+  "n_evaluated_cases": 987,
+  "label_mapping_file": "C:\\Projects\\major-project\\models\\experiments\\old_model_derm7pt_external\\label_mapping.json",
+  "datetime_utc": "2026-09-29T11:11:44.737177+00:00",
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5"
+  },
+  "old_internal_result_recomputed": false,
+  "production_or_live_app_modified": false,
+  "old_experiment_modified": false,
+  "frozen_csvs_modified": false,
+  "inference_runs": 1,
+  "audit_redone": false,
+  "audit_datetime_utc": "2026-09-29T02:30:45.345923+00:00",
+  "baseline_83_4_modified": false,
+  "protected_file_hashes_unchanged": true
+}

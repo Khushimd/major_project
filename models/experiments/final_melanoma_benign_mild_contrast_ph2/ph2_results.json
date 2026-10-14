@@ -1,0 +1,63 @@
+{
+  "cohort": {
+    "n": 200,
+    "melanoma": 40,
+    "strict_benign": 160,
+    "common_nevus": 80,
+    "atypical_nevus": 80
+  },
+  "ph2_previously_used_in_project": true,
+  "ph2_used_for_tuning": false,
+  "training_performed": false,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "threshold": 0.5,
+  "baseline_metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.33,
+    "precision": 0.22988505747126436,
+    "recall": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 0.1625,
+    "f1": 0.37383177570093457,
+    "auc": 0.83546875,
+    "pr_auc": 0.6592606644477185,
+    "tp": 40,
+    "fp": 134,
+    "tn": 26,
+    "fn": 0,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "mild_contrast_metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.285,
+    "precision": 0.2154696132596685,
+    "recall": 0.975,
+    "sensitivity": 0.975,
+    "specificity": 0.1125,
+    "f1": 0.35294117647058826,
+    "auc": 0.8484375,
+    "pr_auc": 0.6865249076730708,
+    "tp": 39,
+    "fp": 142,
+    "tn": 18,
+    "fn": 1,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "observations": "Frozen baseline sensitivity 1.000 vs mild-contrast 0.975; specificity 0.163 vs 0.113; precision 0.230 vs 0.215; accuracy 0.330 vs 0.285. False negatives: baseline 0/40, mild-contrast 1/40. False positives: baseline 134/160, mild-contrast 142/160. Small PH2 melanoma n=40; treat differences as descriptive, not a ranking. PH2 was not used to select or replace the frozen baseline.",
+  "replace_baseline": false,
+  "reproducibility": {
+    "started_utc": "2026-10-13T16:53:03.212034+00:00",
+    "finished_utc": "2026-10-13T16:55:35.121539+00:00",
+    "preprocessing": "process_for_model hair+denoise+224+/255; max-side 1024 if needed; no CLAHE; no crop",
+    "environment": {
+      "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "tensorflow": "2.21.0"
+    }
+  }
+}

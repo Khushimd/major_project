@@ -1,0 +1,11 @@
+{
+  "evaluated_once": false,
+  "post_test_tuning": false,
+  "threshold": 0.5,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "metrics": null,
+  "reason": "Validation did not both meet constraints and show a meaningful FN/sensitivity gain. Test not evaluated."
+}

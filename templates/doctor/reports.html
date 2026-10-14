@@ -1,0 +1,26 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('reports') }}{% endblock %}
+{% block heading %}Reports{% endblock %}
+{% block subhead %}Generated consultation reports.{% endblock %}
+{% block content %}
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Report</th><th>Patient</th><th>Date</th><th>AI prediction</th><th></th></tr></thead>
+    <tbody>
+      {% for c in cases %}
+      <tr>
+        <td>{{ c.report_code or c.id }}</td>
+        <td>{{ c.patient_name }}</td>
+        <td>{{ c.created_at }}</td>
+        <td>{{ c.prediction|ai_label }}</td>
+        <td>
+          <a href="{{ url_for('doctor.case_review', case_id=c.id) }}">View</a>
+          · <a href="{{ url_for('doctor.download_report', case_id=c.id) }}">PDF</a>
+        </td>
+      </tr>
+      {% else %}<tr><td colspan="5">No reports generated yet.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

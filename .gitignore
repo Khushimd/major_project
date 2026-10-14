@@ -12,11 +12,7 @@ env/
 .DS_Store
 Thumbs.db
 
-# Data & artifacts (keep structure, ignore heavy files)
-dataset/raw/**
-!dataset/raw/.gitkeep
-dataset/processed/**
-!dataset/processed/.gitkeep
+# Runtime / generated
 static/uploads/**
 !static/uploads/.gitkeep
 static/results/**
@@ -25,16 +21,57 @@ reports/generated/**
 !reports/generated/.gitkeep
 logs/**
 !logs/.gitkeep
+.pytest_cache/
 
-# Models are large — keep meta JSON, ignore weight binaries
-models/saved/*.keras
-models/checkpoints/**
-!models/checkpoints/.gitkeep
-static/uploads/clinical_reports/**
-
-# Database
+# Database and secrets
 database/*.db
-
-# Secrets
 .env
 *.pem
+
+# Weight binaries (reports/json stay tracked)
+*.keras
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+models/checkpoints/**
+!models/checkpoints/.gitkeep
+**/preprocessed/
+**/preprocessed_cache/
+models/experiments/**/cache/
+models/experiments/**/*.jpg
+models/saved/**/*.jpg
+models/**/*.npy
+
+# Raw images and archives (too large for GitHub)
+images/
+dataset/raw/**
+!dataset/raw/.gitkeep
+dataset/processed/**
+!dataset/processed/**/
+!dataset/processed/**/*.csv
+!dataset/processed/**/*.json
+!dataset/processed/**/*.md
+!dataset/processed/**/*.txt
+!dataset/processed/**/.gitkeep
+dataset/isic_dicm_17k/**
+!dataset/isic_dicm_17k/
+!dataset/isic_dicm_17k/**/
+!dataset/isic_dicm_17k/*.csv
+!dataset/isic_dicm_17k/*.md
+!dataset/isic_dicm_17k/*.txt
+!dataset/isic_dicm_17k/.gitkeep
+dataset/external/**/*.jpg
+dataset/external/**/*.jpeg
+dataset/external/**/*.png
+dataset/external/**/*.bmp
+dataset/external/**/*.tif
+dataset/external/**/*.tiff
+testing_data/**/*.bmp
+testing_data/**/*.jpg
+testing_data/**/*.jpeg
+testing_data/**/*.png
+
+# HAM pixel dumps
+hmnist_*.csv

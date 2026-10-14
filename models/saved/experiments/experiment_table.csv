@@ -1,0 +1,5 @@
+Experiment,Loss,Class balancing method,Oversampling factor,Learning rate,Frozen/unfrozen layers,Best epoch,Validation AUC,Validation PR-AUC,Validation recall,Validation precision,Validation F1,Test AUC,Test PR-AUC,Test recall,Test precision,Test F1,Threshold
+weighted_bce,weighted_bce,weighted_bce,1,0.001,stage1 frozen backbone,0,0.8207481217872677,0.30869737716723245,0.156,0.42391304347826086,0.22807017543859648,,,,,,
+focal,focal,focal,1,0.001,stage1 frozen backbone,0,0.8204238829576908,0.336640324330204,0.012,0.75,0.023622047244094488,,,,,,
+oversample_x2,bce,oversample,2,0.001,stage1 frozen backbone,0,0.8429434559114275,0.35116647208825247,0.204,0.45132743362831856,0.2809917355371901,,,,,,
+oversample_x2+hybrid,bce,oversample,2,1e-05,stage1 frozen + stage2 unfreeze top 20,0,0.81985290628707,0.37565325121565885,0.516,0.344,0.4128,0.8579113977207308,0.4473473838407616,0.5617529880478087,0.35786802030456855,0.4372093023255814,0.3

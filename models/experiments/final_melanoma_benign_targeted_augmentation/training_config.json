@@ -1,0 +1,82 @@
+{
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign",
+  "seed": 42,
+  "label_smoothing": 0.05,
+  "class_weight": null,
+  "oversampling": false,
+  "augmentation": {
+    "keeps_baseline_augmentation": true,
+    "extra_brightness": {
+      "factor": [
+        0.85,
+        1.15
+      ],
+      "probability": 0.3
+    },
+    "extra_contrast": {
+      "factor": [
+        0.75,
+        1.25
+      ],
+      "probability": 0.4
+    },
+    "extra_gamma": {
+      "factor": [
+        0.85,
+        1.15
+      ],
+      "probability": 0.2
+    },
+    "extra_saturation": {
+      "factor": [
+        0.9,
+        1.1
+      ],
+      "probability": 0.15
+    },
+    "applied_to": "train only",
+    "validation_fn_oversampled": false
+  },
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "threshold": 0.5,
+  "stages": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "constraints": {
+    "specificity": 0.82,
+    "precision": 0.78,
+    "f1": 0.8,
+    "accuracy": 0.82
+  },
+  "test_used_for_tuning": false,
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "seed": 42,
+    "gpu": []
+  }
+}

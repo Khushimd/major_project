@@ -1,0 +1,26 @@
+{% extends "dash_base.html" %}
+{% block sidebar %}
+  <a href="{{ url_for('patient.dashboard') }}"><i class="bi bi-grid"></i> Dashboard</a>
+  <a href="{{ url_for('patient.reports') }}"><i class="bi bi-file-earmark-text"></i> My Reports</a>
+  <a href="{{ url_for('patient.appointments') }}"><i class="bi bi-calendar-check"></i> Appointments</a>
+  <a class="active" href="{{ url_for('patient.my_doctor') }}"><i class="bi bi-person-badge"></i> My Doctor</a>
+  <a href="{{ url_for('patient.prescriptions') }}"><i class="bi bi-capsule"></i> Prescriptions</a>
+  <a href="{{ url_for('patient.notifications') }}"><i class="bi bi-bell"></i> Notifications</a>
+  <a href="{{ url_for('patient.profile') }}"><i class="bi bi-person"></i> Profile</a>
+{% endblock %}
+{% block heading %}My doctor{% endblock %}
+{% block content %}
+{% if doctor %}
+<div class="form-pane">
+  <h3>{{ doctor.full_name }}</h3>
+  <p>Qualification: {{ (doctor.profile or {}).specialization or doctor.specialization or 'MBBS, MD (Dermatology, Venereology & Leprosy)' }}</p>
+  <p>Hospital/clinic: {{ (doctor.profile or {}).hospital or doctor.hospital or '—' }}</p>
+  <p>Experience: {{ (doctor.profile or {}).experience or doctor.experience or '—' }}</p>
+  <p>Availability: {{ (doctor.profile or {}).availability or doctor.availability or 'By appointment' }}</p>
+  <p>Consultation hours: {% for s in slots %}{{ s.label }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  <a class="btn btn-cta" href="{{ url_for('patient.appointments', doctor_id=doctor.id) }}">Book appointment</a>
+</div>
+{% else %}
+<p>No doctor is assigned yet.</p>
+{% endif %}
+{% endblock %}

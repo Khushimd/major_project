@@ -1,0 +1,135 @@
+{
+  "dataset": "Melanoma vs Benign",
+  "labels": {
+    "0": "Benign",
+    "1": "Melanoma"
+  },
+  "melanoma_source": "ISIC-DICM-17K",
+  "benign_source": "ISIC 2020",
+  "melanoma_rule": "official class == 1 only; DICM class 0 was not used",
+  "benign_rule": "local images with benign_malignant == benign; ISIC_4225838 removed; diagnosis=unknown kept",
+  "melanoma_stats": {
+    "official_rows_total": 17060,
+    "official_class_counts": {
+      "1": 8530,
+      "0": 8530
+    },
+    "official_class_1": 8530,
+    "matched_images": 8530,
+    "missing_images": 0,
+    "duplicate_ids_dropped": 0,
+    "label_source": [
+      "C:\\Projects\\major-project\\dataset\\isic_dicm_17k\\train-set-metadata.csv",
+      "C:\\Projects\\major-project\\dataset\\isic_dicm_17k\\valid-set-metadata.csv"
+    ],
+    "image_dir": "C:\\Projects\\major-project\\images"
+  },
+  "benign_stats": {
+    "metadata": "C:\\Projects\\major-project\\dataset\\raw\\train.csv",
+    "image_dir": "C:\\Projects\\major-project\\dataset\\raw\\train",
+    "official_train_rows": 33126,
+    "official_benign": 32542,
+    "official_malignant": 584,
+    "missing_unknown_binary_label": 0,
+    "local_benign_before_cleaning": 8000,
+    "atypical_case_removed": {
+      "image_id": "ISIC_4225838",
+      "diagnosis": "atypical melanocytic proliferation",
+      "removed_n": 1,
+      "rows": [
+        {
+          "image_id": "ISIC_4225838",
+          "diagnosis": "atypical melanocytic proliferation",
+          "patient_id": "IP_9124285"
+        }
+      ]
+    },
+    "local_benign_after_cleaning": 7999,
+    "diagnosis_distribution_after_cleaning": {
+      "unknown": 6664,
+      "nevus": 1279,
+      "seborrheic keratosis": 25,
+      "lentigo NOS": 18,
+      "lichenoid keratosis": 12,
+      "solar lentigo": 1
+    },
+    "unknown_diagnosis_kept": 6664,
+    "note": "diagnosis=unknown is kept because benign_malignant=benign and target=0. Only ISIC_4225838 was removed."
+  },
+  "counts": {
+    "melanoma": 8530,
+    "benign": 7999,
+    "total": 16529
+  },
+  "training": {
+    "total": 11611,
+    "melanoma": 5966,
+    "benign": 5645,
+    "melanoma_pct": 51.38,
+    "benign_pct": 48.62,
+    "patients": 2061,
+    "lesions": 2851,
+    "groups": 3952
+  },
+  "validation": {
+    "total": 2445,
+    "melanoma": 1240,
+    "benign": 1205,
+    "melanoma_pct": 50.72,
+    "benign_pct": 49.28,
+    "patients": 470,
+    "lesions": 602,
+    "groups": 848
+  },
+  "test": {
+    "total": 2473,
+    "melanoma": 1324,
+    "benign": 1149,
+    "melanoma_pct": 53.54,
+    "benign_pct": 46.46,
+    "patients": 435,
+    "lesions": 638,
+    "groups": 848
+  },
+  "grouping": {
+    "priority": [
+      "patient_id",
+      "lesion_id",
+      "isic_id"
+    ],
+    "groups": 5648,
+    "seed": 42,
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    }
+  },
+  "overlap_summary": {
+    "melanoma_vs_benign_image": 0,
+    "melanoma_vs_benign_lesion": 0,
+    "melanoma_vs_benign_patient": 338,
+    "siim_isic_2020": 8580,
+    "ham10000": 1113,
+    "ph2_testing": 0
+  },
+  "split_leakage": {
+    "patient_overlap": 0,
+    "lesion_overlap": 0,
+    "image_overlap": 0,
+    "clean": true
+  },
+  "no_oversample": true,
+  "no_image_duplication": true,
+  "test_frozen": true,
+  "production_models_untouched": [
+    "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+    "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras"
+  ],
+  "active_dataset_unchanged": "combined",
+  "old_splits_untouched": [
+    "C:\\Projects\\major-project\\dataset\\processed\\splits",
+    "C:\\Projects\\major-project\\dataset\\processed\\isic_dicm_17k"
+  ],
+  "output_dir": "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign"
+}

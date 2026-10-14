@@ -1,0 +1,46 @@
+{
+  "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras": {
+    "sha256": "f6b0e94b5e6a00ee5d621f95abb7246193dc65de8e6a5e7f355243e95d69b613",
+    "size": 18362343
+  },
+  "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras": {
+    "sha256": "f510a80c5d3f593f9b071a198d67da1bc5376010a9569ef1ef6796d20a5abf89",
+    "size": 10946920
+  },
+  "C:\\Projects\\major-project\\models\\saved\\inference_config.json": {
+    "sha256": "40c1b51ea0caf60d48e7fa8ee1a794f65778146713523ae36b6a4bea5ea26cc5",
+    "size": 1174
+  },
+  "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\efficientnetb0_final_baseline.keras": {
+    "sha256": "7657f315f0f5c654c9cf30656e5bb6d648dabbdc557972a303bc0d6c4f49b75d",
+    "size": 18362323
+  },
+  "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\mobilenetv2_final_baseline.keras": {
+    "sha256": "74ac5ca39513c18ca30a7fc94e81071198cd846e3fba3de783f8dea696254d2a",
+    "size": 10946912
+  },
+  "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\training_summary.json": {
+    "sha256": "f09eb423375b29ed46946210e438052d0d2074bc81dc45b85094e075a4cdce72",
+    "size": 5146
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\train.csv": {
+    "sha256": "e3440c2ff0910461bb153deaaf476c3cac5173d3da29b82e5875f9ccd07c8528",
+    "size": 2594766
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\val.csv": {
+    "sha256": "3c220925eac9e33af08143789537ca9722adb18b2c7796c0aaf1968729e61b6e",
+    "size": 553360
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\test.csv": {
+    "sha256": "c989727b3565feb4c57065cfbbb06e41d512d43e70961ccb2a4a3be774f7a323",
+    "size": 556116
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\manifest.csv": {
+    "sha256": "3eded386faa650488ff7cfb0d01ec240a00d78108e3cb632c186d7e28de968d9",
+    "size": 3703796
+  },
+  "C:\\Projects\\major-project\\models\\experiments\\ph2_external_evaluation\\ph2_external_results.json": {
+    "sha256": "6a3799a9ee99e94ab3f36f30a29f38364bea05ea970f9b74518db59b2dc402d8",
+    "size": 5259
+  }
+}

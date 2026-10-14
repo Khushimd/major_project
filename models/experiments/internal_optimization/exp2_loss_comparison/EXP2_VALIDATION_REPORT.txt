@@ -1,0 +1,41 @@
+EXPERIMENT 2 — LOSS FUNCTION COMPARISON (validation only)
+
+1. Experiment 1 reference ensemble:
+   acc=0.9100 sens=0.9419 spec=0.8772 prec=0.8875 f1=0.9139 auc=0.9686 pr=0.9718
+
+2. BCE (EXP2-A control)
+   ensemble acc=0.9043 sens=0.8927 spec=0.9162 prec=0.9164 f1=0.9044 auc=0.9687 pr=0.9718
+   weights=0.70/0.30 thr=0.30 (sens>=0.85 and spec>=0.70, max F1)
+   Eff AUC=0.9666 Mob AUC=0.9556
+
+3. Focal Loss (EXP2-B)
+   ensemble acc=0.5072 sens=1.0000 spec=0.0000 prec=0.5072 f1=0.6730 auc=0.5941 pr=0.6023
+   weights=1.00/0.00 thr=0.45 (max F1 on validation grid (fallback))
+   Eff AUC=0.5941 Mob AUC=0.3428
+
+4. BCE + label smoothing (EXP2-C)
+   ensemble acc=0.9137 sens=0.9379 spec=0.8888 prec=0.8967 f1=0.9168 auc=0.9718 pr=0.9749
+   weights=0.75/0.25 thr=0.30 (sens>=0.85 and spec>=0.70, max F1)
+   Eff AUC=0.9712 Mob AUC=0.9401
+
+5. Best EfficientNet: bce_smooth AUC=0.9712 PR=0.9742
+6. Best MobileNet: bce AUC=0.9556 PR=0.9619
+7. Best ensemble: bce_smooth
+8. Selected ensemble weights: 0.75/0.25
+9. Selected validation threshold: 0.30 (sens>=0.85 and spec>=0.70, max F1)
+10. Accuracy: 0.9137
+11. Sensitivity: 0.9379
+12. Specificity: 0.8888
+13. Precision: 0.8967
+14. F1: 0.9168
+15. ROC-AUC: 0.9718
+16. PR-AUC: 0.9749
+17. Difference from Experiment 1:
+   acc=+0.0037 sens=-0.0040 spec=+0.0116 prec=+0.0092 f1=+0.0029 auc=+0.0032 pr=+0.0031
+18. Training time seconds: bce=265.5, focal=21499.0, bce_smooth=25376.8
+19. RAM/OOM: none
+20. Files created under models/experiments/internal_optimization/exp2_loss_comparison/
+
+Meaningful improvement over Experiment 1: YES
+Test set was not loaded. PH2 was not used.
+No model was promoted. Experiment 1 was not overwritten.

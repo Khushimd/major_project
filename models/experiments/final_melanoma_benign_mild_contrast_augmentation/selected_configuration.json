@@ -1,0 +1,12 @@
+{
+  "meets_constraints": false,
+  "constraint_failures": [
+    "specificity 0.8007 < 0.82",
+    "precision 0.7578 < 0.78",
+    "f1 0.7942 < 0.80",
+    "accuracy 0.8150 < 0.82"
+  ],
+  "balanced_headline_gain": false,
+  "qualifies_for_test": false,
+  "rule": "Test only if spec/prec/F1/acc floors hold AND accuracy, recall, and precision are all at least as good as baseline validation, with at least one strictly better."
+}

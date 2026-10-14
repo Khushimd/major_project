@@ -1,0 +1,152 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('analytics') }}{% endblock %}
+{% block heading %}Combined CNN Models{% endblock %}
+{% block subhead %}EfficientNetB0 + MobileNetV2{% endblock %}
+{% block content %}
+{% set m = bundle.metrics or {} %}
+<h3 class="section-title">Test Results</h3>
+<div class="stat-row dash-stats mb-4">
+  <div class="stat"><span class="stat-label">Accuracy</span><span class="stat-value">{{ m.accuracy }}%</span></div>
+  <div class="stat"><span class="stat-label">Sensitivity (Recall)</span><span class="stat-value">{{ m.recall }}%</span></div>
+  <div class="stat"><span class="stat-label">Specificity</span><span class="stat-value">{{ m.specificity }}%</span></div>
+  <div class="stat"><span class="stat-label">Precision</span><span class="stat-value">{{ m.precision }}%</span></div>
+  <div class="stat"><span class="stat-label">F1-Score</span><span class="stat-value">{{ m.f1 }}%</span></div>
+  <div class="stat"><span class="stat-label">ROC-AUC</span><span class="stat-value">{{ m.auc }}%</span></div>
+  <div class="stat"><span class="stat-label">PR-AUC</span><span class="stat-value">{{ m.pr_auc }}%</span></div>
+</div>
+
+<div class="form-pane mb-4">
+  <h3>Confusion matrix</h3>
+  {% set n_pos = m.tp + m.fn %}
+  {% set n_neg = m.tn + m.fp %}
+  {% set n_all = n_pos + n_neg %}
+  <p class="cm-total">Out of {{ '{:,}'.format(n_all) }} images ({{ '{:,}'.format(n_pos) }} melanoma, {{ '{:,}'.format(n_neg) }} benign)</p>
+  <table class="cm-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Predicted Melanoma</th>
+        <th>Predicted Benign</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Actual Melanoma<span class="cm-row-n">{{ '{:,}'.format(n_pos) }} images</span></th>
+        <td>
+          <span class="cm-count">{{ '{:,}'.format(m.tp) }}</span>
+          <span class="cm-name">True Positive (TP)</span>
+          <span class="cm-of">of {{ '{:,}'.format(n_pos) }}</span>
+        </td>
+        <td>
+          <span class="cm-count">{{ '{:,}'.format(m.fn) }}</span>
+          <span class="cm-name">False Negative (FN)</span>
+          <span class="cm-of">of {{ '{:,}'.format(n_pos) }}</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Actual Benign<span class="cm-row-n">{{ '{:,}'.format(n_neg) }} images</span></th>
+        <td>
+          <span class="cm-count">{{ '{:,}'.format(m.fp) }}</span>
+          <span class="cm-name">False Positive (FP)</span>
+          <span class="cm-of">of {{ '{:,}'.format(n_neg) }}</span>
+        </td>
+        <td>
+          <span class="cm-count">{{ '{:,}'.format(m.tn) }}</span>
+          <span class="cm-name">True Negative (TN)</span>
+          <span class="cm-of">of {{ '{:,}'.format(n_neg) }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% set curves = bundle.diagnostic_curves or {} %}
+{% if curves.roc or curves.pr %}
+<div class="row g-3 mb-4">
+  {% if curves.roc %}
+  <div class="col-md-6">
+    <div class="form-pane">
+      <h3>ROC curve</h3>
+      <canvas id="rocChart" height="180"></canvas>
+    </div>
+  </div>
+  {% endif %}
+  {% if curves.pr %}
+  <div class="col-md-6">
+    <div class="form-pane">
+      <h3>Precision–Recall curve</h3>
+      <canvas id="prChart" height="180"></canvas>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script>
+const diag = {{ (bundle.diagnostic_curves or {}) | tojson }};
+const teal = "#0f766e";
+const rust = "#c45c26";
+const roc = diag.roc || {};
+const pr = diag.pr || {};
+
+if (roc.fpr && roc.fpr.length) {
+  new Chart(document.getElementById("rocChart"), {
+    type: "scatter",
+    data: {
+      datasets: [
+        {
+          label: "ROC",
+          data: roc.fpr.map((x, i) => ({ x, y: roc.tpr[i] })),
+          showLine: true,
+          pointRadius: 0,
+          borderColor: teal,
+          borderWidth: 2
+        },
+        {
+          label: "Chance",
+          data: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+          showLine: true,
+          pointRadius: 0,
+          borderColor: "#94a3b8",
+          borderDash: [5, 4]
+        }
+      ]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { min: 0, max: 1, title: { display: true, text: "False positive rate" } },
+        y: { min: 0, max: 1, title: { display: true, text: "True positive rate" } }
+      }
+    }
+  });
+}
+
+if (pr.recall && pr.recall.length) {
+  new Chart(document.getElementById("prChart"), {
+    type: "scatter",
+    data: {
+      datasets: [
+        {
+          label: "PR",
+          data: pr.recall.map((x, i) => ({ x, y: pr.precision[i] })),
+          showLine: true,
+          pointRadius: 0,
+          borderColor: rust,
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { min: 0, max: 1, title: { display: true, text: "Recall" } },
+        y: { min: 0, max: 1, title: { display: true, text: "Precision" } }
+      }
+    }
+  });
+}
+</script>
+{% endblock %}

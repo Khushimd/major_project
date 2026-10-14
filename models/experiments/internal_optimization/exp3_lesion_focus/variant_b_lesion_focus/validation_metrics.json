@@ -1,0 +1,204 @@
+{
+  "key": "variant_b_lesion_focus",
+  "label": "EXP3-B conservative lesion-focused crop",
+  "evaluated_on": "validation_only",
+  "test_used": false,
+  "ph2_used": false,
+  "oom": false,
+  "wall_seconds": 25737.23560667038,
+  "ram": {},
+  "efficientnet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp3_lesion_focus\\variant_b_lesion_focus\\efficientnetb0.keras",
+    "training_seconds": 13749.951807022095,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 17
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 12
+      },
+      {
+        "stage": "final",
+        "epochs_run": 9
+      }
+    ],
+    "reused_from": null,
+    "validation": {
+      "threshold": 0.4,
+      "accuracy": 0.8662576687116564,
+      "precision": 0.9022026431718062,
+      "recall": 0.8258064516129032,
+      "sensitivity": 0.8258064516129032,
+      "specificity": 0.9078838174273859,
+      "f1": 0.8623157894736843,
+      "auc": 0.9442229955829204,
+      "pr_auc": 0.9460866532557581,
+      "tp": 1024,
+      "fp": 111,
+      "tn": 1094,
+      "fn": 216,
+      "n_positive": 1240,
+      "n_negative": 1205
+    }
+  },
+  "mobilenet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp3_lesion_focus\\variant_b_lesion_focus\\mobilenetv2.keras",
+    "training_seconds": 11986.751894950867,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 25
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 12
+      },
+      {
+        "stage": "final",
+        "epochs_run": 12
+      }
+    ],
+    "reused_from": null,
+    "validation": {
+      "threshold": 0.4,
+      "accuracy": 0.8568507157464212,
+      "precision": 0.8487460815047022,
+      "recall": 0.8733870967741936,
+      "sensitivity": 0.8733870967741936,
+      "specificity": 0.8398340248962656,
+      "f1": 0.8608903020667726,
+      "auc": 0.9349421094900281,
+      "pr_auc": 0.9389579697602757,
+      "tp": 1083,
+      "fp": 193,
+      "tn": 1012,
+      "fn": 157,
+      "n_positive": 1240,
+      "n_negative": 1205
+    }
+  },
+  "ensemble": {
+    "efficientnet_weight": 0.65,
+    "mobilenet_weight": 0.35,
+    "selection_rule": "max validation ROC-AUC, then PR-AUC",
+    "roc_auc": 0.9485557488957301,
+    "pr_auc": 0.951360244383385,
+    "threshold": 0.4,
+    "threshold_rule": "sens>=0.85 and spec>=0.70, max F1",
+    "validation": {
+      "threshold": 0.4,
+      "accuracy": 0.8830265848670756,
+      "precision": 0.8929159802306426,
+      "recall": 0.8741935483870967,
+      "sensitivity": 0.8741935483870967,
+      "specificity": 0.8921161825726142,
+      "f1": 0.8834555827220864,
+      "auc": 0.9485557488957301,
+      "pr_auc": 0.951360244383385,
+      "tp": 1084,
+      "fp": 130,
+      "tn": 1075,
+      "fn": 156,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "predicted_melanoma": 1214,
+    "predicted_benign": 1231,
+    "score_distribution": {
+      "all": {
+        "min": 0.25572440177202227,
+        "max": 0.9981119185686111,
+        "mean": 0.5467455979267513,
+        "median": 0.39802656769752504,
+        "n": 2445
+      },
+      "melanoma": {
+        "min": 0.28499175384640696,
+        "max": 0.9981119185686111,
+        "mean": 0.7505770919586142,
+        "median": 0.8592011377215385,
+        "n": 1240
+      },
+      "benign": {
+        "min": 0.25572440177202227,
+        "max": 0.9955763906240462,
+        "mean": 0.3369936870557886,
+        "median": 0.30717111825942994,
+        "n": 1205
+      }
+    }
+  },
+  "score_distributions": {
+    "efficientnet": {
+      "all": {
+        "min": 0.20541155338287354,
+        "max": 1.0,
+        "mean": 0.5292907953262329,
+        "median": 0.3748527467250824,
+        "n": 2445
+      },
+      "melanoma": {
+        "min": 0.24593915045261383,
+        "max": 1.0,
+        "mean": 0.7424769401550293,
+        "median": 0.9240301847457886,
+        "n": 1240
+      },
+      "benign": {
+        "min": 0.20541155338287354,
+        "max": 1.0,
+        "mean": 0.3099125623703003,
+        "median": 0.2801053524017334,
+        "n": 1205
+      }
+    },
+    "mobilenet": {
+      "all": {
+        "min": 0.349116712808609,
+        "max": 0.9946054816246033,
+        "mean": 0.5791617035865784,
+        "median": 0.41711705923080444,
+        "n": 2445
+      },
+      "melanoma": {
+        "min": 0.34932541847229004,
+        "max": 0.9946054816246033,
+        "mean": 0.7656202912330627,
+        "median": 0.8593974113464355,
+        "n": 1240
+      },
+      "benign": {
+        "min": 0.349116712808609,
+        "max": 0.9893155097961426,
+        "mean": 0.3872871994972229,
+        "median": 0.35145875811576843,
+        "n": 1205
+      }
+    },
+    "ensemble": {
+      "all": {
+        "min": 0.25572440177202227,
+        "max": 0.9981119185686111,
+        "mean": 0.5467455979267513,
+        "median": 0.39802656769752504,
+        "n": 2445
+      },
+      "melanoma": {
+        "min": 0.28499175384640696,
+        "max": 0.9981119185686111,
+        "mean": 0.7505770919586142,
+        "median": 0.8592011377215385,
+        "n": 1240
+      },
+      "benign": {
+        "min": 0.25572440177202227,
+        "max": 0.9955763906240462,
+        "mean": 0.3369936870557886,
+        "median": 0.30717111825942994,
+        "n": 1205
+      }
+    }
+  }
+}

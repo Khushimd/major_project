@@ -1,0 +1,238 @@
+{
+  "potential_source_domain_confounding_signals": true,
+  "causal_claim": false,
+  "dicm_melanoma": {
+    "n": 6787,
+    "diagnosis": {
+      "melanoma": 6787
+    },
+    "sex": {
+      "male": 3782,
+      "female": 2772,
+      "<MISSING>": 233
+    },
+    "anatom_site": {
+      "anterior torso": 1566,
+      "lower extremity": 1266,
+      "head/neck": 1238,
+      "upper extremity": 1172,
+      "posterior torso": 911,
+      "<MISSING>": 373,
+      "palms/soles": 210,
+      "lateral torso": 28,
+      "oral/genital": 23
+    },
+    "age_approx_describe": {
+      "count": 6549.0,
+      "mean": 61.10093143991449,
+      "std": 15.742721332148857,
+      "min": 5.0,
+      "25%": 50.0,
+      "50%": 65.0,
+      "75%": 75.0,
+      "max": 85.0
+    },
+    "year": {
+      "2019.0": 4111,
+      "<MISSING>": 1882,
+      "2020.0": 581,
+      "2017.0": 213
+    },
+    "image_type": {
+      "dermoscopic": 6787
+    },
+    "dermoscopic_type": {
+      "<MISSING>": 5389,
+      "contact non-polarized": 653,
+      "contact polarized": 557,
+      "non-contact polarized": 188
+    },
+    "diagnosis_confirm_type": {
+      "histopathology": 6787
+    },
+    "attribution": {
+      "Hospital Cl\u00ednic de Barcelona": 2848,
+      "Anonymous": 1702,
+      "ViDIR Group, Department of Dermatology, Medical University of Vienna": 1156,
+      "Memorial Sloan Kettering Cancer Center": 428,
+      "Hospital Italiano de Buenos Aires": 196,
+      "Department of Dermatology, Hospital Cl\u00ednic de Barcelona": 179,
+      "Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera": 134,
+      "Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital": 74,
+      "Department of Dermatology, Medical University of Vienna": 61,
+      "The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre": 9
+    },
+    "sampled_dimension_counts": {
+      "1024x1024": 51,
+      "600x450": 18,
+      "1024x768": 9,
+      "3072x2304": 5,
+      "3872x2592": 5,
+      "1872x1053": 3,
+      "3024x4032": 3,
+      "2592x1936": 3,
+      "4288x2848": 2,
+      "2048x1536": 2,
+      "3008x2000": 2,
+      "2077x2077": 1
+    },
+    "sampled_n_for_dimensions": 120
+  },
+  "dicm_benign": {
+    "n": 4586,
+    "diagnosis": {
+      "nevus": 3544,
+      "seborrheic keratosis": 244,
+      "solar lentigo": 179,
+      "acrochordon": 167,
+      "lichenoid keratosis": 137,
+      "lentigo NOS": 97,
+      "verruca": 62,
+      "dermatofibroma": 54,
+      "angioma": 32,
+      "vascular lesion": 23,
+      "lentigo simplex": 21,
+      "neurofibroma": 13,
+      "angiokeratoma": 5,
+      "sebaceous hyperplasia": 3,
+      "angiofibroma or fibrous papule": 2,
+      "sebaceous adenoma": 1,
+      "cafe-au-lait macule": 1,
+      "clear cell acanthoma": 1
+    },
+    "sex": {
+      "female": 2437,
+      "male": 2129,
+      "<MISSING>": 20
+    },
+    "anatom_site": {
+      "lower extremity": 1108,
+      "posterior torso": 927,
+      "anterior torso": 867,
+      "upper extremity": 701,
+      "head/neck": 466,
+      "<MISSING>": 391,
+      "lateral torso": 81,
+      "palms/soles": 34,
+      "oral/genital": 11
+    },
+    "age_approx_describe": {
+      "count": 4557.0,
+      "mean": 50.25894228659206,
+      "std": 16.8977613581242,
+      "min": 5.0,
+      "25%": 40.0,
+      "50%": 50.0,
+      "75%": 60.0,
+      "max": 85.0
+    },
+    "year": {
+      "<MISSING>": 2970,
+      "2019.0": 1014,
+      "2020.0": 535,
+      "2017.0": 67
+    },
+    "image_type": {
+      "dermoscopic": 4586
+    },
+    "dermoscopic_type": {
+      "<MISSING>": 2328,
+      "contact polarized": 1222,
+      "contact non-polarized": 762,
+      "non-contact polarized": 274
+    },
+    "diagnosis_confirm_type": {
+      "histopathology": 3110,
+      "serial imaging showing no change": 878,
+      "<MISSING>": 328,
+      "single image expert consensus": 220,
+      "confocal microscopy with consensus dermoscopy": 50
+    },
+    "attribution": {
+      "Anonymous": 1816,
+      "ViDIR Group, Department of Dermatology, Medical University of Vienna": 1014,
+      "Memorial Sloan Kettering Cancer Center": 856,
+      "Hospital Cl\u00ednic de Barcelona": 364,
+      "Hospital Italiano de Buenos Aires": 327,
+      "Department of Dermatology, Medical University of Vienna": 125,
+      "Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital": 54,
+      "Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera": 16,
+      "The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre": 14
+    },
+    "sampled_dimension_counts": {
+      "3264x2448": 24,
+      "1024x1024": 12,
+      "640x480": 10,
+      "3072x2304": 10,
+      "600x450": 9,
+      "1872x1053": 9,
+      "1024x768": 8,
+      "2048x1536": 6,
+      "4288x2848": 3,
+      "3024x4032": 3,
+      "1920x1080": 2,
+      "2592x3872": 2
+    },
+    "sampled_n_for_dimensions": 120
+  },
+  "isic_benign": {
+    "n": 4881,
+    "diagnosis": {
+      "nevus": 4679,
+      "seborrheic keratosis": 122,
+      "lentigo NOS": 42,
+      "lichenoid keratosis": 31,
+      "solar lentigo": 6,
+      "cafe-au-lait macule": 1
+    },
+    "sex": {
+      "male": 2718,
+      "female": 2163
+    },
+    "anatom_site": {
+      "torso": 2800,
+      "lower extremity": 1325,
+      "upper extremity": 538,
+      "head/neck": 170,
+      "<MISSING>": 45,
+      "palms/soles": 2,
+      "oral/genital": 1
+    },
+    "age_approx_describe": {
+      "count": 4879.0,
+      "mean": 50.283869645419145,
+      "std": 12.676647202031269,
+      "min": 15.0,
+      "25%": 40.0,
+      "50%": 50.0,
+      "75%": 60.0,
+      "max": 90.0
+    },
+    "year": {
+      "<MISSING>": 4881
+    },
+    "image_type": {
+      "<MISSING>": 4881
+    },
+    "dermoscopic_type": {
+      "<MISSING>": 4881
+    },
+    "diagnosis_confirm_type": {
+      "<MISSING>": 4881
+    },
+    "attribution": {
+      "<MISSING>": 4881
+    },
+    "sampled_dimension_counts": {
+      "1872x1053": 97,
+      "3264x2448": 12,
+      "5184x3456": 4,
+      "4288x2848": 2,
+      "2592x1936": 2,
+      "2431x2431": 1,
+      "2317x2317": 1,
+      "6000x4000": 1
+    },
+    "sampled_n_for_dimensions": 120
+  }
+}

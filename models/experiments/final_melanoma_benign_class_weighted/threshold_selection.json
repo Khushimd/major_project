@@ -1,0 +1,21 @@
+{
+  "threshold": 0.45,
+  "rule": "max validation F1 on the predefined 0.20-0.70 grid; ties by ROC-AUC then closeness to 0.50",
+  "selected": {
+    "threshold": 0.45,
+    "accuracy": 0.8215750615258408,
+    "precision": 0.761168384879725,
+    "recall": 0.8494726749760306,
+    "sensitivity": 0.8494726749760306,
+    "specificity": 0.8007168458781362,
+    "f1": 0.8028998640688718,
+    "auc": 0.9091770705539919,
+    "pr_auc": 0.886431162979093,
+    "tp": 886,
+    "fp": 278,
+    "tn": 1117,
+    "fn": 157,
+    "n_positive": 1043,
+    "n_negative": 1395
+  }
+}

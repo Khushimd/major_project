@@ -1,0 +1,3 @@
+,pred_benign,pred_melanoma
+true_strict_benign,13,147
+true_melanoma,0,40

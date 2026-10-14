@@ -1,0 +1,56 @@
+{
+  "experiment": "experiment_B_weighted_bce_smoothing",
+  "label": "Experiment B: class-weighted BCE + label smoothing 0.05 (train split only)",
+  "seed": 42,
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign",
+  "counts": {
+    "train": {
+      "total": 7961,
+      "melanoma": 4747,
+      "benign": 3214
+    },
+    "val": {
+      "total": 1706,
+      "melanoma": 1016,
+      "benign": 690
+    },
+    "test": {
+      "total": 1706,
+      "melanoma": 1024,
+      "benign": 682
+    }
+  },
+  "preprocessing": "BGR->RGB; downscale max side 1024 if larger (required because many DICM images are ~30MP); DullRazor hair removal; light denoise; resize 224; /255; ImageNet preprocess inside model; no CLAHE; no lesion crop",
+  "augmentation": "get_tf_data_augmentation_fn: flip, small rotation/zoom/translation, brightness/contrast, mild saturation/hue, light noise, mild blur, occasional synthetic hair; train only",
+  "optimizer": "AdamW with staged LR 1e-3 / 1e-4 / 1e-5",
+  "loss": "BinaryCrossentropy(label_smoothing=0.05)",
+  "class_weight": {
+    "0": 1.2384878655880522,
+    "1": 0.8385295976406151
+  },
+  "finetune": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "test_used_for_tuning": false,
+  "ph2_used": false
+}

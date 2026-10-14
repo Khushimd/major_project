@@ -1,0 +1,28 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('patients') }}{% endblock %}
+{% block heading %}{{ patient.full_name }}{% endblock %}
+{% block subhead %}{{ patient.phone or 'No phone on file' }} · {{ (patient.profile or {}).chart_id or ('P' ~ patient.id) }}{% endblock %}
+{% block content %}
+<p>{{ (patient.profile or {}).age or '—' }} · {{ (patient.profile or {}).sex or '—' }}</p>
+<p><a class="btn btn-cta" href="{{ url_for('doctor.analyze', patient_id=patient.id) }}">Start New Patient Analysis</a></p>
+<h3 class="section-title">Previous reports and analyses</h3>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Date</th><th>AI prediction</th><th>AJCC</th><th>Report</th><th></th></tr></thead>
+    <tbody>
+      {% for c in cases %}
+      <tr>
+        <td>{{ c.created_at }}</td>
+        <td>{{ c.prediction|ai_label }}</td>
+        <td>{{ c.ajcc_stage or '—' }}</td>
+        <td>{% if c.review_status == 'finalized' %}Generated{% else %}In consultation{% endif %}</td>
+        <td><a href="{{ url_for('doctor.case_review', case_id=c.id) }}">Open</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5">No analyses on file.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

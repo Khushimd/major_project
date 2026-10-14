@@ -1,0 +1,101 @@
+image_path,image_id,isic_id,label,class_name,patient_id,lesion_id,group_id,source_dataset,diagnosis,benign_malignant,target,official_class,ai_estimated_probability,predicted_label
+C:\Projects\major-project\dataset\raw\train\ISIC_6532137.jpg,ISIC_6532137,ISIC_6532137,0,Benign,IP_8039381,,patient:IP_8039381,ISIC-2020,unknown,benign,0.0,,0.21781840324401855,0
+C:\Projects\major-project\dataset\raw\train\ISIC_5600337.jpg,ISIC_5600337,ISIC_5600337,0,Benign,IP_2114130,,patient:IP_2114130,ISIC-2020,unknown,benign,0.0,,0.6989019215106964,1
+C:\Projects\major-project\dataset\raw\train\ISIC_7594368.jpg,ISIC_7594368,ISIC_7594368,0,Benign,IP_0078294,,patient:IP_0078294,ISIC-2020,unknown,benign,0.0,,0.37151431739330293,0
+C:\Projects\major-project\dataset\raw\train\ISIC_0181017.jpg,ISIC_0181017,ISIC_0181017,0,Benign,IP_7345731,,patient:IP_7345731,ISIC-2020,unknown,benign,0.0,,0.4389303609728813,0
+C:\Projects\major-project\images\ISIC_0069946.jpg,ISIC_0069946,ISIC_0069946,1,Melanoma,,IL_2936850,lesion:IL_2936850,ISIC-DICM-17K,melanoma,,,1.0,0.9987049728631973,1
+C:\Projects\major-project\dataset\raw\train\ISIC_7768638.jpg,ISIC_7768638,ISIC_7768638,0,Benign,IP_6887203,,patient:IP_6887203,ISIC-2020,unknown,benign,0.0,,0.33426367491483683,0
+C:\Projects\major-project\images\ISIC_8325226.jpg,ISIC_8325226,ISIC_8325226,1,Melanoma,IP_0585473,IL_6297591,patient:IP_0585473,ISIC-DICM-17K,melanoma,,,1.0,0.5496508583426476,1
+C:\Projects\major-project\images\ISIC_0033333.jpg,ISIC_0033333,ISIC_0033333,1,Melanoma,,IL_8659124,lesion:IL_8659124,ISIC-DICM-17K,melanoma,,,1.0,0.8772365033626556,1
+C:\Projects\major-project\images\ISIC_0011482.jpg,ISIC_0011482,ISIC_0011482,1,Melanoma,IP_7108438,IL_9090741,patient:IP_7108438,ISIC-DICM-17K,melanoma,,,1.0,0.503325666487217,1
+C:\Projects\major-project\dataset\raw\train\ISIC_7634023.jpg,ISIC_7634023,ISIC_7634023,0,Benign,IP_5176722,IL_4203573,patient:IP_5176722,ISIC-2020,nevus,benign,0.0,,0.24572407230734825,0
+C:\Projects\major-project\dataset\raw\train\ISIC_7989119.jpg,ISIC_7989119,ISIC_7989119,0,Benign,IP_6245507,,patient:IP_6245507,ISIC-2020,unknown,benign,0.0,,0.2583903416991234,0
+C:\Projects\major-project\images\ISIC_3162213.jpg,ISIC_3162213,ISIC_3162213,1,Melanoma,IP_0180807,IL_3106504,patient:IP_0180807,ISIC-DICM-17K,melanoma,,,1.0,0.45888693630695343,0
+C:\Projects\major-project\dataset\raw\train\ISIC_6051951.jpg,ISIC_6051951,ISIC_6051951,0,Benign,IP_5205991,,patient:IP_5205991,ISIC-2020,unknown,benign,0.0,,0.32216500788927077,0
+C:\Projects\major-project\dataset\raw\train\ISIC_4648604.jpg,ISIC_4648604,ISIC_4648604,0,Benign,IP_9718268,,patient:IP_9718268,ISIC-2020,unknown,benign,0.0,,0.2922422826290131,0
+C:\Projects\major-project\images\ISIC_0053933.jpg,ISIC_0053933,ISIC_0053933,1,Melanoma,,IL_2811642,lesion:IL_2811642,ISIC-DICM-17K,melanoma,,,1.0,0.9936964184045791,1
+C:\Projects\major-project\dataset\raw\train\ISIC_2887668.jpg,ISIC_2887668,ISIC_2887668,0,Benign,IP_1636784,,patient:IP_1636784,ISIC-2020,unknown,benign,0.0,,0.25582583248615265,0
+C:\Projects\major-project\dataset\raw\train\ISIC_9851670.jpg,ISIC_9851670,ISIC_9851670,0,Benign,IP_1636784,,patient:IP_1636784,ISIC-2020,unknown,benign,0.0,,0.23526253029704092,0
+C:\Projects\major-project\dataset\raw\train\ISIC_3597660.jpg,ISIC_3597660,ISIC_3597660,0,Benign,IP_8247808,,patient:IP_8247808,ISIC-2020,unknown,benign,0.0,,0.3106658920645714,0
+C:\Projects\major-project\dataset\raw\train\ISIC_6809191.jpg,ISIC_6809191,ISIC_6809191,0,Benign,IP_4565105,,patient:IP_4565105,ISIC-2020,unknown,benign,0.0,,0.3570903748273849,0
+C:\Projects\major-project\images\ISIC_0061520.jpg,ISIC_0061520,ISIC_0061520,1,Melanoma,,IL_5230458,lesion:IL_5230458,ISIC-DICM-17K,melanoma,,,1.0,0.997894412279129,1
+C:\Projects\major-project\images\ISIC_0021253.jpg,ISIC_0021253,ISIC_0021253,1,Melanoma,IP_1425688,,patient:IP_1425688,ISIC-DICM-17K,squamous cell carcinoma,,,1.0,0.7655470073223113,1
+C:\Projects\major-project\dataset\raw\train\ISIC_1352280.jpg,ISIC_1352280,ISIC_1352280,0,Benign,IP_9387565,IL_6229151,patient:IP_9387565,ISIC-2020,nevus,benign,0.0,,0.26606390103697775,0
+C:\Projects\major-project\dataset\raw\train\ISIC_4148086.jpg,ISIC_4148086,ISIC_4148086,0,Benign,IP_6676823,IL_9728334,patient:IP_6676823,ISIC-2020,unknown,benign,0.0,,0.33790753483772273,0
+C:\Projects\major-project\images\ISIC_0012408.jpg,ISIC_0012408,ISIC_0012408,1,Melanoma,,,image:ISIC_0012408,ISIC-DICM-17K,basal cell carcinoma,,,1.0,0.8356393158435822,1
+C:\Projects\major-project\dataset\raw\train\ISIC_5546806.jpg,ISIC_5546806,ISIC_5546806,0,Benign,IP_3531652,,patient:IP_3531652,ISIC-2020,unknown,benign,0.0,,0.31568222194910045,0
+C:\Projects\major-project\images\ISIC_0010469.jpg,ISIC_0010469,ISIC_0010469,1,Melanoma,,,image:ISIC_0010469,ISIC-DICM-17K,melanoma,,,1.0,0.8643655061721802,1
+C:\Projects\major-project\images\ISIC_0031005.jpg,ISIC_0031005,ISIC_0031005,1,Melanoma,,IL_9702658,lesion:IL_9702658,ISIC-DICM-17K,melanoma,,,1.0,0.9032888025045395,1
+C:\Projects\major-project\images\ISIC_0030366.jpg,ISIC_0030366,ISIC_0030366,1,Melanoma,,IL_9771366,lesion:IL_9771366,ISIC-DICM-17K,melanoma,,,1.0,0.3954146474599838,0
+C:\Projects\major-project\dataset\raw\train\ISIC_7821675.jpg,ISIC_7821675,ISIC_7821675,0,Benign,IP_7442385,,patient:IP_7442385,ISIC-2020,nevus,benign,0.0,,0.3704612344503403,0
+C:\Projects\major-project\images\ISIC_0024085.jpg,ISIC_0024085,ISIC_0024085,1,Melanoma,IP_1679579,,patient:IP_1679579,ISIC-DICM-17K,melanoma,,,1.0,0.5182417184114456,1
+C:\Projects\major-project\dataset\raw\train\ISIC_7599973.jpg,ISIC_7599973,ISIC_7599973,0,Benign,IP_2752722,,patient:IP_2752722,ISIC-2020,unknown,benign,0.0,,0.2861230164766312,0
+C:\Projects\major-project\dataset\raw\train\ISIC_8531942.jpg,ISIC_8531942,ISIC_8531942,0,Benign,IP_8402958,,patient:IP_8402958,ISIC-2020,nevus,benign,0.0,,0.23736515194177626,0
+C:\Projects\major-project\dataset\raw\train\ISIC_2694383.jpg,ISIC_2694383,ISIC_2694383,0,Benign,IP_2263888,,patient:IP_2263888,ISIC-2020,unknown,benign,0.0,,0.4691197112202644,0
+C:\Projects\major-project\images\ISIC_0023495.jpg,ISIC_0023495,ISIC_0023495,1,Melanoma,IP_4465811,,patient:IP_4465811,ISIC-DICM-17K,melanoma,,,1.0,0.5664918735623359,1
+C:\Projects\major-project\images\ISIC_0022942.jpg,ISIC_0022942,ISIC_0022942,1,Melanoma,IP_6695833,,patient:IP_6695833,ISIC-DICM-17K,basal cell carcinoma,,,1.0,0.8989620506763458,1
+C:\Projects\major-project\dataset\raw\train\ISIC_4920999.jpg,ISIC_4920999,ISIC_4920999,0,Benign,IP_9086201,,patient:IP_9086201,ISIC-2020,unknown,benign,0.0,,0.5730608940124512,1
+C:\Projects\major-project\images\ISIC_0019315.jpg,ISIC_0019315,ISIC_0019315,1,Melanoma,IP_9509536,,patient:IP_9509536,ISIC-DICM-17K,melanoma,,,1.0,0.3065456062555313,0
+C:\Projects\major-project\dataset\raw\train\ISIC_2969373.jpg,ISIC_2969373,ISIC_2969373,0,Benign,IP_7522397,,patient:IP_7522397,ISIC-2020,unknown,benign,0.0,,0.5199936360120774,1
+C:\Projects\major-project\images\ISIC_0066733.jpg,ISIC_0066733,ISIC_0066733,1,Melanoma,,IL_1936775,lesion:IL_1936775,ISIC-DICM-17K,melanoma,,,1.0,0.9750495165586471,1
+C:\Projects\major-project\dataset\raw\train\ISIC_8360023.jpg,ISIC_8360023,ISIC_8360023,0,Benign,IP_4576785,,patient:IP_4576785,ISIC-2020,unknown,benign,0.0,,0.7705294385552406,1
+C:\Projects\major-project\dataset\raw\train\ISIC_8674332.jpg,ISIC_8674332,ISIC_8674332,0,Benign,IP_6887429,,patient:IP_6887429,ISIC-2020,nevus,benign,0.0,,0.24947324618697167,0
+C:\Projects\major-project\images\ISIC_4459528.jpg,ISIC_4459528,ISIC_4459528,1,Melanoma,,,image:ISIC_4459528,ISIC-DICM-17K,squamous cell carcinoma,,,1.0,0.6103085428476334,1
+C:\Projects\major-project\images\ISIC_6775574.jpg,ISIC_6775574,ISIC_6775574,1,Melanoma,IP_5518588,IL_7568313,patient:IP_5518588,ISIC-DICM-17K,basal cell carcinoma,,,1.0,0.9118900775909423,1
+C:\Projects\major-project\dataset\raw\train\ISIC_1561091.jpg,ISIC_1561091,ISIC_1561091,0,Benign,IP_5205991,,patient:IP_5205991,ISIC-2020,unknown,benign,0.0,,0.2911903366446495,0
+C:\Projects\major-project\dataset\raw\train\ISIC_1584242.jpg,ISIC_1584242,ISIC_1584242,0,Benign,IP_8766487,IL_2422543,patient:IP_8766487,ISIC-2020,unknown,benign,0.0,,0.27580160051584246,0
+C:\Projects\major-project\images\ISIC_0022908.jpg,ISIC_0022908,ISIC_0022908,1,Melanoma,IP_7916746,,patient:IP_7916746,ISIC-DICM-17K,basal cell carcinoma,,,1.0,0.7184341639280319,1
+C:\Projects\major-project\dataset\raw\train\ISIC_0476011.jpg,ISIC_0476011,ISIC_0476011,0,Benign,IP_0998852,,patient:IP_0998852,ISIC-2020,unknown,benign,0.0,,0.3396001040935516,0
+C:\Projects\major-project\images\ISIC_0010883.jpg,ISIC_0010883,ISIC_0010883,1,Melanoma,,,image:ISIC_0010883,ISIC-DICM-17K,melanoma,,,1.0,0.8025474458932876,1
+C:\Projects\major-project\dataset\raw\train\ISIC_5664256.jpg,ISIC_5664256,ISIC_5664256,0,Benign,IP_6887203,,patient:IP_6887203,ISIC-2020,unknown,benign,0.0,,0.192038057744503,0
+C:\Projects\major-project\images\ISIC_0058426.jpg,ISIC_0058426,ISIC_0058426,1,Melanoma,,IL_7298952,lesion:IL_7298952,ISIC-DICM-17K,melanoma,,,1.0,0.8577838063240051,1
+C:\Projects\major-project\dataset\raw\train\ISIC_4590810.jpg,ISIC_4590810,ISIC_4590810,0,Benign,IP_2172761,,patient:IP_2172761,ISIC-2020,unknown,benign,0.0,,0.2491321988403797,0
+C:\Projects\major-project\dataset\raw\train\ISIC_2651049.jpg,ISIC_2651049,ISIC_2651049,0,Benign,IP_3365162,,patient:IP_3365162,ISIC-2020,seborrheic keratosis,benign,0.0,,0.46247697770595547,0
+C:\Projects\major-project\images\ISIC_9159477.jpg,ISIC_9159477,ISIC_9159477,1,Melanoma,IP_3039884,IL_1428469,patient:IP_3039884,ISIC-DICM-17K,melanoma,,,1.0,0.5162992775440216,1
+C:\Projects\major-project\dataset\raw\train\ISIC_7652731.jpg,ISIC_7652731,ISIC_7652731,0,Benign,IP_4173362,,patient:IP_4173362,ISIC-2020,nevus,benign,0.0,,0.5536743849515915,1
+C:\Projects\major-project\dataset\raw\train\ISIC_4507193.jpg,ISIC_4507193,ISIC_4507193,0,Benign,IP_3561719,,patient:IP_3561719,ISIC-2020,unknown,benign,0.0,,0.25573898702859876,0
+C:\Projects\major-project\images\ISIC_0061915.jpg,ISIC_0061915,ISIC_0061915,1,Melanoma,,IL_7775034,lesion:IL_7775034,ISIC-DICM-17K,melanoma,,,1.0,0.9995757967233658,1
+C:\Projects\major-project\dataset\raw\train\ISIC_9876515.jpg,ISIC_9876515,ISIC_9876515,0,Benign,IP_2823659,,patient:IP_2823659,ISIC-2020,unknown,benign,0.0,,0.36093421727418895,0
+C:\Projects\major-project\dataset\raw\train\ISIC_5474398.jpg,ISIC_5474398,ISIC_5474398,0,Benign,IP_2465701,,patient:IP_2465701,ISIC-2020,nevus,benign,0.0,,0.27778846472501756,0
+C:\Projects\major-project\images\ISIC_0023583.jpg,ISIC_0023583,ISIC_0023583,1,Melanoma,IP_9972430,,patient:IP_9972430,ISIC-DICM-17K,melanoma metastasis,,,1.0,0.977643859386444,1
+C:\Projects\major-project\images\ISIC_0011136.jpg,ISIC_0011136,ISIC_0011136,1,Melanoma,,,image:ISIC_0011136,ISIC-DICM-17K,melanoma,,,1.0,0.5575697183609009,1
+C:\Projects\major-project\images\ISIC_0023488.jpg,ISIC_0023488,ISIC_0023488,1,Melanoma,IP_4465811,,patient:IP_4465811,ISIC-DICM-17K,melanoma,,,1.0,0.6434467196464538,1
+C:\Projects\major-project\dataset\raw\train\ISIC_5580730.jpg,ISIC_5580730,ISIC_5580730,0,Benign,IP_9992027,,patient:IP_9992027,ISIC-2020,unknown,benign,0.0,,0.24176212996244428,0
+C:\Projects\major-project\images\ISIC_0000145.jpg,ISIC_0000145,ISIC_0000145,1,Melanoma,,,image:ISIC_0000145,ISIC-DICM-17K,melanoma,,,1.0,0.8787798255681991,1
+C:\Projects\major-project\images\ISIC_0024083.jpg,ISIC_0024083,ISIC_0024083,1,Melanoma,IP_1747237,,patient:IP_1747237,ISIC-DICM-17K,melanoma,,,1.0,0.8842591822147369,1
+C:\Projects\major-project\dataset\raw\train\ISIC_6409918.jpg,ISIC_6409918,ISIC_6409918,0,Benign,IP_1005683,,patient:IP_1005683,ISIC-2020,unknown,benign,0.0,,0.3060166910290718,0
+C:\Projects\major-project\images\ISIC_0012853.jpg,ISIC_0012853,ISIC_0012853,1,Melanoma,,IL_6587320,lesion:IL_6587320,ISIC-DICM-17K,squamous cell carcinoma,,,1.0,0.7208886355161667,1
+C:\Projects\major-project\images\ISIC_0021250.jpg,ISIC_0021250,ISIC_0021250,1,Melanoma,IP_1425688,,patient:IP_1425688,ISIC-DICM-17K,squamous cell carcinoma,,,1.0,0.7745257705450057,1
+C:\Projects\major-project\dataset\raw\train\ISIC_0451095.jpg,ISIC_0451095,ISIC_0451095,0,Benign,IP_8121625,,patient:IP_8121625,ISIC-2020,unknown,benign,0.0,,0.381331917643547,0
+C:\Projects\major-project\images\ISIC_0061183.jpg,ISIC_0061183,ISIC_0061183,1,Melanoma,,IL_0029160,lesion:IL_0029160,ISIC-DICM-17K,melanoma,,,1.0,0.9682443112134933,1
+C:\Projects\major-project\images\ISIC_0057338.jpg,ISIC_0057338,ISIC_0057338,1,Melanoma,,IL_9036308,lesion:IL_9036308,ISIC-DICM-17K,melanoma,,,1.0,0.8180226951837539,1
+C:\Projects\major-project\images\ISIC_0063606.jpg,ISIC_0063606,ISIC_0063606,1,Melanoma,,IL_2670467,lesion:IL_2670467,ISIC-DICM-17K,melanoma,,,1.0,0.9938077181577682,1
+C:\Projects\major-project\images\ISIC_0062524.jpg,ISIC_0062524,ISIC_0062524,1,Melanoma,,IL_7742330,lesion:IL_7742330,ISIC-DICM-17K,melanoma,,,1.0,0.6968283608555793,1
+C:\Projects\major-project\images\ISIC_0029538.jpg,ISIC_0029538,ISIC_0029538,1,Melanoma,,IL_3826918,lesion:IL_3826918,ISIC-DICM-17K,melanoma,,,1.0,0.5160235896706581,1
+C:\Projects\major-project\images\ISIC_0022291.jpg,ISIC_0022291,ISIC_0022291,1,Melanoma,IP_6398099,,patient:IP_6398099,ISIC-DICM-17K,basal cell carcinoma,,,1.0,0.5695249378681183,1
+C:\Projects\major-project\images\ISIC_0031203.jpg,ISIC_0031203,ISIC_0031203,1,Melanoma,,IL_6540615,lesion:IL_6540615,ISIC-DICM-17K,melanoma,,,1.0,0.6823283225297927,1
+C:\Projects\major-project\dataset\raw\train\ISIC_0495675.jpg,ISIC_0495675,ISIC_0495675,0,Benign,IP_2085351,,patient:IP_2085351,ISIC-2020,unknown,benign,0.0,,0.27391358762979506,0
+C:\Projects\major-project\dataset\raw\train\ISIC_4407024.jpg,ISIC_4407024,ISIC_4407024,0,Benign,IP_4050705,,patient:IP_4050705,ISIC-2020,unknown,benign,0.0,,0.2632543332874775,0
+C:\Projects\major-project\dataset\raw\train\ISIC_6418515.jpg,ISIC_6418515,ISIC_6418515,0,Benign,IP_3878510,,patient:IP_3878510,ISIC-2020,nevus,benign,0.0,,0.23388056755065917,0
+C:\Projects\major-project\images\ISIC_0067120.jpg,ISIC_0067120,ISIC_0067120,1,Melanoma,,IL_4734832,lesion:IL_4734832,ISIC-DICM-17K,melanoma,,,1.0,0.901391190290451,1
+C:\Projects\major-project\images\ISIC_2153041.jpg,ISIC_2153041,ISIC_2153041,1,Melanoma,IP_6744475,IL_6378232,patient:IP_6744475,ISIC-DICM-17K,melanoma,,,1.0,0.9802227318286896,1
+C:\Projects\major-project\dataset\raw\train\ISIC_4344870.jpg,ISIC_4344870,ISIC_4344870,0,Benign,IP_7330399,IL_9635227,patient:IP_7330399,ISIC-2020,unknown,benign,0.0,,0.2257276676595211,0
+C:\Projects\major-project\images\ISIC_0022207.jpg,ISIC_0022207,ISIC_0022207,1,Melanoma,IP_1606310,,patient:IP_1606310,ISIC-DICM-17K,squamous cell carcinoma,,,1.0,0.9416634321212768,1
+C:\Projects\major-project\images\ISIC_3435596.jpg,ISIC_3435596,ISIC_3435596,1,Melanoma,IP_9746668,IL_1072654,patient:IP_9746668,ISIC-DICM-17K,melanoma,,,1.0,0.6472980320453643,1
+C:\Projects\major-project\dataset\raw\train\ISIC_2452083.jpg,ISIC_2452083,ISIC_2452083,0,Benign,IP_4314793,,patient:IP_4314793,ISIC-2020,unknown,benign,0.0,,0.2400052100419998,0
+C:\Projects\major-project\images\ISIC_0046242.jpg,ISIC_0046242,ISIC_0046242,1,Melanoma,,,image:ISIC_0046242,ISIC-DICM-17K,melanoma,,,1.0,0.8253630995750427,1
+C:\Projects\major-project\images\ISIC_0013365.jpg,ISIC_0013365,ISIC_0013365,1,Melanoma,,IL_3257769,lesion:IL_3257769,ISIC-DICM-17K,melanoma,,,1.0,0.6716239750385284,1
+C:\Projects\major-project\dataset\raw\train\ISIC_1130669.jpg,ISIC_1130669,ISIC_1130669,0,Benign,IP_5439716,IL_5051956,patient:IP_5439716,ISIC-2020,nevus,benign,0.0,,0.23201353922486306,0
+C:\Projects\major-project\dataset\raw\train\ISIC_9727132.jpg,ISIC_9727132,ISIC_9727132,0,Benign,IP_4548593,,patient:IP_4548593,ISIC-2020,unknown,benign,0.0,,0.3593374341726303,0
+C:\Projects\major-project\dataset\raw\train\ISIC_0975117.jpg,ISIC_0975117,ISIC_0975117,0,Benign,IP_1522453,,patient:IP_1522453,ISIC-2020,unknown,benign,0.0,,0.6257271260023117,1
+C:\Projects\major-project\dataset\raw\train\ISIC_5573733.jpg,ISIC_5573733,ISIC_5573733,0,Benign,IP_9888932,,patient:IP_9888932,ISIC-2020,unknown,benign,0.0,,0.36361951678991317,0
+C:\Projects\major-project\images\ISIC_0026531.jpg,ISIC_0026531,ISIC_0026531,1,Melanoma,,IL_7331513,lesion:IL_7331513,ISIC-DICM-17K,melanoma,,,1.0,0.9909794092178345,1
+C:\Projects\major-project\images\ISIC_0028519.jpg,ISIC_0028519,ISIC_0028519,1,Melanoma,,IL_8695383,lesion:IL_8695383,ISIC-DICM-17K,melanoma,,,1.0,0.9600597262382506,1
+C:\Projects\major-project\dataset\raw\train\ISIC_8099453.jpg,ISIC_8099453,ISIC_8099453,0,Benign,IP_7946270,,patient:IP_7946270,ISIC-2020,unknown,benign,0.0,,0.5113581940531731,1
+C:\Projects\major-project\images\ISIC_0023300.jpg,ISIC_0023300,ISIC_0023300,1,Melanoma,IP_5985699,,patient:IP_5985699,ISIC-DICM-17K,melanoma,,,1.0,0.759820657968521,1
+C:\Projects\major-project\images\ISIC_0033038.jpg,ISIC_0033038,ISIC_0033038,1,Melanoma,,IL_1970176,lesion:IL_1970176,ISIC-DICM-17K,melanoma,,,1.0,0.8413130521774292,1
+C:\Projects\major-project\images\ISIC_0064080.jpg,ISIC_0064080,ISIC_0064080,1,Melanoma,,IL_0029160,lesion:IL_0029160,ISIC-DICM-17K,melanoma,,,1.0,0.9087125778198242,1
+C:\Projects\major-project\dataset\raw\train\ISIC_6320012.jpg,ISIC_6320012,ISIC_6320012,0,Benign,IP_1039004,IL_2952637,patient:IP_1039004,ISIC-2020,lentigo NOS,benign,0.0,,0.4620652839541435,0
+C:\Projects\major-project\dataset\raw\train\ISIC_3212311.jpg,ISIC_3212311,ISIC_3212311,0,Benign,IP_5945814,,patient:IP_5945814,ISIC-2020,unknown,benign,0.0,,0.3823140785098076,0
+C:\Projects\major-project\images\ISIC_0058418.jpg,ISIC_0058418,ISIC_0058418,1,Melanoma,,IL_0441535,lesion:IL_0441535,ISIC-DICM-17K,melanoma,,,1.0,0.8868962764739989,1
+C:\Projects\major-project\dataset\raw\train\ISIC_2189426.jpg,ISIC_2189426,ISIC_2189426,0,Benign,IP_9433384,,patient:IP_9433384,ISIC-2020,unknown,benign,0.0,,0.2697557061910629,0

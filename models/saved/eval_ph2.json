@@ -1,0 +1,1882 @@
+{
+  "dataset": "PH2",
+  "n": 200,
+  "missing": [],
+  "decision_threshold": 0.3,
+  "clinical_counts": {
+    "common_nevus": 80,
+    "atypical_nevus": 80,
+    "melanoma": 40
+  },
+  "positive_class": "melanoma (clinical diagnosis = 2)",
+  "efficientnet": {
+    "threshold": 0.3,
+    "accuracy": 0.745,
+    "precision": 0.43209876543209874,
+    "recall": 0.875,
+    "sensitivity": 0.875,
+    "specificity": 0.7125,
+    "f1": 0.5785123966942148,
+    "auc": 0.88609375,
+    "pr_auc": 0.7473037373223325,
+    "tp": 35,
+    "fp": 46,
+    "tn": 114,
+    "fn": 5,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "mobilenet": {
+    "threshold": 0.3,
+    "accuracy": 0.865,
+    "precision": 0.6226415094339622,
+    "recall": 0.825,
+    "sensitivity": 0.825,
+    "specificity": 0.875,
+    "f1": 0.7096774193548387,
+    "auc": 0.90609375,
+    "pr_auc": 0.7587897569794809,
+    "tp": 33,
+    "fp": 20,
+    "tn": 140,
+    "fn": 7,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "hybrid": {
+    "threshold": 0.3,
+    "accuracy": 0.785,
+    "precision": 0.4805194805194805,
+    "recall": 0.925,
+    "sensitivity": 0.925,
+    "specificity": 0.75,
+    "f1": 0.6324786324786325,
+    "auc": 0.90296875,
+    "pr_auc": 0.7754906297938796,
+    "tp": 37,
+    "fp": 40,
+    "tn": 120,
+    "fn": 3,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "predicted_melanoma_by_clinical": {
+    "common_nevus": {
+      "n": 80,
+      "predicted_melanoma": 12,
+      "predicted_non_melanoma": 68
+    },
+    "atypical_nevus": {
+      "n": 80,
+      "predicted_melanoma": 28,
+      "predicted_non_melanoma": 52
+    },
+    "melanoma": {
+      "n": 40,
+      "predicted_melanoma": 37,
+      "predicted_non_melanoma": 3
+    }
+  },
+  "cases": [
+    {
+      "id": "IMD002",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.290556,
+      "efficientnet": 0.304205,
+      "mobilenet": 0.213212
+    },
+    {
+      "id": "IMD003",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.164756,
+      "efficientnet": 0.179563,
+      "mobilenet": 0.080848
+    },
+    {
+      "id": "IMD004",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.510492,
+      "efficientnet": 0.542362,
+      "mobilenet": 0.329896
+    },
+    {
+      "id": "IMD006",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.235308,
+      "efficientnet": 0.263482,
+      "mobilenet": 0.075653
+    },
+    {
+      "id": "IMD008",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.093835,
+      "efficientnet": 0.102427,
+      "mobilenet": 0.045148
+    },
+    {
+      "id": "IMD009",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.130635,
+      "efficientnet": 0.135776,
+      "mobilenet": 0.101504
+    },
+    {
+      "id": "IMD010",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.615654,
+      "efficientnet": 0.709512,
+      "mobilenet": 0.083797
+    },
+    {
+      "id": "IMD013",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.101525,
+      "efficientnet": 0.104777,
+      "mobilenet": 0.083092
+    },
+    {
+      "id": "IMD014",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.225868,
+      "efficientnet": 0.261488,
+      "mobilenet": 0.024017
+    },
+    {
+      "id": "IMD015",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.17983,
+      "efficientnet": 0.198914,
+      "mobilenet": 0.071682
+    },
+    {
+      "id": "IMD016",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.0809,
+      "efficientnet": 0.083793,
+      "mobilenet": 0.06451
+    },
+    {
+      "id": "IMD017",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.090172,
+      "efficientnet": 0.092835,
+      "mobilenet": 0.075082
+    },
+    {
+      "id": "IMD018",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.263096,
+      "efficientnet": 0.274946,
+      "mobilenet": 0.195944
+    },
+    {
+      "id": "IMD019",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.104556,
+      "efficientnet": 0.100136,
+      "mobilenet": 0.129603
+    },
+    {
+      "id": "IMD020",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.245884,
+      "efficientnet": 0.258394,
+      "mobilenet": 0.17499
+    },
+    {
+      "id": "IMD021",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.601838,
+      "efficientnet": 0.682853,
+      "mobilenet": 0.142751
+    },
+    {
+      "id": "IMD022",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.141167,
+      "efficientnet": 0.158174,
+      "mobilenet": 0.044792
+    },
+    {
+      "id": "IMD023",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.18554,
+      "efficientnet": 0.205573,
+      "mobilenet": 0.072019
+    },
+    {
+      "id": "IMD024",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.255326,
+      "efficientnet": 0.270696,
+      "mobilenet": 0.168226
+    },
+    {
+      "id": "IMD025",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.108327,
+      "efficientnet": 0.110924,
+      "mobilenet": 0.09361
+    },
+    {
+      "id": "IMD027",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.11221,
+      "efficientnet": 0.108228,
+      "mobilenet": 0.134779
+    },
+    {
+      "id": "IMD030",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.368459,
+      "efficientnet": 0.422153,
+      "mobilenet": 0.064195
+    },
+    {
+      "id": "IMD031",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.787542,
+      "efficientnet": 0.775889,
+      "mobilenet": 0.853574
+    },
+    {
+      "id": "IMD032",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.265827,
+      "efficientnet": 0.282031,
+      "mobilenet": 0.174002
+    },
+    {
+      "id": "IMD033",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.312258,
+      "efficientnet": 0.328983,
+      "mobilenet": 0.21748
+    },
+    {
+      "id": "IMD035",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.178774,
+      "efficientnet": 0.195119,
+      "mobilenet": 0.086152
+    },
+    {
+      "id": "IMD036",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.160269,
+      "efficientnet": 0.150815,
+      "mobilenet": 0.213838
+    },
+    {
+      "id": "IMD037",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.40661,
+      "efficientnet": 0.451273,
+      "mobilenet": 0.153517
+    },
+    {
+      "id": "IMD038",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.182056,
+      "efficientnet": 0.188503,
+      "mobilenet": 0.145526
+    },
+    {
+      "id": "IMD039",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.164324,
+      "efficientnet": 0.176061,
+      "mobilenet": 0.097814
+    },
+    {
+      "id": "IMD040",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.157256,
+      "efficientnet": 0.169828,
+      "mobilenet": 0.086013
+    },
+    {
+      "id": "IMD041",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.355635,
+      "efficientnet": 0.376768,
+      "mobilenet": 0.235884
+    },
+    {
+      "id": "IMD042",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.457714,
+      "efficientnet": 0.456936,
+      "mobilenet": 0.462122
+    },
+    {
+      "id": "IMD043",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.267561,
+      "efficientnet": 0.273679,
+      "mobilenet": 0.23289
+    },
+    {
+      "id": "IMD044",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.137184,
+      "efficientnet": 0.151558,
+      "mobilenet": 0.055734
+    },
+    {
+      "id": "IMD045",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.1003,
+      "efficientnet": 0.108878,
+      "mobilenet": 0.05169
+    },
+    {
+      "id": "IMD047",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.352024,
+      "efficientnet": 0.384874,
+      "mobilenet": 0.16587
+    },
+    {
+      "id": "IMD048",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.182211,
+      "efficientnet": 0.202067,
+      "mobilenet": 0.069692
+    },
+    {
+      "id": "IMD049",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.211726,
+      "efficientnet": 0.201894,
+      "mobilenet": 0.267441
+    },
+    {
+      "id": "IMD050",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.065684,
+      "efficientnet": 0.065439,
+      "mobilenet": 0.067069
+    },
+    {
+      "id": "IMD057",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.603506,
+      "efficientnet": 0.592412,
+      "mobilenet": 0.666372
+    },
+    {
+      "id": "IMD058",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.629425,
+      "efficientnet": 0.682679,
+      "mobilenet": 0.32765
+    },
+    {
+      "id": "IMD061",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.365663,
+      "efficientnet": 0.32079,
+      "mobilenet": 0.61994
+    },
+    {
+      "id": "IMD063",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.702925,
+      "efficientnet": 0.713323,
+      "mobilenet": 0.644002
+    },
+    {
+      "id": "IMD064",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.768284,
+      "efficientnet": 0.830616,
+      "mobilenet": 0.415066
+    },
+    {
+      "id": "IMD065",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.907747,
+      "efficientnet": 0.935018,
+      "mobilenet": 0.753214
+    },
+    {
+      "id": "IMD075",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.391891,
+      "efficientnet": 0.431092,
+      "mobilenet": 0.16975
+    },
+    {
+      "id": "IMD076",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.186975,
+      "efficientnet": 0.181501,
+      "mobilenet": 0.21799
+    },
+    {
+      "id": "IMD078",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.298847,
+      "efficientnet": 0.322531,
+      "mobilenet": 0.16464
+    },
+    {
+      "id": "IMD080",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.718165,
+      "efficientnet": 0.767087,
+      "mobilenet": 0.440942
+    },
+    {
+      "id": "IMD085",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.46462,
+      "efficientnet": 0.488417,
+      "mobilenet": 0.329769
+    },
+    {
+      "id": "IMD088",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.616994,
+      "efficientnet": 0.640276,
+      "mobilenet": 0.485065
+    },
+    {
+      "id": "IMD090",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.800641,
+      "efficientnet": 0.83128,
+      "mobilenet": 0.627017
+    },
+    {
+      "id": "IMD091",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Benign",
+      "hybrid_prob": 0.128646,
+      "efficientnet": 0.131534,
+      "mobilenet": 0.112281
+    },
+    {
+      "id": "IMD092",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.133032,
+      "efficientnet": 0.148641,
+      "mobilenet": 0.044582
+    },
+    {
+      "id": "IMD101",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.427187,
+      "efficientnet": 0.475719,
+      "mobilenet": 0.152171
+    },
+    {
+      "id": "IMD103",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.087056,
+      "efficientnet": 0.088858,
+      "mobilenet": 0.076843
+    },
+    {
+      "id": "IMD105",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.048025,
+      "efficientnet": 0.042102,
+      "mobilenet": 0.081588
+    },
+    {
+      "id": "IMD107",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.068953,
+      "efficientnet": 0.07045,
+      "mobilenet": 0.060473
+    },
+    {
+      "id": "IMD108",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.152975,
+      "efficientnet": 0.168879,
+      "mobilenet": 0.062852
+    },
+    {
+      "id": "IMD112",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.263756,
+      "efficientnet": 0.288353,
+      "mobilenet": 0.124371
+    },
+    {
+      "id": "IMD118",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.179061,
+      "efficientnet": 0.180252,
+      "mobilenet": 0.172313
+    },
+    {
+      "id": "IMD120",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.126872,
+      "efficientnet": 0.117133,
+      "mobilenet": 0.182058
+    },
+    {
+      "id": "IMD125",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.054278,
+      "efficientnet": 0.05256,
+      "mobilenet": 0.064015
+    },
+    {
+      "id": "IMD126",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.222083,
+      "efficientnet": 0.214415,
+      "mobilenet": 0.265535
+    },
+    {
+      "id": "IMD132",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.25433,
+      "efficientnet": 0.27656,
+      "mobilenet": 0.128358
+    },
+    {
+      "id": "IMD133",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.073295,
+      "efficientnet": 0.080429,
+      "mobilenet": 0.032873
+    },
+    {
+      "id": "IMD134",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.055604,
+      "efficientnet": 0.058828,
+      "mobilenet": 0.037334
+    },
+    {
+      "id": "IMD135",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.135534,
+      "efficientnet": 0.150321,
+      "mobilenet": 0.051739
+    },
+    {
+      "id": "IMD137",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.097028,
+      "efficientnet": 0.1005,
+      "mobilenet": 0.077351
+    },
+    {
+      "id": "IMD138",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.246797,
+      "efficientnet": 0.277729,
+      "mobilenet": 0.071516
+    },
+    {
+      "id": "IMD139",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.198331,
+      "efficientnet": 0.209477,
+      "mobilenet": 0.135169
+    },
+    {
+      "id": "IMD140",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.181816,
+      "efficientnet": 0.201858,
+      "mobilenet": 0.068244
+    },
+    {
+      "id": "IMD142",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.075976,
+      "efficientnet": 0.077087,
+      "mobilenet": 0.069683
+    },
+    {
+      "id": "IMD143",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.062519,
+      "efficientnet": 0.056166,
+      "mobilenet": 0.098516
+    },
+    {
+      "id": "IMD144",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.127128,
+      "efficientnet": 0.134203,
+      "mobilenet": 0.087039
+    },
+    {
+      "id": "IMD146",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.036878,
+      "efficientnet": 0.031237,
+      "mobilenet": 0.068845
+    },
+    {
+      "id": "IMD147",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.17614,
+      "efficientnet": 0.184734,
+      "mobilenet": 0.127443
+    },
+    {
+      "id": "IMD149",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.269379,
+      "efficientnet": 0.251116,
+      "mobilenet": 0.372867
+    },
+    {
+      "id": "IMD150",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.380194,
+      "efficientnet": 0.403925,
+      "mobilenet": 0.245715
+    },
+    {
+      "id": "IMD152",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.134316,
+      "efficientnet": 0.148582,
+      "mobilenet": 0.053475
+    },
+    {
+      "id": "IMD153",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.278185,
+      "efficientnet": 0.305207,
+      "mobilenet": 0.125065
+    },
+    {
+      "id": "IMD154",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.331337,
+      "efficientnet": 0.370411,
+      "mobilenet": 0.109917
+    },
+    {
+      "id": "IMD155",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.110475,
+      "efficientnet": 0.125374,
+      "mobilenet": 0.026049
+    },
+    {
+      "id": "IMD156",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.062279,
+      "efficientnet": 0.070265,
+      "mobilenet": 0.017025
+    },
+    {
+      "id": "IMD157",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.224003,
+      "efficientnet": 0.239156,
+      "mobilenet": 0.138138
+    },
+    {
+      "id": "IMD159",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.06408,
+      "efficientnet": 0.059544,
+      "mobilenet": 0.089785
+    },
+    {
+      "id": "IMD160",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.220089,
+      "efficientnet": 0.227883,
+      "mobilenet": 0.175926
+    },
+    {
+      "id": "IMD161",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.32202,
+      "efficientnet": 0.328259,
+      "mobilenet": 0.286664
+    },
+    {
+      "id": "IMD162",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.094622,
+      "efficientnet": 0.101429,
+      "mobilenet": 0.056046
+    },
+    {
+      "id": "IMD164",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.04796,
+      "efficientnet": 0.049782,
+      "mobilenet": 0.037635
+    },
+    {
+      "id": "IMD166",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.250664,
+      "efficientnet": 0.208008,
+      "mobilenet": 0.492382
+    },
+    {
+      "id": "IMD168",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.874962,
+      "efficientnet": 0.87559,
+      "mobilenet": 0.871407
+    },
+    {
+      "id": "IMD169",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.431845,
+      "efficientnet": 0.460634,
+      "mobilenet": 0.268708
+    },
+    {
+      "id": "IMD170",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.281035,
+      "efficientnet": 0.286572,
+      "mobilenet": 0.249655
+    },
+    {
+      "id": "IMD171",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.565754,
+      "efficientnet": 0.594068,
+      "mobilenet": 0.405308
+    },
+    {
+      "id": "IMD173",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.087571,
+      "efficientnet": 0.09287,
+      "mobilenet": 0.057542
+    },
+    {
+      "id": "IMD175",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.067689,
+      "efficientnet": 0.071216,
+      "mobilenet": 0.047701
+    },
+    {
+      "id": "IMD176",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.090823,
+      "efficientnet": 0.093272,
+      "mobilenet": 0.076947
+    },
+    {
+      "id": "IMD177",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.180794,
+      "efficientnet": 0.19347,
+      "mobilenet": 0.10896
+    },
+    {
+      "id": "IMD182",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.125648,
+      "efficientnet": 0.137677,
+      "mobilenet": 0.057486
+    },
+    {
+      "id": "IMD196",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.119288,
+      "efficientnet": 0.126052,
+      "mobilenet": 0.080957
+    },
+    {
+      "id": "IMD197",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.439397,
+      "efficientnet": 0.462655,
+      "mobilenet": 0.307599
+    },
+    {
+      "id": "IMD198",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.066097,
+      "efficientnet": 0.061501,
+      "mobilenet": 0.092142
+    },
+    {
+      "id": "IMD199",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.068173,
+      "efficientnet": 0.074895,
+      "mobilenet": 0.030082
+    },
+    {
+      "id": "IMD200",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.059405,
+      "efficientnet": 0.068085,
+      "mobilenet": 0.010221
+    },
+    {
+      "id": "IMD203",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.10849,
+      "efficientnet": 0.097932,
+      "mobilenet": 0.168315
+    },
+    {
+      "id": "IMD204",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.082375,
+      "efficientnet": 0.079409,
+      "mobilenet": 0.099183
+    },
+    {
+      "id": "IMD206",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.229205,
+      "efficientnet": 0.243858,
+      "mobilenet": 0.146172
+    },
+    {
+      "id": "IMD207",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.056532,
+      "efficientnet": 0.046391,
+      "mobilenet": 0.114
+    },
+    {
+      "id": "IMD208",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.203781,
+      "efficientnet": 0.224467,
+      "mobilenet": 0.086561
+    },
+    {
+      "id": "IMD210",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.806314,
+      "efficientnet": 0.824749,
+      "mobilenet": 0.701853
+    },
+    {
+      "id": "IMD211",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.349682,
+      "efficientnet": 0.372138,
+      "mobilenet": 0.222435
+    },
+    {
+      "id": "IMD219",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.935553,
+      "efficientnet": 0.941252,
+      "mobilenet": 0.903261
+    },
+    {
+      "id": "IMD226",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.197579,
+      "efficientnet": 0.21791,
+      "mobilenet": 0.08237
+    },
+    {
+      "id": "IMD240",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.943087,
+      "efficientnet": 0.970363,
+      "mobilenet": 0.788525
+    },
+    {
+      "id": "IMD242",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.415782,
+      "efficientnet": 0.415029,
+      "mobilenet": 0.420052
+    },
+    {
+      "id": "IMD243",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.218686,
+      "efficientnet": 0.195303,
+      "mobilenet": 0.351193
+    },
+    {
+      "id": "IMD251",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.252622,
+      "efficientnet": 0.274779,
+      "mobilenet": 0.127066
+    },
+    {
+      "id": "IMD254",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.077682,
+      "efficientnet": 0.08176,
+      "mobilenet": 0.054572
+    },
+    {
+      "id": "IMD256",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.274388,
+      "efficientnet": 0.2233,
+      "mobilenet": 0.563886
+    },
+    {
+      "id": "IMD278",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.139006,
+      "efficientnet": 0.155808,
+      "mobilenet": 0.043799
+    },
+    {
+      "id": "IMD279",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.286407,
+      "efficientnet": 0.313816,
+      "mobilenet": 0.131091
+    },
+    {
+      "id": "IMD280",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.330445,
+      "efficientnet": 0.373214,
+      "mobilenet": 0.08809
+    },
+    {
+      "id": "IMD284",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.863233,
+      "efficientnet": 0.945886,
+      "mobilenet": 0.394863
+    },
+    {
+      "id": "IMD285",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Benign",
+      "hybrid_prob": 0.081212,
+      "efficientnet": 0.088634,
+      "mobilenet": 0.039154
+    },
+    {
+      "id": "IMD304",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.136833,
+      "efficientnet": 0.152891,
+      "mobilenet": 0.045841
+    },
+    {
+      "id": "IMD305",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.397292,
+      "efficientnet": 0.412063,
+      "mobilenet": 0.313586
+    },
+    {
+      "id": "IMD306",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.342398,
+      "efficientnet": 0.391584,
+      "mobilenet": 0.063674
+    },
+    {
+      "id": "IMD312",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.244677,
+      "efficientnet": 0.249446,
+      "mobilenet": 0.217653
+    },
+    {
+      "id": "IMD328",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.189295,
+      "efficientnet": 0.177105,
+      "mobilenet": 0.258376
+    },
+    {
+      "id": "IMD331",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.413414,
+      "efficientnet": 0.470158,
+      "mobilenet": 0.091865
+    },
+    {
+      "id": "IMD339",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.094942,
+      "efficientnet": 0.084329,
+      "mobilenet": 0.155081
+    },
+    {
+      "id": "IMD347",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.209373,
+      "efficientnet": 0.200269,
+      "mobilenet": 0.260965
+    },
+    {
+      "id": "IMD348",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.830141,
+      "efficientnet": 0.854379,
+      "mobilenet": 0.692792
+    },
+    {
+      "id": "IMD349",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.316326,
+      "efficientnet": 0.296761,
+      "mobilenet": 0.427196
+    },
+    {
+      "id": "IMD356",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.261282,
+      "efficientnet": 0.275985,
+      "mobilenet": 0.17796
+    },
+    {
+      "id": "IMD360",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.236475,
+      "efficientnet": 0.245373,
+      "mobilenet": 0.186054
+    },
+    {
+      "id": "IMD364",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.059013,
+      "efficientnet": 0.061571,
+      "mobilenet": 0.044519
+    },
+    {
+      "id": "IMD365",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.069679,
+      "efficientnet": 0.070836,
+      "mobilenet": 0.063122
+    },
+    {
+      "id": "IMD367",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.14819,
+      "efficientnet": 0.165004,
+      "mobilenet": 0.052912
+    },
+    {
+      "id": "IMD368",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.185612,
+      "efficientnet": 0.204025,
+      "mobilenet": 0.081267
+    },
+    {
+      "id": "IMD369",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.460834,
+      "efficientnet": 0.498267,
+      "mobilenet": 0.248712
+    },
+    {
+      "id": "IMD370",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.250742,
+      "efficientnet": 0.233454,
+      "mobilenet": 0.348707
+    },
+    {
+      "id": "IMD371",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.149722,
+      "efficientnet": 0.15553,
+      "mobilenet": 0.116809
+    },
+    {
+      "id": "IMD372",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.297085,
+      "efficientnet": 0.311294,
+      "mobilenet": 0.216567
+    },
+    {
+      "id": "IMD374",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.152838,
+      "efficientnet": 0.162509,
+      "mobilenet": 0.098039
+    },
+    {
+      "id": "IMD375",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.307166,
+      "efficientnet": 0.341745,
+      "mobilenet": 0.111221
+    },
+    {
+      "id": "IMD376",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.163442,
+      "efficientnet": 0.159224,
+      "mobilenet": 0.187347
+    },
+    {
+      "id": "IMD378",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.189795,
+      "efficientnet": 0.181068,
+      "mobilenet": 0.23925
+    },
+    {
+      "id": "IMD379",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.204606,
+      "efficientnet": 0.21535,
+      "mobilenet": 0.143725
+    },
+    {
+      "id": "IMD380",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.126324,
+      "efficientnet": 0.130503,
+      "mobilenet": 0.102644
+    },
+    {
+      "id": "IMD381",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.350288,
+      "efficientnet": 0.389674,
+      "mobilenet": 0.1271
+    },
+    {
+      "id": "IMD382",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.385545,
+      "efficientnet": 0.434834,
+      "mobilenet": 0.106243
+    },
+    {
+      "id": "IMD383",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.093791,
+      "efficientnet": 0.093909,
+      "mobilenet": 0.093126
+    },
+    {
+      "id": "IMD384",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.294768,
+      "efficientnet": 0.275713,
+      "mobilenet": 0.40275
+    },
+    {
+      "id": "IMD385",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.080139,
+      "efficientnet": 0.083972,
+      "mobilenet": 0.058415
+    },
+    {
+      "id": "IMD386",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.308148,
+      "efficientnet": 0.297146,
+      "mobilenet": 0.370494
+    },
+    {
+      "id": "IMD388",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.160488,
+      "efficientnet": 0.168803,
+      "mobilenet": 0.113373
+    },
+    {
+      "id": "IMD389",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.190739,
+      "efficientnet": 0.214863,
+      "mobilenet": 0.054038
+    },
+    {
+      "id": "IMD390",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.141127,
+      "efficientnet": 0.154254,
+      "mobilenet": 0.066736
+    },
+    {
+      "id": "IMD392",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.295037,
+      "efficientnet": 0.344228,
+      "mobilenet": 0.01629
+    },
+    {
+      "id": "IMD393",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.587628,
+      "efficientnet": 0.654166,
+      "mobilenet": 0.210583
+    },
+    {
+      "id": "IMD394",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.417797,
+      "efficientnet": 0.41562,
+      "mobilenet": 0.43013
+    },
+    {
+      "id": "IMD395",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.148794,
+      "efficientnet": 0.157543,
+      "mobilenet": 0.099214
+    },
+    {
+      "id": "IMD396",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.300838,
+      "efficientnet": 0.34066,
+      "mobilenet": 0.075185
+    },
+    {
+      "id": "IMD397",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.324269,
+      "efficientnet": 0.344952,
+      "mobilenet": 0.207068
+    },
+    {
+      "id": "IMD398",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.335537,
+      "efficientnet": 0.316854,
+      "mobilenet": 0.441407
+    },
+    {
+      "id": "IMD399",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.205876,
+      "efficientnet": 0.213737,
+      "mobilenet": 0.161334
+    },
+    {
+      "id": "IMD400",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.260082,
+      "efficientnet": 0.254035,
+      "mobilenet": 0.294344
+    },
+    {
+      "id": "IMD402",
+      "clinical": 0,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.349139,
+      "efficientnet": 0.376057,
+      "mobilenet": 0.1966
+    },
+    {
+      "id": "IMD403",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.410065,
+      "efficientnet": 0.389787,
+      "mobilenet": 0.524974
+    },
+    {
+      "id": "IMD404",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.533617,
+      "efficientnet": 0.556292,
+      "mobilenet": 0.405124
+    },
+    {
+      "id": "IMD405",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.640745,
+      "efficientnet": 0.656229,
+      "mobilenet": 0.553003
+    },
+    {
+      "id": "IMD406",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.40055,
+      "efficientnet": 0.412795,
+      "mobilenet": 0.331162
+    },
+    {
+      "id": "IMD407",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.667113,
+      "efficientnet": 0.669518,
+      "mobilenet": 0.653483
+    },
+    {
+      "id": "IMD408",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.927093,
+      "efficientnet": 0.928363,
+      "mobilenet": 0.919892
+    },
+    {
+      "id": "IMD409",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.498056,
+      "efficientnet": 0.490776,
+      "mobilenet": 0.539305
+    },
+    {
+      "id": "IMD410",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.36672,
+      "efficientnet": 0.385679,
+      "mobilenet": 0.259288
+    },
+    {
+      "id": "IMD411",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.707657,
+      "efficientnet": 0.736998,
+      "mobilenet": 0.541391
+    },
+    {
+      "id": "IMD413",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.449051,
+      "efficientnet": 0.489381,
+      "mobilenet": 0.220515
+    },
+    {
+      "id": "IMD417",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.758776,
+      "efficientnet": 0.795077,
+      "mobilenet": 0.55307
+    },
+    {
+      "id": "IMD418",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.47034,
+      "efficientnet": 0.453774,
+      "mobilenet": 0.564214
+    },
+    {
+      "id": "IMD419",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.955793,
+      "efficientnet": 0.965482,
+      "mobilenet": 0.90089
+    },
+    {
+      "id": "IMD420",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.534184,
+      "efficientnet": 0.494,
+      "mobilenet": 0.761895
+    },
+    {
+      "id": "IMD421",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.349637,
+      "efficientnet": 0.272818,
+      "mobilenet": 0.784946
+    },
+    {
+      "id": "IMD423",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.869067,
+      "efficientnet": 0.892385,
+      "mobilenet": 0.736934
+    },
+    {
+      "id": "IMD424",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.820355,
+      "efficientnet": 0.861413,
+      "mobilenet": 0.58769
+    },
+    {
+      "id": "IMD425",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.618474,
+      "efficientnet": 0.632942,
+      "mobilenet": 0.536487
+    },
+    {
+      "id": "IMD426",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Benign",
+      "hybrid_prob": 0.230568,
+      "efficientnet": 0.249003,
+      "mobilenet": 0.126102
+    },
+    {
+      "id": "IMD427",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.352037,
+      "efficientnet": 0.381162,
+      "mobilenet": 0.186997
+    },
+    {
+      "id": "IMD429",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.401088,
+      "efficientnet": 0.434726,
+      "mobilenet": 0.210472
+    },
+    {
+      "id": "IMD430",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.298558,
+      "efficientnet": 0.328331,
+      "mobilenet": 0.129846
+    },
+    {
+      "id": "IMD431",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.13299,
+      "efficientnet": 0.138943,
+      "mobilenet": 0.099254
+    },
+    {
+      "id": "IMD432",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Benign",
+      "hybrid_prob": 0.181576,
+      "efficientnet": 0.198665,
+      "mobilenet": 0.084741
+    },
+    {
+      "id": "IMD433",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.430481,
+      "efficientnet": 0.478945,
+      "mobilenet": 0.155851
+    },
+    {
+      "id": "IMD434",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.393611,
+      "efficientnet": 0.393429,
+      "mobilenet": 0.394643
+    },
+    {
+      "id": "IMD435",
+      "clinical": 2,
+      "true_melanoma": 1,
+      "pred": "Malignant",
+      "hybrid_prob": 0.415887,
+      "efficientnet": 0.353656,
+      "mobilenet": 0.76853
+    },
+    {
+      "id": "IMD436",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.535736,
+      "efficientnet": 0.558206,
+      "mobilenet": 0.408407
+    },
+    {
+      "id": "IMD437",
+      "clinical": 1,
+      "true_melanoma": 0,
+      "pred": "Malignant",
+      "hybrid_prob": 0.320592,
+      "efficientnet": 0.306694,
+      "mobilenet": 0.399349
+    }
+  ]
+}

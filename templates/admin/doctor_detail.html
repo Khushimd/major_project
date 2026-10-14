@@ -1,0 +1,23 @@
+{% extends "dash_base.html" %}
+{% block sidebar %}
+  <a class="active" href="{{ url_for('admin.dashboard') }}"><i class="bi bi-shield-lock"></i> Admin</a>
+{% endblock %}
+{% block heading %}{{ doctor.full_name }}{% endblock %}
+{% block subhead %}Doctor profile{% endblock %}
+{% block content %}
+<p class="mb-3"><a class="btn btn-ghost btn-sm" href="{{ url_for('admin.dashboard') }}">&larr; Back to admin</a></p>
+<article class="form-pane" style="max-width:720px">
+  <h3 class="mb-3">Doctor details</h3>
+  <table class="report-table">
+    <tr><th>Name</th><td>{{ doctor.full_name }}</td></tr>
+    <tr><th>Email</th><td>{{ doctor.email or '—' }}</td></tr>
+    <tr><th>Contact</th><td>{{ doctor.phone or '—' }}</td></tr>
+    <tr><th>Hospital</th><td>{{ profile.hospital or '—' }}</td></tr>
+    <tr><th>Qualification</th><td>{{ profile.specialization or '—' }}</td></tr>
+    <tr><th>Experience</th><td>{{ profile.experience or '—' }}</td></tr>
+    <tr><th>Registration no.</th><td>{{ profile.medical_registration or '—' }}</td></tr>
+    <tr><th>Availability</th><td>{{ profile.availability or '—' }}</td></tr>
+    <tr><th>Verified</th><td>{{ 'Yes' if doctor.is_verified else 'No' }}</td></tr>
+  </table>
+</article>
+{% endblock %}

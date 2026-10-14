@@ -1,0 +1,32 @@
+{
+  "source": "models/saved/melanoma_benign/validation_metrics.json",
+  "note": "Read-only snapshot of the unchanged 2-stage baseline. Not used for training.",
+  "threshold": 0.5,
+  "efficientnetb0": {
+    "accuracy": 0.8940695296523518,
+    "sensitivity": 0.9169354838709678,
+    "specificity": 0.870539419087137,
+    "precision": 0.8793503480278422,
+    "f1": 0.897749703908409,
+    "auc": 0.9558298755186722,
+    "pr_auc": 0.9563044395473426
+  },
+  "mobilenetv2": {
+    "accuracy": 0.8658486707566462,
+    "sensitivity": 0.8258064516129032,
+    "specificity": 0.9070539419087137,
+    "precision": 0.9014084507042254,
+    "f1": 0.8619528619528619,
+    "auc": 0.944697496988355,
+    "pr_auc": 0.9498042489322376
+  },
+  "ensemble": {
+    "accuracy": 0.8985685071574642,
+    "sensitivity": 0.9153225806451613,
+    "specificity": 0.8813278008298755,
+    "precision": 0.8881064162754304,
+    "f1": 0.9015091342335186,
+    "auc": 0.9580022754651318,
+    "pr_auc": 0.9603652776712204
+  }
+}

@@ -1,0 +1,354 @@
+CLEAN DICM-ONLY MELANOMA-VS-BENIGN DATASET DESIGN
+Analysis/design only. No training. No existing files were modified except this new report.
+
+Existing frozen melanoma_benign splits, experiments, production models, and the app were not changed.
+
+============================================================
+1. CLEAN MELANOMA
+============================================================
+
+Recommended rule:
+  KEEP if official diagnosis == 'melanoma'
+  AND benign_malignant in {malignant, indeterminate/malignant}.
+
+Do NOT use official class=1.
+Do NOT include BCC, SCC, AIMP, atypical melanocytic proliferation,
+or melanoma metastasis in the melanoma class.
+
+Eligible clean melanoma images: 6787
+Unique non-empty patients: 1083
+Melanoma images with missing patient_id: 4858
+Unique lesions: 2362
+Melanoma images with missing lesion_id: 1397
+Histopathology-confirmed subset: 6787 images, 1083 patients, 2362 lesions
+
+benign_malignant among kept melanoma:
+  malignant: 6773
+  indeterminate/malignant: 14
+
+diagnosis_confirm_type among kept melanoma:
+  histopathology: 6787
+
+============================================================
+2. CLEAN BENIGN
+============================================================
+
+Recommended rule:
+  KEEP if official diagnosis is in the pre-specified benign list below
+  AND benign_malignant == 'benign'
+  AND diagnosis is not missing.
+
+Do NOT use official class=0 as benign.
+Exclude malignant, indeterminate, missing diagnosis, premalignant AK,
+AIMP/AMP, atypical Spitz, unspecified 'other', scar, BCC, and SCC.
+
+Allowed benign diagnoses:
+  - acrochordon
+  - angiofibroma or fibrous papule
+  - angiokeratoma
+  - angioma
+  - cafe-au-lait macule
+  - clear cell acanthoma
+  - dermatofibroma
+  - lentigo NOS
+  - lentigo simplex
+  - lichenoid keratosis
+  - neurofibroma
+  - nevus
+  - pigmented benign keratosis
+  - sebaceous adenoma
+  - sebaceous hyperplasia
+  - seborrheic keratosis
+  - solar lentigo
+  - vascular lesion
+  - verruca
+
+Eligible clean benign images: 4586
+Unique non-empty patients: 1458
+Benign images with missing patient_id: 2200
+Unique lesions: 2472
+Benign images with missing lesion_id: 1999
+
+Kept benign diagnosis counts:
+  nevus: 3544
+  seborrheic keratosis: 244
+  solar lentigo: 179
+  acrochordon: 167
+  lichenoid keratosis: 137
+  lentigo NOS: 97
+  verruca: 62
+  dermatofibroma: 54
+  angioma: 32
+  vascular lesion: 23
+  lentigo simplex: 21
+  neurofibroma: 13
+  angiokeratoma: 5
+  sebaceous hyperplasia: 3
+  angiofibroma or fibrous papule: 2
+  clear cell acanthoma: 1
+  sebaceous adenoma: 1
+  cafe-au-lait macule: 1
+
+============================================================
+3. DIAGNOSIS TABLE
+============================================================
+
+diagnosis | count | proposed category | kept as melanoma | kept as benign | excluded | reason
+
+melanoma | 6790 | mixed / exclude unless BM rule passes | 6787 | 0 | 3 | Same diagnosis string is not uniform after the benign_malignant filter: {'melanoma': 6787, 'exclude': 3}. Only rows matching the strict BM rule are kept.
+nevus | 3554 | mixed / exclude unless BM rule passes | 0 | 3544 | 10 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 3544, 'exclude': 10}. Only rows matching the strict BM rule are kept.
+<MISSING> | 2708 | exclude | 0 | 0 | 2708 | Missing diagnosis. High-purity rule excludes unknown labels.
+basal cell carcinoma | 1498 | exclude | 0 | 0 | 1498 | Malignant keratinocyte cancer, not melanoma and not benign.
+squamous cell carcinoma | 676 | exclude | 0 | 0 | 676 | Malignant keratinocyte cancer, not melanoma and not benign.
+seborrheic keratosis | 349 | mixed / exclude unless BM rule passes | 0 | 244 | 105 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 244, 'exclude': 105}. Only rows matching the strict BM rule are kept.
+actinic keratosis | 294 | exclude | 0 | 0 | 294 | Premalignant keratinocyte lesion, not confidently benign.
+solar lentigo | 204 | mixed / exclude unless BM rule passes | 0 | 179 | 25 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 179, 'exclude': 25}. Only rows matching the strict BM rule are kept.
+acrochordon | 167 | benign | 0 | 167 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+lichenoid keratosis | 137 | benign | 0 | 137 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+pigmented benign keratosis | 112 | exclude | 0 | 0 | 112 | Benign-appearing diagnosis but benign_malignant is missing.
+lentigo NOS | 98 | mixed / exclude unless BM rule passes | 0 | 97 | 1 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 97, 'exclude': 1}. Only rows matching the strict BM rule are kept.
+atypical melanocytic proliferation | 80 | exclude | 0 | 0 | 80 | Atypical / uncertain melanocytic lesion; not high-purity melanoma or benign.
+AIMP | 77 | exclude | 0 | 0 | 77 | Atypical intraepithelial melanocytic proliferation; not confirmed melanoma or benign.
+dermatofibroma | 72 | mixed / exclude unless BM rule passes | 0 | 54 | 18 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 54, 'exclude': 18}. Only rows matching the strict BM rule are kept.
+verruca | 62 | benign | 0 | 62 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+vascular lesion | 44 | mixed / exclude unless BM rule passes | 0 | 23 | 21 | Same diagnosis string is not uniform after the benign_malignant filter: {'benign': 23, 'exclude': 21}. Only rows matching the strict BM rule are kept.
+melanoma metastasis | 36 | exclude | 0 | 0 | 36 | Melanoma biology, but a metastasis rather than a primary cutaneous lesion.
+angioma | 32 | benign | 0 | 32 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+lentigo simplex | 21 | benign | 0 | 21 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+neurofibroma | 13 | benign | 0 | 13 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+scar | 9 | exclude | 0 | 0 | 9 | May be post-excision or post-treatment; not a confident intact benign lesion.
+other | 8 | exclude | 0 | 0 | 8 | Unspecified diagnosis; cannot assign a clean class.
+angiokeratoma | 5 | benign | 0 | 5 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+clear cell acanthoma | 5 | mixed / exclude unless BM rule passes | 0 | 1 | 4 | Same diagnosis string is not uniform after the benign_malignant filter: {'exclude': 4, 'benign': 1}. Only rows matching the strict BM rule are kept.
+sebaceous hyperplasia | 3 | benign | 0 | 3 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+angiofibroma or fibrous papule | 2 | benign | 0 | 2 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+atypical spitz tumor | 2 | exclude | 0 | 0 | 2 | Ambiguous melanocytic tumor; can be difficult to classify.
+cafe-au-lait macule | 1 | benign | 0 | 1 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+sebaceous adenoma | 1 | benign | 0 | 1 | 0 | Clearly benign diagnosis and benign_malignant=benign.
+
+============================================================
+4. OVERLAP WITH THE EXISTING EXPERIMENT
+============================================================
+
+Audit only. Nothing was removed from the existing 16,529-image dataset.
+
+Proposed clean pool:
+  image IDs: 11373
+  patient IDs: 2434
+  lesion IDs: 4834
+
+Clean melanoma image overlap with existing manifest: 6787
+Clean benign image overlap with existing manifest: 143
+Clean pool image overlap with existing manifest: 6930
+Clean pool image overlap with existing train.csv: 4834
+Clean pool image overlap with existing val.csv: 981
+Clean pool image overlap with existing test.csv: 1115
+Clean melanoma image overlap with existing test.csv: 1092
+Clean benign image overlap with existing test.csv: 23
+
+Clean pool patient overlap with existing manifest: 1403
+Clean pool patient overlap with existing train: 971
+Clean pool patient overlap with existing val: 217
+Clean pool patient overlap with existing test: 215
+
+Clean pool lesion overlap with existing manifest: 2505
+Clean pool lesion overlap with existing train: 1741
+Clean pool lesion overlap with existing val: 358
+Clean pool lesion overlap with existing test: 406
+
+Clean pool image overlap with ISIC 2020 benign-used pool: 535
+Clean melanoma image overlap with ISIC 2020 benign-used pool: 0
+Clean benign image overlap with ISIC 2020 benign-used pool: 535
+
+Interpretation:
+  Clean melanoma images that already sit in the current experiment are the
+  DICM class=1 rows whose diagnosis was truly melanoma. They remain in the
+  frozen experiment and must not be deleted. A new DICM-only experiment
+  would reuse some of those images, so it must be a NEW split/directory,
+  not an edit of the frozen melanoma_benign CSVs.
+
+============================================================
+5. PATIENT/LESION-LEVEL SPLIT FEASIBILITY
+============================================================
+
+Clean pool images: 11373  melanoma=6787  benign=4586
+Unique non-empty patients in pool: 2434
+Images with missing patient_id: 7058 (melanoma 4858, benign 2200)
+Unique lesions in pool: 4834
+Patients with both clean melanoma and clean benign images: 107
+
+Feasible: yes, but ONLY if missing patient_id rows fall back to lesion_id,
+then image_id. Treating blank patient_id as one group would dump most
+melanoma images into a single split. Any real patient with both classes
+must stay in one split.
+Proposed ratio: 70 / 15 / 15, stratified by whether the patient has melanoma.
+Seed for this simulation only: 42. No CSV files were written.
+
+Proposed simulation:
+  train: images=7961 melanoma=4747 benign=3214 (59.63% melanoma) patients=1706 lesions=3418
+  val: images=1706 melanoma=1016 benign=690 (59.55% melanoma) patients=384 lesions=707
+  test: images=1706 melanoma=1024 benign=682 (60.02% melanoma) patients=344 lesions=709
+
+============================================================
+6. BALANCE
+============================================================
+
+Clean melanoma: 6787
+Clean benign: 4586
+Melanoma:benign image ratio: 1.48
+Benign:melanoma image ratio: 0.68
+
+The clean pool is large enough for a meaningful experiment. Melanoma is the
+larger class (6,787 vs 4,586). Do not randomly discard melanoma images yet.
+
+Options if training is later approved:
+  1. Keep all images and use class-weighted loss.
+  2. Keep all images and report prevalence-aware metrics (PR-AUC, sensitivity/specificity).
+  3. Controlled patient-level sampling of the majority class, only if weighting is insufficient.
+
+Recommendation: prefer keeping all clean images and using class weighting /
+imbalance-aware metrics. Do not downsample first.
+
+============================================================
+7. SOURCE-CONFOUNDING CHECK
+============================================================
+
+This design removes the main previous confound: melanoma from DICM vs
+benign from ISIC 2020. Both classes would come from official DICM metadata
+and the same DICM image collection.
+
+Source confounding is NOT completely eliminated. Remaining within-DICM risks:
+
+year among clean melanoma:
+    2019.0: 4111
+    <MISSING>: 1882
+    2020.0: 581
+    2017.0: 213
+
+year among clean benign:
+    <MISSING>: 2970
+    2019.0: 1014
+    2020.0: 535
+    2017.0: 67
+
+dermoscopic_type among clean melanoma:
+    <MISSING>: 5389
+    contact non-polarized: 653
+    contact polarized: 557
+    non-contact polarized: 188
+
+dermoscopic_type among clean benign:
+    <MISSING>: 2328
+    contact polarized: 1222
+    contact non-polarized: 762
+    non-contact polarized: 274
+
+anatom_site_general among clean melanoma:
+    anterior torso: 1566
+    lower extremity: 1266
+    head/neck: 1238
+    upper extremity: 1172
+    posterior torso: 911
+    <MISSING>: 373
+    palms/soles: 210
+    lateral torso: 28
+    oral/genital: 23
+
+anatom_site_general among clean benign:
+    lower extremity: 1108
+    posterior torso: 927
+    anterior torso: 867
+    upper extremity: 701
+    head/neck: 466
+    <MISSING>: 391
+    lateral torso: 81
+    palms/soles: 34
+    oral/genital: 11
+
+attribution among clean melanoma:
+    Hospital Clínic de Barcelona: 2848
+    Anonymous: 1702
+    ViDIR Group, Department of Dermatology, Medical University of Vienna: 1156
+    Memorial Sloan Kettering Cancer Center: 428
+    Hospital Italiano de Buenos Aires: 196
+    Department of Dermatology, Hospital Clínic de Barcelona: 179
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera: 134
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital: 74
+    Department of Dermatology, Medical University of Vienna: 61
+    The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre: 9
+
+attribution among clean benign:
+    Anonymous: 1816
+    ViDIR Group, Department of Dermatology, Medical University of Vienna: 1014
+    Memorial Sloan Kettering Cancer Center: 856
+    Hospital Clínic de Barcelona: 364
+    Hospital Italiano de Buenos Aires: 327
+    Department of Dermatology, Medical University of Vienna: 125
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital: 54
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera: 16
+    The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre: 14
+
+image_manipulation among clean pool:
+    <MISSING>: 10089
+    instrument only: 1284
+
+If year, hospital, or dermoscopic modality still separates classes, a model
+can use those shortcuts. A later experiment should report these tables and,
+if needed, stratify or audit errors by contributor/year.
+
+============================================================
+8. LABEL QUALITY
+============================================================
+
+Confirmed melanoma (proposed keep): 6787
+Confirmed benign (proposed keep): 4586
+Excluded from both classes: 5687
+
+Uncertain / excluded groups include: missing diagnosis, AIMP, atypical
+melanocytic proliferation, atypical Spitz, AK, BCC, SCC, metastasis,
+scar, other, and any allowed diagnosis whose benign_malignant is missing
+or not exactly 'benign' / malignant as required.
+
+Purity was preferred over size. Official class was not used as the label.
+
+============================================================
+9. FINAL RECOMMENDATION
+============================================================
+
+A. Recommended clean melanoma definition:
+   official diagnosis == melanoma AND benign_malignant in
+   {malignant, indeterminate/malignant}. Exclude metastasis and all other diagnoses.
+
+B. Recommended clean benign definition:
+   official diagnosis in the listed benign diagnoses AND
+   benign_malignant == benign. Exclude missing, indeterminate, malignant,
+   premalignant, and ambiguous diagnoses.
+
+C. Number of usable melanoma images: 6787
+D. Number of usable benign images: 4586
+E. Number of unique patients: 2434
+F. Number of unique lesions: 4834
+G. Potential overlap with existing experiment:
+   images 6930 / 11373 of the clean pool
+   already appear in the 16,529-image melanoma_benign manifest;
+   1115 overlap the frozen test set.
+   Do not edit that experiment. If this design is later approved, create a
+   new processed directory and new splits.
+H. Proposed split: patient-grouped 70/15/15, seed 42 simulation only.
+   train: n=7961 mel=4747 ben=3214 patients=1706 lesions=3418
+   val: n=1706 mel=1016 ben=690 patients=384 lesions=707
+   test: n=1706 mel=1024 ben=682 patients=344 lesions=709
+I. Remaining risks:
+   - residual DICM contributor/year/site/modality imbalance
+   - melanoma is the majority class
+   - 4,858 clean melanoma images have no patient_id; grouping must fall back
+     to lesion_id then image_id or leakage control is incomplete
+   - 3 official class=0 rows diagnosed melanoma were excluded if BM missing;
+     kept melanoma still depends on the official diagnosis field quality
+   - overlap with the previous experiment if results are compared casually
+J. GO / NO-GO recommendation for training: GO
+   GO means: the metadata supports a later, separate training experiment.
+   It does not authorize training now. Wait for explicit approval.
+   No train.csv/val.csv/test.csv were created.
+
+No model was trained. Production and the live app were not modified.

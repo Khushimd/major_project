@@ -1,0 +1,193 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('analyze') }}{% endblock %}
+{% block heading %}Current patient analysis{% endblock %}
+{% block subhead %}{{ record.patient_name }} · {{ owner.phone if owner and owner.phone else 'phone not recorded' }}{% endblock %}
+{% block content %}
+<div class="form-pane mb-3">
+  <h3>Patient</h3>
+  <p class="mb-0">
+    {{ record.patient_name }}
+    · ID {{ record.patient_id }}
+    · {{ record.age or '—' }} / {{ record.sex or '—' }}
+    · Phone {{ owner.phone if owner and owner.phone else 'not recorded' }}
+  </p>
+</div>
+
+<div class="result-card {% if melanoma %}is-melanoma{% else %}is-clear{% endif %}" id="result">
+  <p class="kicker">AI-assisted prediction</p>
+  <h2>{{ ai_label }}</h2>
+  <ul class="metrics metrics-two">
+    <li>
+      <span>Prediction</span>
+      <strong>{{ ai_label }}</strong>
+    </li>
+    <li>
+      <span>Confidence</span>
+      <strong>{{ '%.1f'|format((record.confidence or record.malignant_prob or 0) * 100) }}%</strong>
+    </li>
+  </ul>
+  <p class="note mb-0">{{ ai_assist_note }}</p>
+</div>
+
+{% if melanoma %}
+<div class="form-pane mb-3">
+  <h3>AI Explainability</h3>
+  <p class="hint">
+    Grad-CAM highlights image regions that contributed to the model's prediction.
+    It provides a visual explanation of the regions influencing the model output and should not be interpreted as definitive evidence of malignancy.
+  </p>
+  <div class="images {% if not images.gradcam %}single{% endif %}">
+    {% if images.gradcam %}
+    <figure>
+      <img src="{{ images.gradcam }}" alt="Grad-CAM heatmap" />
+      <figcaption>Grad-CAM heatmap</figcaption>
+    </figure>
+    {% endif %}
+    {% if images.original %}
+    <figure>
+      <img src="{{ images.original }}" alt="Uploaded lesion" />
+      <figcaption>Original dermoscopic image</figcaption>
+    </figure>
+    {% endif %}
+    {% if not images.gradcam %}
+    <p class="hint mb-0">Grad-CAM could not be generated for this image.</p>
+    {% endif %}
+  </div>
+</div>
+{% elif images.original %}
+<div class="form-pane mb-3">
+  <h3>Dermoscopic image</h3>
+  <div class="images single">
+    <figure>
+      <img src="{{ images.original }}" alt="Uploaded lesion" />
+      <figcaption>Uploaded image</figcaption>
+    </figure>
+  </div>
+</div>
+{% endif %}
+
+{% if melanoma %}
+<div class="form-pane mb-3" id="clinical">
+  <h3>Clinical / pathology information</h3>
+  <p class="hint">The image model does not infer these values. Enter them from clinical or pathology assessment.</p>
+  <form method="post" action="{{ url_for('doctor.case_staging', case_id=record.id) }}" class="row g-3">
+    <div class="col-md-4">
+      <label class="form-label">Breslow thickness (mm)</label>
+      <input class="form-control" name="breslow_thickness_mm" value="{{ record.breslow_thickness or '' }}" />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Ulceration</label>
+      <select class="form-select" name="ulceration">
+        <option value="no">No</option>
+        <option value="yes" {% if record.ulceration %}selected{% endif %}>Yes</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Mitotic rate (if available)</label>
+      <input class="form-control" name="mitotic_rate" value="{{ record.mitotic_rate or '' }}" />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Lymph node involvement</label>
+      <select class="form-select" name="lymph_node_involvement">
+        <option value="no">No</option>
+        <option value="yes" {% if record.lymph_node_involvement %}selected{% endif %}>Yes</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Number of positive nodes</label>
+      <input class="form-control" name="num_positive_nodes" value="0" />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Metastasis</label>
+      <select class="form-select" name="metastasis">
+        <option value="no">No</option>
+        <option value="yes" {% if record.metastasis %}selected{% endif %}>Yes</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <label class="form-label">Other clinical / pathology notes</label>
+      <textarea class="form-control" name="doctor_notes" rows="2">{{ record.doctor_notes or '' }}</textarea>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-cta" type="submit">Calculate clinical stage</button>
+    </div>
+  </form>
+</div>
+
+<div class="form-pane mb-3">
+  <h3>Clinical Stage Assessment</h3>
+  <p class="hint">Based on the clinical/pathology information entered by the doctor. The AI image classifier does not determine AJCC stage.</p>
+  {% if record.ajcc_stage %}
+  <table class="report-table">
+    <tr><th>AJCC stage</th><td>{{ record.ajcc_stage }}</td></tr>
+    <tr><th>TNM</th><td>{{ record.t_category }} {{ record.n_category }} {{ record.m_category }}</td></tr>
+    <tr><th>Risk level</th><td>{{ record.risk_level or '—' }}</td></tr>
+  </table>
+  {% else %}
+  <p class="mb-0">Stage will appear here after you calculate it from the values above.</p>
+  {% endif %}
+</div>
+{% endif %}
+
+<form method="post">
+<div class="form-pane mb-3" id="prescription">
+  <h3>Prescription and medication</h3>
+  <p class="hint">Enter the medicines this patient should follow. This is written by you, not the AI, and is included on the report as a prescription.</p>
+  {% if not owner %}
+  <p class="hint">Record the patient's phone first so the prescription can be issued to their account.</p>
+  {% endif %}
+  <div id="medRows">
+    {% set rx_items = (prescription['items'] if prescription and prescription['items'] else [{}]) %}
+    {% for item in rx_items %}
+    <div class="row g-2 mb-2 rx-row">
+      <div class="col-md-3"><input class="form-control" name="medicine" placeholder="Medicine" value="{{ item.medicine or '' }}" /></div>
+      <div class="col-md-2"><input class="form-control" name="dosage" placeholder="Dosage" value="{{ item.dosage or '' }}" /></div>
+      <div class="col-md-2"><input class="form-control" name="frequency" placeholder="Frequency" value="{{ item.frequency or '' }}" /></div>
+      <div class="col-md-2"><input class="form-control" name="duration" placeholder="Duration" value="{{ item.duration or '' }}" /></div>
+      <div class="col-md-3"><input class="form-control" name="instructions" placeholder="Instructions" value="{{ item.instructions or '' }}" /></div>
+    </div>
+    {% endfor %}
+  </div>
+  <button type="button" class="btn btn-ghost btn-sm mb-3" onclick="addMed()">Add medicine</button>
+  <label class="form-label">Prescription notes</label>
+  <textarea class="form-control" name="prescription_notes" rows="2" placeholder="How the patient should take these medicines">{{ (prescription.notes if prescription else '') or '' }}</textarea>
+</div>
+
+<div class="form-pane">
+  <h3>Doctor's Assessment</h3>
+  <p class="hint">Kept separate from the AI-assisted prediction.</p>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Lesion location</label>
+      <input class="form-control" name="lesion_location" value="{{ review.lesion_location or '' }}" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Clinical impression</label>
+      <input class="form-control" name="clinical_impression" value="{{ review.final_diagnosis or '' }}" />
+    </div>
+    <div class="col-12">
+      <label class="form-label">Additional observations</label>
+      <textarea class="form-control" name="additional_observations" rows="2">{{ review.clinical_observations or '' }}</textarea>
+    </div>
+  </div>
+  <div class="mt-3 d-flex gap-2 flex-wrap">
+    <button class="btn btn-ghost" name="action" value="save" type="submit">Save assessment</button>
+    <button class="btn btn-cta" name="action" value="generate" type="submit">Generate Report</button>
+    {% if record.report_path and record.review_status == 'finalized' %}
+    <a class="btn btn-ghost" href="{{ url_for('doctor.download_report', case_id=record.id) }}">Download PDF</a>
+    {% endif %}
+  </div>
+</div>
+</form>
+{% endblock %}
+{% block scripts %}
+<script>
+function addMed(){
+  const wrap=document.getElementById('medRows');
+  const row=wrap.querySelector('.rx-row').cloneNode(true);
+  row.querySelectorAll('input').forEach(i=>i.value='');
+  wrap.appendChild(row);
+}
+</script>
+{% endblock %}

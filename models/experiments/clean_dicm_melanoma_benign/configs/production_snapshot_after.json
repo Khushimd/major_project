@@ -1,0 +1,38 @@
+{
+  "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras": {
+    "sha256": "f6b0e94b5e6a00ee5d621f95abb7246193dc65de8e6a5e7f355243e95d69b613",
+    "size": 18362343
+  },
+  "C:\\Projects\\major-project\\models\\saved\\inference_config.json": {
+    "sha256": "40c1b51ea0caf60d48e7fa8ee1a794f65778146713523ae36b6a4bea5ea26cc5",
+    "size": 1174
+  },
+  "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\efficientnetb0_melanoma_benign.keras": {
+    "sha256": "26026d71b26190d0cd00df6176a889482de5c3c1fb244b4cddcfc157de4c1054",
+    "size": 18362323
+  },
+  "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\mobilenetv2_melanoma_benign.keras": {
+    "sha256": "59b01d9fad0510a238c806c5beb76f3c911d7caab550d9d47efaef8530506ed4",
+    "size": 10946920
+  },
+  "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras": {
+    "sha256": "f510a80c5d3f593f9b071a198d67da1bc5376010a9569ef1ef6796d20a5abf89",
+    "size": 10946920
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\train.csv": {
+    "sha256": "73b1b10e28f24d679cb95698e0c3bd6172a9187cd7b7146ec174168c0b89a99a",
+    "size": 1796854
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\val.csv": {
+    "sha256": "f6ff80b017b15810bf795089cd474d2cefafbe03cba0c0c3f2065cba9c798226",
+    "size": 379292
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\test.csv": {
+    "sha256": "27d27e79f5ff3566e2c41f7a6f7bd635bd8e01bae2bbb0222b27dd1bde141a5b",
+    "size": 382050
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\manifest.csv": {
+    "sha256": "1b619892e5e1ffa202040e8672deb820bcb99641739f509546320ccdc082882a",
+    "size": 2557916
+  }
+}

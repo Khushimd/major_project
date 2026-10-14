@@ -1,0 +1,56 @@
+{
+  "dicm_ids": 17060,
+  "siim_isic_2020": {
+    "images_on_disk": 8584,
+    "overlap_n": 1381,
+    "overlap_examples": [
+      "ISIC_0086632",
+      "ISIC_0149698",
+      "ISIC_0164329",
+      "ISIC_0170960",
+      "ISIC_0174983",
+      "ISIC_0181374",
+      "ISIC_0187428",
+      "ISIC_0188432",
+      "ISIC_0204275",
+      "ISIC_0207268",
+      "ISIC_0208967",
+      "ISIC_0217267",
+      "ISIC_0218575",
+      "ISIC_0220461",
+      "ISIC_0229832",
+      "ISIC_0232101",
+      "ISIC_0232274",
+      "ISIC_0239070",
+      "ISIC_0239810",
+      "ISIC_0244197"
+    ]
+  },
+  "ham10000": {
+    "images_on_disk": 20030,
+    "overlap_n": 1910,
+    "overlap_examples": [
+      "ISIC_0024310",
+      "ISIC_0024313",
+      "ISIC_0024315",
+      "ISIC_0024323",
+      "ISIC_0024326",
+      "ISIC_0024333",
+      "ISIC_0024335",
+      "ISIC_0024336",
+      "ISIC_0024351",
+      "ISIC_0024352",
+      "ISIC_0024363",
+      "ISIC_0024367",
+      "ISIC_0024381",
+      "ISIC_0024385",
+      "ISIC_0024399",
+      "ISIC_0024400",
+      "ISIC_0024410",
+      "ISIC_0024434",
+      "ISIC_0024446",
+      "ISIC_0024448"
+    ]
+  },
+  "note": "Overlaps are expected because ISIC-DICM-17K is curated from the ISIC archive. Old datasets stay unused in the new training set. Use these IDs later if an external validation must exclude shared images."
+}

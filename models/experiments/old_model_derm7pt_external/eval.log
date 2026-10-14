@@ -1,0 +1,38 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790679742.042014   12156 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790679778.413936   12156 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Snapshotting protected files...
+Loading frozen 987-case cohort...
+Preprocessed 50/987
+Preprocessed 100/987
+Preprocessed 150/987
+Preprocessed 200/987
+Preprocessed 250/987
+Preprocessed 300/987
+Preprocessed 350/987
+Preprocessed 400/987
+Preprocessed 450/987
+Preprocessed 500/987
+Preprocessed 550/987
+Preprocessed 600/987
+Preprocessed 650/987
+Preprocessed 700/987
+Preprocessed 750/987
+Preprocessed 800/987
+Preprocessed 850/987
+Preprocessed 900/987
+Preprocessed 950/987
+Preprocessed cache ready (987 newly written, 0 reused)
+I0000 00:00:1790680248.902031   12156 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading EfficientNet C:\Projects\major-project\models\experiments\internal_optimization\exp2_loss_comparison\exp2c_bce_smooth\efficientnetb0_bce_smooth.keras
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+WARNING:tensorflow:From C:\Projects\major-project\.venv\Lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+EfficientNet inference done
+Loading MobileNet C:\Projects\major-project\models\experiments\internal_optimization\exp2_loss_comparison\exp2c_bce_smooth\mobilenetv2_bce_smooth.keras
+MobileNet inference done
+2026-09-29 16:41:44 | INFO     | evaluate | thr=0.30 acc=0.2766 prec=0.2604 rec=0.9960 spec=0.0299 f1=0.4128 auc=0.7000 pr_auc=0.4775
+EXTERNAL VALIDATION COMPLETE acc=0.2766 sens=0.9960 spec=0.0299 f1=0.4128 auc=0.7000 pr=0.4775 TP=251 TN=22 FP=713 FN=1
+STOP. No further experiment started.

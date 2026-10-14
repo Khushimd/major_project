@@ -1,0 +1,64 @@
+{
+  "evaluated_on": "frozen_clean_dicm_test_once",
+  "selected_experiment": "experiment_A_bce_smoothing",
+  "efficientnet_weight": 0.6,
+  "mobilenet_weight": 0.4,
+  "threshold": 0.5,
+  "threshold_rule": "sens>=0.80 and spec>=0.65, max F1",
+  "metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.7708089097303634,
+    "precision": 0.7960710944808232,
+    "recall": 0.8310546875,
+    "sensitivity": 0.8310546875,
+    "specificity": 0.6803519061583577,
+    "f1": 0.8131868131868132,
+    "auc": 0.8521094895527859,
+    "pr_auc": 0.9024556651770155,
+    "tp": 851,
+    "fp": 218,
+    "tn": 464,
+    "fn": 173,
+    "n_positive": 1024,
+    "n_negative": 682
+  },
+  "bootstrap_ci95": {
+    "accuracy": {
+      "mean": 0.7711808323563891,
+      "ci95_low": 0.7514654161781946,
+      "ci95_high": 0.7913247362250879
+    },
+    "sensitivity": {
+      "mean": 0.8313560415351213,
+      "ci95_low": 0.8082936689210376,
+      "ci95_high": 0.8532319001648766
+    },
+    "specificity": {
+      "mean": 0.680724541741491,
+      "ci95_low": 0.6462191647687932,
+      "ci95_high": 0.714497391409852
+    },
+    "precision": {
+      "mean": 0.796487096099922,
+      "ci95_low": 0.7725161388269153,
+      "ci95_high": 0.8204425671334961
+    },
+    "f1": {
+      "mean": 0.8134801242847964,
+      "ci95_low": 0.7950161021059637,
+      "ci95_high": 0.8319818740167608
+    },
+    "auc": {
+      "mean": 0.8524478025121197,
+      "ci95_low": 0.8350304300477145,
+      "ci95_high": 0.8702768356710492
+    },
+    "pr_auc": {
+      "mean": 0.9028121139954933,
+      "ci95_low": 0.8870805762670866,
+      "ci95_high": 0.9177297274020862
+    }
+  },
+  "note": "These are model scores / AI probability estimates, not clinically calibrated probabilities.",
+  "rerun_after_test": false
+}

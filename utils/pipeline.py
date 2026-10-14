@@ -15,7 +15,7 @@ import tensorflow as tf
 
 import config
 from database.db import get_db
-from gradcam.gradcam import generate_gradcam_if_malignant
+from gradcam.gradcam import GradCAM, generate_gradcam_if_malignant
 from models.ensemble import EnsemblePredictor
 from preprocessing.image_preprocess import ImagePreprocessor, load_and_preprocess
 from reports.pdf_generator import DiagnosticReportGenerator
@@ -52,11 +52,14 @@ class MelanomaPipeline:
         patient: Dict[str, Any],
         clinical: Optional[Dict[str, Any]] = None,
         doctor_notes: str = "",
+        owner_user_id: Optional[int] = None,
+        assigned_doctor_id: Optional[int] = None,
     ) -> Dict[str, Any]:
         """
         Execute classification (+ optional staging if clinical provided).
 
-        Same image bytes always reuse cached confidence via SHA-256.
+        Uses the trained hybrid models on the standard preprocess.
+        Scores are computed live (not reused from cache).
         """
         self.load_models()
         patient_id = patient.get("patient_id") or generate_unique_id("PID")
@@ -76,59 +79,24 @@ class MelanomaPipeline:
         prep_uint8 = (processed * 255).astype(np.uint8)
         cv2.imwrite(str(prep_path), cv2.cvtColor(prep_uint8, cv2.COLOR_RGB2BGR))
 
-        cached = get_db().get_cached_prediction(image_hash)
-        if cached:
-            pred = {
-                "malignant_prob": float(cached["malignant_prob"]),
-                "benign_prob": float(cached["benign_prob"]),
-                "prediction": cached["prediction"],
-                "confidence": float(cached["confidence"]),
-                "model_used": cached.get("model_used") or "Hybrid (cached)",
-                "from_cache": True,
-            }
-            logger.info(
-                "Reused cached score for hash=%s… prediction=%s conf=%.4f",
-                image_hash[:12],
-                pred["prediction"],
-                pred["confidence"],
-            )
-        else:
-            pred = self.ensemble.predict(batch)
-            pred["from_cache"] = False
-            get_db().upsert_prediction_cache(
-                {
-                    "image_hash": image_hash,
-                    "prediction": pred["prediction"],
-                    "confidence": pred["confidence"],
-                    "malignant_prob": pred["malignant_prob"],
-                    "benign_prob": pred["benign_prob"],
-                    "model_used": pred.get("model_used"),
-                }
-            )
-            logger.info(
-                "Prediction=%s conf=%.3f model=%s",
-                pred["prediction"],
-                pred["confidence"],
-                pred["model_used"],
-            )
+        pred = self.ensemble.predict(batch)
+        pred["from_cache"] = False
+        logger.info(
+            "Prediction=%s conf=%.3f mal=%.3f thr=%.3f model=%s",
+            pred["prediction"],
+            pred["confidence"],
+            pred["malignant_prob"],
+            pred.get("decision_threshold"),
+            pred["model_used"],
+        )
 
         gradcam_path = None
-        gradcam_info = {"generated": False, "message": "No malignant regions detected."}
-        if pred["prediction"] == "Malignant":
-            gradcam_path = str(config.RESULTS_DIR / f"{patient_id}_gradcam.jpg")
-            cam_model = self.ensemble.efficientnet or self.ensemble.mobilenet
-            if cam_model is not None:
-                orig_resized = cv2.resize(original_rgb, config.IMG_SIZE)
-                gradcam_info = generate_gradcam_if_malignant(
-                    pred["prediction"],
-                    cam_model,
-                    batch,
-                    orig_resized,
-                    save_path=gradcam_path,
-                )
-            else:
-                gradcam_info["message"] = "Grad-CAM unavailable (model not loaded)."
-                gradcam_path = None
+        gradcam_info = {"generated": False, "message": ""}
+        if str(pred.get("prediction") or "").lower() == "malignant":
+            save_path = str(config.RESULTS_DIR / f"{patient_id}_gradcam.jpg")
+            gradcam_path, gradcam_info = self._generate_gradcam(
+                pred["prediction"], batch, original_rgb, save_path
+            )
 
         # Staging only when clinical values are explicitly provided
         staging = None
@@ -196,6 +164,10 @@ class MelanomaPipeline:
                 else 0
             ),
             "created_at": timestamp_now(),
+            "owner_user_id": owner_user_id,
+            "assigned_doctor_id": assigned_doctor_id,
+            "review_status": "pending_review" if owner_user_id else None,
+            "report_code": report_id,
         }
         db_id = get_db().insert_prediction(record)
 
@@ -221,6 +193,53 @@ class MelanomaPipeline:
             "disclaimer": config.MEDICAL_DISCLAIMER,
             "timestamp": record["created_at"],
         }
+
+    def _generate_gradcam(
+        self,
+        prediction: str,
+        batch: np.ndarray,
+        original_rgb: np.ndarray,
+        save_path: str,
+    ) -> tuple:
+        info = {"generated": False, "message": "Grad-CAM unavailable (model not loaded)."}
+        models = [m for m in (self.ensemble.mobilenet, self.ensemble.efficientnet) if m is not None]
+        for cam_model in models:
+            try:
+                info = generate_gradcam_if_malignant(
+                    prediction,
+                    cam_model,
+                    batch,
+                    original_rgb,
+                    save_path=save_path,
+                )
+                if Path(save_path).exists():
+                    return save_path, info
+            except Exception as exc:
+                logger.exception("Grad-CAM failed: %s", exc)
+                info = {"generated": False, "message": f"Grad-CAM unavailable ({exc})."}
+        return None, info
+
+    def ensure_gradcam(self, record: Dict[str, Any]) -> Optional[str]:
+        """Create or restyle a melanoma heatmap for an already-saved case."""
+        if str(record.get("prediction") or "").lower() not in {"malignant", "melanoma"}:
+            return None
+        image_path = record.get("image_path")
+        if not image_path or not Path(str(image_path)).exists():
+            return None
+        pid = record.get("patient_id") or generate_unique_id("PID")
+        save_path = str(record.get("gradcam_path") or (config.RESULTS_DIR / f"{pid}_gradcam.jpg"))
+        stamp = Path(save_path + f".{GradCAM.OVERLAY_STYLE_VERSION}")
+        if Path(save_path).exists() and stamp.exists():
+            return save_path
+
+        original_rgb, processed, _ = load_and_preprocess(str(image_path))
+        self.load_models()
+        batch = np.expand_dims(processed.astype(np.float32), axis=0)
+        path, _ = self._generate_gradcam("Malignant", batch, original_rgb, save_path)
+        if path and record.get("id"):
+            get_db().update_prediction(int(record["id"]), {"gradcam_path": path})
+            record["gradcam_path"] = path
+        return path
 
     def apply_ajcc_staging(
         self,

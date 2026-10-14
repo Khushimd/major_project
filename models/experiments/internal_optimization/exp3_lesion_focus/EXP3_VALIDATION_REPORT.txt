@@ -1,0 +1,28 @@
+EXPERIMENT 3 — LESION-FOCUSED PREPROCESSING (validation only)
+
+1. Variant B improved over Variant A: NO
+2. Best EfficientNet: variant_a_current AUC=0.9712
+3. Best MobileNet: variant_a_current AUC=0.9401
+4. Best ensemble: variant_a_current
+5. Selected ensemble weights: 0.75/0.25
+6. Selected threshold: 0.30 (sens>=0.85 and spec>=0.70, max F1)
+7. Accuracy: 0.9137
+8. Sensitivity: 0.9379
+9. Specificity: 0.8888
+10. Precision: 0.8967
+11. F1: 0.9168
+12. ROC-AUC: 0.9718
+13. PR-AUC: 0.9749
+14. Difference from Experiment 2-C:
+    acc=-0.0307 sens=-0.0637 spec=+0.0033 prec=-0.0038 f1=-0.0333 auc=-0.0232 pr=-0.0235
+15. Confusion matrix TP=1163 FP=134 TN=1071 FN=77
+16. Ensemble score dist melanoma mean/median=0.7230/0.7914 benign=0.2378/0.2172
+17. Predicted melanoma=1297 benign=1148
+18. Training seconds: A_eff=0.0 A_mob=0.0 B_eff=13750.0 B_mob=11986.8
+19. RAM snapshot: {}
+20. OOM: none
+21. Files created under models/experiments/internal_optimization/exp3_lesion_focus/
+22. Production/live-app files modified: NO
+
+Variant A reused Experiment 2-C models (read-only control). Variant B was trained.
+Test set was not loaded. PH2 was not used. Experiment 4 was not started.

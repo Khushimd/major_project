@@ -1,0 +1,9 @@
+{% macro nav(active='') %}
+  <a class="{% if active=='dashboard' %}active{% endif %}" href="{{ url_for('doctor.dashboard') }}"><i class="bi bi-grid"></i> Dashboard</a>
+  <a class="{% if active=='analyze' %}active{% endif %}" href="{{ url_for('doctor.analyze') }}"><i class="bi bi-plus-circle"></i> New Analysis</a>
+  <a class="{% if active=='patients' %}active{% endif %}" href="{{ url_for('doctor.patients') }}"><i class="bi bi-people"></i> Patients</a>
+  <a class="{% if active=='appointments' %}active{% endif %}" href="{{ url_for('doctor.appointments') }}"><i class="bi bi-calendar-check"></i> Appointments</a>
+  <a class="{% if active=='reports' %}active{% endif %}" href="{{ url_for('doctor.reports') }}"><i class="bi bi-file-earmark-medical"></i> Reports</a>
+  <a class="{% if active=='analytics' %}active{% endif %}" href="{{ url_for('doctor.performance') }}"><i class="bi bi-graph-up"></i> Model Performance</a>
+  <a class="{% if active=='settings' %}active{% endif %}" href="{{ url_for('doctor.profile') }}"><i class="bi bi-gear"></i> Settings</a>
+{% endmacro %}

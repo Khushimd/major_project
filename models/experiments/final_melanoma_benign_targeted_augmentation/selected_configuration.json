@@ -1,0 +1,12 @@
+{
+  "meets_constraints": false,
+  "constraint_failures": [
+    "specificity 0.7978 < 0.82",
+    "precision 0.7548 < 0.78",
+    "f1 0.7916 < 0.80",
+    "accuracy 0.8126 < 0.82"
+  ],
+  "meaningful_gain": true,
+  "qualifies_for_test": false,
+  "rule": "Test only if all constraints hold and FN drops by >=5 or sensitivity rises by >=1 pp vs baseline validation."
+}

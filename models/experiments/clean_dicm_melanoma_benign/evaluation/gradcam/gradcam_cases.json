@@ -1,0 +1,35 @@
+{
+  "model": "EfficientNetB0 from the validation-selected experiment",
+  "interpretation": "Grad-CAM visualizes image regions contributing to the melanoma score. It does not prove that the model is focusing on the correct lesion boundary.",
+  "used_for_model_selection": false,
+  "cases": {
+    "true_positive": {
+      "image_id": "ISIC_0020468",
+      "label": 1,
+      "predicted": 1,
+      "ensemble_score": 0.8650912642478943,
+      "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\evaluation\\gradcam\\true_positive_ISIC_0020468.jpg"
+    },
+    "true_negative": {
+      "image_id": "ISIC_8527330",
+      "label": 0,
+      "predicted": 0,
+      "ensemble_score": 0.0108716638206715,
+      "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\evaluation\\gradcam\\true_negative_ISIC_8527330.jpg"
+    },
+    "false_positive": {
+      "image_id": "ISIC_0023649",
+      "label": 0,
+      "predicted": 1,
+      "ensemble_score": 0.7885410904884338,
+      "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\evaluation\\gradcam\\false_positive_ISIC_0023649.jpg"
+    },
+    "false_negative": {
+      "image_id": "ISIC_8308321",
+      "label": 1,
+      "predicted": 0,
+      "ensemble_score": 0.0330618703737854,
+      "path": "C:\\Projects\\major-project\\models\\experiments\\clean_dicm_melanoma_benign\\evaluation\\gradcam\\false_negative_ISIC_8308321.jpg"
+    }
+  }
+}

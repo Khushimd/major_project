@@ -1,0 +1,36 @@
+DATASET:
+path C:\Projects\major-project\dataset\processed\dicm_clean_melanoma_benign
+total 11373
+melanoma 6787
+benign 4586
+
+SPLITS:
+train {'total': 7961, 'melanoma': 4747, 'benign': 3214}
+validation {'total': 1706, 'melanoma': 1016, 'benign': 690}
+test {'total': 1706, 'melanoma': 1024, 'benign': 682}
+
+MODELS:
+EfficientNetB0
+MobileNetV2
+
+EXPERIMENTS:
+A = BCE + label smoothing
+B = class-weighted BCE + label smoothing
+class_weights_from_train_only {0: 1.2384878655880522, 1: 0.8385295976406151}
+
+PRODUCTION MODELS MODIFIED:
+NO
+
+OLD DATASET MODIFIED:
+NO
+
+OLD TEST SET USED FOR TUNING:
+NO
+
+PH2 USED:
+NO
+
+NEW TEST SET USED FOR TUNING:
+NO (frozen until after validation selection)
+
+Safety checks passed. Training may begin.

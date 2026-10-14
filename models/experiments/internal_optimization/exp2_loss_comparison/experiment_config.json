@@ -1,0 +1,16 @@
+{
+  "experiment": "exp2_loss_comparison",
+  "seed": 42,
+  "control": "EXP2-A reuses Experiment 1 BCE models (read-only). Not retrained.",
+  "focal": {
+    "alpha": 0.5,
+    "gamma": 2.0,
+    "chosen_a_priori": true
+  },
+  "label_smoothing": 0.05,
+  "ensemble_weight_rule": "max validation ROC-AUC, then PR-AUC",
+  "threshold_rule": "sens>=0.85 and spec>=0.70, max F1; fallbacks documented in code",
+  "test_loaded": false,
+  "ph2_used": false,
+  "overwrites_experiment_1": false
+}

@@ -1,0 +1,34 @@
+{
+  "metadata": "C:\\Projects\\major-project\\dataset\\raw\\train.csv",
+  "image_dir": "C:\\Projects\\major-project\\dataset\\raw\\train",
+  "metadata_rows": 33126,
+  "image_files": 8584,
+  "columns": [
+    "image_name",
+    "patient_id",
+    "sex",
+    "age_approx",
+    "anatom_site_general_challenge",
+    "diagnosis",
+    "benign_malignant",
+    "target",
+    "image_id"
+  ],
+  "strict_melanoma_metadata": 584,
+  "strict_melanoma_local": 584,
+  "strict_benign_metadata": 5417,
+  "strict_benign_local": 1335,
+  "image_overlap": {
+    "ISIC melanoma \u2229 DICM melanoma": 581,
+    "ISIC melanoma \u2229 DICM benign": 0,
+    "ISIC benign \u2229 DICM melanoma": 0,
+    "ISIC benign \u2229 DICM benign": 532,
+    "local ISIC melanoma \u2229 DICM melanoma": 581,
+    "local ISIC melanoma \u2229 DICM benign": 0,
+    "local ISIC benign \u2229 DICM melanoma": 0,
+    "local ISIC benign \u2229 DICM benign": 143
+  },
+  "shared_dicm_patients": 741,
+  "report": "C:\\Projects\\major-project\\dataset\\isic_2020\\ISIC_2020_MELANOMA_BENIGN_AUDIT.md",
+  "training_performed": false
+}

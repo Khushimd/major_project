@@ -1,0 +1,36 @@
+{
+  "label": "100-IMAGE TEST DEMONSTRATION",
+  "not_the_complete_evaluation": true,
+  "primary_internal_evaluation": "frozen test set of 2473 images",
+  "used_for_training_or_tuning": false,
+  "n": 100,
+  "melanoma": 50,
+  "benign": 50,
+  "correct": 90,
+  "incorrect": 10,
+  "accuracy": 0.9,
+  "threshold": 0.5,
+  "metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.9,
+    "precision": 0.8703703703703703,
+    "recall": 0.94,
+    "sensitivity": 0.94,
+    "specificity": 0.86,
+    "f1": 0.9038461538461539,
+    "auc": 0.958,
+    "pr_auc": 0.9599832479479138,
+    "tp": 47,
+    "fp": 7,
+    "tn": 43,
+    "fn": 3,
+    "n_positive": 50,
+    "n_negative": 50
+  },
+  "confusion_matrix": {
+    "tp": 47,
+    "tn": 43,
+    "fp": 7,
+    "fn": 3
+  }
+}

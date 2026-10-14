@@ -1,0 +1,25 @@
+{
+  "threshold": 0.5,
+  "accuracy": 0.8125512715340443,
+  "precision": 0.7547826086956522,
+  "recall": 0.8322147651006712,
+  "sensitivity": 0.8322147651006712,
+  "specificity": 0.7978494623655914,
+  "f1": 0.791609667122663,
+  "auc": 0.9043412818688852,
+  "pr_auc": 0.8837668368893384,
+  "tp": 868,
+  "fp": 282,
+  "tn": 1113,
+  "fn": 175,
+  "n_positive": 1043,
+  "n_negative": 1395,
+  "constraint_failures": [
+    "specificity 0.7978 < 0.82",
+    "precision 0.7548 < 0.78",
+    "f1 0.7916 < 0.80",
+    "accuracy 0.8126 < 0.82"
+  ],
+  "meets_constraints": false,
+  "meaningful_gain": true
+}

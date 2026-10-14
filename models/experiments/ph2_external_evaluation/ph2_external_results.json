@@ -1,0 +1,160 @@
+{
+  "cohort": {
+    "n": 200,
+    "melanoma": 40,
+    "strict_benign": 160,
+    "common_nevus": 80,
+    "atypical_nevus": 80
+  },
+  "ph2_previously_used_in_project": true,
+  "old": {
+    "efficientnet_path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\efficientnetb0_bce_smooth.keras",
+    "mobilenet_path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\mobilenetv2_bce_smooth.keras",
+    "efficientnet_weight": 0.75,
+    "mobilenet_weight": 0.25,
+    "threshold": 0.3,
+    "sha256": {
+      "efficientnet": "02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87",
+      "mobilenet": "ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f"
+    }
+  },
+  "class_weighted": {
+    "efficientnet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_class_weighted\\efficientnetb0_class_weighted.keras",
+    "mobilenet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_class_weighted\\mobilenetv2_class_weighted.keras",
+    "efficientnet_weight": 0.5,
+    "mobilenet_weight": 0.5,
+    "threshold": 0.45,
+    "internal_test": {
+      "threshold": 0.45,
+      "accuracy": 0.8272466146901929,
+      "precision": 0.7690972222222222,
+      "recall": 0.851104707012488,
+      "sensitivity": 0.851104707012488,
+      "specificity": 0.8094555873925502,
+      "f1": 0.8080255357957137,
+      "auc": 0.9121319592963565,
+      "pr_auc": 0.8857626022922268,
+      "tp": 886,
+      "fp": 266,
+      "tn": 1130,
+      "fn": 155,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "class_weights": {
+      "formula": "weight(class) = N / (number_of_classes * class_count)",
+      "source": "training set only",
+      "N": 11379,
+      "n_classes": 2,
+      "benign_count": 6676,
+      "melanoma_count": 4703,
+      "benign_weight": 0.8522318753744758,
+      "melanoma_weight": 1.2097597278332979,
+      "keras_class_weight": {
+        "0": 0.8522318753744758,
+        "1": 1.2097597278332979
+      },
+      "oversampling": false,
+      "undersampling": false,
+      "validation_or_test_used": false
+    },
+    "source": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_class_weighted\\training_summary.json"
+  },
+  "old_metrics": {
+    "threshold": 0.3,
+    "accuracy": 0.205,
+    "precision": 0.20100502512562815,
+    "recall": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 0.00625,
+    "f1": 0.33472803347280333,
+    "auc": 0.65734375,
+    "pr_auc": 0.43084022554005486,
+    "tp": 40,
+    "fp": 159,
+    "tn": 1,
+    "fn": 0,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "class_weighted_metrics": {
+    "threshold": 0.45,
+    "accuracy": 0.265,
+    "precision": 0.21390374331550802,
+    "recall": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 0.08125,
+    "f1": 0.3524229074889868,
+    "auc": 0.834375,
+    "pr_auc": 0.630438981058296,
+    "tp": 40,
+    "fp": 147,
+    "tn": 13,
+    "fn": 0,
+    "n_positive": 40,
+    "n_negative": 160
+  },
+  "old_predicted_melanoma": 199,
+  "old_predicted_benign": 1,
+  "cw_predicted_melanoma": 187,
+  "cw_predicted_benign": 13,
+  "score_distributions": {
+    "old_all": {
+      "n": 200,
+      "mean": 0.7242408769764006,
+      "median": 0.7002982050180435,
+      "min": 0.29546472430229187,
+      "max": 0.999969556927681
+    },
+    "old_melanoma": {
+      "n": 40,
+      "mean": 0.8049147136509418,
+      "median": 0.9207470938563347,
+      "min": 0.33920443058013916,
+      "max": 0.999969556927681
+    },
+    "old_benign": {
+      "n": 160,
+      "mean": 0.7040724178077653,
+      "median": 0.6733791828155518,
+      "min": 0.29546472430229187,
+      "max": 0.9999367892742157
+    },
+    "cw_all": {
+      "n": 200,
+      "mean": 0.7487375828251243,
+      "median": 0.7717348337173462,
+      "min": 0.3102199286222458,
+      "max": 0.9939959347248077
+    },
+    "cw_melanoma": {
+      "n": 40,
+      "mean": 0.8893554763868451,
+      "median": 0.9366976618766785,
+      "min": 0.4563615024089813,
+      "max": 0.9939959347248077
+    },
+    "cw_benign": {
+      "n": 160,
+      "mean": 0.713583109434694,
+      "median": 0.7375364601612091,
+      "min": 0.3102199286222458,
+      "max": 0.9929629862308502
+    }
+  },
+  "observations": "Old model sensitivity 1.000 vs class-weighted 1.000; specificity 0.006 vs 0.081. False positives: old 159/160, class-weighted 147/160. Small PH2 melanoma n=40; treat metric differences as descriptive, not a ranking.",
+  "ph2_used_for_tuning": false,
+  "training_performed": false,
+  "reproducibility": {
+    "started_utc": "2026-09-29T21:43:27.612975+00:00",
+    "finished_utc": "2026-09-29T21:46:17.350917+00:00",
+    "preprocessing": "process_for_model hair+denoise+224+/255; max-side 1024 if needed; no CLAHE; no crop",
+    "environment": {
+      "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "tensorflow": "2.21.0",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5"
+    }
+  }
+}

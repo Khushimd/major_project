@@ -1,0 +1,14 @@
+{
+  "patient_overlap_between_new_splits": [],
+  "lesion_overlap_between_new_splits": [],
+  "image_overlap_between_new_splits": [],
+  "path_overlap_between_new_splits": [],
+  "content_duplicate_files_remaining": [],
+  "content_duplicates_dropped_before_split": [
+    "ISIC_4261232",
+    "ISIC_4364740",
+    "ISIC_7528783",
+    "ISIC_9645937"
+  ],
+  "passed": true
+}

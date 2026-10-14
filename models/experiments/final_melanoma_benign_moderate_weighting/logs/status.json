@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "selection": "retained_baseline",
+  "interpretation": {
+    "answer": "NO",
+    "replace_baseline": false,
+    "better_than_0_50_baseline": false,
+    "detail": "Moderate weighting did not provide a sufficiently favorable operating trade-off under the stated constraints. Retain the 83.42% baseline."
+  }
+}

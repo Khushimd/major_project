@@ -1,0 +1,152 @@
+{% extends "dash_base.html" %}
+{% block sidebar %}
+  <a class="active" href="{{ url_for('admin.dashboard') }}"><i class="bi bi-shield-lock"></i> Admin</a>
+{% endblock %}
+{% block heading %}Admin{% endblock %}
+{% block subhead %}{{ current_user.full_name }} — registered doctors and patients{% endblock %}
+{% block content %}
+<p class="hint mb-3">Review every registered doctor, the patients under each doctor, and all patient accounts. Doctors create their own accounts from Doctor login.</p>
+<div class="stat-row dash-stats mb-4">
+  <div class="stat"><span class="stat-value">{{ stats.users }}</span><span class="stat-label">Active accounts</span></div>
+  <div class="stat"><span class="stat-value">{{ doctors|length }}</span><span class="stat-label">Doctors</span></div>
+  <div class="stat"><span class="stat-value">{{ patients|length }}</span><span class="stat-label">Patients</span></div>
+  <div class="stat"><span class="stat-value">{{ stats.pending_doctors }}</span><span class="stat-label">Unverified doctors</span></div>
+</div>
+
+<h3 class="section-title">Registered doctors and their patients</h3>
+{% for u in doctors %}
+<article class="admin-doctor-card">
+  <div class="admin-doctor-head">
+    <div>
+      <h4>{{ u.full_name }}</h4>
+      <p class="admin-doctor-meta">
+        {{ (u.profile or {}).hospital or 'Hospital not set' }}
+        · {{ (u.profile or {}).specialization or 'Education not set' }}
+        · {{ u.patients|length }} patient{{ '' if u.patients|length == 1 else 's' }}
+      </p>
+    </div>
+    <div class="admin-row-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-bs-toggle="modal" data-bs-target="#doctor-{{ u.id }}">Details</button>
+      <form method="post" action="{{ url_for('admin.verify_user', user_id=u.id) }}">
+        <input type="hidden" name="is_verified" value="{{ 0 if u.is_verified else 1 }}" />
+        <button class="btn btn-ghost btn-sm">{{ 'Unverify' if u.is_verified else 'Verify' }}</button>
+      </form>
+      <form method="post" action="{{ url_for('admin.delete_user', user_id=u.id) }}" onsubmit="return confirm({{ ('Delete doctor ' ~ u.full_name ~ '? They will no longer be able to sign in.')|tojson }});">
+        <input type="hidden" name="role" value="doctor" />
+        <button class="btn btn-ghost btn-sm btn-delete">Delete</button>
+      </form>
+    </div>
+  </div>
+  <dl class="admin-doctor-facts">
+    <div><dt>Email</dt><dd>{{ u.email or '—' }}</dd></div>
+    <div><dt>Phone</dt><dd>{{ u.phone or '—' }}</dd></div>
+    <div><dt>Hospital</dt><dd>{{ (u.profile or {}).hospital or '—' }}</dd></div>
+    <div><dt>Education</dt><dd>{{ (u.profile or {}).specialization or '—' }}</dd></div>
+    <div><dt>Verified</dt><dd>{{ 'Yes' if u.is_verified else 'No' }}</dd></div>
+  </dl>
+  <h5 class="admin-subhead">Patients of {{ u.full_name }}</h5>
+  <div class="history-table-wrap">
+    <table class="table history-table mb-0">
+      <thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Age</th><th>Cases</th></tr></thead>
+      <tbody>
+        {% for p in u.patients %}
+        <tr>
+          <td>{{ p.full_name }}</td>
+          <td>{{ p.phone or '—' }}</td>
+          <td>{{ p.email or '—' }}</td>
+          <td>{{ p.age or '—' }}</td>
+          <td>{{ p.case_count or 0 }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5">No patients assigned to this doctor yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="modal fade" id="doctor-{{ u.id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ u.full_name }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="report-table mb-0">
+            <tr><th>Email</th><td>{{ u.email or '—' }}</td></tr>
+            <tr><th>Contact</th><td>{{ u.phone or '—' }}</td></tr>
+            <tr><th>Hospital</th><td>{{ (u.profile or {}).hospital or '—' }}</td></tr>
+            <tr><th>Education</th><td>{{ (u.profile or {}).specialization or '—' }}</td></tr>
+            <tr><th>Experience</th><td>{{ (u.profile or {}).experience or '—' }}</td></tr>
+            <tr><th>Registration no.</th><td>{{ (u.profile or {}).medical_registration or '—' }}</td></tr>
+            <tr><th>Availability</th><td>{{ (u.profile or {}).availability or '—' }}</td></tr>
+            <tr><th>Verified</th><td>{{ 'Yes' if u.is_verified else 'No' }}</td></tr>
+            <tr><th>Patients</th><td>{{ u.patients|length }}</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% else %}
+<p class="hint">No doctors registered yet.</p>
+{% endfor %}
+
+<h3 class="section-title">All registered patients</h3>
+<div class="history-table-wrap mb-4">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Assigned doctor</th><th></th></tr></thead>
+    <tbody>
+      {% for p in patients %}
+      <tr>
+        <td>{{ p.full_name }}</td>
+        <td>{{ p.phone or '—' }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.assigned_doctor.full_name if p.assigned_doctor else '—' }}</td>
+        <td>
+          <div class="admin-row-actions">
+            <button type="button" class="btn btn-ghost btn-sm" data-bs-toggle="modal" data-bs-target="#patient-{{ p.id }}">Details</button>
+            <form method="post" action="{{ url_for('admin.delete_user', user_id=p.id) }}" onsubmit="return confirm({{ ('Delete patient ' ~ p.full_name ~ '? They will no longer be able to sign in.')|tojson }});">
+              <input type="hidden" name="role" value="patient" />
+              <button class="btn btn-ghost btn-sm btn-delete">Delete</button>
+            </form>
+          </div>
+          <div class="modal fade" id="patient-{{ p.id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{ p.full_name }}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <table class="report-table mb-0">
+                    <tr><th>Phone</th><td>{{ p.phone or '—' }}</td></tr>
+                    <tr><th>Email</th><td>{{ p.email or '—' }}</td></tr>
+                    <tr><th>Age</th><td>{{ (p.profile or {}).age or '—' }}</td></tr>
+                    <tr><th>Sex</th><td>{{ (p.profile or {}).sex or '—' }}</td></tr>
+                    <tr><th>Date of birth</th><td>{{ (p.profile or {}).date_of_birth or '—' }}</td></tr>
+                    <tr><th>Assigned doctor</th><td>{{ p.assigned_doctor.full_name if p.assigned_doctor else '—' }}</td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5">No patients yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if unassigned_patients %}
+<p class="hint mb-4">{{ unassigned_patients|length }} patient{{ '' if unassigned_patients|length == 1 else 's' }} not assigned to a doctor.</p>
+{% endif %}
+
+<h3>Audit log</h3>
+<ul>
+  {% for a in audit %}
+  <li>{{ a.created_at }} · {{ a.email or '—' }} · {{ a.action }} · {{ a.entity }} {{ a.entity_id }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

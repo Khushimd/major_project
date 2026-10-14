@@ -1,0 +1,31 @@
+{
+  "unique_patients": {
+    "dicm_melanoma": 1083,
+    "dicm_benign": 1458,
+    "isic_benign": 973
+  },
+  "pairwise": {
+    "dicm_melanoma_vs_dicm_benign": {
+      "shared_patients": 107,
+      "images_in_left": 212,
+      "images_in_right": 154
+    },
+    "dicm_melanoma_vs_isic_benign": {
+      "shared_patients": 179,
+      "images_in_left": 255,
+      "images_in_right": 671
+    },
+    "dicm_benign_vs_isic_benign": {
+      "shared_patients": 363,
+      "images_in_left": 545,
+      "images_in_right": 3250
+    }
+  },
+  "patients_in_all_three_groups": 51,
+  "missing_patient_id": {
+    "dicm_melanoma": 4858,
+    "dicm_benign": 2200,
+    "isic_benign": 0
+  },
+  "note": "Shared patients are kept. Group-aware splitting assigns every image of a patient to one split."
+}

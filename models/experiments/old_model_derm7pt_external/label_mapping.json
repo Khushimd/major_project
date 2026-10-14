@@ -1,0 +1,43 @@
+{
+  "positive_class": 1,
+  "positive_name": "melanoma",
+  "negative_class": 0,
+  "negative_name": "non_melanoma",
+  "image_used": "dermoscopic_only",
+  "clinical_image_used": false,
+  "positive_diagnoses": [
+    "melanoma",
+    "melanoma (0.76 to 1.5 mm)",
+    "melanoma (in situ)",
+    "melanoma (less than 0.76 mm)",
+    "melanoma (more than 1.5 mm)",
+    "melanoma metastasis"
+  ],
+  "negative_diagnoses": [
+    "basal cell carcinoma",
+    "blue nevus",
+    "clark nevus",
+    "combined nevus",
+    "congenital nevus",
+    "dermal nevus",
+    "dermatofibroma",
+    "lentigo",
+    "recurrent nevus",
+    "reed or spitz nevus",
+    "seborrheic keratosis",
+    "vascular lesion"
+  ],
+  "excluded_diagnoses": {
+    "melanosis": "ambiguous_not_melanoma_not_clearly_benign: melanosis is not a melanoma diagnosis and is not automatically assigned to the non-melanoma class",
+    "miscellaneous": "ambiguous_unspecified_mixed_category: miscellaneous is not a named diagnosis and cannot be defensibly assigned"
+  },
+  "notes": [
+    "Melanoma in situ is included as melanoma.",
+    "All listed melanoma thickness categories are included as melanoma.",
+    "Melanoma metastasis (n=4) is included as melanoma because it is a melanoma diagnosis; it is reported separately because it is not a primary cutaneous lesion.",
+    "Melanosis is excluded: not melanoma and not automatically treated as non-melanoma/benign.",
+    "Miscellaneous is excluded: unspecified mixed category.",
+    "Basal cell carcinoma is non-melanoma (negative), not benign in the clinical sense.",
+    "The old development labels used DICM official class=1 as the positive class, which is not a pure melanoma label."
+  ]
+}

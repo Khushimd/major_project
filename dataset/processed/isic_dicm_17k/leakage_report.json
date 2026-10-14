@@ -1,0 +1,110 @@
+{
+  "counts": {
+    "train": {
+      "rows": 11859,
+      "malignant": 5875,
+      "benign": 5984,
+      "unique_image_ids": 11859,
+      "unique_groups": 6636,
+      "unique_paths": 11859
+    },
+    "val": {
+      "rows": 2616,
+      "malignant": 1334,
+      "benign": 1282,
+      "unique_image_ids": 2616,
+      "unique_groups": 1422,
+      "unique_paths": 2616
+    },
+    "test": {
+      "rows": 2585,
+      "malignant": 1321,
+      "benign": 1264,
+      "unique_image_ids": 2585,
+      "unique_groups": 1422,
+      "unique_paths": 2585
+    }
+  },
+  "image_id_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 11859,
+      "right_n": 2616,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 11859,
+      "right_n": 2585,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 2616,
+      "right_n": 2585,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "group_id_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 6636,
+      "right_n": 1422,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 6636,
+      "right_n": 1422,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 1422,
+      "right_n": 1422,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "path_overlap": {
+    "train_vs_val": {
+      "left": "train",
+      "right": "val",
+      "left_n": 11859,
+      "right_n": 2616,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "train_vs_test": {
+      "left": "train",
+      "right": "test",
+      "left_n": 11859,
+      "right_n": 2585,
+      "overlap_n": 0,
+      "overlap_examples": []
+    },
+    "val_vs_test": {
+      "left": "val",
+      "right": "test",
+      "left_n": 2616,
+      "right_n": 2585,
+      "overlap_n": 0,
+      "overlap_examples": []
+    }
+  },
+  "near_duplicates": {
+    "enabled": false
+  },
+  "clean": true
+}

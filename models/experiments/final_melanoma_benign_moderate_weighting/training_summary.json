@@ -1,0 +1,379 @@
+{
+  "experiment": "final_melanoma_benign_moderate_weighting",
+  "variants": [
+    {
+      "id": "W_1.00",
+      "benign": 1.0,
+      "melanoma": 1.0,
+      "role": "control/reference"
+    },
+    {
+      "id": "W_1.05",
+      "benign": 1.0,
+      "melanoma": 1.05,
+      "role": "moderate candidate"
+    },
+    {
+      "id": "W_1.10",
+      "benign": 1.0,
+      "melanoma": 1.1,
+      "role": "moderate candidate"
+    },
+    {
+      "id": "W_1.15",
+      "benign": 1.0,
+      "melanoma": 1.15,
+      "role": "moderate candidate"
+    }
+  ],
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "threshold": 0.5,
+  "constraints": {
+    "specificity": 0.82,
+    "precision": 0.78,
+    "f1": 0.8,
+    "accuracy": 0.82
+  },
+  "validation_results": [
+    {
+      "id": "W_1.00",
+      "role": "control/reference",
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.0,
+      "threshold": 0.5,
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "constraint_failures": [
+        "specificity 0.8151 < 0.82",
+        "precision 0.7707 < 0.78",
+        "f1 0.7998 < 0.80"
+      ],
+      "meets_constraints": false,
+      "accuracy": 0.8219852337981952,
+      "precision": 0.7706666666666667,
+      "recall": 0.8312559923298178,
+      "sensitivity": 0.8312559923298178,
+      "specificity": 0.8150537634408602,
+      "f1": 0.7998154981549815,
+      "auc": 0.9100093815400159,
+      "pr_auc": 0.8882236638853455,
+      "tp": 867,
+      "fp": 258,
+      "tn": 1137,
+      "fn": 176,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    {
+      "id": "W_1.05",
+      "role": "moderate candidate",
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.05,
+      "threshold": 0.5,
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "constraint_failures": [
+        "specificity 0.7950 < 0.82",
+        "precision 0.7539 < 0.78",
+        "f1 0.7946 < 0.80",
+        "accuracy 0.8142 < 0.82"
+      ],
+      "meets_constraints": false,
+      "accuracy": 0.8141919606234619,
+      "precision": 0.7538726333907056,
+      "recall": 0.8398849472674976,
+      "sensitivity": 0.8398849472674976,
+      "specificity": 0.7949820788530466,
+      "f1": 0.7945578231292517,
+      "auc": 0.9097592071395926,
+      "pr_auc": 0.8871105491423354,
+      "tp": 876,
+      "fp": 286,
+      "tn": 1109,
+      "fn": 167,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    {
+      "id": "W_1.10",
+      "role": "moderate candidate",
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.1,
+      "threshold": 0.5,
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "constraint_failures": [
+        "specificity 0.8108 < 0.82",
+        "precision 0.7645 < 0.78",
+        "f1 0.7921 < 0.80",
+        "accuracy 0.8154 < 0.82"
+      ],
+      "meets_constraints": false,
+      "accuracy": 0.815422477440525,
+      "precision": 0.7644959857270295,
+      "recall": 0.8216682646212847,
+      "sensitivity": 0.8216682646212847,
+      "specificity": 0.810752688172043,
+      "f1": 0.7920517560073937,
+      "auc": 0.9048704969467037,
+      "pr_auc": 0.8825735116573884,
+      "tp": 857,
+      "fp": 264,
+      "tn": 1131,
+      "fn": 186,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    {
+      "id": "W_1.15",
+      "role": "moderate candidate",
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.15,
+      "threshold": 0.5,
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "constraint_failures": [
+        "specificity 0.7892 < 0.82",
+        "precision 0.7502 < 0.78",
+        "f1 0.7955 < 0.80",
+        "accuracy 0.8138 < 0.82"
+      ],
+      "meets_constraints": false,
+      "accuracy": 0.8137817883511075,
+      "precision": 0.7502124044180118,
+      "recall": 0.8465963566634708,
+      "sensitivity": 0.8465963566634708,
+      "specificity": 0.789247311827957,
+      "f1": 0.7954954954954955,
+      "auc": 0.9085674422760371,
+      "pr_auc": 0.8868329578115267,
+      "tp": 883,
+      "fp": 294,
+      "tn": 1101,
+      "fn": 160,
+      "n_positive": 1043,
+      "n_negative": 1395
+    }
+  ],
+  "selection": {
+    "feasible": false,
+    "n_feasible": 0,
+    "selected_id": "retained_baseline",
+    "selected": null,
+    "rule": "No moderate-weighting configuration met specificity>=0.82, precision>=0.78, F1>=0.80, and accuracy>=0.82 on validation at threshold 0.50. Constraints were not relaxed. Retain the frozen 83.42% baseline."
+  },
+  "test_metrics": {
+    "evaluated_once": false,
+    "post_test_tuning": false,
+    "threshold": 0.5,
+    "ensemble_weights": {
+      "efficientnet": 0.7,
+      "mobilenet": 0.3
+    },
+    "selected_id": "retained_baseline",
+    "metrics": null,
+    "reason": "No constrained validation winner; test not used to pick a weight. Baseline retained."
+  },
+  "comparison_rows": [
+    {
+      "name": "Current frozen baseline",
+      "mark": "baseline",
+      "evaluation": "frozen_test",
+      "accuracy": 0.8342224045958145,
+      "sensitivity": 0.8146013448607109,
+      "specificity": 0.8488538681948424,
+      "precision": 0.8007554296506137,
+      "f1": 0.8076190476190476,
+      "auc": 0.9126790142826079,
+      "pr_auc": 0.8884757664753524,
+      "tp": 848,
+      "tn": 1185,
+      "fp": 211,
+      "fn": 193
+    },
+    {
+      "name": "Threshold optimization",
+      "mark": "previous ablation",
+      "evaluation": "frozen_test",
+      "accuracy": 0.8342224045958145,
+      "sensitivity": 0.8146013448607109,
+      "specificity": 0.8488538681948424,
+      "precision": 0.8007554296506137,
+      "f1": 0.8076190476190476,
+      "auc": 0.9126790142826079,
+      "pr_auc": 0.8884757664753524,
+      "tp": 848,
+      "tn": 1185,
+      "fp": 211,
+      "fn": 193
+    },
+    {
+      "name": "Previous balanced class weighting",
+      "mark": "previous ablation",
+      "evaluation": "frozen_test",
+      "accuracy": 0.8272466146901929,
+      "sensitivity": 0.851104707012488,
+      "specificity": 0.8094555873925502,
+      "precision": 0.7690972222222222,
+      "f1": 0.8080255357957137,
+      "auc": 0.9121319592963565,
+      "pr_auc": 0.8857626022922268,
+      "tp": 886,
+      "tn": 1130,
+      "fp": 266,
+      "fn": 155
+    },
+    {
+      "name": "Moderate weighting W_1.00 (1.00:1.00)",
+      "mark": "control/reference",
+      "evaluation": "validation",
+      "accuracy": 0.8219852337981952,
+      "sensitivity": 0.8312559923298178,
+      "specificity": 0.8150537634408602,
+      "precision": 0.7706666666666667,
+      "f1": 0.7998154981549815,
+      "auc": 0.9100093815400159,
+      "pr_auc": 0.8882236638853455,
+      "tp": 867,
+      "tn": 1137,
+      "fp": 258,
+      "fn": 176,
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.0
+    },
+    {
+      "name": "Moderate weighting W_1.05 (1.00:1.05)",
+      "mark": "moderate candidate",
+      "evaluation": "validation",
+      "accuracy": 0.8141919606234619,
+      "sensitivity": 0.8398849472674976,
+      "specificity": 0.7949820788530466,
+      "precision": 0.7538726333907056,
+      "f1": 0.7945578231292517,
+      "auc": 0.9097592071395926,
+      "pr_auc": 0.8871105491423354,
+      "tp": 876,
+      "tn": 1109,
+      "fp": 286,
+      "fn": 167,
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.05
+    },
+    {
+      "name": "Moderate weighting W_1.10 (1.00:1.10)",
+      "mark": "moderate candidate",
+      "evaluation": "validation",
+      "accuracy": 0.815422477440525,
+      "sensitivity": 0.8216682646212847,
+      "specificity": 0.810752688172043,
+      "precision": 0.7644959857270295,
+      "f1": 0.7920517560073937,
+      "auc": 0.9048704969467037,
+      "pr_auc": 0.8825735116573884,
+      "tp": 857,
+      "tn": 1131,
+      "fp": 264,
+      "fn": 186,
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.1
+    },
+    {
+      "name": "Moderate weighting W_1.15 (1.00:1.15)",
+      "mark": "moderate candidate",
+      "evaluation": "validation",
+      "accuracy": 0.8137817883511075,
+      "sensitivity": 0.8465963566634708,
+      "specificity": 0.789247311827957,
+      "precision": 0.7502124044180118,
+      "f1": 0.7954954954954955,
+      "auc": 0.9085674422760371,
+      "pr_auc": 0.8868329578115267,
+      "tp": 883,
+      "tn": 1101,
+      "fp": 294,
+      "fn": 160,
+      "benign_weight": 1.0,
+      "melanoma_weight": 1.15
+    },
+    {
+      "name": "Final selected model (retained frozen baseline)",
+      "mark": "final selected candidate",
+      "evaluation": "frozen_test",
+      "accuracy": 0.8342224045958145,
+      "sensitivity": 0.8146013448607109,
+      "specificity": 0.8488538681948424,
+      "precision": 0.8007554296506137,
+      "f1": 0.8076190476190476,
+      "auc": 0.9126790142826079,
+      "pr_auc": 0.8884757664753524,
+      "tp": 848,
+      "tn": 1185,
+      "fp": 211,
+      "fn": 193
+    }
+  ],
+  "previous_class_weighted": {
+    "name": "Previous balanced class weighting",
+    "mark": "previous ablation",
+    "accuracy": 0.8272466146901929,
+    "sensitivity": 0.851104707012488,
+    "specificity": 0.8094555873925502,
+    "precision": 0.7690972222222222,
+    "f1": 0.8080255357957137,
+    "auc": 0.9121319592963565,
+    "pr_auc": 0.8857626022922268,
+    "tp": 886,
+    "tn": 1130,
+    "fp": 266,
+    "fn": 155,
+    "evaluation": "frozen_test",
+    "benign_weight": 0.8522318753744758,
+    "melanoma_weight": 1.2097597278332979
+  },
+  "interpretation": {
+    "answer": "NO",
+    "replace_baseline": false,
+    "better_than_0_50_baseline": false,
+    "detail": "Moderate weighting did not provide a sufficiently favorable operating trade-off under the stated constraints. Retain the 83.42% baseline."
+  },
+  "timing": {
+    "total_seconds": 130543.68758392334
+  },
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "seed": 42,
+    "gpu": []
+  },
+  "test_used_for_tuning": false,
+  "post_test_tuning": false,
+  "replace_baseline": false,
+  "variant_paths": [
+    {
+      "id": "W_1.00",
+      "efficientnet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.00\\efficientnetb0.keras",
+      "mobilenet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.00\\mobilenetv2.keras"
+    },
+    {
+      "id": "W_1.05",
+      "efficientnet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.05\\efficientnetb0.keras",
+      "mobilenet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.05\\mobilenetv2.keras"
+    },
+    {
+      "id": "W_1.10",
+      "efficientnet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.10\\efficientnetb0.keras",
+      "mobilenet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.10\\mobilenetv2.keras"
+    },
+    {
+      "id": "W_1.15",
+      "efficientnet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.15\\efficientnetb0.keras",
+      "mobilenet": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_moderate_weighting\\variants\\W_1.15\\mobilenetv2.keras"
+    }
+  ]
+}

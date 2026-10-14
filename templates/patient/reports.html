@@ -1,0 +1,30 @@
+{% extends "dash_base.html" %}
+{% from "macros/patient_nav.html" import nav %}
+{% block sidebar %}{{ nav('reports') }}{% endblock %}
+{% block heading %}My reports{% endblock %}
+{% block content %}
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead>
+      <tr>
+        <th>Date</th><th>Doctor's assessment</th><th>AJCC</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in cases %}
+      <tr>
+        <td>{{ c.created_at }}</td>
+        <td>{{ c.final_diagnosis or '—' }}</td>
+        <td>{{ c.ajcc_stage or '—' }}</td>
+        <td>
+          <a href="{{ url_for('patient.report_detail', case_id=c.id) }}">View</a>
+          · <a href="{{ url_for('patient.download_report', case_id=c.id) }}">Download</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4">No completed reports yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

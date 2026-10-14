@@ -1,0 +1,420 @@
+{
+  "dataset": {
+    "total": 16529,
+    "melanoma": 8530,
+    "benign": 7999,
+    "train": {
+      "total": 11611,
+      "melanoma": 5966,
+      "benign": 5645
+    },
+    "validation": {
+      "total": 2445,
+      "melanoma": 1240,
+      "benign": 1205
+    },
+    "test": {
+      "total": 2473,
+      "melanoma": 1324,
+      "benign": 1149
+    }
+  },
+  "efficientnetb0": {
+    "best_epoch": 32,
+    "training_seconds": 11101.682097673416,
+    "validation": {
+      "threshold": 0.5,
+      "accuracy": 0.8940695296523518,
+      "precision": 0.8793503480278422,
+      "recall": 0.9169354838709678,
+      "sensitivity": 0.9169354838709678,
+      "specificity": 0.870539419087137,
+      "f1": 0.897749703908409,
+      "auc": 0.9558298755186722,
+      "pr_auc": 0.9563044395473426,
+      "tp": 1137,
+      "fp": 156,
+      "tn": 1049,
+      "fn": 103,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "test": {
+      "threshold": 0.5,
+      "accuracy": 0.9009300444803882,
+      "precision": 0.8975681650700074,
+      "recall": 0.9199395770392749,
+      "sensitivity": 0.9199395770392749,
+      "specificity": 0.8790252393385553,
+      "f1": 0.9086161879895561,
+      "auc": 0.9636206710682349,
+      "pr_auc": 0.9691261550825756,
+      "tp": 1218,
+      "fp": 139,
+      "tn": 1010,
+      "fn": 106,
+      "n_positive": 1324,
+      "n_negative": 1149
+    }
+  },
+  "mobilenetv2": {
+    "best_epoch": 42,
+    "training_seconds": 9949.03098320961,
+    "validation": {
+      "threshold": 0.5,
+      "accuracy": 0.8658486707566462,
+      "precision": 0.9014084507042254,
+      "recall": 0.8258064516129032,
+      "sensitivity": 0.8258064516129032,
+      "specificity": 0.9070539419087137,
+      "f1": 0.8619528619528619,
+      "auc": 0.944697496988355,
+      "pr_auc": 0.9498042489322376,
+      "tp": 1024,
+      "fp": 112,
+      "tn": 1093,
+      "fn": 216,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "test": {
+      "threshold": 0.5,
+      "accuracy": 0.8819247877072381,
+      "precision": 0.9075829383886256,
+      "recall": 0.8678247734138973,
+      "sensitivity": 0.8678247734138973,
+      "specificity": 0.8981723237597912,
+      "f1": 0.8872586872586873,
+      "auc": 0.9554735629826541,
+      "pr_auc": 0.9639922484177077,
+      "tp": 1149,
+      "fp": 117,
+      "tn": 1032,
+      "fn": 175,
+      "n_positive": 1324,
+      "n_negative": 1149
+    }
+  },
+  "ensemble": {
+    "efficientnet_weight": 0.85,
+    "mobilenet_weight": 0.15,
+    "threshold": 0.5,
+    "validation": {
+      "threshold": 0.5,
+      "accuracy": 0.8985685071574642,
+      "precision": 0.8881064162754304,
+      "recall": 0.9153225806451613,
+      "sensitivity": 0.9153225806451613,
+      "specificity": 0.8813278008298755,
+      "f1": 0.9015091342335186,
+      "auc": 0.9580022754651318,
+      "pr_auc": 0.9603652776712204,
+      "tp": 1135,
+      "fp": 143,
+      "tn": 1062,
+      "fn": 105,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "test": {
+      "threshold": 0.5,
+      "accuracy": 0.9057824504650223,
+      "precision": 0.9025830258302583,
+      "recall": 0.9237160120845922,
+      "sensitivity": 0.9237160120845922,
+      "specificity": 0.8851174934725848,
+      "f1": 0.9130272489734975,
+      "auc": 0.9657859586294664,
+      "pr_auc": 0.9716158502570492,
+      "tp": 1223,
+      "fp": 132,
+      "tn": 1017,
+      "fn": 101,
+      "n_positive": 1324,
+      "n_negative": 1149
+    }
+  },
+  "ph2": {
+    "label": "EXTERNAL PH2 TEST",
+    "n": 200,
+    "melanoma": 40,
+    "benign": 160,
+    "missing": [],
+    "used_for_training_or_tuning": false,
+    "efficientnetb0": {
+      "threshold": 0.5,
+      "accuracy": 0.21,
+      "precision": 0.20202020202020202,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0125,
+      "f1": 0.33613445378151263,
+      "auc": 0.580625,
+      "pr_auc": 0.29017166476341133,
+      "tp": 40,
+      "fp": 158,
+      "tn": 2,
+      "fn": 0,
+      "n_positive": 40,
+      "n_negative": 160
+    },
+    "mobilenetv2": {
+      "threshold": 0.5,
+      "accuracy": 0.2,
+      "precision": 0.2,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0,
+      "f1": 0.3333333333333333,
+      "auc": 0.72265625,
+      "pr_auc": 0.5434433573626674,
+      "tp": 40,
+      "fp": 160,
+      "tn": 0,
+      "fn": 0,
+      "n_positive": 40,
+      "n_negative": 160
+    },
+    "ensemble": {
+      "threshold": 0.5,
+      "accuracy": 0.21,
+      "precision": 0.20202020202020202,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0125,
+      "f1": 0.33613445378151263,
+      "auc": 0.6292187499999999,
+      "pr_auc": 0.41214077066035815,
+      "tp": 40,
+      "fp": 158,
+      "tn": 2,
+      "fn": 0,
+      "n_positive": 40,
+      "n_negative": 160
+    },
+    "threshold": 0.5,
+    "weights": {
+      "efficientnet": 0.85,
+      "mobilenet": 0.15
+    },
+    "note": "PH2 was not used for training, threshold, or ensemble selection."
+  },
+  "demo_100": {
+    "label": "100-IMAGE TEST DEMONSTRATION",
+    "not_the_complete_evaluation": true,
+    "primary_internal_evaluation": "frozen test set of 2473 images",
+    "used_for_training_or_tuning": false,
+    "n": 100,
+    "melanoma": 50,
+    "benign": 50,
+    "correct": 90,
+    "incorrect": 10,
+    "accuracy": 0.9,
+    "threshold": 0.5,
+    "metrics": {
+      "threshold": 0.5,
+      "accuracy": 0.9,
+      "precision": 0.8703703703703703,
+      "recall": 0.94,
+      "sensitivity": 0.94,
+      "specificity": 0.86,
+      "f1": 0.9038461538461539,
+      "auc": 0.958,
+      "pr_auc": 0.9599832479479138,
+      "tp": 47,
+      "fp": 7,
+      "tn": 43,
+      "fn": 3,
+      "n_positive": 50,
+      "n_negative": 50
+    },
+    "confusion_matrix": {
+      "tp": 47,
+      "tn": 43,
+      "fp": 7,
+      "fn": 3
+    }
+  },
+  "gradcam": {
+    "status": "ok",
+    "label": "AI Attention Visualization",
+    "n_examples": 4,
+    "issues": [],
+    "cases": [
+      {
+        "kind": "true_positive_melanoma",
+        "image_id": "ISIC_0061345",
+        "true_label": 1,
+        "predicted_label": 1,
+        "ai_estimated_probability": 0.9999314665794372,
+        "ok": true,
+        "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_original.jpg",
+        "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_heatmap.jpg",
+        "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_overlay.jpg",
+        "caption": "AI Attention Visualization",
+        "not_cancer_area": true,
+        "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+      },
+      {
+        "kind": "true_negative_benign",
+        "image_id": "ISIC_4247550",
+        "true_label": 0,
+        "predicted_label": 0,
+        "ai_estimated_probability": 0.0913166593760252,
+        "ok": true,
+        "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_original.jpg",
+        "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_heatmap.jpg",
+        "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_overlay.jpg",
+        "caption": "AI Attention Visualization",
+        "not_cancer_area": true,
+        "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+      },
+      {
+        "kind": "false_positive",
+        "image_id": "ISIC_9161937",
+        "true_label": 0,
+        "predicted_label": 1,
+        "ai_estimated_probability": 0.9550632983446121,
+        "ok": true,
+        "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_original.jpg",
+        "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_heatmap.jpg",
+        "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_overlay.jpg",
+        "caption": "AI Attention Visualization",
+        "not_cancer_area": true,
+        "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+      },
+      {
+        "kind": "false_negative",
+        "image_id": "ISIC_0020491",
+        "true_label": 1,
+        "predicted_label": 0,
+        "ai_estimated_probability": 0.24757760092616082,
+        "ok": true,
+        "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_original.jpg",
+        "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_heatmap.jpg",
+        "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_overlay.jpg",
+        "caption": "AI Attention Visualization",
+        "not_cancer_area": true,
+        "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+      }
+    ]
+  },
+  "calibration": {
+    "status": "implemented",
+    "method": "isotonic regression",
+    "fitted_on": "validation ensemble raw probabilities only",
+    "validation_only_fitting": true,
+    "test_used_for_fitting": false,
+    "raw_brier": 0.10739252156573145,
+    "calibrated_brier": 0.07358609559062394,
+    "reliability_raw": {
+      "mean_predicted": [
+        0.1831780302077532,
+        0.25964818878436635,
+        0.34137059824461,
+        0.4475579154505218,
+        0.5515246306033057,
+        0.6501332912657218,
+        0.7528561566745383,
+        0.8557363794868802,
+        0.9656608137600836
+      ],
+      "fraction_positive": [
+        0.04,
+        0.02952755905511811,
+        0.06698564593301436,
+        0.2824074074074074,
+        0.5989304812834224,
+        0.8022598870056498,
+        0.9060773480662984,
+        0.9605911330049262,
+        0.9849056603773585
+      ]
+    },
+    "operating_threshold_uses_raw_scores": true,
+    "note": "Displayed probability is an AI-estimated model score. It is not a clinically calibrated medical probability."
+  },
+  "safety": {
+    "old_production_models_not_overwritten": true,
+    "old_production_metrics_not_overwritten": true,
+    "old_threshold_not_reused": true,
+    "old_ensemble_weights_not_reused": true,
+    "trained_on_melanoma_benign_only": true,
+    "dicm_class_0_not_used": true,
+    "train_split_unchanged": true,
+    "val_split_unchanged": true,
+    "test_split_unchanged": true,
+    "test_not_used_for_tuning": true,
+    "ph2_not_used_for_tuning": true,
+    "no_val_test_augmentation": true,
+    "no_duplicated_images": true,
+    "threshold_from_validation_only": true,
+    "ensemble_weights_from_validation_only": true,
+    "production_application_not_modified": true,
+    "active_dataset_unchanged": "combined",
+    "production_snapshot_before": {
+      "efficientnet": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+        "exists": true,
+        "size": 18362343,
+        "mtime": 1789839256.1543894
+      },
+      "mobilenet": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+        "exists": true,
+        "size": 10946920,
+        "mtime": 1789844318.7423635
+      },
+      "eval_metrics": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\evaluation_metrics.json",
+        "exists": true,
+        "size": 5931,
+        "mtime": 1789844696.4895136
+      },
+      "inference_config": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\inference_config.json",
+        "exists": true,
+        "size": 1174,
+        "mtime": 1789844696.5169592
+      },
+      "ensemble_meta": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\ensemble_meta.json",
+        "exists": true,
+        "size": 637,
+        "mtime": 1789844696.4908445
+      }
+    },
+    "production_snapshot_after": {
+      "efficientnet": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+        "exists": true,
+        "size": 18362343,
+        "mtime": 1789839256.1543894
+      },
+      "mobilenet": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+        "exists": true,
+        "size": 10946920,
+        "mtime": 1789844318.7423635
+      },
+      "eval_metrics": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\evaluation_metrics.json",
+        "exists": true,
+        "size": 5931,
+        "mtime": 1789844696.4895136
+      },
+      "inference_config": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\inference_config.json",
+        "exists": true,
+        "size": 1174,
+        "mtime": 1789844696.5169592
+      },
+      "ensemble_meta": {
+        "path": "C:\\Projects\\major-project\\models\\saved\\ensemble_meta.json",
+        "exists": true,
+        "size": 637,
+        "mtime": 1789844696.4908445
+      }
+    }
+  }
+}

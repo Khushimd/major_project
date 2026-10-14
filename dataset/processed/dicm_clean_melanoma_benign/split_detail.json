@@ -1,0 +1,72 @@
+{
+  "seed": 42,
+  "grouping": "patient_id, else lesion_id, else image_id",
+  "target": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "splits": {
+    "all": {
+      "total": 11373,
+      "melanoma": 6787,
+      "benign": 4586,
+      "patients": 2434,
+      "lesions": 4834,
+      "missing_patient_id": 7058,
+      "missing_lesion_id": 3396,
+      "group_levels": {
+        "lesion": 5257,
+        "patient": 4315,
+        "image": 1801
+      }
+    },
+    "train": {
+      "total": 7961,
+      "melanoma": 4747,
+      "benign": 3214,
+      "patients": 1706,
+      "lesions": 3418,
+      "missing_patient_id": 4980,
+      "missing_lesion_id": 2332,
+      "group_levels": {
+        "lesion": 3704,
+        "patient": 2981,
+        "image": 1276
+      }
+    },
+    "val": {
+      "total": 1706,
+      "melanoma": 1016,
+      "benign": 690,
+      "patients": 384,
+      "lesions": 707,
+      "missing_patient_id": 1025,
+      "missing_lesion_id": 536,
+      "group_levels": {
+        "lesion": 756,
+        "patient": 681,
+        "image": 269
+      }
+    },
+    "test": {
+      "total": 1706,
+      "melanoma": 1024,
+      "benign": 682,
+      "patients": 344,
+      "lesions": 709,
+      "missing_patient_id": 1053,
+      "missing_lesion_id": 528,
+      "group_levels": {
+        "lesion": 797,
+        "patient": 653,
+        "image": 256
+      }
+    }
+  },
+  "group_level_counts": {
+    "lesion": 5257,
+    "patient": 4315,
+    "image": 1801
+  }
+}

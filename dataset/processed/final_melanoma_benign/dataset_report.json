@@ -1,0 +1,147 @@
+{
+  "training_performed": false,
+  "sources": [
+    "ISIC-DICM-17K clean melanoma",
+    "ISIC-DICM-17K clean benign",
+    "ISIC 2020 strict named benign"
+  ],
+  "isic_2020_melanoma_added": false,
+  "seed": 42,
+  "initial_expected": {
+    "dicm_melanoma": 6787,
+    "dicm_benign": 4586,
+    "isic_strict_benign": 5417,
+    "total": 16790
+  },
+  "isic_benign_image_id_overlap_dropped": 532,
+  "byte_identical_extra_files_dropped": [
+    "ISIC_4261232",
+    "ISIC_4364740",
+    "ISIC_7528783",
+    "ISIC_9645937"
+  ],
+  "byte_identical_groups_found": [
+    {
+      "sha256": "d9fc770104a5e6e6ec20b2a62df509a04913afdad330789da4c28fa979e2d4cf",
+      "size": 2119628,
+      "paths": [
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_2741583.jpg",
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_4261232.jpg"
+      ]
+    },
+    {
+      "sha256": "478dc0d7a584d8b8463b16000200d1597a84c9076ab582e3a729eb5476bf1d44",
+      "size": 2314491,
+      "paths": [
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_3461423.jpg",
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_4364740.jpg"
+      ]
+    },
+    {
+      "sha256": "214c5ce9fc6cb97ea7daed9016c977b1971576f6504370ae22af902bfc8e1e20",
+      "size": 1769975,
+      "paths": [
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_7528783.jpg",
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_6689310.jpg"
+      ]
+    },
+    {
+      "sha256": "849f402c78c355fa0f3bfcb0699fcd541c2d31df3fee9706c5d793ccfd5ea74d",
+      "size": 1423817,
+      "paths": [
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_9432244.jpg",
+        "C:\\Projects\\major-project\\dataset\\raw\\train\\ISIC_9645937.jpg"
+      ]
+    }
+  ],
+  "final": {
+    "melanoma": 6787,
+    "benign": 9467,
+    "total": 16254,
+    "ratio_benign_per_melanoma": 1.3948725504641226
+  },
+  "extract_isic": {
+    "already": 5417,
+    "extracted": 0,
+    "needed": 0,
+    "still_missing": []
+  },
+  "splits": {
+    "all": {
+      "total": 16254,
+      "melanoma": 6787,
+      "benign": 9467,
+      "patients": 2916,
+      "lesions": 4834,
+      "missing_patient_id": 7058,
+      "missing_lesion_id": 8277,
+      "group_levels": {
+        "patient": 9196,
+        "lesion": 5257,
+        "image": 1801
+      },
+      "by_source": {
+        "('ISIC-2020', 0)": 4881,
+        "('ISIC-DICM-17K', 1)": 6787,
+        "('ISIC-DICM-17K', 0)": 4586
+      }
+    },
+    "train": {
+      "total": 11379,
+      "melanoma": 4703,
+      "benign": 6676,
+      "patients": 2051,
+      "lesions": 3340,
+      "missing_patient_id": 4865,
+      "missing_lesion_id": 5893,
+      "group_levels": {
+        "patient": 6514,
+        "lesion": 3594,
+        "image": 1271
+      },
+      "by_source": {
+        "('ISIC-2020', 0)": 3487,
+        "('ISIC-DICM-17K', 1)": 4703,
+        "('ISIC-DICM-17K', 0)": 3189
+      }
+    },
+    "val": {
+      "total": 2438,
+      "melanoma": 1043,
+      "benign": 1395,
+      "patients": 440,
+      "lesions": 753,
+      "missing_patient_id": 1131,
+      "missing_lesion_id": 1168,
+      "group_levels": {
+        "patient": 1307,
+        "lesion": 846,
+        "image": 285
+      },
+      "by_source": {
+        "('ISIC-2020', 0)": 673,
+        "('ISIC-DICM-17K', 1)": 1043,
+        "('ISIC-DICM-17K', 0)": 722
+      }
+    },
+    "test": {
+      "total": 2437,
+      "melanoma": 1041,
+      "benign": 1396,
+      "patients": 425,
+      "lesions": 741,
+      "missing_patient_id": 1062,
+      "missing_lesion_id": 1216,
+      "group_levels": {
+        "patient": 1375,
+        "lesion": 817,
+        "image": 245
+      },
+      "by_source": {
+        "('ISIC-2020', 0)": 721,
+        "('ISIC-DICM-17K', 1)": 1041,
+        "('ISIC-DICM-17K', 0)": 675
+      }
+    }
+  }
+}

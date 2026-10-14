@@ -1,0 +1,542 @@
+DICM SOURCE-BIAS AUDIT
+Read-only. No training. No dataset/model/split/production files were modified.
+
+Current experimental construction (context, not changed here):
+  Melanoma  = 8,530 images from ISIC-DICM-17K official class=1
+  Benign    = 7,999 local ISIC 2020 images with benign_malignant=benign
+  DICM official class=0 (non-melanoma) was NOT used as the benign class.
+
+Files inspected:
+  C:\Projects\major-project\metadata.csv
+  C:\Projects\major-project\dataset\isic_dicm_17k\train-set-metadata.csv  rows=15098
+  C:\Projects\major-project\dataset\isic_dicm_17k\valid-set-metadata.csv  rows=1962
+  C:\Projects\major-project\dataset\raw\train.csv  rows=33126
+
+============================================================
+1. COLUMNS
+============================================================
+
+Official train/valid metadata (24 columns):
+  - image
+  - isic_id
+  - year
+  - class
+  - patient_id
+  - lesion_id
+  - sex
+  - age_approx
+  - anatom_site_general
+  - benign_malignant
+  - dermoscopic_type
+  - diagnosis
+  - diagnosis_confirm_type
+  - image_type
+  - mel_class
+  - mel_mitotic_index
+  - mel_type
+  - mel_ulcer
+  - melanocytic
+  - nevus_type
+  - clin_size_long_diam_mm
+  - mel_thick_mm
+  - personal_hx_mm
+  - family_hx_mm
+
+Archive metadata.csv (29 columns; archive extras not in official labels):
+  - isic_id
+  - attribution
+  - copyright_license
+  - acquisition_day
+  - age_approx
+  - anatom_site_general
+  - anatom_site_special
+  - clin_size_long_diam_mm
+  - concomitant_biopsy
+  - dermoscopic_type
+  - diagnosis_1
+  - diagnosis_2
+  - diagnosis_3
+  - diagnosis_4
+  - diagnosis_5
+  - diagnosis_confirm_type
+  - family_hx_mm
+  - fitzpatrick_skin_type
+  - image_manipulation
+  - image_type
+  - lesion_id
+  - mel_mitotic_index
+  - mel_thick_mm
+  - mel_ulcer
+  - melanocytic
+  - patient_id
+  - personal_hx_mm
+  - sex
+  - image_id
+
+Archive-only fields (not in official train/valid CSVs):
+  - acquisition_day
+  - anatom_site_special
+  - attribution
+  - concomitant_biopsy
+  - copyright_license
+  - diagnosis_1
+  - diagnosis_2
+  - diagnosis_3
+  - diagnosis_4
+  - diagnosis_5
+  - fitzpatrick_skin_type
+  - image_manipulation
+
+Official-only fields (not in archive metadata.csv):
+  - benign_malignant
+  - class
+  - diagnosis
+  - image
+  - mel_class
+  - mel_type
+  - nevus_type
+  - year
+
+============================================================
+2. OFFICIAL BINARY class COLUMN
+============================================================
+
+class is the official DICM melanoma vs non-melanoma label.
+It is NOT a benign vs malignant label.
+
+Official train rows: 15098
+Official valid rows: 1962
+Official combined rows: 17060
+
+Combined class counts:
+    1: 8530
+    0: 8530
+
+Train class counts:
+    1: 7549
+    0: 7549
+
+Valid class counts:
+    1: 981
+    0: 981
+
+============================================================
+3. class=0 (NON-MELANOMA) DIAGNOSIS FIELDS
+============================================================
+
+n class=0: 8530
+
+IMPORTANT: class=0 means NON-MELANOMA, not necessarily benign.
+
+Official diagnosis:
+    nevus: 3554
+    <MISSING>: 2670
+    basal cell carcinoma: 489
+    seborrheic keratosis: 337
+    actinic keratosis: 294
+    solar lentigo: 204
+    acrochordon: 167
+    lichenoid keratosis: 137
+    pigmented benign keratosis: 112
+    lentigo NOS: 98
+    squamous cell carcinoma: 89
+    dermatofibroma: 72
+    atypical melanocytic proliferation: 67
+    verruca: 62
+    vascular lesion: 44
+    AIMP: 34
+    angioma: 32
+    lentigo simplex: 21
+    neurofibroma: 13
+    scar: 9
+    other: 7
+    angiokeratoma: 5
+    sebaceous hyperplasia: 3
+    melanoma: 3
+    atypical spitz tumor: 2
+    angiofibroma or fibrous papule: 2
+    clear cell acanthoma: 1
+    sebaceous adenoma: 1
+    cafe-au-lait macule: 1
+
+Official benign_malignant:
+    benign: 7680
+    <MISSING>: 748
+    indeterminate: 73
+    indeterminate/benign: 29
+
+Official melanocytic:
+    1.0: 3600
+    <MISSING>: 3026
+    0.0: 1904
+
+Official nevus_type:
+    <MISSING>: 8182
+    nevus NOS: 325
+    combined: 13
+    blue: 7
+    persistent/recurrent: 1
+    plexiform spindle cell: 1
+    pigmented spindle cell of reed: 1
+
+Official diagnosis_confirm_type:
+    histopathology: 4294
+    serial imaging showing no change: 2446
+    single image expert consensus: 1228
+    <MISSING>: 477
+    confocal microscopy with consensus dermoscopy: 85
+
+Archive diagnosis_1 (merged on isic_id):
+    Benign: 7458
+    Malignant: 589
+    Indeterminate: 478
+    <MISSING>: 5
+
+Archive diagnosis_2:
+    Benign melanocytic proliferations: 3516
+    <MISSING>: 2577
+    Benign epidermal proliferations: 829
+    Malignant adnexal epithelial proliferations - Follicular: 489
+    Indeterminate epidermal proliferations: 318
+    Benign soft tissue proliferations - Fibro-histiocytic: 253
+    Indeterminate melanocytic proliferations: 159
+    Flat melanotic pigmentations - not melanocytic nevus: 101
+    Malignant epidermal proliferations: 89
+    Benign soft tissue proliferations - Vascular: 81
+    Inflammatory or infectious diseases: 49
+    Collision - Only benign proliferations: 33
+    Benign soft tissue proliferations - Neural: 13
+    Collision - At least one malignant proliferation: 7
+    Hemorrhagic lesions: 7
+    Malignant melanocytic proliferations (Melanoma): 4
+    Benign adnexal epithelial proliferations - Sebaceous: 4
+    Exogenous: 1
+
+Archive diagnosis_3:
+    Nevus: 3493
+    <MISSING>: 2668
+    Basal cell carcinoma: 489
+    Seborrheic keratosis: 363
+    Solar or actinic keratosis: 316
+    Solar lentigo: 199
+    Fibroepithelial polyp: 167
+    Lichen planus like keratosis: 144
+    Atypical melanocytic neoplasm: 117
+    Pigmented benign keratosis: 112
+    Lentigo NOS: 98
+    Squamous cell carcinoma, NOS: 79
+    Dermatofibroma: 72
+    Verruca: 47
+    Atypical intraepithelial melanocytic proliferation: 39
+    Hemangioma: 28
+    Lentigo simplex: 23
+    Neurofibroma: 13
+    Scar: 12
+    Squamous cell carcinoma, Invasive: 10
+    Angiokeratoma: 9
+    Hemorrhage: 6
+    Epidermal nevus: 4
+    Clear cell acanthoma: 4
+    Sebaceous hyperplasia: 3
+    Melanoma, NOS: 3
+    Atypical Spitz tumor: 2
+    Angiofibroma: 2
+    Melanoma in situ: 1
+    Mucosal melanotic macule: 1
+    Sebaceous adenoma: 1
+    Cafe au lait macule or patch: 1
+    Large cell acanthoma: 1
+    Atypical proliferative nodules in congenital melanocytic nevus: 1
+    Ink-spot lentigo: 1
+    Tattoo: 1
+
+============================================================
+4. class=1 (MELANOMA) DIAGNOSIS FIELDS
+============================================================
+
+n class=1: 8530
+
+Official diagnosis:
+    melanoma: 6787
+    basal cell carcinoma: 1009
+    squamous cell carcinoma: 587
+    AIMP: 43
+    <MISSING>: 38
+    melanoma metastasis: 36
+    atypical melanocytic proliferation: 13
+    seborrheic keratosis: 12
+    clear cell acanthoma: 4
+    other: 1
+
+LABEL INCONSISTENCY:
+  Official class=1 is the melanoma class, but the diagnosis field is not
+  purely melanoma. 1,009 BCC + 587 SCC + other non-melanoma diagnoses sit
+  inside class=1 (about 18.7% of the 8,530). The current experiment used
+  official class=1 as melanoma, so those images were trained/tested as
+  melanoma even when diagnosis says BCC/SCC. This is a label-noise issue,
+  separate from source confounding.
+
+Official benign_malignant:
+    malignant: 8460
+    indeterminate/malignant: 70
+
+Official mel_class:
+    <MISSING>: 7527
+    melanoma in situ: 674
+    invasive melanoma: 328
+    melanoma NOS: 1
+
+Official mel_type:
+    <MISSING>: 8334
+    superficial spreading melanoma: 159
+    lentigo maligna melanoma: 23
+    nodular melanoma: 13
+    melanoma NOS: 1
+
+Official melanocytic:
+    1.0: 6674
+    0.0: 1272
+    <MISSING>: 584
+
+Archive diagnosis_1:
+    Malignant: 8467
+    Indeterminate: 56
+    Benign: 7
+
+============================================================
+5. DIAGNOSIS CATEGORIES INSIDE DICM NON-MELANOMA (class=0)
+============================================================
+
+These are the official `diagnosis` values among class=0 images.
+They include both benign diagnoses and other non-melanoma disease.
+
+    nevus: 3554
+    <MISSING>: 2670
+    basal cell carcinoma: 489
+    seborrheic keratosis: 337
+    actinic keratosis: 294
+    solar lentigo: 204
+    acrochordon: 167
+    lichenoid keratosis: 137
+    pigmented benign keratosis: 112
+    lentigo NOS: 98
+    squamous cell carcinoma: 89
+    dermatofibroma: 72
+    atypical melanocytic proliferation: 67
+    verruca: 62
+    vascular lesion: 44
+    AIMP: 34
+    angioma: 32
+    lentigo simplex: 21
+    neurofibroma: 13
+    scar: 9
+    other: 7
+    angiokeratoma: 5
+    sebaceous hyperplasia: 3
+    melanoma: 3
+    atypical spitz tumor: 2
+    angiofibroma or fibrous papule: 2
+    clear cell acanthoma: 1
+    sebaceous adenoma: 1
+    cafe-au-lait macule: 1
+
+benign_malignant among class=0 (do NOT equate this to 'benign class'):
+    benign: 7680
+    <MISSING>: 748
+    indeterminate: 73
+    indeterminate/benign: 29
+
+============================================================
+6. PATIENT IDs
+============================================================
+
+Official patient_id non-empty unique, class=0: 2631
+Official patient_id non-empty unique, class=1: 1547
+Official patient_id missing/empty, class=0: 0
+Official patient_id missing/empty, class=1: 0
+Archive patient_id unique among merged class=0: 2631
+
+============================================================
+7. LESION IDs
+============================================================
+
+Official lesion_id non-empty unique, class=0: 5896
+Official lesion_id non-empty unique, class=1: 3292
+Official lesion_id missing/empty, class=0: 0
+Official lesion_id missing/empty, class=1: 0
+
+============================================================
+8. IMAGE ID OVERLAP WITH ISIC 2020
+============================================================
+
+DICM official unique image IDs: 17060
+ISIC 2020 train.csv unique image IDs: 33126
+ISIC 2020 official-benign IDs after dropping ISIC_4225838: 32541
+Image-ID overlap DICM intersect all ISIC 2020: 3663
+Image-ID overlap DICM intersect ISIC 2020 benign-used pool: 3081
+Overlap by DICM class among the 3663 shared images: class=0: 3082; class=1: 581
+Almost all 581 class=1 overlaps are ISIC 2020 malignant rows, not the
+current 7,999 benign pool. class=0 accounts for the 3,081 overlap with
+the benign-used pool. Those class=0 images were not used as melanoma.
+
+Note: any overlap of DICM melanoma (class=1) with ISIC 2020 is expected if the
+same ISIC image appears in both collections. Overlap of DICM class=0 with the
+current benign pool would be more concerning for leakage.
+
+============================================================
+9. PATIENT ID OVERLAP DICM vs ISIC 2020
+============================================================
+
+DICM unique non-empty patient_id: 3810
+ISIC 2020 unique non-empty patient_id: 2056
+Exact string overlap of all patient_id values: 1467
+DICM IDs starting with IP_: 3810
+ISIC 2020 IDs starting with IP_: 2056
+Overlap of IP_ patient IDs: 1467
+
+Identifier compatibility:
+  ISIC 2020 uses IP_######## patient IDs.
+  ALL 3,810 non-empty DICM patient IDs also use the IP_######## namespace.
+  The identifiers are compatible. Exact string match found 1,467 shared
+  patients. The current melanoma-vs-benign build already kept shared
+  patients inside one grouped split; it did not put the same patient in
+  both train and test. Source confounding can still exist because a
+  patient's melanoma image is DICM-sourced and a benign image from the
+  same patient is ISIC-2020-sourced.
+
+============================================================
+10. ACQUISITION / SOURCE FIELDS
+============================================================
+
+Official year (collection/challenge year — a source-shift signal):
+    <MISSING>: 7250
+    2019.0: 5867
+    2020.0: 3663
+    2017.0: 280
+
+Official year by class=0:
+    <MISSING>: 3625
+    2020.0: 3082
+    2019.0: 1756
+    2017.0: 67
+
+Official year by class=1:
+    2019.0: 4111
+    <MISSING>: 3625
+    2020.0: 581
+    2017.0: 213
+
+Official image_type:
+    dermoscopic: 17060
+
+Official dermoscopic_type:
+    <MISSING>: 10549
+    contact non-polarized: 3265
+    contact polarized: 2506
+    non-contact polarized: 740
+
+Official anatom_site_general:
+    lower extremity: 3635
+    anterior torso: 3363
+    head/neck: 2992
+    posterior torso: 2847
+    upper extremity: 2761
+    <MISSING>: 936
+    palms/soles: 288
+    lateral torso: 197
+    oral/genital: 41
+
+Archive attribution (dataset/contributor — strongest source field):
+    Anonymous: 5390
+    Hospital Clínic de Barcelona: 3745
+    Memorial Sloan Kettering Cancer Center: 2388
+    ViDIR Group, Department of Dermatology, Medical University of Vienna: 2379
+    Hospital Italiano de Buenos Aires: 885
+    Department of Dermatology, Hospital Clínic de Barcelona: 861
+    The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre: 798
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera: 297
+    Department of Dermatology, Medical University of Vienna: 186
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital: 128
+    Dr. Julien Anriot: 3
+
+Archive attribution by class=0:
+    Anonymous: 2338
+    Memorial Sloan Kettering Cancer Center: 1907
+    ViDIR Group, Department of Dermatology, Medical University of Vienna: 1223
+    Hospital Clínic de Barcelona: 897
+    The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre: 789
+    Department of Dermatology, Hospital Clínic de Barcelona: 682
+    Hospital Italiano de Buenos Aires: 349
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera: 163
+    Department of Dermatology, Medical University of Vienna: 125
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital: 54
+    Dr. Julien Anriot: 3
+
+Archive attribution by class=1:
+    Anonymous: 3052
+    Hospital Clínic de Barcelona: 2848
+    ViDIR Group, Department of Dermatology, Medical University of Vienna: 1156
+    Hospital Italiano de Buenos Aires: 536
+    Memorial Sloan Kettering Cancer Center: 481
+    Department of Dermatology, Hospital Clínic de Barcelona: 179
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera: 134
+    Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital: 74
+    Department of Dermatology, Medical University of Vienna: 61
+    The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre: 9
+
+Archive image_type:
+    dermoscopic: 17060
+
+Archive image_manipulation:
+    <MISSING>: 14672
+    instrument only: 2388
+
+No camera/device column exists in official or archive metadata.
+No explicit width/height columns exist.
+Small read-only pixel sample (width x height):
+  DICM class=1 sample: 600x450, 1024x1024, 1024x1024, 600x450, 2592x1936, 1024x1024, 1024x1024, 1024x1024
+  DICM class=0 sample: 600x450, 6000x4000, 3888x2592, 600x450, 5184x3456, 6000x4000, 5184x3456, 600x450
+  ISIC 2020 benign sample: 6000x4000, 5184x3456, 2592x1936
+
+============================================================
+11. NON-MELANOMA vs BENIGN
+============================================================
+
+DICM class=0 is NOT a clean benign class.
+DICM class=1 is NOT a clean melanoma class.
+
+What the official class column actually tracks in this metadata:
+  class=1  <->  almost entirely benign_malignant in {malignant,
+                indeterminate/malignant}
+  class=0  <->  benign, missing, or indeterminate; never 'malignant'
+
+So official class is closer to a malignant vs not-malignant split than
+to a pure melanoma vs benign split.
+
+Diagnosis disagrees with that binary:
+  - class=0 includes BCC (489), SCC (89), AK, and other non-nevus disease
+  - class=1 includes BCC (1009) and SCC (587) that were tagged malignant
+  - class=0 also includes 3 rows whose diagnosis is melanoma
+  - class=1 diagnosis is melanoma for 6,787 / 8,530 (79.6%)
+
+The current experiment used official class=1 as the melanoma pool.
+That avoided treating class=0 as benign, which was correct, but it also
+imported malignant keratinocyte cancers as if they were melanoma.
+
+That construction avoids mislabeling non-melanoma disease as benign,
+but it creates a SOURCE confound:
+  melanoma images come from the DICM 17K collection;
+  benign images come from ISIC 2020.
+A model can partly learn collection/camera/year style instead of
+melanoma biology. This audit does not measure how large that effect is.
+
+============================================================
+12. IMPLICATIONS (NO TRAINING)
+============================================================
+
+No model was trained or changed.
+The frozen melanoma_benign splits were not modified.
+Production files were not modified.
+
+If a later experiment addresses source confounding, do it as a new
+controlled study. Do not silently rewrite the frozen test set.

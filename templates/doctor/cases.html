@@ -1,0 +1,37 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('cases') }}{% endblock %}
+{% block heading %}Cases{% endblock %}
+{% block content %}
+<form class="row g-2 mb-3" method="get">
+  <div class="col-md-4"><input class="form-control" name="q" value="{{ q }}" placeholder="Search" /></div>
+  <div class="col-md-3">
+    <select class="form-select" name="status">
+      <option value="">All statuses</option>
+      {% for s in ['pending_review','draft','finalized'] %}
+      <option value="{{ s }}" {% if status==s %}selected{% endif %}>{{ s }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-2"><button class="btn btn-ghost">Filter</button></div>
+</form>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Case</th><th>Patient</th><th>Date</th><th>AI</th><th>Prob</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for c in cases %}
+      <tr>
+        <td><a href="{{ url_for('doctor.case_review', case_id=c.id) }}">C{{ c.id }}</a></td>
+        <td>{{ c.patient_name }}</td>
+        <td>{{ c.created_at }}</td>
+        <td>{{ c.prediction }}</td>
+        <td>{{ '%.1f'|format((c.malignant_prob or 0)*100) }}%</td>
+        <td>{{ c.review_status or 'pending_review' }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6">No cases.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

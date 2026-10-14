@@ -1,0 +1,988 @@
+derm7pt_row_index,case_num,official_split,image_filename,derm_relpath,original_diagnosis,true_binary_label,efficientnet_score,mobilenet_score,ensemble_score,threshold,predicted_label,predicted_label_name
+0,1,train,Nel026.jpg,NEL/Nel026.jpg,basal cell carcinoma,0,0.41742417,0.48887995,0.43528811633586884,0.3,1,melanoma
+1,2,valid,Nel028.jpg,NEL/Nel028.jpg,basal cell carcinoma,0,0.92402196,0.9890231,0.9402722418308258,0.3,1,melanoma
+2,3,train,Nel033.jpg,NEL/Nel033.jpg,basal cell carcinoma,0,0.99350274,0.85240054,0.9582271873950958,0.3,1,melanoma
+3,4,test,Nel035.jpg,NEL/Nel035.jpg,basal cell carcinoma,0,1.0,0.99967486,0.9999187141656876,0.3,1,melanoma
+4,5,train,Nel037.jpg,NEL/Nel037.jpg,basal cell carcinoma,0,0.6258424,0.59492564,0.6181132048368454,0.3,1,melanoma
+5,6,valid,Nel039.jpg,NEL/Nel039.jpg,basal cell carcinoma,0,0.40298387,0.49468377,0.4259088486433029,0.3,1,melanoma
+6,7,test,Nel041.jpg,NEL/Nel041.jpg,basal cell carcinoma,0,0.8730143,0.6511464,0.8175473064184189,0.3,1,melanoma
+7,8,train,Nel085.jpg,NEL/Nel085.jpg,basal cell carcinoma,0,1.0,0.99894893,0.9997372329235077,0.3,1,melanoma
+8,9,test,Nel087.jpg,NEL/Nel087.jpg,basal cell carcinoma,0,0.566016,0.5260089,0.5560142397880554,0.3,1,melanoma
+9,10,train,Nel089.jpg,NEL/Nel089.jpg,basal cell carcinoma,0,0.9332233,0.9884252,0.9470237791538239,0.3,1,melanoma
+10,11,test,Nel091.jpg,NEL/Nel091.jpg,basal cell carcinoma,0,0.9086394,0.9873219,0.9283100068569183,0.3,1,melanoma
+11,12,valid,Nel092.jpg,NEL/Nel092.jpg,basal cell carcinoma,0,0.9241977,0.99540985,0.9420007169246674,0.3,1,melanoma
+12,13,train,Nel095.jpg,NEL/Nel095.jpg,basal cell carcinoma,0,0.9154701,0.98683506,0.9333113580942154,0.3,1,melanoma
+13,14,valid,Nel097.jpg,NEL/Nel097.jpg,basal cell carcinoma,0,1.0,0.99929,0.9998224973678589,0.3,1,melanoma
+14,15,test,Nel098.jpg,NEL/Nel098.jpg,basal cell carcinoma,0,1.0,0.99898446,0.9997461140155792,0.3,1,melanoma
+15,16,test,Nel100.jpg,NEL/Nel100.jpg,basal cell carcinoma,0,0.64935464,0.93431824,0.7205955386161804,0.3,1,melanoma
+16,17,train,Nfl068.jpg,NFL/Nfl068.jpg,basal cell carcinoma,0,1.0,0.997599,0.9993997514247894,0.3,1,melanoma
+17,18,train,Ngl047.jpg,NGL/Ngl047.jpg,basal cell carcinoma,0,0.46436483,0.6478738,0.5102420747280121,0.3,1,melanoma
+18,19,train,Nhl011.jpg,NHL/Nhl011.jpg,basal cell carcinoma,0,0.9904645,0.96553123,0.9842311888933182,0.3,1,melanoma
+19,20,valid,Nml098.jpg,NML/Nml098.jpg,basal cell carcinoma,0,0.8970522,0.85032773,0.8853711038827896,0.3,1,melanoma
+20,21,test,Nml102.jpg,NML/Nml102.jpg,basal cell carcinoma,0,0.71989477,0.94791883,0.7769007831811905,0.3,1,melanoma
+21,22,train,Nml104.jpg,NML/Nml104.jpg,basal cell carcinoma,0,0.44098547,0.6122731,0.48380737751722336,0.3,1,melanoma
+22,23,train,Nml106.jpg,NML/Nml106.jpg,basal cell carcinoma,0,0.60837144,0.52819586,0.5883275419473648,0.3,1,melanoma
+23,24,test,Adl379.jpg,Adl/Adl379.jpg,basal cell carcinoma,0,0.7760365,0.5505364,0.7196614742279053,0.3,1,melanoma
+24,25,train,Ael455.jpg,Ael/Ael455.jpg,basal cell carcinoma,0,0.99999994,0.9892223,0.9973055273294449,0.3,1,melanoma
+25,26,valid,Ael469.jpg,Ael/Ael469.jpg,basal cell carcinoma,0,0.97004426,0.7094183,0.9048877656459808,0.3,1,melanoma
+26,27,train,Ael502.jpg,Ael/Ael502.jpg,basal cell carcinoma,0,0.9494233,0.52566046,0.8434825986623764,0.3,1,melanoma
+27,28,train,Ael505.jpg,Ael/Ael505.jpg,basal cell carcinoma,0,0.9101091,0.4544055,0.7961831986904144,0.3,1,melanoma
+28,29,test,gzl02.jpg,Gzl/gzl02.jpg,basal cell carcinoma,0,0.4036911,0.99653685,0.5519025474786758,0.3,1,melanoma
+29,30,train,gzl06.jpg,Gzl/gzl06.jpg,basal cell carcinoma,0,0.5286278,0.70214444,0.5720069706439972,0.3,1,melanoma
+30,31,train,gzl38.jpg,Gzl/gzl38.jpg,basal cell carcinoma,0,0.5612109,0.8179913,0.6254059821367264,0.3,1,melanoma
+31,32,test,Gal098.jpg,Gal/Gal098.jpg,basal cell carcinoma,0,0.7386163,0.6859763,0.7254562973976135,0.3,1,melanoma
+32,33,test,Fal096.jpg,FAL/Fal096.jpg,basal cell carcinoma,0,1.0,0.96875256,0.9921881407499313,0.3,1,melanoma
+33,34,train,Fcl062.jpg,FCL/Fcl062.jpg,basal cell carcinoma,0,0.9190124,0.54807353,0.8262777030467987,0.3,1,melanoma
+34,35,test,Fdl070.jpg,FDL/Fdl070.jpg,basal cell carcinoma,0,0.97180814,0.64553154,0.8902389854192734,0.3,1,melanoma
+35,36,test,Ggl028.jpg,Ggl/Ggl028.jpg,basal cell carcinoma,0,0.7116339,0.8233422,0.73956099152565,0.3,1,melanoma
+36,37,valid,Ggl030.jpg,Ggl/Ggl030.jpg,basal cell carcinoma,0,0.3502759,0.5836042,0.40860798209905624,0.3,1,melanoma
+37,38,train,Ggl082.jpg,Ggl/Ggl082.jpg,basal cell carcinoma,0,0.4767527,0.96712697,0.5993462651968002,0.3,1,melanoma
+38,39,test,Fgl088.jpg,Fgl/Fgl088.jpg,basal cell carcinoma,0,0.6365393,0.6729992,0.6456542611122131,0.3,1,melanoma
+39,40,train,Fgl053.jpg,Fgl/Fgl053.jpg,basal cell carcinoma,0,1.0,0.9989399,0.9997349679470062,0.3,1,melanoma
+40,41,test,Fhl050.jpg,Fhl/Fhl050.jpg,basal cell carcinoma,0,0.76648873,0.3707286,0.6675487011671066,0.3,1,melanoma
+41,42,test,Fhl052.jpg,Fhl/Fhl052.jpg,basal cell carcinoma,0,0.42746502,0.60813653,0.47263289988040924,0.3,1,melanoma
+42,43,test,Nfl040.jpg,NFL/Nfl040.jpg,blue nevus,0,0.566097,0.6710155,0.5923266410827637,0.3,1,melanoma
+43,44,train,Nfl046.jpg,NFL/Nfl046.jpg,blue nevus,0,0.91563565,0.6200092,0.8417290300130844,0.3,1,melanoma
+44,45,test,Nfl048.jpg,NFL/Nfl048.jpg,blue nevus,0,1.0,0.96119934,0.9902998358011246,0.3,1,melanoma
+45,46,train,Nfl050.jpg,NFL/Nfl050.jpg,blue nevus,0,0.46055797,0.61144376,0.4982794150710106,0.3,1,melanoma
+46,47,train,Ngl072.jpg,NGL/Ngl072.jpg,blue nevus,0,0.999999,0.7784035,0.9446001201868057,0.3,1,melanoma
+47,48,train,Ngl090.jpg,NGL/Ngl090.jpg,blue nevus,0,1.0,0.9832688,0.9958171993494034,0.3,1,melanoma
+48,49,train,Nml043.jpg,NML/Nml043.jpg,blue nevus,0,0.99100876,0.96047425,0.9833751320838928,0.3,1,melanoma
+49,50,train,Nml087.jpg,NML/Nml087.jpg,blue nevus,0,0.47708005,0.3504902,0.4454325884580612,0.3,1,melanoma
+50,51,train,Nml089.jpg,NML/Nml089.jpg,blue nevus,0,0.85050505,0.69343483,0.8112374991178513,0.3,1,melanoma
+51,52,train,Aal068.jpg,A1l/Aal068.jpg,blue nevus,0,0.48239902,0.50362194,0.4877047464251518,0.3,1,melanoma
+52,53,test,Adl325.jpg,Adl/Adl325.jpg,blue nevus,0,0.591837,0.44636962,0.5554701462388039,0.3,1,melanoma
+53,54,test,Ael442.jpg,Ael/Ael442.jpg,blue nevus,0,0.5662463,0.5908544,0.57239830493927,0.3,1,melanoma
+54,55,test,Ael444.jpg,Ael/Ael444.jpg,blue nevus,0,0.46441838,0.41845188,0.45292675495147705,0.3,1,melanoma
+55,56,test,Ael446.jpg,Ael/Ael446.jpg,blue nevus,0,0.40597522,0.35984036,0.39444150775671005,0.3,1,melanoma
+56,57,valid,Ael508.jpg,Ael/Ael508.jpg,blue nevus,0,0.49741086,0.58535933,0.5193979814648628,0.3,1,melanoma
+57,58,test,Ael510.jpg,Ael/Ael510.jpg,blue nevus,0,1.0,0.9953291,0.9988322705030441,0.3,1,melanoma
+58,59,valid,Ael512.jpg,Ael/Ael512.jpg,blue nevus,0,0.36693904,0.47081944,0.39290913939476013,0.3,1,melanoma
+59,60,test,gzl24.jpg,Gzl/gzl24.jpg,blue nevus,0,0.5266683,0.61213124,0.5480340421199799,0.3,1,melanoma
+60,61,train,gzl88.jpg,Gzl/gzl88.jpg,blue nevus,0,0.40434095,0.5034776,0.4291251078248024,0.3,1,melanoma
+61,62,test,gzl42.jpg,Gzl/gzl42.jpg,blue nevus,0,0.42382535,0.8677964,0.5348181203007698,0.3,1,melanoma
+62,63,train,Fal012.jpg,FAL/Fal012.jpg,blue nevus,0,0.4094102,0.4030975,0.407832033932209,0.3,1,melanoma
+63,64,train,FBL032.JPG,FBL/FBL032.JPG,blue nevus,0,0.64286846,0.98940116,0.7295016348361969,0.3,1,melanoma
+64,65,test,Fcl088.jpg,FCL/Fcl088.jpg,blue nevus,0,0.40708277,0.48781735,0.4272664114832878,0.3,1,melanoma
+65,66,train,FDL026.JPG,FDL/FDL026.JPG,blue nevus,0,0.9981742,0.8090417,0.9508910626173019,0.3,1,melanoma
+66,67,test,Ggl004.jpg,Ggl/Ggl004.jpg,blue nevus,0,0.439244,0.42418948,0.43548037111759186,0.3,1,melanoma
+67,68,train,Ggl006.jpg,Ggl/Ggl006.jpg,blue nevus,0,0.29099283,0.75391716,0.40672390908002853,0.3,1,melanoma
+68,69,train,Fgl063.jpg,Fgl/Fgl063.jpg,blue nevus,0,0.5698377,0.50467896,0.5535480082035065,0.3,1,melanoma
+69,70,valid,Fgl090.jpg,Fgl/Fgl090.jpg,blue nevus,0,0.5678315,0.9635389,0.6667583584785461,0.3,1,melanoma
+70,71,test,Ndl005.jpg,NDL/Ndl005.jpg,clark nevus,0,0.6567291,0.9285535,0.7246852070093155,0.3,1,melanoma
+71,72,test,Nbl076.jpg,NBL/Nbl076.jpg,clark nevus,0,0.2741713,0.612875,0.3588472157716751,0.3,1,melanoma
+72,73,train,Nbl081.jpg,NBL/Nbl081.jpg,clark nevus,0,0.55258644,0.9909477,0.6621767580509186,0.3,1,melanoma
+73,74,test,Nbl086.jpg,NBL/Nbl086.jpg,clark nevus,0,0.625145,0.85676384,0.6830497235059738,0.3,1,melanoma
+74,75,valid,Nbl095.jpg,NBL/Nbl095.jpg,clark nevus,0,0.47762835,0.4440886,0.4692434147000313,0.3,1,melanoma
+75,76,valid,Nbl098.jpg,NBL/Nbl098.jpg,clark nevus,0,0.29344147,0.40113527,0.32036492228507996,0.3,1,melanoma
+76,77,valid,Ncl004.jpg,NCL/Ncl004.jpg,clark nevus,0,0.28974187,0.38743785,0.3141658678650856,0.3,1,melanoma
+77,78,train,Ncl006.jpg,NCL/Ncl006.jpg,clark nevus,0,0.3122268,0.60173714,0.38460438698530197,0.3,1,melanoma
+78,79,test,Ncl008.jpg,NCL/Ncl008.jpg,clark nevus,0,0.37423342,0.6086216,0.43283046782016754,0.3,1,melanoma
+79,80,train,Ncl010.jpg,NCL/Ncl010.jpg,clark nevus,0,0.38912085,0.38100204,0.38709114491939545,0.3,1,melanoma
+80,81,train,Ncl012.jpg,NCL/Ncl012.jpg,clark nevus,0,0.99929744,0.6899752,0.9219668805599213,0.3,1,melanoma
+81,82,train,Ncl014.jpg,NCL/Ncl014.jpg,clark nevus,0,0.4768196,0.5984661,0.5072312280535698,0.3,1,melanoma
+82,83,valid,Ncl022.jpg,NCL/Ncl022.jpg,clark nevus,0,0.27878073,0.44782856,0.3210426867008209,0.3,1,melanoma
+83,84,test,Ncl030.jpg,NCL/Ncl030.jpg,clark nevus,0,0.46398473,0.78336656,0.5438301861286163,0.3,1,melanoma
+84,85,train,Ncl035.jpg,NCL/Ncl035.jpg,clark nevus,0,1.0,0.9738901,0.9934725314378738,0.3,1,melanoma
+85,86,test,Ncl044.jpg,NCL/Ncl044.jpg,clark nevus,0,0.7415499,0.8950356,0.7799213379621506,0.3,1,melanoma
+86,87,test,Ncl048.jpg,NCL/Ncl048.jpg,clark nevus,0,0.870188,0.73433733,0.8362253308296204,0.3,1,melanoma
+87,88,train,Ncl050.jpg,NCL/Ncl050.jpg,clark nevus,0,0.33736774,0.35519004,0.3418233171105385,0.3,1,melanoma
+88,89,train,Ncl051.jpg,NCL/Ncl051.jpg,clark nevus,0,0.4399304,0.5868623,0.47666338831186295,0.3,1,melanoma
+89,90,test,Ncl053.jpg,NCL/Ncl053.jpg,clark nevus,0,0.45362815,0.50011975,0.46525105088949203,0.3,1,melanoma
+90,91,test,Ncl056.jpg,NCL/Ncl056.jpg,clark nevus,0,0.51129407,0.8670626,0.6002362072467804,0.3,1,melanoma
+91,92,test,Ncl063.jpg,NCL/Ncl063.jpg,clark nevus,0,0.5330951,0.91994023,0.629806399345398,0.3,1,melanoma
+92,93,train,Ncl064.jpg,NCL/Ncl064.jpg,clark nevus,0,0.37371728,0.64532137,0.44161830097436905,0.3,1,melanoma
+93,94,train,Ncl069.jpg,NCL/Ncl069.jpg,clark nevus,0,0.8192694,0.9625969,0.8551012873649597,0.3,1,melanoma
+94,95,train,Ncl076.jpg,NCL/Ncl076.jpg,clark nevus,0,0.7656431,0.7669103,0.7659599184989929,0.3,1,melanoma
+95,96,train,Ncl079.jpg,NCL/Ncl079.jpg,clark nevus,0,0.7926789,0.9622549,0.8350728899240494,0.3,1,melanoma
+96,97,test,Ncl083.jpg,NCL/Ncl083.jpg,clark nevus,0,0.48387334,0.80046177,0.5630204454064369,0.3,1,melanoma
+97,98,test,Ncl085.jpg,NCL/Ncl085.jpg,clark nevus,0,0.39844474,0.36693138,0.3905664011836052,0.3,1,melanoma
+98,99,train,Ndl009.jpg,NDL/Ndl009.jpg,clark nevus,0,0.45649636,0.42677617,0.44906631112098694,0.3,1,melanoma
+99,100,test,Ndl012.jpg,NDL/Ndl012.jpg,clark nevus,0,1.0,0.78914726,0.9472868144512177,0.3,1,melanoma
+100,101,train,ndl013.jpg,NDL/ndl013.jpg,clark nevus,0,0.33028173,0.39180994,0.34566378593444824,0.3,1,melanoma
+101,102,train,Ndl018.jpg,NDL/Ndl018.jpg,clark nevus,0,0.5609472,0.47431192,0.5392883643507957,0.3,1,melanoma
+102,103,test,Ndl021.jpg,NDL/Ndl021.jpg,clark nevus,0,0.44912872,0.83711696,0.5461257770657539,0.3,1,melanoma
+103,104,test,Ndl022.jpg,NDL/Ndl022.jpg,clark nevus,0,0.9928233,0.92602897,0.976124718785286,0.3,1,melanoma
+104,105,valid,Ndl025.jpg,NDL/Ndl025.jpg,clark nevus,0,0.46586367,0.8878427,0.571358434855938,0.3,1,melanoma
+105,106,train,Ndl027.jpg,NDL/Ndl027.jpg,clark nevus,0,0.6364298,0.9295391,0.709707111120224,0.3,1,melanoma
+106,107,test,Ndl028.jpg,NDL/Ndl028.jpg,clark nevus,0,0.5479261,0.6272701,0.5677621215581894,0.3,1,melanoma
+107,108,train,Ndl031.jpg,NDL/Ndl031.jpg,clark nevus,0,1.0,0.83401287,0.9585032165050507,0.3,1,melanoma
+108,109,test,Ndl033.jpg,NDL/Ndl033.jpg,clark nevus,0,0.4001602,0.5008494,0.4253325015306473,0.3,1,melanoma
+109,110,train,Ndl035.jpg,NDL/Ndl035.jpg,clark nevus,0,0.3789447,0.7030222,0.4599640667438507,0.3,1,melanoma
+110,111,train,Ndl037.jpg,NDL/Ndl037.jpg,clark nevus,0,0.34612015,0.43371928,0.3680199310183525,0.3,1,melanoma
+111,112,test,Ndl039.jpg,NDL/Ndl039.jpg,clark nevus,0,0.32234594,0.34940478,0.32911065220832825,0.3,1,melanoma
+112,113,test,Ndl040.jpg,NDL/Ndl040.jpg,clark nevus,0,0.41611022,0.6065776,0.46372705698013306,0.3,1,melanoma
+113,114,test,Nfl032.jpg,NFL/Nfl032.jpg,clark nevus,0,0.37894982,0.3906843,0.381883442401886,0.3,1,melanoma
+114,115,train,Nfl052.jpg,NFL/Nfl052.jpg,clark nevus,0,0.47029898,0.7206488,0.5328864380717278,0.3,1,melanoma
+115,116,test,Ngl023.jpg,NGL/Ngl023.jpg,clark nevus,0,0.58805466,0.562054,0.5815544873476028,0.3,1,melanoma
+116,117,test,Ngl043.jpg,NGL/Ngl043.jpg,clark nevus,0,0.35077694,0.75308263,0.45135336369276047,0.3,1,melanoma
+117,118,train,Ngl049.jpg,NGL/Ngl049.jpg,clark nevus,0,0.33019027,0.5714496,0.3905050978064537,0.3,1,melanoma
+118,119,train,Ngl053.jpg,NGL/Ngl053.jpg,clark nevus,0,0.41238305,0.73956215,0.49417782574892044,0.3,1,melanoma
+119,120,train,Ngl074.jpg,NGL/Ngl074.jpg,clark nevus,0,0.5675391,0.6443224,0.5867349207401276,0.3,1,melanoma
+120,121,test,Ngl076.jpg,NGL/Ngl076.jpg,clark nevus,0,0.5256045,0.4026457,0.4948647916316986,0.3,1,melanoma
+121,122,valid,Ngl092.jpg,NGL/Ngl092.jpg,clark nevus,0,0.68320286,0.81982124,0.7173574566841125,0.3,1,melanoma
+122,123,train,Ngl094.jpg,NGL/Ngl094.jpg,clark nevus,0,0.45220974,0.44045377,0.44927074760198593,0.3,1,melanoma
+123,124,train,Ngl096.jpg,NGL/Ngl096.jpg,clark nevus,0,0.44353965,0.7351072,0.5164315328001976,0.3,1,melanoma
+124,125,train,Nhl013.jpg,NHL/Nhl013.jpg,clark nevus,0,0.6334332,0.6285579,0.6322143971920013,0.3,1,melanoma
+125,126,test,Nhl015.jpg,NHL/Nhl015.jpg,clark nevus,0,0.4876406,0.34410018,0.45175548642873764,0.3,1,melanoma
+126,127,test,Nil002.jpg,NIL/Nil002.jpg,clark nevus,0,0.4695993,0.5656429,0.4936102032661438,0.3,1,melanoma
+127,128,valid,Nil006.jpg,NIL/Nil006.jpg,clark nevus,0,0.46139735,0.6020667,0.49656468629837036,0.3,1,melanoma
+128,129,test,Nil008.jpg,NIL/Nil008.jpg,clark nevus,0,0.5922153,0.53678685,0.5783581882715225,0.3,1,melanoma
+129,130,train,Nil010.jpg,NIL/Nil010.jpg,clark nevus,0,0.4195495,0.42530206,0.42098763585090637,0.3,1,melanoma
+130,131,valid,Nil021.jpg,NIL/Nil021.jpg,clark nevus,0,1.0,0.9968253,0.9992063194513321,0.3,1,melanoma
+131,132,train,Nil025.jpg,NIL/Nil025.jpg,clark nevus,0,0.84653884,0.7319643,0.8178952038288116,0.3,1,melanoma
+132,133,valid,Nil027.jpg,NIL/Nil027.jpg,clark nevus,0,0.68198353,0.9775913,0.7558854669332504,0.3,1,melanoma
+133,134,train,Nil033.jpg,NIL/Nil033.jpg,clark nevus,0,0.99999994,0.999026,0.9997564554214478,0.3,1,melanoma
+134,135,test,Nil035.jpg,NIL/Nil035.jpg,clark nevus,0,0.4327723,0.4044158,0.4256831780076027,0.3,1,melanoma
+135,136,test,Nil037.jpg,NIL/Nil037.jpg,clark nevus,0,0.33787552,0.5961572,0.4024459347128868,0.3,1,melanoma
+136,137,test,Nil043.jpg,NIL/Nil043.jpg,clark nevus,0,0.5815571,0.87001896,0.6536725610494614,0.3,1,melanoma
+137,138,train,Nil045.jpg,NIL/Nil045.jpg,clark nevus,0,0.54994464,0.5190511,0.5422212481498718,0.3,1,melanoma
+138,139,test,Nil048.jpg,NIL/Nil048.jpg,clark nevus,0,0.6189799,0.86647546,0.6808537691831589,0.3,1,melanoma
+139,140,train,Nil052.jpg,NIL/Nil052.jpg,clark nevus,0,0.96414596,0.83869624,0.9327835291624069,0.3,1,melanoma
+140,141,train,Nil054.jpg,NIL/Nil054.jpg,clark nevus,0,0.5488559,0.7250758,0.5929108709096909,0.3,1,melanoma
+141,142,valid,Nil056.jpg,NIL/Nil056.jpg,clark nevus,0,0.4057608,0.6580266,0.4688272401690483,0.3,1,melanoma
+142,143,valid,Nil060.jpg,NIL/Nil060.jpg,clark nevus,0,0.58895254,0.80994904,0.6442016661167145,0.3,1,melanoma
+143,144,test,Nll016.jpg,NLL/Nll016.jpg,clark nevus,0,0.34309047,0.42694384,0.3640538156032562,0.3,1,melanoma
+144,145,test,Nll018.jpg,NLL/Nll018.jpg,clark nevus,0,0.3537878,0.85613614,0.47937489300966263,0.3,1,melanoma
+145,146,test,Nll020.jpg,NLL/Nll020.jpg,clark nevus,0,0.25790536,0.35881373,0.2831324562430382,0.3,0,non_melanoma
+146,147,test,nll022.jpg,NLL/nll022.jpg,clark nevus,0,0.35861492,0.41516274,0.3727518767118454,0.3,1,melanoma
+147,148,test,nll026.jpg,NLL/nll026.jpg,clark nevus,0,0.9343692,0.34668922,0.7874492108821869,0.3,1,melanoma
+148,149,train,Nll030.jpg,NLL/Nll030.jpg,clark nevus,0,0.69624656,0.48073977,0.6423698663711548,0.3,1,melanoma
+149,150,test,nll032.jpg,NLL/nll032.jpg,clark nevus,0,0.5823958,0.80493236,0.638029932975769,0.3,1,melanoma
+150,151,train,NLL034.JPG,NLL/NLL034.JPG,clark nevus,0,0.40643367,0.37419733,0.3983745872974396,0.3,1,melanoma
+151,152,test,Nll042.jpg,NLL/Nll042.jpg,clark nevus,0,0.9292285,0.48118204,0.8172168731689453,0.3,1,melanoma
+152,153,train,Nll046.jpg,NLL/Nll046.jpg,clark nevus,0,0.5086199,0.7599156,0.5714438259601593,0.3,1,melanoma
+153,154,train,Nll060.jpg,NLL/Nll060.jpg,clark nevus,0,0.47796553,0.8905045,0.581100270152092,0.3,1,melanoma
+154,155,train,Nll062.jpg,NLL/Nll062.jpg,clark nevus,0,0.4490417,0.61577725,0.4907255843281746,0.3,1,melanoma
+155,156,valid,NLL067.JPG,NLL/NLL067.JPG,clark nevus,0,0.6450433,0.5667928,0.6254806816577911,0.3,1,melanoma
+156,157,train,Nll069.jpg,NLL/Nll069.jpg,clark nevus,0,0.30223083,0.53998744,0.36166998744010925,0.3,1,melanoma
+157,158,train,Nll072.jpg,NLL/Nll072.jpg,clark nevus,0,0.4810529,0.83325493,0.5691034123301506,0.3,1,melanoma
+158,159,test,Nll076.jpg,NLL/Nll076.jpg,clark nevus,0,0.48314613,0.4482402,0.47441964596509933,0.3,1,melanoma
+159,160,train,Nll084.jpg,NLL/Nll084.jpg,clark nevus,0,0.37950078,0.66424364,0.4506864920258522,0.3,1,melanoma
+160,161,test,Nll094.jpg,NLL/Nll094.jpg,clark nevus,0,0.4458176,0.42898127,0.4416085109114647,0.3,1,melanoma
+161,162,test,Nll098.jpg,NLL/Nll098.jpg,clark nevus,0,0.7519742,0.49033913,0.686565451323986,0.3,1,melanoma
+162,163,train,Nll102.jpg,NLL/Nll102.jpg,clark nevus,0,0.33108026,0.38537002,0.3446526974439621,0.3,1,melanoma
+163,164,train,Nll104.jpg,NLL/Nll104.jpg,clark nevus,0,0.36154962,0.36325055,0.3619748502969742,0.3,1,melanoma
+164,165,valid,Nll106.jpg,NLL/Nll106.jpg,clark nevus,0,0.46419916,0.86654377,0.5647853091359138,0.3,1,melanoma
+165,166,valid,Nml002.jpg,NML/Nml002.jpg,clark nevus,0,0.45240742,0.88546693,0.5606722980737686,0.3,1,melanoma
+166,167,train,Nml006.jpg,NML/Nml006.jpg,clark nevus,0,0.880543,0.6853765,0.8317513763904572,0.3,1,melanoma
+167,168,test,Nml008.jpg,NML/Nml008.jpg,clark nevus,0,0.42243105,0.42503673,0.42308247089385986,0.3,1,melanoma
+168,169,test,Nml014.jpg,NML/Nml014.jpg,clark nevus,0,0.38200945,0.46369916,0.4024318754673004,0.3,1,melanoma
+169,170,train,Nml018.jpg,NML/Nml018.jpg,clark nevus,0,0.3929741,0.5058236,0.42118648439645767,0.3,1,melanoma
+170,171,train,Nml030.jpg,NML/Nml030.jpg,clark nevus,0,0.99907535,0.56302476,0.8900627046823502,0.3,1,melanoma
+171,172,test,Nml034.jpg,NML/Nml034.jpg,clark nevus,0,0.6638925,0.71936417,0.6777604222297668,0.3,1,melanoma
+172,173,test,Nml085.jpg,NML/Nml085.jpg,clark nevus,0,0.5169319,0.6166526,0.5418620705604553,0.3,1,melanoma
+173,174,train,Adl381.jpg,Adl/Adl381.jpg,clark nevus,0,0.32197425,0.36991903,0.3339604437351227,0.3,1,melanoma
+174,175,valid,Adl387.jpg,Adl/Adl387.jpg,clark nevus,0,0.33347195,0.4744322,0.36871201545000076,0.3,1,melanoma
+175,176,train,Abl101.jpg,A2l/Abl101.jpg,clark nevus,0,0.4002525,0.41007042,0.40270697325468063,0.3,1,melanoma
+176,177,train,Abl108.jpg,A2l/Abl108.jpg,clark nevus,0,1.0,0.96970946,0.9924273639917374,0.3,1,melanoma
+177,178,test,Abl112.jpg,A2l/Abl112.jpg,clark nevus,0,0.6686102,0.77610433,0.6954837441444397,0.3,1,melanoma
+178,179,test,Abl116.jpg,A2l/Abl116.jpg,clark nevus,0,0.33013806,0.40811336,0.3496318832039833,0.3,1,melanoma
+179,180,test,Abl118.jpg,A2l/Abl118.jpg,clark nevus,0,0.2296801,0.36168092,0.2626803107559681,0.3,0,non_melanoma
+180,181,train,Abl121.jpg,A2l/Abl121.jpg,clark nevus,0,0.46804956,0.58930975,0.4983646050095558,0.3,1,melanoma
+181,182,test,Abl123.jpg,A2l/Abl123.jpg,clark nevus,0,0.26821694,0.3542707,0.28973037749528885,0.3,0,non_melanoma
+182,183,test,Abl127.jpg,A2l/Abl127.jpg,clark nevus,0,0.9224777,0.4070084,0.7936103940010071,0.3,1,melanoma
+183,184,train,Abl129.jpg,A2l/Abl129.jpg,clark nevus,0,0.6628312,0.53675675,0.6313125789165497,0.3,1,melanoma
+184,185,train,Acl201.jpg,A3l/Acl201.jpg,clark nevus,0,0.45802304,0.3510281,0.43127430975437164,0.3,1,melanoma
+185,186,train,Acl243.jpg,A3l/Acl243.jpg,clark nevus,0,0.39787295,0.40706164,0.40017012506723404,0.3,1,melanoma
+186,187,valid,Acl245.jpg,A3l/Acl245.jpg,clark nevus,0,0.47237208,0.3883726,0.4513722136616707,0.3,1,melanoma
+187,188,train,Acl247.jpg,A3l/Acl247.jpg,clark nevus,0,0.3544963,0.44567487,0.3772909417748451,0.3,1,melanoma
+188,189,train,Acl249.jpg,A3l/Acl249.jpg,clark nevus,0,0.2505764,0.3442227,0.2739879786968231,0.3,0,non_melanoma
+189,190,valid,Acl251.jpg,A3l/Acl251.jpg,clark nevus,0,0.40639517,0.8173089,0.5091236010193825,0.3,1,melanoma
+190,191,test,Acl253.jpg,A3l/Acl253.jpg,clark nevus,0,0.30256495,0.35390317,0.31539950519800186,0.3,1,melanoma
+191,192,valid,Acl264.jpg,A3l/Acl264.jpg,clark nevus,0,0.32288843,0.36971343,0.3345946818590164,0.3,1,melanoma
+192,193,train,Adl333.jpg,Adl/Adl333.jpg,clark nevus,0,0.3792202,0.43854722,0.3940519466996193,0.3,1,melanoma
+193,194,train,Adl344.jpg,Adl/Adl344.jpg,clark nevus,0,0.48756352,0.675292,0.5344956442713737,0.3,1,melanoma
+194,195,valid,Adl375.jpg,Adl/Adl375.jpg,clark nevus,0,0.39821455,0.65143,0.46151841431856155,0.3,1,melanoma
+195,196,test,Aal044.jpg,A1l/Aal044.jpg,clark nevus,0,0.35210073,0.36176673,0.35451722890138626,0.3,1,melanoma
+196,197,test,Aal046.jpg,A1l/Aal046.jpg,clark nevus,0,0.29953083,0.37082157,0.3173535168170929,0.3,1,melanoma
+197,198,train,Aal048.jpg,A1l/Aal048.jpg,clark nevus,0,0.506843,0.63862145,0.5397875905036926,0.3,1,melanoma
+198,199,train,Aal052.jpg,A1l/Aal052.jpg,clark nevus,0,0.4209642,0.38319218,0.41152120381593704,0.3,1,melanoma
+199,200,test,Aal056.jpg,A1l/Aal056.jpg,clark nevus,0,0.4793995,0.4568066,0.4737512767314911,0.3,1,melanoma
+200,201,test,Aal062.jpg,A1l/Aal062.jpg,clark nevus,0,0.31973687,0.3638852,0.3307739496231079,0.3,1,melanoma
+201,202,test,Aal064.jpg,A1l/Aal064.jpg,clark nevus,0,0.52335685,0.4028999,0.49324261397123337,0.3,1,melanoma
+202,203,train,Aal066.jpg,A1l/Aal066.jpg,clark nevus,0,0.49038166,0.459761,0.48272649198770523,0.3,1,melanoma
+203,204,valid,Aal078.jpg,A1l/Aal078.jpg,clark nevus,0,0.30462137,0.3567093,0.31764335185289383,0.3,1,melanoma
+204,205,train,Aal086.jpg,A1l/Aal086.jpg,clark nevus,0,0.333761,0.367689,0.3422430083155632,0.3,1,melanoma
+205,206,test,Aal088.jpg,A1l/Aal088.jpg,clark nevus,0,0.5369345,0.520671,0.5328686237335205,0.3,1,melanoma
+206,207,test,Aal090.jpg,A1l/Aal090.jpg,clark nevus,0,0.30905274,0.3470756,0.3185584545135498,0.3,1,melanoma
+207,208,test,Aal094.jpg,A1l/Aal094.jpg,clark nevus,0,0.2553903,0.34465352,0.2777060940861702,0.3,0,non_melanoma
+208,209,train,Aal096.jpg,A1l/Aal096.jpg,clark nevus,0,0.21221784,0.36584127,0.2506236955523491,0.3,0,non_melanoma
+209,210,valid,Aal099bis.jpg,A1l/Aal099bis.jpg,clark nevus,0,0.31194502,0.35002008,0.32146378606557846,0.3,1,melanoma
+210,211,valid,Ael477.jpg,Ael/Ael477.jpg,clark nevus,0,0.74293417,0.71599436,0.736199215054512,0.3,1,melanoma
+211,212,train,Abl135.jpg,A2l/Abl135.jpg,clark nevus,0,0.296103,0.36475635,0.3132663369178772,0.3,1,melanoma
+212,213,test,Abl137.jpg,A2l/Abl137.jpg,clark nevus,0,0.9993123,0.39348334,0.8478550463914871,0.3,1,melanoma
+213,214,train,Abl139.jpg,A2l/Abl139.jpg,clark nevus,0,1.0,0.97384864,0.9934621602296829,0.3,1,melanoma
+214,215,train,Abl141.jpg,A2l/Abl141.jpg,clark nevus,0,0.32823595,0.38497344,0.3424203246831894,0.3,1,melanoma
+215,216,test,Abl191.jpg,A2l/Abl191.jpg,clark nevus,0,0.44242337,0.3687665,0.42400915175676346,0.3,1,melanoma
+216,217,valid,Acl219.jpg,A3l/Acl219.jpg,clark nevus,0,0.46527356,0.4611027,0.46423084288835526,0.3,1,melanoma
+217,218,test,Acl223.jpg,A3l/Acl223.jpg,clark nevus,0,0.37828743,0.62336457,0.43955671787261963,0.3,1,melanoma
+218,219,valid,Acl281.jpg,A3l/Acl281.jpg,clark nevus,0,0.34681803,0.37976986,0.3550559878349304,0.3,1,melanoma
+219,220,test,Acl283.jpg,A3l/Acl283.jpg,clark nevus,0,0.40263835,0.45669731,0.41615308821201324,0.3,1,melanoma
+220,221,train,Acl287.jpg,A3l/Acl287.jpg,clark nevus,0,0.83835775,0.44068307,0.7389390766620636,0.3,1,melanoma
+221,222,train,Adl319.jpg,Adl/Adl319.jpg,clark nevus,0,0.47217324,0.61467075,0.5077976211905479,0.3,1,melanoma
+222,223,train,Adl391.jpg,Adl/Adl391.jpg,clark nevus,0,0.37232104,0.43531224,0.3880688399076462,0.3,1,melanoma
+223,224,train,Ael435.jpg,Ael/Ael435.jpg,clark nevus,0,0.5898541,0.3920617,0.5404060184955597,0.3,1,melanoma
+224,225,test,Ael448.jpg,Ael/Ael448.jpg,clark nevus,0,0.48939705,0.5121299,0.49508026242256165,0.3,1,melanoma
+225,226,valid,Ael481.jpg,Ael/Ael481.jpg,clark nevus,0,0.24058485,0.350918,0.2681681364774704,0.3,0,non_melanoma
+226,227,test,Adl362.jpg,Adl/Adl362.jpg,clark nevus,0,0.5014903,0.45834866,0.49070488661527634,0.3,1,melanoma
+227,228,test,Aal010.jpg,A1l/Aal010.jpg,clark nevus,0,0.62464094,0.97889435,0.7132042944431305,0.3,1,melanoma
+228,229,train,Aal012.jpg,A1l/Aal012.jpg,clark nevus,0,0.8413239,0.830037,0.8385021835565567,0.3,1,melanoma
+229,230,train,Abl143.jpg,A2l/Abl143.jpg,clark nevus,0,0.23739862,0.37956396,0.272939957678318,0.3,0,non_melanoma
+230,231,test,Abl145.jpg,A2l/Abl145.jpg,clark nevus,0,0.49804872,0.48421994,0.49459152668714523,0.3,1,melanoma
+231,232,test,Abl151.jpg,A2l/Abl151.jpg,clark nevus,0,0.3196923,0.4104419,0.34237971156835556,0.3,1,melanoma
+232,233,train,Abl153.jpg,A2l/Abl153.jpg,clark nevus,0,0.48621634,0.38567108,0.46108002215623856,0.3,1,melanoma
+233,234,valid,Abl155.jpg,A2l/Abl155.jpg,clark nevus,0,0.46545383,0.37626052,0.4431555047631264,0.3,1,melanoma
+234,235,train,Abl147.jpg,A2l/Abl147.jpg,clark nevus,0,0.32643706,0.4939897,0.36832521855831146,0.3,1,melanoma
+235,236,train,Abl157.jpg,A2l/Abl157.jpg,clark nevus,0,0.99319744,0.7346698,0.9285655319690704,0.3,1,melanoma
+236,237,train,Abl161.jpg,A2l/Abl161.jpg,clark nevus,0,0.41888696,0.47542548,0.43302159011363983,0.3,1,melanoma
+237,238,valid,Abl163.jpg,A2l/Abl163.jpg,clark nevus,0,0.31216872,0.38091174,0.3293544724583626,0.3,1,melanoma
+238,239,test,Abl165.jpg,A2l/Abl165.jpg,clark nevus,0,0.9078141,0.44662094,0.7925157994031906,0.3,1,melanoma
+239,240,valid,Abl167.jpg,A2l/Abl167.jpg,clark nevus,0,0.32900566,0.3825942,0.34240279346704483,0.3,1,melanoma
+240,241,train,Abl168.jpg,A2l/Abl168.jpg,clark nevus,0,0.4718312,0.72378826,0.5348204672336578,0.3,1,melanoma
+241,242,test,Abl171.jpg,A2l/Abl171.jpg,clark nevus,0,0.999406,0.7669757,0.9412984102964401,0.3,1,melanoma
+242,243,test,Abl175.jpg,A2l/Abl175.jpg,clark nevus,0,0.4690691,0.36860204,0.4439523294568062,0.3,1,melanoma
+243,244,test,Abl177.jpg,A2l/Abl177.jpg,clark nevus,0,0.5049939,0.45854458,0.4933815822005272,0.3,1,melanoma
+244,245,valid,Abl179.jpg,A2l/Abl179.jpg,clark nevus,0,0.65776503,0.990311,0.740901529788971,0.3,1,melanoma
+245,246,train,Abl185.jpg,A2l/Abl185.jpg,clark nevus,0,0.4001812,0.60941184,0.45248886197805405,0.3,1,melanoma
+246,247,valid,Abl195.jpg,A2l/Abl195.jpg,clark nevus,0,0.36584428,0.48485607,0.3955972269177437,0.3,1,melanoma
+247,248,valid,Acl215.jpg,A3l/Acl215.jpg,clark nevus,0,0.4844297,0.5792018,0.5081227198243141,0.3,1,melanoma
+248,249,test,Acl217.jpg,A3l/Acl217.jpg,clark nevus,0,0.53177595,0.5806823,0.5440025329589844,0.3,1,melanoma
+249,250,test,Acl221.jpg,A3l/Acl221.jpg,clark nevus,0,0.57260424,0.5490185,0.5667078047990799,0.3,1,melanoma
+250,251,test,Acl235.jpg,A3l/Acl235.jpg,clark nevus,0,0.33023226,0.4954862,0.371545746922493,0.3,1,melanoma
+251,252,train,Acl239.jpg,A3l/Acl239.jpg,clark nevus,0,0.42021206,0.44529983,0.42648400366306305,0.3,1,melanoma
+252,253,test,Acl241.jpg,A3l/Acl241.jpg,clark nevus,0,0.43389857,0.59290934,0.473651260137558,0.3,1,melanoma
+253,254,test,Acl259.jpg,A3l/Acl259.jpg,clark nevus,0,0.24029164,0.37181285,0.27317194268107414,0.3,0,non_melanoma
+254,255,train,Acl271.jpg,A3l/Acl271.jpg,clark nevus,0,0.35827467,0.42911622,0.3759850561618805,0.3,1,melanoma
+255,256,train,Acl279.jpg,A3l/Acl279.jpg,clark nevus,0,0.36689955,0.43936482,0.3850158676505089,0.3,1,melanoma
+256,257,train,Acl299.jpg,A3l/Acl299.jpg,clark nevus,0,0.51518536,0.48300928,0.5071413367986679,0.3,1,melanoma
+257,258,valid,Aal004.jpg,A1l/Aal004.jpg,clark nevus,0,0.5106974,0.79624426,0.582084134221077,0.3,1,melanoma
+258,259,train,Adl311.jpg,Adl/Adl311.jpg,clark nevus,0,0.45955035,0.39824474,0.44422394782304764,0.3,1,melanoma
+259,260,train,Adl321.jpg,Adl/Adl321.jpg,clark nevus,0,0.4757218,0.7785362,0.5514254048466682,0.3,1,melanoma
+260,261,train,Adl329.jpg,Adl/Adl329.jpg,clark nevus,0,0.38688135,0.50521195,0.4164640009403229,0.3,1,melanoma
+261,262,train,Adl335.jpg,Adl/Adl335.jpg,clark nevus,0,0.607823,0.92306936,0.6866346001625061,0.3,1,melanoma
+262,263,test,Adl340.jpg,Adl/Adl340.jpg,clark nevus,0,0.4391573,0.7510669,0.5171347111463547,0.3,1,melanoma
+263,264,test,Adl346.jpg,Adl/Adl346.jpg,clark nevus,0,0.48286644,0.50888515,0.4893711134791374,0.3,1,melanoma
+264,265,train,Adl348.jpg,Adl/Adl348.jpg,clark nevus,0,0.6109599,0.56413436,0.5992535054683685,0.3,1,melanoma
+265,266,valid,Adl350.jpg,Adl/Adl350.jpg,clark nevus,0,0.43686986,0.5593678,0.46749433875083923,0.3,1,melanoma
+266,267,train,Adl356.jpg,Adl/Adl356.jpg,clark nevus,0,0.65698236,0.7620992,0.6832615733146667,0.3,1,melanoma
+267,268,train,Adl366.jpg,Adl/Adl366.jpg,clark nevus,0,0.28535333,0.46799597,0.3310139924287796,0.3,1,melanoma
+268,269,test,Adl371.jpg,Adl/Adl371.jpg,clark nevus,0,0.5147233,0.5684581,0.5281569957733154,0.3,1,melanoma
+269,270,test,Ael413.jpg,Ael/Ael413.jpg,clark nevus,0,0.4271933,0.35376638,0.40883658081293106,0.3,1,melanoma
+270,271,test,Ael419.jpg,Ael/Ael419.jpg,clark nevus,0,0.3775527,0.42956817,0.39055655896663666,0.3,1,melanoma
+271,272,test,Ael425.jpg,Ael/Ael425.jpg,clark nevus,0,0.37659737,0.42822093,0.38950326293706894,0.3,1,melanoma
+272,273,train,Ael431.jpg,Ael/Ael431.jpg,clark nevus,0,0.3813191,0.39343932,0.38434915989637375,0.3,1,melanoma
+273,274,test,Ael433.jpg,Ael/Ael433.jpg,clark nevus,0,0.42166504,0.82714766,0.5230356976389885,0.3,1,melanoma
+274,275,train,Ael452.jpg,Ael/Ael452.jpg,clark nevus,0,0.41212857,0.4006144,0.40925002843141556,0.3,1,melanoma
+275,276,test,Ael467.jpg,Ael/Ael467.jpg,clark nevus,0,0.38365626,0.45401734,0.4012465327978134,0.3,1,melanoma
+276,277,train,Ael471.jpg,Ael/Ael471.jpg,clark nevus,0,0.4137546,0.35058594,0.39796244353055954,0.3,1,melanoma
+277,278,valid,Aal006.jpg,A1l/Aal006.jpg,clark nevus,0,0.5214075,0.53182805,0.5240126252174377,0.3,1,melanoma
+278,279,test,Ael517.jpg,Ael/Ael517.jpg,clark nevus,0,0.5485538,0.8887576,0.6336047649383545,0.3,1,melanoma
+279,280,test,Ael523.jpg,Ael/Ael523.jpg,clark nevus,0,0.82680887,0.86149126,0.8354794681072235,0.3,1,melanoma
+280,281,test,Ael525.jpg,Ael/Ael525.jpg,clark nevus,0,0.6817035,0.49818206,0.6358231455087662,0.3,1,melanoma
+281,282,test,Aal008.jpg,A1l/Aal008.jpg,clark nevus,0,0.468952,0.4754161,0.470568023622036,0.3,1,melanoma
+282,283,test,gzl56.jpg,Gzl/gzl56.jpg,clark nevus,0,0.30451176,0.59463894,0.37704355269670486,0.3,1,melanoma
+283,284,valid,gzl08.jpg,Gzl/gzl08.jpg,clark nevus,0,0.27712384,0.9497393,0.44527769833803177,0.3,1,melanoma
+284,285,test,gzl62.jpg,Gzl/gzl62.jpg,clark nevus,0,0.25162214,0.38295206,0.2844546213746071,0.3,0,non_melanoma
+285,286,valid,gzl66.jpg,Gzl/gzl66.jpg,clark nevus,0,0.23319276,0.362087,0.26541632041335106,0.3,0,non_melanoma
+286,287,train,gzl22.jpg,Gzl/gzl22.jpg,clark nevus,0,0.27350533,0.63014334,0.3626648336648941,0.3,1,melanoma
+287,288,train,gzl70.jpg,Gzl/gzl70.jpg,clark nevus,0,0.33090168,0.43873608,0.3578602820634842,0.3,1,melanoma
+288,289,train,gzl10.jpg,Gzl/gzl10.jpg,clark nevus,0,0.230154,0.37259337,0.2657638378441334,0.3,0,non_melanoma
+289,290,test,gzl80.jpg,Gzl/gzl80.jpg,clark nevus,0,0.3000612,0.5252859,0.3563673719763756,0.3,1,melanoma
+290,291,train,gzl84.jpg,Gzl/gzl84.jpg,clark nevus,0,0.41794178,0.4728412,0.43166663497686386,0.3,1,melanoma
+291,292,test,gzl86.jpg,Gzl/gzl86.jpg,clark nevus,0,0.9811544,0.7443601,0.9219558089971542,0.3,1,melanoma
+292,293,train,gzl32.jpg,Gzl/gzl32.jpg,clark nevus,0,0.22558431,0.3541689,0.257730457931757,0.3,0,non_melanoma
+293,294,train,gzl34.jpg,Gzl/gzl34.jpg,clark nevus,0,0.31630024,0.5430036,0.3729760870337486,0.3,1,melanoma
+294,295,train,gzl36.jpg,Gzl/gzl36.jpg,clark nevus,0,0.41190976,0.51483136,0.43764016032218933,0.3,1,melanoma
+295,296,train,gzl54.jpg,Gzl/gzl54.jpg,clark nevus,0,0.2541562,0.49654317,0.3147529438138008,0.3,1,melanoma
+296,297,test,Gal232.jpg,Gal/Gal232.jpg,clark nevus,0,0.55372566,0.8436159,0.6261982172727585,0.3,1,melanoma
+297,298,train,Gal010.jpg,Gal/Gal010.jpg,clark nevus,0,0.23374662,0.428514,0.2824384644627571,0.3,0,non_melanoma
+298,299,test,Gal016.jpg,Gal/Gal016.jpg,clark nevus,0,0.66394067,0.90410227,0.7239810675382614,0.3,1,melanoma
+299,300,train,Gal025.jpg,Gal/Gal025.jpg,clark nevus,0,0.6859156,0.7780819,0.70895716547966,0.3,1,melanoma
+300,301,train,Gal045.jpg,Gal/Gal045.jpg,clark nevus,0,0.45279887,0.6596126,0.5045023038983345,0.3,1,melanoma
+301,302,train,Gal047.jpg,Gal/Gal047.jpg,clark nevus,0,1.0,0.5117065,0.8779266178607941,0.3,1,melanoma
+302,303,test,Gal049.jpg,Gal/Gal049.jpg,clark nevus,0,0.5135144,0.4928922,0.5083588510751724,0.3,1,melanoma
+303,304,train,Gal043.jpg,Gal/Gal043.jpg,clark nevus,0,0.51292634,0.79110426,0.5824708193540573,0.3,1,melanoma
+304,305,train,Gal006.jpg,Gal/Gal006.jpg,clark nevus,0,0.3761572,0.5347386,0.4158025458455086,0.3,1,melanoma
+305,306,train,Gal058.jpg,Gal/Gal058.jpg,clark nevus,0,0.31286603,0.3762377,0.3287089467048645,0.3,1,melanoma
+306,307,valid,Gal230.jpg,Gal/Gal230.jpg,clark nevus,0,0.38352326,0.462446,0.4032539427280426,0.3,1,melanoma
+307,308,test,Gal152.jpg,Gal/Gal152.jpg,clark nevus,0,0.6224518,0.5614722,0.6072068810462952,0.3,1,melanoma
+308,309,train,Fal020.jpg,FAL/Fal020.jpg,clark nevus,0,0.3167881,0.34461558,0.3237449750304222,0.3,1,melanoma
+309,310,test,Fal024.jpg,FAL/Fal024.jpg,clark nevus,0,0.44256252,0.4925079,0.4550488665699959,0.3,1,melanoma
+310,311,train,FAL036.JPG,FAL/FAL036.JPG,clark nevus,0,0.36079466,0.7899405,0.46808111667633057,0.3,1,melanoma
+311,312,test,FAL038.JPG,FAL/FAL038.JPG,clark nevus,0,0.5360482,0.9425743,0.63767971098423,0.3,1,melanoma
+312,313,train,FAL042.JPG,FAL/FAL042.JPG,clark nevus,0,0.5865717,0.8656591,0.656343549489975,0.3,1,melanoma
+313,314,test,FAL044.JPG,FAL/FAL044.JPG,clark nevus,0,0.57535535,0.6100563,0.5840305835008621,0.3,1,melanoma
+314,315,train,Fal050.jpg,FAL/Fal050.jpg,clark nevus,0,0.851802,0.57762563,0.7832579016685486,0.3,1,melanoma
+315,316,train,FAL054.JPG,FAL/FAL054.JPG,clark nevus,0,0.71767366,0.8035328,0.7391384392976761,0.3,1,melanoma
+316,317,valid,Fal064.jpg,FAL/Fal064.jpg,clark nevus,0,0.4072945,0.88293743,0.5262052416801453,0.3,1,melanoma
+317,318,valid,Fal072.jpg,FAL/Fal072.jpg,clark nevus,0,0.4042098,0.5904599,0.45077231526374817,0.3,1,melanoma
+318,319,train,Fal090.jpg,FAL/Fal090.jpg,clark nevus,0,0.48146224,0.67580277,0.5300473719835281,0.3,1,melanoma
+319,320,test,Fal100.jpg,FAL/Fal100.jpg,clark nevus,0,0.3985588,0.5000577,0.4239335209131241,0.3,1,melanoma
+320,321,test,Fbl002.jpg,FBL/Fbl002.jpg,clark nevus,0,0.9441037,0.9203193,0.9381576180458069,0.3,1,melanoma
+321,322,test,Fbl004.jpg,FBL/Fbl004.jpg,clark nevus,0,0.4176787,0.54844755,0.4503709226846695,0.3,1,melanoma
+322,323,valid,Fbl006.jpg,FBL/Fbl006.jpg,clark nevus,0,0.47487754,0.8346343,0.5648167282342911,0.3,1,melanoma
+323,324,train,Fbl010.jpg,FBL/Fbl010.jpg,clark nevus,0,0.29142058,0.6569636,0.38280633091926575,0.3,1,melanoma
+324,325,train,FBL012.JPG,FBL/FBL012.JPG,clark nevus,0,0.45099798,0.87399274,0.556746669113636,0.3,1,melanoma
+325,326,train,Fll019.jpg,Fll/Fll019.jpg,clark nevus,0,0.46537718,0.91492444,0.5777639970183372,0.3,1,melanoma
+326,327,test,Fll021.jpg,Fll/Fll021.jpg,clark nevus,0,0.9889513,0.5204607,0.8718286752700806,0.3,1,melanoma
+327,328,test,Fbl022.jpg,FBL/Fbl022.jpg,clark nevus,0,0.33894828,0.34363607,0.34012022614479065,0.3,1,melanoma
+328,329,train,Fbl024.jpg,FBL/Fbl024.jpg,clark nevus,0,0.9999995,0.8860626,0.9715152978897095,0.3,1,melanoma
+329,330,valid,Fll023.jpg,Fll/Fll023.jpg,clark nevus,0,0.46175218,0.5875149,0.4931928515434265,0.3,1,melanoma
+330,331,test,Fbl036.jpg,FBL/Fbl036.jpg,clark nevus,0,0.49417552,0.70233333,0.5462149754166603,0.3,1,melanoma
+331,332,valid,Fbl038.jpg,FBL/Fbl038.jpg,clark nevus,0,0.50394,0.6146498,0.5316174328327179,0.3,1,melanoma
+332,333,train,Fbl044.jpg,FBL/Fbl044.jpg,clark nevus,0,0.606535,0.57388043,0.5983713716268539,0.3,1,melanoma
+333,334,valid,Fbl048.jpg,FBL/Fbl048.jpg,clark nevus,0,0.36173362,0.46461418,0.38745375722646713,0.3,1,melanoma
+334,335,train,Fbl054.jpg,FBL/Fbl054.jpg,clark nevus,0,0.940003,0.9301202,0.9375322908163071,0.3,1,melanoma
+335,336,test,Fbl056.jpg,FBL/Fbl056.jpg,clark nevus,0,0.41256538,0.55467963,0.448093943297863,0.3,1,melanoma
+336,337,train,FBL062.JPG,FBL/FBL062.JPG,clark nevus,0,0.28179067,0.6058019,0.3627934753894806,0.3,1,melanoma
+337,338,test,Fbl064.jpg,FBL/Fbl064.jpg,clark nevus,0,0.63871723,0.5345939,0.6126863956451416,0.3,1,melanoma
+338,339,test,Fbl068.jpg,FBL/Fbl068.jpg,clark nevus,0,0.38262075,0.50533533,0.41329939663410187,0.3,1,melanoma
+339,340,test,Fbl072.jpg,FBL/Fbl072.jpg,clark nevus,0,0.6115428,0.5346899,0.59232959151268,0.3,1,melanoma
+340,341,test,Fbl074.jpg,FBL/Fbl074.jpg,clark nevus,0,0.39931488,0.3466143,0.38613973557949066,0.3,1,melanoma
+341,342,train,Fbl076.jpg,FBL/Fbl076.jpg,clark nevus,0,0.37698528,0.41431513,0.38631774485111237,0.3,1,melanoma
+342,343,test,Fbl080.jpg,FBL/Fbl080.jpg,clark nevus,0,0.80176127,0.9145327,0.829954132437706,0.3,1,melanoma
+343,344,train,Fbl088.jpg,FBL/Fbl088.jpg,clark nevus,0,0.51742476,0.36356393,0.4789595529437065,0.3,1,melanoma
+344,345,test,Fbl090.jpg,FBL/Fbl090.jpg,clark nevus,0,0.69351673,0.8167906,0.7243351936340332,0.3,1,melanoma
+345,346,valid,Fbl092.jpg,FBL/Fbl092.jpg,clark nevus,0,0.3847751,0.6881752,0.46062512695789337,0.3,1,melanoma
+346,347,train,Fbl094.jpg,FBL/Fbl094.jpg,clark nevus,0,0.50814795,0.5544482,0.5197230130434036,0.3,1,melanoma
+347,348,test,Fbl098.jpg,FBL/Fbl098.jpg,clark nevus,0,0.43738213,0.44329807,0.4388611167669296,0.3,1,melanoma
+348,349,test,Fll035.jpg,Fll/Fll035.jpg,clark nevus,0,1.0,0.9783188,0.9945797026157379,0.3,1,melanoma
+349,350,test,Fll037.jpg,Fll/Fll037.jpg,clark nevus,0,0.76524657,0.52397,0.7049274295568466,0.3,1,melanoma
+350,351,train,Fll039.jpg,Fll/Fll039.jpg,clark nevus,0,0.33104724,0.57977164,0.39322833716869354,0.3,1,melanoma
+351,352,test,Fcl010.jpg,FCL/Fcl010.jpg,clark nevus,0,0.9990377,0.90643406,0.9758867770433426,0.3,1,melanoma
+352,353,train,Fcl012.jpg,FCL/Fcl012.jpg,clark nevus,0,0.27698115,0.39270762,0.3059127628803253,0.3,1,melanoma
+353,354,train,Fcl014.jpg,FCL/Fcl014.jpg,clark nevus,0,0.8788588,0.38775805,0.7560836151242256,0.3,1,melanoma
+354,355,train,FCL018.JPG,FCL/FCL018.JPG,clark nevus,0,0.33930868,0.39649224,0.3536045700311661,0.3,1,melanoma
+355,356,valid,Fll041.jpg,Fll/Fll041.jpg,clark nevus,0,0.47331697,0.8080998,0.557012677192688,0.3,1,melanoma
+356,357,train,Fcl024.jpg,FCL/Fcl024.jpg,clark nevus,0,0.58350194,0.34590113,0.524101734161377,0.3,1,melanoma
+357,358,test,Fcl028.jpg,FCL/Fcl028.jpg,clark nevus,0,0.95520705,0.93691766,0.950634703040123,0.3,1,melanoma
+358,359,test,Fcl030.jpg,FCL/Fcl030.jpg,clark nevus,0,0.43445572,0.67989075,0.4958144798874855,0.3,1,melanoma
+359,360,test,Fcl032.jpg,FCL/Fcl032.jpg,clark nevus,0,0.62041175,0.6720396,0.6333187222480774,0.3,1,melanoma
+360,361,train,Fcl034.jpg,FCL/Fcl034.jpg,clark nevus,0,0.7130054,0.9402061,0.7698055952787399,0.3,1,melanoma
+361,362,test,Fcl036.jpg,FCL/Fcl036.jpg,clark nevus,0,0.81766,0.35845873,0.7028596624732018,0.3,1,melanoma
+362,363,train,Fcl038.jpg,FCL/Fcl038.jpg,clark nevus,0,1.0,0.84309095,0.9607727378606796,0.3,1,melanoma
+363,364,test,Fll043.jpg,Fll/Fll043.jpg,clark nevus,0,0.39783034,0.39364314,0.3967835381627083,0.3,1,melanoma
+364,365,valid,Fcl048.jpg,FCL/Fcl048.jpg,clark nevus,0,0.678673,0.9326133,0.7421581000089645,0.3,1,melanoma
+365,366,test,Fcl050.jpg,FCL/Fcl050.jpg,clark nevus,0,0.4210864,0.34551612,0.4021938294172287,0.3,1,melanoma
+366,367,train,FCL052.JPG,FCL/FCL052.JPG,clark nevus,0,0.9987742,0.98096955,0.9943230152130127,0.3,1,melanoma
+367,368,test,FCL066.JPG,FCL/FCL066.JPG,clark nevus,0,0.9978463,0.9524564,0.9864988327026367,0.3,1,melanoma
+368,369,train,Fcl070.jpg,FCL/Fcl070.jpg,clark nevus,0,0.4276918,0.8542292,0.5343261435627937,0.3,1,melanoma
+369,370,train,Fcl076.jpg,FCL/Fcl076.jpg,clark nevus,0,0.44881096,0.41989642,0.4415823295712471,0.3,1,melanoma
+370,371,test,Fcl080.jpg,FCL/Fcl080.jpg,clark nevus,0,0.46154526,0.39830685,0.4457356557250023,0.3,1,melanoma
+371,372,test,Fcl090.jpg,FCL/Fcl090.jpg,clark nevus,0,0.9553175,0.9457632,0.9529289156198502,0.3,1,melanoma
+372,373,train,Fcl094.jpg,FCL/Fcl094.jpg,clark nevus,0,0.9826531,0.9795654,0.9818811565637589,0.3,1,melanoma
+373,374,train,Fcl096.jpg,FCL/Fcl096.jpg,clark nevus,0,0.5065073,0.5274034,0.5117313116788864,0.3,1,melanoma
+374,375,valid,Fcl098.jpg,FCL/Fcl098.jpg,clark nevus,0,0.37691307,0.80988103,0.48515506088733673,0.3,1,melanoma
+375,376,valid,Fel002.jpg,FEL/Fel002.jpg,clark nevus,0,0.3898443,0.42245245,0.39799633622169495,0.3,1,melanoma
+376,377,train,Fel016.jpg,FEL/Fel016.jpg,clark nevus,0,0.6584875,0.67989385,0.6638390868902206,0.3,1,melanoma
+377,378,valid,Fel018.jpg,FEL/Fel018.jpg,clark nevus,0,0.9492904,0.776459,0.9060825407505035,0.3,1,melanoma
+378,379,train,Fel024.jpg,FEL/Fel024.jpg,clark nevus,0,0.9995524,0.7625332,0.9402976185083389,0.3,1,melanoma
+379,380,train,Fel030.jpg,FEL/Fel030.jpg,clark nevus,0,0.53865767,0.4223759,0.5095872208476067,0.3,1,melanoma
+380,381,train,Fel034.jpg,FEL/Fel034.jpg,clark nevus,0,0.73199797,0.70128,0.7243184745311737,0.3,1,melanoma
+381,382,test,Fel052.jpg,FEL/Fel052.jpg,clark nevus,0,0.52516216,0.6414056,0.5542230159044266,0.3,1,melanoma
+382,383,train,Fel064.jpg,FEL/Fel064.jpg,clark nevus,0,0.35331863,0.64424014,0.42604900896549225,0.3,1,melanoma
+383,384,train,Fel068.jpg,FEL/Fel068.jpg,clark nevus,0,1.0,0.89338297,0.9733457416296005,0.3,1,melanoma
+384,385,train,Fel070.jpg,FEL/Fel070.jpg,clark nevus,0,0.6451911,0.9836292,0.7298006117343903,0.3,1,melanoma
+385,386,test,Fel072.jpg,FEL/Fel072.jpg,clark nevus,0,0.37027583,0.78413063,0.47373952716588974,0.3,1,melanoma
+386,387,train,Fel082.jpg,FEL/Fel082.jpg,clark nevus,0,0.3827671,0.64479953,0.44827521592378616,0.3,1,melanoma
+387,388,train,Fel084.jpg,FEL/Fel084.jpg,clark nevus,0,0.326419,0.37138978,0.3376616910099983,0.3,1,melanoma
+388,389,train,Fel086.jpg,FEL/Fel086.jpg,clark nevus,0,0.42000568,0.67395115,0.48349204659461975,0.3,1,melanoma
+389,390,train,Fel088.jpg,FEL/Fel088.jpg,clark nevus,0,0.39093295,0.5190609,0.4229649379849434,0.3,1,melanoma
+390,391,test,Fel096.jpg,FEL/Fel096.jpg,clark nevus,0,0.48549238,0.5325787,0.49726396054029465,0.3,1,melanoma
+391,392,train,Fel100.jpg,FEL/Fel100.jpg,clark nevus,0,0.67878556,0.6253314,0.6654220223426819,0.3,1,melanoma
+392,393,valid,FFL002.JPG,FFL/FFL002.JPG,clark nevus,0,0.69067883,0.9592533,0.7578224539756775,0.3,1,melanoma
+393,394,train,FFL004.JPG,FFL/FFL004.JPG,clark nevus,0,0.47900957,0.58841485,0.5063608884811401,0.3,1,melanoma
+394,395,train,FFL006.JPG,FFL/FFL006.JPG,clark nevus,0,0.42210084,0.70372677,0.49250732362270355,0.3,1,melanoma
+395,396,valid,FFL008.JPG,FFL/FFL008.JPG,clark nevus,0,0.4851768,0.5591489,0.5036698281764984,0.3,1,melanoma
+396,397,test,Ffl010.jpg,FFL/Ffl010.jpg,clark nevus,0,0.64466965,0.7612411,0.6738125085830688,0.3,1,melanoma
+397,398,valid,Ffl014.jpg,FFL/Ffl014.jpg,clark nevus,0,0.99999315,0.42238218,0.8555904030799866,0.3,1,melanoma
+398,399,valid,Ffl016.jpg,FFL/Ffl016.jpg,clark nevus,0,0.3114331,0.36174566,0.3240112438797951,0.3,1,melanoma
+399,400,test,FFL032.JPG,FFL/FFL032.JPG,clark nevus,0,0.9999693,0.98598206,0.996472492814064,0.3,1,melanoma
+400,401,test,Ffl066.jpg,FFL/Ffl066.jpg,clark nevus,0,0.62664884,0.5047389,0.5961713641881943,0.3,1,melanoma
+401,402,train,Ffl078.jpg,FFL/Ffl078.jpg,clark nevus,0,0.29156813,0.3775899,0.3130735754966736,0.3,1,melanoma
+402,403,test,Ffl082.jpg,FFL/Ffl082.jpg,clark nevus,0,0.6395129,0.89497197,0.7033776640892029,0.3,1,melanoma
+403,404,train,Ffl100.jpg,FFL/Ffl100.jpg,clark nevus,0,0.62349665,0.98424095,0.7136827260255814,0.3,1,melanoma
+404,405,test,Fdl002.jpg,FDL/Fdl002.jpg,clark nevus,0,0.9863164,0.47364596,0.8581487759947777,0.3,1,melanoma
+405,406,train,Fdl020.jpg,FDL/Fdl020.jpg,clark nevus,0,0.512944,0.70054936,0.5598453283309937,0.3,1,melanoma
+406,407,valid,Fll065.jpg,Fll/Fll065.jpg,clark nevus,0,0.8441082,0.6779314,0.8025640249252319,0.3,1,melanoma
+407,408,test,Fdl028.jpg,FDL/Fdl028.jpg,clark nevus,0,0.46278062,0.5031157,0.47286439687013626,0.3,1,melanoma
+408,409,test,Fdl030.jpg,FDL/Fdl030.jpg,clark nevus,0,0.47742108,0.44747242,0.4699339121580124,0.3,1,melanoma
+409,410,valid,Fdl054.jpg,FDL/Fdl054.jpg,clark nevus,0,0.3459976,0.36484146,0.35070856660604477,0.3,1,melanoma
+410,411,test,Fll083.jpg,Fll/Fll083.jpg,clark nevus,0,0.5747827,0.812154,0.6341255456209183,0.3,1,melanoma
+411,412,valid,Fgl002.jpg,Fgl/Fgl002.jpg,clark nevus,0,0.5772704,0.48282164,0.553658202290535,0.3,1,melanoma
+412,413,train,Gcl073.jpg,Gcl/Gcl073.jpg,clark nevus,0,0.28824213,0.41135764,0.3190210089087486,0.3,1,melanoma
+413,414,test,Ggl024.jpg,Ggl/Ggl024.jpg,clark nevus,0,0.34593317,0.36184564,0.34991128742694855,0.3,1,melanoma
+414,415,test,Ggl052.jpg,Ggl/Ggl052.jpg,clark nevus,0,0.27723363,0.34786177,0.2948906645178795,0.3,0,non_melanoma
+415,416,train,Ggl060.jpg,Ggl/Ggl060.jpg,clark nevus,0,0.34528464,0.48769134,0.3808863162994385,0.3,1,melanoma
+416,417,test,Ggl062.jpg,Ggl/Ggl062.jpg,clark nevus,0,0.26876044,0.68927836,0.3738899230957031,0.3,1,melanoma
+417,418,test,Ggl034.jpg,Ggl/Ggl034.jpg,clark nevus,0,0.2718516,0.594122,0.3524191975593567,0.3,1,melanoma
+418,419,valid,Ggl074.jpg,Ggl/Ggl074.jpg,clark nevus,0,0.30593476,0.566707,0.37112782150506973,0.3,1,melanoma
+419,420,train,Ggl076.jpg,Ggl/Ggl076.jpg,clark nevus,0,0.31812903,0.580457,0.3837110176682472,0.3,1,melanoma
+420,421,test,Ggl078.jpg,Ggl/Ggl078.jpg,clark nevus,0,0.38758215,0.516966,0.4199281111359596,0.3,1,melanoma
+421,422,valid,Ggl088.jpg,Ggl/Ggl088.jpg,clark nevus,0,0.32616585,0.45250288,0.3577501103281975,0.3,1,melanoma
+422,423,train,Fgl036.jpg,Fgl/Fgl036.jpg,clark nevus,0,0.6583969,0.9877497,0.7407350987195969,0.3,1,melanoma
+423,424,train,Fgl008.jpg,Fgl/Fgl008.jpg,clark nevus,0,0.34315476,0.60111696,0.4076453074812889,0.3,1,melanoma
+424,425,test,Fgl010.jpg,Fgl/Fgl010.jpg,clark nevus,0,0.40635642,0.6008135,0.45497069507837296,0.3,1,melanoma
+425,426,train,Fgl012.jpg,Fgl/Fgl012.jpg,clark nevus,0,0.46183118,0.85284513,0.5595846697688103,0.3,1,melanoma
+426,427,train,Fgl014.jpg,Fgl/Fgl014.jpg,clark nevus,0,0.62284625,0.99557734,0.716029018163681,0.3,1,melanoma
+427,428,test,Fll087.jpg,Fll/Fll087.jpg,clark nevus,0,0.51914036,0.87609804,0.6083797812461853,0.3,1,melanoma
+428,429,train,Fgl005.jpg,Fgl/Fgl005.jpg,clark nevus,0,0.95451546,0.8899551,0.9383753687143326,0.3,1,melanoma
+429,430,train,Fll091.jpg,Fll/Fll091.jpg,clark nevus,0,0.7196233,0.59885013,0.6894300282001495,0.3,1,melanoma
+430,431,valid,Fgl042.jpg,Fgl/Fgl042.jpg,clark nevus,0,0.39010656,0.47569785,0.4115043804049492,0.3,1,melanoma
+431,432,train,Fgl047.jpg,Fgl/Fgl047.jpg,clark nevus,0,0.62314117,0.8549429,0.6810916066169739,0.3,1,melanoma
+432,433,test,Fgl051.jpg,Fgl/Fgl051.jpg,clark nevus,0,0.45352864,0.38545406,0.43650999665260315,0.3,1,melanoma
+433,434,train,Fgl055.jpg,Fgl/Fgl055.jpg,clark nevus,0,0.34378642,0.42178425,0.3632858768105507,0.3,1,melanoma
+434,435,test,Fgl068.jpg,Fgl/Fgl068.jpg,clark nevus,0,0.4233239,0.8937972,0.5409422293305397,0.3,1,melanoma
+435,436,valid,Fgl072.jpg,Fgl/Fgl072.jpg,clark nevus,0,1.0,0.99398565,0.998496413230896,0.3,1,melanoma
+436,437,valid,Fgl078.jpg,Fgl/Fgl078.jpg,clark nevus,0,0.37958342,0.38292867,0.3804197311401367,0.3,1,melanoma
+437,438,train,Fhl030.jpg,Fhl/Fhl030.jpg,clark nevus,0,0.6801466,0.7679862,0.7021064758300781,0.3,1,melanoma
+438,439,test,Fhl032.jpg,Fhl/Fhl032.jpg,clark nevus,0,0.7129066,0.7869386,0.7314146012067795,0.3,1,melanoma
+439,440,valid,Fhl034.jpg,Fhl/Fhl034.jpg,clark nevus,0,0.50124115,0.37217322,0.46897416561841965,0.3,1,melanoma
+440,441,train,Fhl038.jpg,Fhl/Fhl038.jpg,clark nevus,0,0.999979,0.9985052,0.9996105581521988,0.3,1,melanoma
+441,442,valid,Fhl040.jpg,Fhl/Fhl040.jpg,clark nevus,0,0.8901137,0.93917185,0.9023782461881638,0.3,1,melanoma
+442,443,test,Fhl042.jpg,Fhl/Fhl042.jpg,clark nevus,0,0.6088886,0.8162408,0.6607266664505005,0.3,1,melanoma
+443,444,test,Fhl064.jpg,Fhl/Fhl064.jpg,clark nevus,0,0.34646353,0.3677516,0.3517855480313301,0.3,1,melanoma
+444,445,test,Fhl066.jpg,Fhl/Fhl066.jpg,clark nevus,0,0.38661763,0.4691068,0.4072399213910103,0.3,1,melanoma
+445,446,train,Fhl070.jpg,Fhl/Fhl070.jpg,clark nevus,0,0.606959,0.39125893,0.5530339702963829,0.3,1,melanoma
+446,447,train,Fhl072.jpg,Fhl/Fhl072.jpg,clark nevus,0,0.35184604,0.37260127,0.3570348471403122,0.3,1,melanoma
+447,448,train,Fhl074.jpg,Fhl/Fhl074.jpg,clark nevus,0,0.50225765,0.5522665,0.5147598534822464,0.3,1,melanoma
+448,449,train,Fhl076.jpg,Fhl/Fhl076.jpg,clark nevus,0,0.6023185,0.38268182,0.5474093481898308,0.3,1,melanoma
+449,450,train,Fhl078.jpg,Fhl/Fhl078.jpg,clark nevus,0,0.4537208,0.35919797,0.4300900995731354,0.3,1,melanoma
+450,451,test,Fhl080.jpg,Fhl/Fhl080.jpg,clark nevus,0,0.6286932,0.5759407,0.6155050992965698,0.3,1,melanoma
+451,452,train,Fhl082.jpg,Fhl/Fhl082.jpg,clark nevus,0,0.7765371,0.54183185,0.7178608030080795,0.3,1,melanoma
+452,453,train,Fhl084.jpg,Fhl/Fhl084.jpg,clark nevus,0,0.46179676,0.34736207,0.4331880882382393,0.3,1,melanoma
+453,454,test,Fhl086.jpg,Fhl/Fhl086.jpg,clark nevus,0,0.33433768,0.36170942,0.34118061512708664,0.3,1,melanoma
+454,455,valid,Fhl088.jpg,Fhl/Fhl088.jpg,clark nevus,0,0.99998885,0.95938617,0.989838182926178,0.3,1,melanoma
+455,456,train,Fhl090.jpg,Fhl/Fhl090.jpg,clark nevus,0,0.5270401,0.7329308,0.5785127878189087,0.3,1,melanoma
+456,457,test,Fhl092.jpg,Fhl/Fhl092.jpg,clark nevus,0,0.4068337,0.40278798,0.4058222770690918,0.3,1,melanoma
+457,458,valid,Fhl094.jpg,Fhl/Fhl094.jpg,clark nevus,0,0.4006391,0.6373023,0.45980488508939743,0.3,1,melanoma
+458,459,train,Fhl096.jpg,Fhl/Fhl096.jpg,clark nevus,0,0.37535864,0.60203815,0.43202851712703705,0.3,1,melanoma
+459,460,test,Fhl098.jpg,Fhl/Fhl098.jpg,clark nevus,0,0.3976599,0.59907806,0.44801443815231323,0.3,1,melanoma
+460,461,valid,Fhl100.jpg,Fhl/Fhl100.jpg,clark nevus,0,0.3458293,0.3540317,0.34787990897893906,0.3,1,melanoma
+461,462,test,Fll142.jpg,Fll/Fll142.jpg,clark nevus,0,0.46523783,0.7848877,0.5451502874493599,0.3,1,melanoma
+462,463,train,Fil062.jpg,Fil/Fil062.jpg,clark nevus,0,1.0,0.9349175,0.9837293773889542,0.3,1,melanoma
+463,464,train,Fml010.jpg,Fml/Fml010.jpg,clark nevus,0,0.5713722,0.6902441,0.6010901778936386,0.3,1,melanoma
+464,465,test,Fml020.jpg,Fml/Fml020.jpg,clark nevus,0,0.4844791,0.5667774,0.5050536766648293,0.3,1,melanoma
+465,466,valid,Fil088.jpg,Fil/Fil088.jpg,clark nevus,0,0.61347294,0.99093974,0.7078396379947662,0.3,1,melanoma
+466,467,train,Fil094.jpg,Fil/Fil094.jpg,clark nevus,0,0.6369615,0.6128396,0.6309310346841812,0.3,1,melanoma
+467,468,train,Nml067.jpg,NML/Nml067.jpg,clark nevus,0,0.54865736,0.9988515,0.6612058877944946,0.3,1,melanoma
+468,469,test,Nll024.jpg,NLL/Nll024.jpg,clark nevus,0,0.3356487,0.46783417,0.36869505792856216,0.3,1,melanoma
+469,470,train,Nel012.jpg,NEL/Nel012.jpg,combined nevus,0,0.35203925,0.51725745,0.39334379881620407,0.3,1,melanoma
+470,471,test,Nfl034.jpg,NFL/Nfl034.jpg,combined nevus,0,0.6575149,0.68435585,0.664225161075592,0.3,1,melanoma
+471,472,test,Ngl086.jpg,NGL/Ngl086.jpg,combined nevus,0,0.5477152,0.7522799,0.5988563597202301,0.3,1,melanoma
+472,473,valid,Ngl098.jpg,NGL/Ngl098.jpg,combined nevus,0,0.56479454,0.80740404,0.6254469156265259,0.3,1,melanoma
+473,474,train,Nml045.jpg,NML/Nml045.jpg,combined nevus,0,0.968605,0.99884677,0.9761654287576675,0.3,1,melanoma
+474,475,valid,Nml047.jpg,NML/Nml047.jpg,combined nevus,0,0.39450777,0.5870044,0.44263193011283875,0.3,1,melanoma
+475,476,train,Acl285.jpg,A3l/Acl285.jpg,combined nevus,0,1.0,0.53451943,0.8836298584938049,0.3,1,melanoma
+476,477,train,Gal216.jpg,Gal/Gal216.jpg,combined nevus,0,0.9619456,0.9872287,0.9682663679122925,0.3,1,melanoma
+477,478,test,Gal218.jpg,Gal/Gal218.jpg,combined nevus,0,0.451531,0.6651449,0.5049344748258591,0.3,1,melanoma
+478,479,valid,FAL022.JPG,FAL/FAL022.JPG,combined nevus,0,0.6156868,0.9889912,0.7090128809213638,0.3,1,melanoma
+479,480,test,Fdl062.jpg,FDL/Fdl062.jpg,combined nevus,0,1.0,0.62333596,0.9058339893817902,0.3,1,melanoma
+480,481,test,Gdl100.jpg,Gdl/Gdl100.jpg,combined nevus,0,0.43003538,0.51101816,0.4502810761332512,0.3,1,melanoma
+481,482,train,Ggl090.jpg,Ggl/Ggl090.jpg,combined nevus,0,0.28461137,0.40775672,0.315397709608078,0.3,1,melanoma
+482,483,test,Ncl027.jpg,NCL/Ncl027.jpg,congenital nevus,0,0.8812213,0.9439835,0.8969118446111679,0.3,1,melanoma
+483,484,train,Ncl071.jpg,NCL/Ncl071.jpg,congenital nevus,0,0.5868145,0.814309,0.6436881422996521,0.3,1,melanoma
+484,485,train,Ncl100.jpg,NCL/Ncl100.jpg,congenital nevus,0,0.4538037,0.7979326,0.5398359224200249,0.3,1,melanoma
+485,486,test,Nel008.jpg,NEL/Nel008.jpg,congenital nevus,0,0.9701982,0.96608514,0.969169944524765,0.3,1,melanoma
+486,487,train,Nel010.jpg,NEL/Nel010.jpg,congenital nevus,0,1.0,0.86616296,0.966540738940239,0.3,1,melanoma
+487,488,train,Nfl036.jpg,NFL/Nfl036.jpg,congenital nevus,0,0.3092129,0.856112,0.4459376707673073,0.3,1,melanoma
+488,489,valid,Nml039.jpg,NML/Nml039.jpg,congenital nevus,0,0.5651065,0.5886837,0.5710008144378662,0.3,1,melanoma
+489,490,train,Abl193.jpg,A2l/Abl193.jpg,congenital nevus,0,0.9999276,0.9768122,0.9941487312316895,0.3,1,melanoma
+490,491,test,Adl377.jpg,Adl/Adl377.jpg,congenital nevus,0,0.4236647,0.4769672,0.43699031323194504,0.3,1,melanoma
+491,492,test,Ael475.jpg,Ael/Ael475.jpg,congenital nevus,0,0.31516942,0.5466459,0.37303853780031204,0.3,1,melanoma
+492,493,train,Abl183.jpg,A2l/Abl183.jpg,congenital nevus,0,0.37384352,0.3993882,0.380229689180851,0.3,1,melanoma
+493,494,train,Gal062.jpg,Gal/Gal062.jpg,congenital nevus,0,0.5617701,0.70090735,0.5965543985366821,0.3,1,melanoma
+494,495,train,Ffl062.jpg,FFL/Ffl062.jpg,congenital nevus,0,0.6138352,0.36623952,0.5519362911581993,0.3,1,melanoma
+495,496,train,Ffl096.jpg,FFL/Ffl096.jpg,congenital nevus,0,0.57087815,0.6167166,0.5823377668857574,0.3,1,melanoma
+496,497,train,FDL016.JPG,FDL/FDL016.JPG,congenital nevus,0,0.45590127,0.8624174,0.5575302988290787,0.3,1,melanoma
+497,498,valid,FDL022.JPG,FDL/FDL022.JPG,congenital nevus,0,0.99896526,0.664649,0.9153861999511719,0.3,1,melanoma
+498,499,train,Ggl002.jpg,Ggl/Ggl002.jpg,congenital nevus,0,0.3218933,0.56465983,0.38258493691682816,0.3,1,melanoma
+499,500,train,Nbl080.jpg,NBL/Nbl080.jpg,dermal nevus,0,0.50057054,0.92454994,0.6065653860569,0.3,1,melanoma
+500,501,train,Nel005.jpg,NEL/Nel005.jpg,dermal nevus,0,0.34367165,0.7980831,0.45727451890707016,0.3,1,melanoma
+501,502,train,Nfl042.jpg,NFL/Nfl042.jpg,dermal nevus,0,0.5418323,0.9642618,0.6474396884441376,0.3,1,melanoma
+502,503,train,Nfl044.jpg,NFL/Nfl044.jpg,dermal nevus,0,0.4674461,0.6960243,0.5245906412601471,0.3,1,melanoma
+503,504,train,Nll038.jpg,NLL/Nll038.jpg,dermal nevus,0,0.97687215,0.7023301,0.908236637711525,0.3,1,melanoma
+504,505,test,Nll040.jpg,NLL/Nll040.jpg,dermal nevus,0,0.4242143,0.43290454,0.42638686299324036,0.3,1,melanoma
+505,506,train,Nll048.jpg,NLL/Nll048.jpg,dermal nevus,0,0.9972731,0.981491,0.9933275729417801,0.3,1,melanoma
+506,507,valid,Nll050.jpg,NLL/Nll050.jpg,dermal nevus,0,0.38446942,0.49739966,0.4127019792795181,0.3,1,melanoma
+507,508,train,NLL052.JPG,NLL/NLL052.JPG,dermal nevus,0,0.3911017,0.38780487,0.3902774825692177,0.3,1,melanoma
+508,509,train,Nll056.jpg,NLL/Nll056.jpg,dermal nevus,0,0.4677266,0.95658165,0.5899403542280197,0.3,1,melanoma
+509,510,train,Nll058.jpg,NLL/Nll058.jpg,dermal nevus,0,0.7144922,0.95254797,0.7740061432123184,0.3,1,melanoma
+510,511,test,Nll088.jpg,NLL/Nll088.jpg,dermal nevus,0,0.46483576,0.42145061,0.4539894759654999,0.3,1,melanoma
+511,512,train,NML032.JPG,NML/NML032.JPG,dermal nevus,0,0.541315,0.8835342,0.6268698126077652,0.3,1,melanoma
+512,513,valid,Nml051.jpg,NML/Nml051.jpg,dermal nevus,0,0.81981534,0.95093995,0.8525964915752411,0.3,1,melanoma
+513,514,train,Nml063.jpg,NML/Nml063.jpg,dermal nevus,0,0.95511013,0.94031787,0.9514120668172836,0.3,1,melanoma
+514,515,train,Nml065.jpg,NML/Nml065.jpg,dermal nevus,0,0.6295984,0.8937857,0.6956452131271362,0.3,1,melanoma
+515,516,train,Abl189.jpg,A2l/Abl189.jpg,dermal nevus,0,0.36860037,0.44937077,0.3887929692864418,0.3,1,melanoma
+516,517,test,Acl203.jpg,A3l/Acl203.jpg,dermal nevus,0,0.55584514,0.3952737,0.5157022774219513,0.3,1,melanoma
+517,518,train,Acl263.jpg,A3l/Acl263.jpg,dermal nevus,0,0.53003556,0.4927648,0.5207178667187691,0.3,1,melanoma
+518,519,train,Adl331.jpg,Adl/Adl331.jpg,dermal nevus,0,0.4438685,0.5913538,0.4807398095726967,0.3,1,melanoma
+519,520,valid,Adl337bis.jpg,Adl/Adl337bis.jpg,dermal nevus,0,0.65599585,0.7919954,0.6899957358837128,0.3,1,melanoma
+520,521,train,Ael521.jpg,Ael/Ael521.jpg,dermal nevus,0,0.5373676,0.97860146,0.6476760506629944,0.3,1,melanoma
+521,522,train,gzl68.jpg,Gzl/gzl68.jpg,dermal nevus,0,0.8558592,0.6942311,0.8154521882534027,0.3,1,melanoma
+522,523,valid,gzl52.jpg,Gzl/gzl52.jpg,dermal nevus,0,0.68168133,0.9381745,0.7458046227693558,0.3,1,melanoma
+523,524,test,Gal033.jpg,Gal/Gal033.jpg,dermal nevus,0,0.4360085,0.40625653,0.4285705164074898,0.3,1,melanoma
+524,525,test,Fbl030.jpg,FBL/Fbl030.jpg,dermal nevus,0,0.71372545,0.8250242,0.7415501326322556,0.3,1,melanoma
+525,526,valid,Ffl042.jpg,FFL/Ffl042.jpg,dermal nevus,0,0.35515454,0.66832536,0.4334472492337227,0.3,1,melanoma
+526,527,test,Ggl008.jpg,Ggl/Ggl008.jpg,dermal nevus,0,0.35074437,0.34464395,0.34921926259994507,0.3,1,melanoma
+527,528,test,Ggl042.jpg,Ggl/Ggl042.jpg,dermal nevus,0,0.38084507,0.46712613,0.40241533517837524,0.3,1,melanoma
+528,529,valid,Ggl044.jpg,Ggl/Ggl044.jpg,dermal nevus,0,0.25291637,0.36095098,0.27992501854896545,0.3,0,non_melanoma
+529,530,train,Fgl035.jpg,Fgl/Fgl035.jpg,dermal nevus,0,0.40359834,0.47502834,0.42145583778619766,0.3,1,melanoma
+530,531,train,Fgl020.jpg,Fgl/Fgl020.jpg,dermal nevus,0,0.46656385,0.74636066,0.536513052880764,0.3,1,melanoma
+531,532,test,Fll089.jpg,Fll/Fll089.jpg,dermal nevus,0,0.929434,0.8072008,0.8988756984472275,0.3,1,melanoma
+532,533,train,Nfl004.jpg,NFL/Nfl004.jpg,dermatofibroma,0,0.7945862,0.544533,0.7320728898048401,0.3,1,melanoma
+533,534,valid,Aal014.jpg,A1l/Aal014.jpg,dermatofibroma,0,0.34972394,0.39164206,0.36020346730947495,0.3,1,melanoma
+534,535,test,Aal018.jpg,A1l/Aal018.jpg,dermatofibroma,0,0.6830075,0.4492324,0.6245637089014053,0.3,1,melanoma
+535,536,test,Aal020.jpg,A1l/Aal020.jpg,dermatofibroma,0,0.49593323,0.54484,0.5081599205732346,0.3,1,melanoma
+536,537,test,Abl197.jpg,A2l/Abl197.jpg,dermatofibroma,0,0.26971164,0.37554544,0.29617009311914444,0.3,0,non_melanoma
+537,538,valid,Acl209.jpg,A3l/Acl209.jpg,dermatofibroma,0,0.33208543,0.44103998,0.35932406783103943,0.3,1,melanoma
+538,539,valid,Acl211.jpg,A3l/Acl211.jpg,dermatofibroma,0,0.6259148,0.48895845,0.5916757211089134,0.3,1,melanoma
+539,540,test,Aal024.jpg,A1l/Aal024.jpg,dermatofibroma,0,0.5393825,0.44920522,0.5168381929397583,0.3,1,melanoma
+540,541,valid,Acl231.jpg,A3l/Acl231.jpg,dermatofibroma,0,0.35778666,0.4352049,0.37714121490716934,0.3,1,melanoma
+541,542,test,Acl233.jpg,A3l/Acl233.jpg,dermatofibroma,0,0.69177055,0.51350284,0.6472036242485046,0.3,1,melanoma
+542,543,train,Aal028.jpg,A1l/Aal028.jpg,dermatofibroma,0,0.39294818,0.5181897,0.4242585673928261,0.3,1,melanoma
+543,544,train,Aal030.jpg,A1l/Aal030.jpg,dermatofibroma,0,0.5236422,0.39398283,0.4912273436784744,0.3,1,melanoma
+544,545,valid,Aal038.jpg,A1l/Aal038.jpg,dermatofibroma,0,0.65021396,0.39856467,0.5873016342520714,0.3,1,melanoma
+545,546,train,Adl373.jpg,Adl/Adl373.jpg,dermatofibroma,0,0.38155723,0.4637274,0.40209977328777313,0.3,1,melanoma
+546,547,test,Ael527.jpg,Ael/Ael527.jpg,dermatofibroma,0,0.5589026,0.47077945,0.5368718281388283,0.3,1,melanoma
+547,548,valid,Gal226.jpg,Gal/Gal226.jpg,dermatofibroma,0,0.4920564,0.5324087,0.5021444782614708,0.3,1,melanoma
+548,549,test,Ggl048.jpg,Ggl/Ggl048.jpg,dermatofibroma,0,0.41904938,0.5583927,0.4538852125406265,0.3,1,melanoma
+549,550,train,Ggl056.jpg,Ggl/Ggl056.jpg,dermatofibroma,0,0.45228052,0.8408462,0.5494219362735748,0.3,1,melanoma
+550,551,train,Ggl084.jpg,Ggl/Ggl084.jpg,dermatofibroma,0,0.27704093,0.41493195,0.3115136846899986,0.3,1,melanoma
+551,552,valid,Fhl044.jpg,Fhl/Fhl044.jpg,dermatofibroma,0,0.32927552,0.35344064,0.3353167995810509,0.3,1,melanoma
+552,553,train,Ndl089.jpg,NDL/Ndl089.jpg,lentigo,0,0.6355922,0.7788142,0.6713977158069611,0.3,1,melanoma
+553,554,valid,Ndl100.jpg,NDL/Ndl100.jpg,lentigo,0,0.3586874,0.41726926,0.3733328655362129,0.3,1,melanoma
+554,555,valid,Adl383.jpg,Adl/Adl383.jpg,lentigo,0,0.30681583,0.37785918,0.3245766684412956,0.3,1,melanoma
+555,556,train,Adl385.jpg,Adl/Adl385.jpg,lentigo,0,0.41090778,0.42793128,0.41516365110874176,0.3,1,melanoma
+556,557,test,Adl387bis.jpg,Adl/Adl387bis.jpg,lentigo,0,0.36563188,0.49921435,0.3990274965763092,0.3,1,melanoma
+557,558,valid,Ael415.jpg,Ael/Ael415.jpg,lentigo,0,0.43709219,0.4725458,0.4459555894136429,0.3,1,melanoma
+558,559,valid,gzl60.jpg,Gzl/gzl60.jpg,lentigo,0,0.47927743,0.9840032,0.6054588705301285,0.3,1,melanoma
+559,560,test,gzl48.jpg,Gzl/gzl48.jpg,lentigo,0,0.30438006,0.5792048,0.37308624386787415,0.3,1,melanoma
+560,561,test,Gal169.jpg,Gal/Gal169.jpg,lentigo,0,0.44466534,0.4420071,0.444000780582428,0.3,1,melanoma
+561,562,test,Gal171.jpg,Gal/Gal171.jpg,lentigo,0,0.45706183,0.7691611,0.5350866466760635,0.3,1,melanoma
+562,563,test,Ggl070.jpg,Ggl/Ggl070.jpg,lentigo,0,0.28467277,0.3650556,0.30476847290992737,0.3,1,melanoma
+563,564,train,Ggl072.jpg,Ggl/Ggl072.jpg,lentigo,0,0.64727163,0.91690177,0.714679166674614,0.3,1,melanoma
+564,565,train,Fhl018.jpg,Fhl/Fhl018.jpg,lentigo,0,0.9999998,0.58286774,0.8957168012857437,0.3,1,melanoma
+565,566,train,Fil064.jpg,Fil/Fil064.jpg,lentigo,0,0.68768764,0.9769199,0.759995698928833,0.3,1,melanoma
+566,567,test,Fml026.jpg,Fml/Fml026.jpg,lentigo,0,0.4309623,0.6148608,0.4769369140267372,0.3,1,melanoma
+567,568,train,newl006.jpg,New/newl006.jpg,lentigo,0,0.37795973,0.40820745,0.38552165776491165,0.3,1,melanoma
+568,569,test,newl008.jpg,New/newl008.jpg,lentigo,0,0.5886866,0.5357541,0.5754534602165222,0.3,1,melanoma
+569,570,test,newl010.jpg,New/newl010.jpg,lentigo,0,0.5768633,0.7206229,0.612803190946579,0.3,1,melanoma
+570,571,valid,newl012.jpg,New/newl012.jpg,lentigo,0,0.7568877,0.97032034,0.8102458417415619,0.3,1,melanoma
+571,572,train,newl018.jpg,New/newl018.jpg,lentigo,0,0.32986882,0.49559036,0.37129920721054077,0.3,1,melanoma
+572,573,test,newl020.jpg,New/newl020.jpg,lentigo,0,0.3254521,0.4918818,0.36705951392650604,0.3,1,melanoma
+573,574,test,newl022.jpg,New/newl022.jpg,lentigo,0,0.25273648,0.40078804,0.2897493690252304,0.3,0,non_melanoma
+574,575,test,newl024.jpg,New/newl024.jpg,lentigo,0,0.3153493,0.4473601,0.34835200756788254,0.3,1,melanoma
+575,576,test,newl026.jpg,New/newl026.jpg,lentigo,0,0.27834266,0.4426628,0.3194226995110512,0.3,1,melanoma
+576,577,valid,Nal020.jpg,NAL/Nal020.jpg,melanoma (in situ),1,0.4290986,0.47180372,0.43977488577365875,0.3,1,melanoma
+577,578,test,Nal022.jpg,NAL/Nal022.jpg,melanoma (in situ),1,0.997422,0.9982953,0.9976403117179871,0.3,1,melanoma
+578,579,test,Nal037.jpg,NAL/Nal037.jpg,melanoma (in situ),1,0.6329262,0.4375996,0.5840945690870285,0.3,1,melanoma
+579,580,train,Nal044.jpg,NAL/Nal044.jpg,melanoma (in situ),1,0.55095357,0.86433995,0.6293001621961594,0.3,1,melanoma
+580,581,test,Nal047.jpg,NAL/Nal047.jpg,melanoma (in situ),1,0.99985796,0.9733365,0.9932276010513306,0.3,1,melanoma
+581,582,test,Nal066.jpg,NAL/Nal066.jpg,melanoma (in situ),1,1.0,0.9988717,0.9997179210186005,0.3,1,melanoma
+582,583,test,Nal073.jpg,NAL/Nal073.jpg,melanoma (in situ),1,0.5276673,0.7868025,0.5924510806798935,0.3,1,melanoma
+583,584,train,Nal075.jpg,NAL/Nal075.jpg,melanoma (in situ),1,0.5528122,0.6041276,0.5656410604715347,0.3,1,melanoma
+584,585,train,Nal077.jpg,NAL/Nal077.jpg,melanoma (in situ),1,0.99949676,0.99540603,0.9984740763902664,0.3,1,melanoma
+585,586,test,Nal080.jpg,NAL/Nal080.jpg,melanoma (in situ),1,0.93904227,0.9623065,0.9448583275079727,0.3,1,melanoma
+586,587,valid,Nal082.jpg,NAL/Nal082.jpg,melanoma (in situ),1,0.9399258,0.7627784,0.8956389427185059,0.3,1,melanoma
+587,588,train,Nal084.jpg,NAL/Nal084.jpg,melanoma (in situ),1,0.6876795,0.7597165,0.7056887745857239,0.3,1,melanoma
+588,589,test,Nal088.jpg,NAL/Nal088.jpg,melanoma (in situ),1,0.50399286,0.65280056,0.5411947816610336,0.3,1,melanoma
+589,590,test,Nal090.jpg,NAL/Nal090.jpg,melanoma (in situ),1,0.8810624,0.83011913,0.8683265745639801,0.3,1,melanoma
+590,591,test,Nal052.jpg,NAL/Nal052.jpg,melanoma (in situ),1,0.5319463,0.5195634,0.5288505703210831,0.3,1,melanoma
+591,592,train,Nal099.jpg,NAL/Nal099.jpg,melanoma (in situ),1,1.0,0.9995605,0.9998901188373566,0.3,1,melanoma
+592,593,test,Nbl001.jpg,NBL/Nbl001.jpg,melanoma (in situ),1,1.0,0.98680913,0.9967022836208344,0.3,1,melanoma
+593,594,valid,Nbl007.jpg,NBL/Nbl007.jpg,melanoma (in situ),1,0.5101876,0.36658424,0.4742867797613144,0.3,1,melanoma
+594,595,train,Nbl010.jpg,NBL/Nbl010.jpg,melanoma (in situ),1,0.46533194,0.9827759,0.5946929380297661,0.3,1,melanoma
+595,596,test,Nbl013.jpg,NBL/Nbl013.jpg,melanoma (in situ),1,0.3757626,0.52052796,0.41195394843816757,0.3,1,melanoma
+596,597,train,Nbl015.jpg,NBL/Nbl015.jpg,melanoma (in situ),1,1.0,0.9930101,0.9982525259256363,0.3,1,melanoma
+597,598,valid,Nbl022.jpg,NBL/Nbl022.jpg,melanoma (in situ),1,1.0,0.9989224,0.9997306019067764,0.3,1,melanoma
+598,599,test,Nbl025.jpg,NBL/Nbl025.jpg,melanoma (in situ),1,0.6400317,0.4210227,0.5852794498205185,0.3,1,melanoma
+599,600,test,Nbl031.jpg,NBL/Nbl031.jpg,melanoma (in situ),1,0.85128856,0.5163245,0.7675475478172302,0.3,1,melanoma
+600,601,valid,Nfl054.jpg,NFL/Nfl054.jpg,melanoma (in situ),1,0.5486615,0.35334438,0.4998321980237961,0.3,1,melanoma
+601,602,valid,Ngl002.jpg,NGL/Ngl002.jpg,melanoma (in situ),1,0.7270037,0.9832862,0.7910743206739426,0.3,1,melanoma
+602,603,train,NGL010.JPG,NGL/NGL010.JPG,melanoma (in situ),1,0.9981423,0.9739834,0.9921025782823563,0.3,1,melanoma
+603,604,test,Ngl062.jpg,NGL/Ngl062.jpg,melanoma (in situ),1,0.69953513,0.82817113,0.7316941320896149,0.3,1,melanoma
+604,605,train,Ngl068.jpg,NGL/Ngl068.jpg,melanoma (in situ),1,0.9984607,0.9712153,0.9916493594646454,0.3,1,melanoma
+605,606,train,Ngl084.jpg,NGL/Ngl084.jpg,melanoma (in situ),1,0.34807622,0.34884062,0.3482673242688179,0.3,1,melanoma
+606,607,train,Nhl009.jpg,NHL/Nhl009.jpg,melanoma (in situ),1,0.47779697,0.58330977,0.5041751712560654,0.3,1,melanoma
+607,608,valid,Nil031.jpg,NIL/Nil031.jpg,melanoma (in situ),1,0.9997789,0.9825579,0.9954736679792404,0.3,1,melanoma
+608,609,test,Nil080.jpg,NIL/Nil080.jpg,melanoma (in situ),1,0.34183395,0.47360778,0.3747774064540863,0.3,1,melanoma
+609,610,valid,Nil084.jpg,NIL/Nil084.jpg,melanoma (in situ),1,0.5485698,0.9725359,0.6545613259077072,0.3,1,melanoma
+610,611,test,Adl301.jpg,Adl/Adl301.jpg,melanoma (in situ),1,0.39997146,0.4795514,0.4198664426803589,0.3,1,melanoma
+611,612,train,Ael496.jpg,Ael/Ael496.jpg,melanoma (in situ),1,0.2889744,0.40380734,0.3176826387643814,0.3,1,melanoma
+612,613,valid,gzl20.jpg,Gzl/gzl20.jpg,melanoma (in situ),1,0.3536877,0.9182389,0.49482549726963043,0.3,1,melanoma
+613,614,valid,gzl28.jpg,Gzl/gzl28.jpg,melanoma (in situ),1,0.9079058,0.47419652,0.7994784936308861,0.3,1,melanoma
+614,615,train,Gal240.jpg,Gal/Gal240.jpg,melanoma (in situ),1,1.0,0.9767401,0.9941850304603577,0.3,1,melanoma
+615,616,valid,Gal039.jpg,Gal/Gal039.jpg,melanoma (in situ),1,0.37367034,0.62811124,0.4372805655002594,0.3,1,melanoma
+616,617,train,Gal185.jpg,Gal/Gal185.jpg,melanoma (in situ),1,0.44424373,0.5937238,0.48161374032497406,0.3,1,melanoma
+617,618,test,FBL026.JPG,FBL/FBL026.JPG,melanoma (in situ),1,0.38581222,0.6068759,0.44107814133167267,0.3,1,melanoma
+618,619,test,Fbl028.jpg,FBL/Fbl028.jpg,melanoma (in situ),1,1.0,0.9566767,0.989169180393219,0.3,1,melanoma
+619,620,test,Fcl022.jpg,FCL/Fcl022.jpg,melanoma (in situ),1,0.7651147,0.61569786,0.7277605086565018,0.3,1,melanoma
+620,621,train,Fcl040.jpg,FCL/Fcl040.jpg,melanoma (in situ),1,0.9904543,0.9663867,0.9844374060630798,0.3,1,melanoma
+621,622,train,Fcl044.jpg,FCL/Fcl044.jpg,melanoma (in situ),1,0.39482477,0.4214756,0.40148747712373734,0.3,1,melanoma
+622,623,valid,FCL058.JPG,FCL/FCL058.JPG,melanoma (in situ),1,0.37030873,0.98317206,0.523524560034275,0.3,1,melanoma
+623,624,train,FCL074.JPG,FCL/FCL074.JPG,melanoma (in situ),1,0.47493947,0.77434736,0.5497914403676987,0.3,1,melanoma
+624,625,train,Ffl080.jpg,FFL/Ffl080.jpg,melanoma (in situ),1,0.5497933,0.6734212,0.5807002782821655,0.3,1,melanoma
+625,626,valid,Fdl014.jpg,FDL/Fdl014.jpg,melanoma (in situ),1,0.5308571,0.5895575,0.5455321967601776,0.3,1,melanoma
+626,627,train,FDL036.JPG,FDL/FDL036.JPG,melanoma (in situ),1,0.9998903,0.9854372,0.9962770491838455,0.3,1,melanoma
+627,628,train,Gcl003.jpg,Gcl/Gcl003.jpg,melanoma (in situ),1,0.99163413,0.77817017,0.9382681399583817,0.3,1,melanoma
+628,629,test,Gdl037.jpg,Gdl/Gdl037.jpg,melanoma (in situ),1,0.99706894,0.96932817,0.990133747458458,0.3,1,melanoma
+629,630,valid,Ggl036.jpg,Ggl/Ggl036.jpg,melanoma (in situ),1,0.20342118,0.34422904,0.23862314224243164,0.3,0,non_melanoma
+630,631,test,Ggl068.jpg,Ggl/Ggl068.jpg,melanoma (in situ),1,0.39924785,0.84184474,0.5098970755934715,0.3,1,melanoma
+631,632,valid,Fll085.jpg,Fll/Fll085.jpg,melanoma (in situ),1,0.7311715,0.96126616,0.7886951565742493,0.3,1,melanoma
+632,633,test,Fgl018.jpg,Fgl/Fgl018.jpg,melanoma (in situ),1,0.7001891,0.61658716,0.6792886257171631,0.3,1,melanoma
+633,634,test,Fgl029.jpg,Fgl/Fgl029.jpg,melanoma (in situ),1,0.99272287,0.86138815,0.9598891884088516,0.3,1,melanoma
+634,635,test,Fgl057.jpg,Fgl/Fgl057.jpg,melanoma (in situ),1,0.51003075,0.38821745,0.4795774221420288,0.3,1,melanoma
+635,636,train,Fil004.jpg,Fil/Fil004.jpg,melanoma (in situ),1,0.99994576,0.9840242,0.995965376496315,0.3,1,melanoma
+636,637,test,Fll122.jpg,Fll/Fll122.jpg,melanoma (in situ),1,1.0,0.9995077,0.9998769313097,0.3,1,melanoma
+637,638,valid,Fil052.jpg,Fil/Fil052.jpg,melanoma (in situ),1,0.47476903,0.37780216,0.4505273103713989,0.3,1,melanoma
+638,639,train,Fil070.jpg,Fil/Fil070.jpg,melanoma (in situ),1,0.498114,0.47041476,0.491189181804657,0.3,1,melanoma
+639,640,test,newl053.jpg,New/newl053.jpg,melanoma (in situ),1,0.35636654,0.36904147,0.359535276889801,0.3,1,melanoma
+640,641,test,Nal005.jpg,NAL/Nal005.jpg,melanoma (less than 0.76 mm),1,1.0,0.99873585,0.9996839612722397,0.3,1,melanoma
+641,642,train,Nal018.jpg,NAL/Nal018.jpg,melanoma (less than 0.76 mm),1,0.9999992,0.9854284,0.9963565170764923,0.3,1,melanoma
+642,643,train,Nal025.jpg,NAL/Nal025.jpg,melanoma (less than 0.76 mm),1,0.9998591,0.9771775,0.9941886961460114,0.3,1,melanoma
+643,644,train,Nal033.jpg,NAL/Nal033.jpg,melanoma (less than 0.76 mm),1,0.869437,0.89468807,0.8757497519254684,0.3,1,melanoma
+644,645,test,Nal035.jpg,NAL/Nal035.jpg,melanoma (less than 0.76 mm),1,0.70180744,0.9988872,0.7760773748159409,0.3,1,melanoma
+645,646,train,Nal049.jpg,NAL/Nal049.jpg,melanoma (less than 0.76 mm),1,0.69546294,0.99082357,0.769303098320961,0.3,1,melanoma
+646,647,valid,Nal057.jpg,NAL/Nal057.jpg,melanoma (less than 0.76 mm),1,0.6202811,0.9573489,0.7045480459928513,0.3,1,melanoma
+647,648,train,Nal058.jpg,NAL/Nal058.jpg,melanoma (less than 0.76 mm),1,0.54005384,0.9654036,0.646391287446022,0.3,1,melanoma
+648,649,test,Nal064.jpg,NAL/Nal064.jpg,melanoma (less than 0.76 mm),1,1.0,0.99541175,0.99885293841362,0.3,1,melanoma
+649,650,test,Nal070.jpg,NAL/Nal070.jpg,melanoma (less than 0.76 mm),1,0.9057225,0.8307376,0.8869762718677521,0.3,1,melanoma
+650,651,train,Nal086.jpg,NAL/Nal086.jpg,melanoma (less than 0.76 mm),1,0.59987736,0.4526465,0.5630696415901184,0.3,1,melanoma
+651,652,train,Nal091.jpg,NAL/Nal091.jpg,melanoma (less than 0.76 mm),1,0.80797863,0.9686948,0.848157674074173,0.3,1,melanoma
+652,653,test,nal095.jpg,NAL/nal095.jpg,melanoma (less than 0.76 mm),1,0.43894568,0.765798,0.5206587538123131,0.3,1,melanoma
+653,654,valid,Nal097.jpg,NAL/Nal097.jpg,melanoma (less than 0.76 mm),1,0.70273715,0.7505661,0.7146943956613541,0.3,1,melanoma
+654,655,valid,Nbl004.jpg,NBL/Nbl004.jpg,melanoma (less than 0.76 mm),1,0.99988693,0.9479956,0.9869140982627869,0.3,1,melanoma
+655,656,test,Nbl006.jpg,NBL/Nbl006.jpg,melanoma (less than 0.76 mm),1,0.3634929,0.567603,0.41452042758464813,0.3,1,melanoma
+656,657,test,Nbl017.jpg,NBL/Nbl017.jpg,melanoma (less than 0.76 mm),1,1.0,0.9945233,0.9986308217048645,0.3,1,melanoma
+657,658,train,Nbl019.jpg,NBL/Nbl019.jpg,melanoma (less than 0.76 mm),1,0.99987555,0.9260814,0.981427013874054,0.3,1,melanoma
+658,659,valid,Nbl028.jpg,NBL/Nbl028.jpg,melanoma (less than 0.76 mm),1,0.47981885,0.7136813,0.538284458220005,0.3,1,melanoma
+659,660,train,Nbl030.jpg,NBL/Nbl030.jpg,melanoma (less than 0.76 mm),1,0.5793795,0.9941064,0.6830612272024155,0.3,1,melanoma
+660,661,test,Nbl034.jpg,NBL/Nbl034.jpg,melanoma (less than 0.76 mm),1,1.0,0.999588,0.9998970031738281,0.3,1,melanoma
+661,662,train,Nfl063.jpg,NFL/Nfl063.jpg,melanoma (less than 0.76 mm),1,0.6442665,0.90927297,0.7105181068181992,0.3,1,melanoma
+662,663,valid,nfl070.jpg,NFL/nfl070.jpg,melanoma (less than 0.76 mm),1,0.30370915,0.38029268,0.32285503298044205,0.3,1,melanoma
+663,664,test,nfl072.jpg,NFL/nfl072.jpg,melanoma (less than 0.76 mm),1,0.5588615,0.84642667,0.6307527869939804,0.3,1,melanoma
+664,665,valid,Ngl008.jpg,NGL/Ngl008.jpg,melanoma (less than 0.76 mm),1,0.3106095,0.8505183,0.4455866888165474,0.3,1,melanoma
+665,666,train,Ngl013.jpg,NGL/Ngl013.jpg,melanoma (less than 0.76 mm),1,0.51297164,0.93170726,0.6176555454730988,0.3,1,melanoma
+666,667,valid,Ngl017.jpg,NGL/Ngl017.jpg,melanoma (less than 0.76 mm),1,0.99995244,0.99358714,0.9983611106872559,0.3,1,melanoma
+667,668,train,Ngl019.jpg,NGL/Ngl019.jpg,melanoma (less than 0.76 mm),1,1.0,0.7718831,0.9429707676172256,0.3,1,melanoma
+668,669,train,Ngl021.jpg,NGL/Ngl021.jpg,melanoma (less than 0.76 mm),1,1.0,0.998374,0.9995934963226318,0.3,1,melanoma
+669,670,train,Ngl027.jpg,NGL/Ngl027.jpg,melanoma (less than 0.76 mm),1,0.6760864,0.98162603,0.7524713277816772,0.3,1,melanoma
+670,671,train,Ngl039.jpg,NGL/Ngl039.jpg,melanoma (less than 0.76 mm),1,0.9999819,0.99518216,0.9987819492816925,0.3,1,melanoma
+671,672,test,Ngl055.jpg,NGL/Ngl055.jpg,melanoma (less than 0.76 mm),1,0.9639649,0.98967826,0.9703932255506516,0.3,1,melanoma
+672,673,test,Ngl064.jpg,NGL/Ngl064.jpg,melanoma (less than 0.76 mm),1,0.77911484,0.6600652,0.7493524253368378,0.3,1,melanoma
+673,674,train,Ngl100.jpg,NGL/Ngl100.jpg,melanoma (less than 0.76 mm),1,0.84091216,0.9980938,0.8802075684070587,0.3,1,melanoma
+674,675,train,Nil066.jpg,NIL/Nil066.jpg,melanoma (less than 0.76 mm),1,1.0,0.9993662,0.9998415559530258,0.3,1,melanoma
+675,676,train,Nil070.jpg,NIL/Nil070.jpg,melanoma (less than 0.76 mm),1,0.4895231,0.5260635,0.4986582100391388,0.3,1,melanoma
+676,677,test,Nil076.jpg,NIL/Nil076.jpg,melanoma (less than 0.76 mm),1,0.5054617,0.9729193,0.6223260909318924,0.3,1,melanoma
+677,678,valid,Nil078.jpg,NIL/Nil078.jpg,melanoma (less than 0.76 mm),1,1.0,0.99739444,0.9993486106395721,0.3,1,melanoma
+678,679,train,Nil088.jpg,NIL/Nil088.jpg,melanoma (less than 0.76 mm),1,0.99990684,0.9440288,0.9859373271465302,0.3,1,melanoma
+679,680,train,Nil096.jpg,NIL/Nil096.jpg,melanoma (less than 0.76 mm),1,0.9567233,0.9240333,0.9485507756471634,0.3,1,melanoma
+680,681,train,Nil100.jpg,NIL/Nil100.jpg,melanoma (less than 0.76 mm),1,0.77462184,0.68230164,0.751541793346405,0.3,1,melanoma
+681,682,valid,Nil103.jpg,NIL/Nil103.jpg,melanoma (less than 0.76 mm),1,1.0,0.9903451,0.9975862801074982,0.3,1,melanoma
+682,683,test,Nll002.jpg,NLL/Nll002.jpg,melanoma (less than 0.76 mm),1,0.92660964,0.819899,0.8999319821596146,0.3,1,melanoma
+683,684,train,Nll004.jpg,NLL/Nll004.jpg,melanoma (less than 0.76 mm),1,1.0,0.99952173,0.9998804330825806,0.3,1,melanoma
+684,685,test,Nml022.jpg,NML/Nml022.jpg,melanoma (less than 0.76 mm),1,0.97183,0.5778842,0.8733435571193695,0.3,1,melanoma
+685,686,valid,Nml077.jpg,NML/Nml077.jpg,melanoma (less than 0.76 mm),1,0.4115753,0.39008614,0.4062030017375946,0.3,1,melanoma
+686,687,valid,Nml079.jpg,NML/Nml079.jpg,melanoma (less than 0.76 mm),1,0.508162,0.5605416,0.5212569236755371,0.3,1,melanoma
+687,688,test,Adl305.jpg,Adl/Adl305.jpg,melanoma (less than 0.76 mm),1,1.0,0.8268604,0.9567151069641113,0.3,1,melanoma
+688,689,test,Adl313.jpg,Adl/Adl313.jpg,melanoma (less than 0.76 mm),1,0.4317666,0.42364886,0.4297371655702591,0.3,1,melanoma
+689,690,valid,Ael490.jpg,Ael/Ael490.jpg,melanoma (less than 0.76 mm),1,0.5567509,0.7582327,0.6071213483810425,0.3,1,melanoma
+690,691,train,Ael492.jpg,Ael/Ael492.jpg,melanoma (less than 0.76 mm),1,0.35312292,0.3739124,0.35832028836011887,0.3,1,melanoma
+691,692,valid,Ael504.jpg,Ael/Ael504.jpg,melanoma (less than 0.76 mm),1,0.49356616,0.46502477,0.4864308089017868,0.3,1,melanoma
+692,693,test,gzl04.jpg,Gzl/gzl04.jpg,melanoma (less than 0.76 mm),1,0.31519365,0.440646,0.34655673801898956,0.3,1,melanoma
+693,694,train,gzl16.jpg,Gzl/gzl16.jpg,melanoma (less than 0.76 mm),1,0.48839256,0.9028427,0.5920050963759422,0.3,1,melanoma
+694,695,train,gzl76.jpg,Gzl/gzl76.jpg,melanoma (less than 0.76 mm),1,0.261673,0.45680183,0.31045521050691605,0.3,1,melanoma
+695,696,test,gzl50.jpg,Gzl/gzl50.jpg,melanoma (less than 0.76 mm),1,0.42403877,0.6032756,0.46884797513484955,0.3,1,melanoma
+696,697,train,Gal108.jpg,Gal/Gal108.jpg,melanoma (less than 0.76 mm),1,0.36538166,0.6753538,0.4428746998310089,0.3,1,melanoma
+697,698,valid,Gal113.jpg,Gal/Gal113.jpg,melanoma (less than 0.76 mm),1,0.4044468,0.8260137,0.5098385289311409,0.3,1,melanoma
+698,699,valid,Gal146.jpg,Gal/Gal146.jpg,melanoma (less than 0.76 mm),1,0.5105599,0.916045,0.6119311898946762,0.3,1,melanoma
+699,700,test,Gal257.jpg,Gal/Gal257.jpg,melanoma (less than 0.76 mm),1,0.3763118,0.99038535,0.5298301950097084,0.3,1,melanoma
+700,701,valid,Gal211.jpg,Gal/Gal211.jpg,melanoma (less than 0.76 mm),1,0.8968288,0.8023522,0.8732096254825592,0.3,1,melanoma
+701,702,test,FAL066.JPG,FAL/FAL066.JPG,melanoma (less than 0.76 mm),1,0.78015083,0.99193966,0.8330980390310287,0.3,1,melanoma
+702,703,train,Fal078.jpg,FAL/Fal078.jpg,melanoma (less than 0.76 mm),1,0.99960613,0.8721928,0.9677527993917465,0.3,1,melanoma
+703,704,train,FBL046.JPG,FBL/FBL046.JPG,melanoma (less than 0.76 mm),1,0.50618196,0.63637424,0.5387300252914429,0.3,1,melanoma
+704,705,test,Fbl050.jpg,FBL/Fbl050.jpg,melanoma (less than 0.76 mm),1,1.0,0.97827744,0.9945693612098694,0.3,1,melanoma
+705,706,valid,FBL058.JPG,FBL/FBL058.JPG,melanoma (less than 0.76 mm),1,0.4287164,0.43351606,0.42991630733013153,0.3,1,melanoma
+706,707,train,Fll027.jpg,Fll/Fll027.jpg,melanoma (less than 0.76 mm),1,1.0,0.95460314,0.9886507838964462,0.3,1,melanoma
+707,708,test,Fbl082.jpg,FBL/Fbl082.jpg,melanoma (less than 0.76 mm),1,0.33436665,0.41413343,0.3543083444237709,0.3,1,melanoma
+708,709,train,Fcl026.jpg,FCL/Fcl026.jpg,melanoma (less than 0.76 mm),1,0.4926944,0.38150027,0.4648958742618561,0.3,1,melanoma
+709,710,test,Fcl060.jpg,FCL/Fcl060.jpg,melanoma (less than 0.76 mm),1,0.40280214,0.45296934,0.4153439402580261,0.3,1,melanoma
+710,711,test,Fll045.jpg,Fll/Fll045.jpg,melanoma (less than 0.76 mm),1,1.0,0.5561944,0.8890486061573029,0.3,1,melanoma
+711,712,valid,Fcl100.jpg,FCL/Fcl100.jpg,melanoma (less than 0.76 mm),1,1.0,0.92609906,0.9815247654914856,0.3,1,melanoma
+712,713,train,Fel098.jpg,FEL/Fel098.jpg,melanoma (less than 0.76 mm),1,1.0,0.988107,0.9970267564058304,0.3,1,melanoma
+713,714,train,FFL020.JPG,FFL/FFL020.JPG,melanoma (less than 0.76 mm),1,0.5282903,0.9552231,0.6350234746932983,0.3,1,melanoma
+714,715,train,Ffl092.jpg,FFL/Ffl092.jpg,melanoma (less than 0.76 mm),1,0.8545847,0.93559366,0.8748369365930557,0.3,1,melanoma
+715,716,test,Ffl094.jpg,FFL/Ffl094.jpg,melanoma (less than 0.76 mm),1,0.99954045,0.9927861,0.9978518635034561,0.3,1,melanoma
+716,717,test,Fll071.jpg,Fll/Fll071.jpg,melanoma (less than 0.76 mm),1,0.74372494,0.9840088,0.8037959039211273,0.3,1,melanoma
+717,718,train,Fdl056.jpg,FDL/Fdl056.jpg,melanoma (less than 0.76 mm),1,0.38714615,0.43703523,0.3996184170246124,0.3,1,melanoma
+718,719,valid,Gbl009.jpg,Gbl/Gbl009.jpg,melanoma (less than 0.76 mm),1,0.79041076,0.9833976,0.8386574685573578,0.3,1,melanoma
+719,720,test,Gcl094.jpg,Gcl/Gcl094.jpg,melanoma (less than 0.76 mm),1,0.54096305,0.5005543,0.5308608710765839,0.3,1,melanoma
+720,721,test,Gdl014.jpg,Gdl/Gdl014.jpg,melanoma (less than 0.76 mm),1,0.9953131,0.9985159,0.9961138069629669,0.3,1,melanoma
+721,722,test,Gdl021.jpg,Gdl/Gdl021.jpg,melanoma (less than 0.76 mm),1,0.7576399,0.544176,0.704273909330368,0.3,1,melanoma
+722,723,valid,Gdl025.jpg,Gdl/Gdl025.jpg,melanoma (less than 0.76 mm),1,0.672547,0.9986779,0.7540797144174576,0.3,1,melanoma
+723,724,test,Ggl050.jpg,Ggl/Ggl050.jpg,melanoma (less than 0.76 mm),1,0.37961224,0.43543375,0.39356761425733566,0.3,1,melanoma
+724,725,train,Ggl058.jpg,Ggl/Ggl058.jpg,melanoma (less than 0.76 mm),1,0.48562184,0.8388957,0.5739402994513512,0.3,1,melanoma
+725,726,test,Fll097.jpg,Fll/Fll097.jpg,melanoma (less than 0.76 mm),1,1.0,0.9978355,0.9994588792324066,0.3,1,melanoma
+726,727,test,Fgl082.jpg,Fgl/Fgl082.jpg,melanoma (less than 0.76 mm),1,0.7323911,0.4190374,0.6540526896715164,0.3,1,melanoma
+727,728,test,Fgl083.jpg,Fgl/Fgl083.jpg,melanoma (less than 0.76 mm),1,1.0,0.963443,0.9908607453107834,0.3,1,melanoma
+728,729,train,Fhl046.jpg,Fhl/Fhl046.jpg,melanoma (less than 0.76 mm),1,0.75814915,0.46364516,0.6845231503248215,0.3,1,melanoma
+729,730,test,Fll108.jpg,Fll/Fll108.jpg,melanoma (less than 0.76 mm),1,0.9937989,0.8241726,0.951392337679863,0.3,1,melanoma
+730,731,valid,Fil006.jpg,Fil/Fil006.jpg,melanoma (less than 0.76 mm),1,0.9995111,0.97641486,0.993737056851387,0.3,1,melanoma
+731,732,test,Fll116.jpg,Fll/Fll116.jpg,melanoma (less than 0.76 mm),1,0.32332182,0.6921855,0.4155377447605133,0.3,1,melanoma
+732,733,test,Fll118.jpg,Fll/Fll118.jpg,melanoma (less than 0.76 mm),1,1.0,0.999183,0.9997957497835159,0.3,1,melanoma
+733,734,valid,Fil032.jpg,Fil/Fil032.jpg,melanoma (less than 0.76 mm),1,0.99983394,0.99902225,0.9996310174465179,0.3,1,melanoma
+734,735,test,Fll132.jpg,Fll/Fll132.jpg,melanoma (less than 0.76 mm),1,0.4106498,0.7995261,0.5078688785433769,0.3,1,melanoma
+735,736,test,newl014.jpg,New/newl014.jpg,melanoma (less than 0.76 mm),1,0.35996476,0.49509886,0.39374828338623047,0.3,1,melanoma
+736,737,train,newl032.jpg,New/newl032.jpg,melanoma (less than 0.76 mm),1,0.40366328,0.8101426,0.5052831023931503,0.3,1,melanoma
+737,738,train,newl043.jpg,New/newl043.jpg,melanoma (less than 0.76 mm),1,1.0,0.99774235,0.9994355887174606,0.3,1,melanoma
+738,739,test,newl047.jpg,New/newl047.jpg,melanoma (less than 0.76 mm),1,0.47535947,0.49855325,0.48115791380405426,0.3,1,melanoma
+739,740,valid,newl049.jpg,New/newl049.jpg,melanoma (less than 0.76 mm),1,1.0,0.99931026,0.9998275637626648,0.3,1,melanoma
+740,741,test,newl051.jpg,New/newl051.jpg,melanoma (less than 0.76 mm),1,0.9640204,0.86635625,0.9396043419837952,0.3,1,melanoma
+741,742,train,newl059.jpg,New/newl059.jpg,melanoma (less than 0.76 mm),1,0.48425254,0.8680901,0.5802119299769402,0.3,1,melanoma
+742,743,valid,Nal002.jpg,NAL/Nal002.jpg,melanoma (0.76 to 1.5 mm),1,0.99992657,0.90789735,0.9769192636013031,0.3,1,melanoma
+743,744,test,Nal008.jpg,NAL/Nal008.jpg,melanoma (0.76 to 1.5 mm),1,0.36939025,0.77874255,0.4717283248901367,0.3,1,melanoma
+744,745,test,Nbl059.jpg,NBL/Nbl059.jpg,melanoma (0.76 to 1.5 mm),1,0.6638531,0.91296315,0.7261306196451187,0.3,1,melanoma
+745,746,train,Nbl060.jpg,NBL/Nbl060.jpg,melanoma (0.76 to 1.5 mm),1,0.67279875,0.964413,0.7457023113965988,0.3,1,melanoma
+746,747,test,Nbl063.jpg,NBL/Nbl063.jpg,melanoma (0.76 to 1.5 mm),1,0.9999701,0.9956453,0.9988888800144196,0.3,1,melanoma
+747,748,train,Nbl065.jpg,NBL/Nbl065.jpg,melanoma (0.76 to 1.5 mm),1,0.95586663,0.98282933,0.9626073092222214,0.3,1,melanoma
+748,749,train,Ngl004.jpg,NGL/Ngl004.jpg,melanoma (0.76 to 1.5 mm),1,0.5173986,0.92643857,0.6196585893630981,0.3,1,melanoma
+749,750,valid,NGL025.JPG,NGL/NGL025.JPG,melanoma (0.76 to 1.5 mm),1,0.46664494,0.9903323,0.5975667834281921,0.3,1,melanoma
+750,751,valid,Ngl041.jpg,NGL/Ngl041.jpg,melanoma (0.76 to 1.5 mm),1,0.8720542,0.97697467,0.8982843309640884,0.3,1,melanoma
+751,752,test,Ngl066.jpg,NGL/Ngl066.jpg,melanoma (0.76 to 1.5 mm),1,0.9808698,0.9907752,0.9833461791276932,0.3,1,melanoma
+752,753,train,Ngl088.jpg,NGL/Ngl088.jpg,melanoma (0.76 to 1.5 mm),1,0.4799661,0.44523808,0.47128409892320633,0.3,1,melanoma
+753,754,valid,Nil064.jpg,NIL/Nil064.jpg,melanoma (0.76 to 1.5 mm),1,0.5574696,0.8882085,0.6401543319225311,0.3,1,melanoma
+754,755,train,Nil068.jpg,NIL/Nil068.jpg,melanoma (0.76 to 1.5 mm),1,0.99866694,0.9549436,0.9877361059188843,0.3,1,melanoma
+755,756,train,Nil082.jpg,NIL/Nil082.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.99768746,0.9994218647480011,0.3,1,melanoma
+756,757,train,Nil090.jpg,NIL/Nil090.jpg,melanoma (0.76 to 1.5 mm),1,0.99999994,0.9469439,0.986735925078392,0.3,1,melanoma
+757,758,train,Nil093.jpg,NIL/Nil093.jpg,melanoma (0.76 to 1.5 mm),1,0.9740525,0.9808772,0.9757586717605591,0.3,1,melanoma
+758,759,test,nll014.jpg,NLL/nll014.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9392733,0.9848183244466782,0.3,1,melanoma
+759,760,test,Nml024.jpg,NML/Nml024.jpg,melanoma (0.76 to 1.5 mm),1,0.41585168,0.69114554,0.4846751466393471,0.3,1,melanoma
+760,761,test,Nml073.jpg,NML/Nml073.jpg,melanoma (0.76 to 1.5 mm),1,0.68225014,0.9321249,0.7447188347578049,0.3,1,melanoma
+761,762,test,Aal002.jpg,A1l/Aal002.jpg,melanoma (0.76 to 1.5 mm),1,0.66410685,0.9895544,0.7454687356948853,0.3,1,melanoma
+762,763,train,Aal002bis.jpg,A1l/Aal002bis.jpg,melanoma (0.76 to 1.5 mm),1,0.5807179,0.99747086,0.6849061548709869,0.3,1,melanoma
+763,764,train,Ael494.jpg,Ael/Ael494.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.804334,0.9510834962129593,0.3,1,melanoma
+764,765,valid,gzl12.jpg,Gzl/gzl12.jpg,melanoma (0.76 to 1.5 mm),1,0.2854215,0.5041181,0.3400956392288208,0.3,1,melanoma
+765,766,test,gzl26.jpg,Gzl/gzl26.jpg,melanoma (0.76 to 1.5 mm),1,0.32227975,0.39622194,0.3407652974128723,0.3,1,melanoma
+766,767,train,Gal220.jpg,Gal/Gal220.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.83567965,0.9589199125766754,0.3,1,melanoma
+767,768,valid,Gal262.jpg,Gal/Gal262.jpg,melanoma (0.76 to 1.5 mm),1,0.476863,0.8925365,0.580781377851963,0.3,1,melanoma
+768,769,train,Gal209.jpg,Gal/Gal209.jpg,melanoma (0.76 to 1.5 mm),1,0.50139356,0.34449118,0.46216796338558197,0.3,1,melanoma
+769,770,valid,FAL006.JPG,FAL/FAL006.JPG,melanoma (0.76 to 1.5 mm),1,0.67783713,0.99657387,0.757521316409111,0.3,1,melanoma
+770,771,train,FAL094.JPG,FAL/FAL094.JPG,melanoma (0.76 to 1.5 mm),1,1.0,0.9889054,0.9972263425588608,0.3,1,melanoma
+771,772,valid,FBL020.JPG,FBL/FBL020.JPG,melanoma (0.76 to 1.5 mm),1,0.99998564,0.9992339,0.9997977018356323,0.3,1,melanoma
+772,773,train,FCL056.JPG,FCL/FCL056.JPG,melanoma (0.76 to 1.5 mm),1,0.47433433,0.9608703,0.5959683284163475,0.3,1,melanoma
+773,774,valid,Fll047.jpg,Fll/Fll047.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9577034,0.989425852894783,0.3,1,melanoma
+774,775,train,FCL084.JPG,FCL/FCL084.JPG,melanoma (0.76 to 1.5 mm),1,0.4128659,0.99482995,0.5583569183945656,0.3,1,melanoma
+775,776,train,Fcl092.jpg,FCL/Fcl092.jpg,melanoma (0.76 to 1.5 mm),1,0.9999927,0.9126459,0.9781560152769089,0.3,1,melanoma
+776,777,test,FFL068.JPG,FFL/FFL068.JPG,melanoma (0.76 to 1.5 mm),1,1.0,0.9183783,0.9795945733785629,0.3,1,melanoma
+777,778,valid,Fll069.jpg,Fll/Fll069.jpg,melanoma (0.76 to 1.5 mm),1,0.8327747,0.9689266,0.86681267619133,0.3,1,melanoma
+778,779,valid,Gbl014.jpg,Gbl/Gbl014.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9905233,0.9976308196783066,0.3,1,melanoma
+779,780,test,Gcl058.jpg,Gcl/Gcl058.jpg,melanoma (0.76 to 1.5 mm),1,0.9858862,0.8772441,0.9587256908416748,0.3,1,melanoma
+780,781,test,Gdl012.jpg,Gdl/Gdl012.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9996297,0.9999074190855026,0.3,1,melanoma
+781,782,test,Gdl023.jpg,Gdl/Gdl023.jpg,melanoma (0.76 to 1.5 mm),1,0.99746627,0.99620986,0.9971521645784378,0.3,1,melanoma
+782,783,valid,Gdl034.jpg,Gdl/Gdl034.jpg,melanoma (0.76 to 1.5 mm),1,0.5317488,0.98250866,0.6444387435913086,0.3,1,melanoma
+783,784,train,Gdl089.jpg,Gdl/Gdl089.jpg,melanoma (0.76 to 1.5 mm),1,0.8885193,0.5991918,0.8161874115467072,0.3,1,melanoma
+784,785,valid,Ggl040.jpg,Ggl/Ggl040.jpg,melanoma (0.76 to 1.5 mm),1,0.2694696,0.9167704,0.4312947914004326,0.3,1,melanoma
+785,786,test,Ggl054.jpg,Ggl/Ggl054.jpg,melanoma (0.76 to 1.5 mm),1,0.30455273,0.40848336,0.330535389482975,0.3,1,melanoma
+786,787,test,Fgl006.jpg,Fgl/Fgl006.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9987438,0.9996859431266785,0.3,1,melanoma
+787,788,train,Fgl061.jpg,Fgl/Fgl061.jpg,melanoma (0.76 to 1.5 mm),1,0.9995347,0.7222772,0.9302203506231308,0.3,1,melanoma
+788,789,train,Fil010.jpg,Fil/Fil010.jpg,melanoma (0.76 to 1.5 mm),1,0.74491495,0.940679,0.7938559651374817,0.3,1,melanoma
+789,790,valid,Fll126.jpg,Fll/Fll126.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9992588,0.9998147040605545,0.3,1,melanoma
+790,791,test,Fll128.jpg,Fll/Fll128.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.99847275,0.99961818754673,0.3,1,melanoma
+791,792,test,Fll130.jpg,Fll/Fll130.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.99936724,0.9998418092727661,0.3,1,melanoma
+792,793,test,Fll136.jpg,Fll/Fll136.jpg,melanoma (0.76 to 1.5 mm),1,0.99611306,0.9531406,0.9853699505329132,0.3,1,melanoma
+793,794,train,newl045.jpg,New/newl045.jpg,melanoma (0.76 to 1.5 mm),1,1.0,0.9991331,0.9997832775115967,0.3,1,melanoma
+794,795,train,newl055.jpg,New/newl055.jpg,melanoma (0.76 to 1.5 mm),1,0.9999811,0.98149186,0.995358794927597,0.3,1,melanoma
+795,796,test,Nbl037.jpg,NBL/Nbl037.jpg,melanoma (more than 1.5 mm),1,1.0,0.9871471,0.9967867732048035,0.3,1,melanoma
+796,797,test,Nbl040.jpg,NBL/Nbl040.jpg,melanoma (more than 1.5 mm),1,1.0,0.9958539,0.998963475227356,0.3,1,melanoma
+797,798,train,Nbl044.jpg,NBL/Nbl044.jpg,melanoma (more than 1.5 mm),1,1.0,0.9997675,0.9999418705701828,0.3,1,melanoma
+798,799,test,Nbl048.jpg,NBL/Nbl048.jpg,melanoma (more than 1.5 mm),1,0.9874623,0.77573913,0.93453149497509,0.3,1,melanoma
+799,800,valid,NBL049.JPG,NBL/NBL049.JPG,melanoma (more than 1.5 mm),1,0.7059865,0.9300923,0.7620129436254501,0.3,1,melanoma
+800,801,test,Nbl054.jpg,NBL/Nbl054.jpg,melanoma (more than 1.5 mm),1,0.74946463,0.9526174,0.8002528250217438,0.3,1,melanoma
+801,802,train,Nbl074.jpg,NBL/Nbl074.jpg,melanoma (more than 1.5 mm),1,0.9999914,0.9986136,0.9996469616889954,0.3,1,melanoma
+802,803,valid,Ngl006.jpg,NGL/Ngl006.jpg,melanoma (more than 1.5 mm),1,0.67214656,0.94841945,0.741214781999588,0.3,1,melanoma
+803,804,test,Ngl057.jpg,NGL/Ngl057.jpg,melanoma (more than 1.5 mm),1,0.66096264,0.9927402,0.7439070343971252,0.3,1,melanoma
+804,805,valid,Ngl015.jpg,NGL/Ngl015.jpg,melanoma (more than 1.5 mm),1,0.8180351,0.998242,0.8630868494510651,0.3,1,melanoma
+805,806,test,Nhl017.jpg,NHL/Nhl017.jpg,melanoma (more than 1.5 mm),1,0.99928933,0.9395132,0.9843453019857407,0.3,1,melanoma
+806,807,valid,Nil062.jpg,NIL/Nil062.jpg,melanoma (more than 1.5 mm),1,0.54598826,0.9464809,0.6461114138364792,0.3,1,melanoma
+807,808,test,Nil086.jpg,NIL/Nil086.jpg,melanoma (more than 1.5 mm),1,1.0,0.96757454,0.9918936342000961,0.3,1,melanoma
+808,809,valid,Nml020.jpg,NML/Nml020.jpg,melanoma (more than 1.5 mm),1,1.0,0.8962678,0.9740669429302216,0.3,1,melanoma
+809,810,test,Nml081.jpg,NML/Nml081.jpg,melanoma (more than 1.5 mm),1,0.71054196,0.5755898,0.6768039166927338,0.3,1,melanoma
+810,811,test,Ael498.jpg,Ael/Ael498.jpg,melanoma (more than 1.5 mm),1,0.68279594,0.8113125,0.714925080537796,0.3,1,melanoma
+811,812,test,Ael514.jpg,Ael/Ael514.jpg,melanoma (more than 1.5 mm),1,0.50177073,0.48628452,0.4978991821408272,0.3,1,melanoma
+812,813,test,gzl64.jpg,Gzl/gzl64.jpg,melanoma (more than 1.5 mm),1,0.31870303,0.479732,0.35896027088165283,0.3,1,melanoma
+813,814,valid,gzl78.jpg,Gzl/gzl78.jpg,melanoma (more than 1.5 mm),1,0.30302045,0.41182742,0.3302221894264221,0.3,1,melanoma
+814,815,train,FCL054.JPG,FCL/FCL054.JPG,melanoma (more than 1.5 mm),1,1.0,0.9980782,0.999519556760788,0.3,1,melanoma
+815,816,train,Fcl068.jpg,FCl/Fcl068.jpg,melanoma (more than 1.5 mm),1,0.9999999,0.9818763,0.9954689890146255,0.3,1,melanoma
+816,817,test,FDL052.JPG,FDL/FDL052.JPG,melanoma (more than 1.5 mm),1,0.6568265,0.7846582,0.6887844204902649,0.3,1,melanoma
+817,818,test,Gcl039.jpg,Gcl/Gcl039.jpg,melanoma (more than 1.5 mm),1,0.61714566,0.9973017,0.7121846675872803,0.3,1,melanoma
+818,819,train,Gcl052.jpg,Gcl/Gcl052.jpg,melanoma (more than 1.5 mm),1,0.81411594,0.89756745,0.8349788188934326,0.3,1,melanoma
+819,820,test,Fgl044.jpg,Fgl/Fgl044.jpg,melanoma (more than 1.5 mm),1,0.70276046,0.7506774,0.7147396951913834,0.3,1,melanoma
+820,821,test,Fil008.jpg,Fil/Fil008.jpg,melanoma (more than 1.5 mm),1,0.99998,0.98960865,0.9973871409893036,0.3,1,melanoma
+821,822,train,Fil040.jpg,Fil/Fil040.jpg,melanoma (more than 1.5 mm),1,1.0,0.99385434,0.998463585972786,0.3,1,melanoma
+822,823,valid,newl036.jpg,New/newl036.jpg,melanoma (more than 1.5 mm),1,0.56040275,0.79286635,0.6185186505317688,0.3,1,melanoma
+823,824,valid,NBL041.JPG,NBL/NBL041.JPG,melanoma metastasis,1,0.4558119,0.56199574,0.48235785216093063,0.3,1,melanoma
+824,825,train,Nbl046.jpg,NBL/Nbl046.jpg,melanoma metastasis,1,0.3792136,0.36025557,0.37447409331798553,0.3,1,melanoma
+825,826,train,Fcl016.jpg,FCL/Fcl016.jpg,melanoma metastasis,1,0.34099007,0.34707794,0.3425120338797569,0.3,1,melanoma
+826,827,test,Nbl042.jpg,NBL/Nbl042.jpg,melanoma metastasis,1,0.6198635,0.54628444,0.6014687418937683,0.3,1,melanoma
+851,852,train,ndl085.jpg,NDL/ndl085.jpg,recurrent nevus,0,0.4247705,0.60523486,0.4698865935206413,0.3,1,melanoma
+852,853,train,Nfl074.jpg,NFL/Nfl074.jpg,recurrent nevus,0,0.61252856,0.59418,0.6079414188861847,0.3,1,melanoma
+853,854,test,Nml004.jpg,NML/Nml004.jpg,recurrent nevus,0,0.39286292,0.36151326,0.3850255012512207,0.3,1,melanoma
+854,855,train,Nml071.jpg,NML/Nml071.jpg,recurrent nevus,0,0.7303807,0.5102805,0.6753556579351425,0.3,1,melanoma
+855,856,train,gzl82.jpg,Gzl/gzl82.jpg,recurrent nevus,0,0.2652748,0.654395,0.3625548407435417,0.3,1,melanoma
+856,857,valid,Fel092.jpg,FEL/Fel092.jpg,recurrent nevus,0,0.655138,0.4006628,0.5915192142128944,0.3,1,melanoma
+857,858,train,Ndl075.jpg,NDL/Ndl075.jpg,reed or spitz nevus,0,0.54887205,0.8719939,0.6296525150537491,0.3,1,melanoma
+858,859,test,Nbl088.jpg,NBL/Nbl088.jpg,reed or spitz nevus,0,0.8224689,0.9126131,0.8450049310922623,0.3,1,melanoma
+859,860,valid,Nbl100.jpg,NBL/Nbl100.jpg,reed or spitz nevus,0,0.3607912,0.40066057,0.3707585483789444,0.3,1,melanoma
+860,861,train,Ncl020.jpg,NCL/Ncl020.jpg,reed or spitz nevus,0,0.39700636,0.53177977,0.4306997135281563,0.3,1,melanoma
+861,862,test,Ncl032.jpg,NCL/Ncl032.jpg,reed or spitz nevus,0,0.49811518,0.5504545,0.5112000107765198,0.3,1,melanoma
+862,863,test,Ncl078.jpg,NCL/Ncl078.jpg,reed or spitz nevus,0,0.39571843,0.74923193,0.48409680277109146,0.3,1,melanoma
+863,864,train,Ncl093.jpg,NCL/Ncl093.jpg,reed or spitz nevus,0,0.44096434,0.4583271,0.4453050345182419,0.3,1,melanoma
+864,865,test,Ncl095.jpg,NCL/Ncl095.jpg,reed or spitz nevus,0,0.33794868,0.70266336,0.4291273504495621,0.3,1,melanoma
+865,866,test,Ndl046.jpg,NDL/Ndl046.jpg,reed or spitz nevus,0,0.62815356,0.81216604,0.6741566807031631,0.3,1,melanoma
+866,867,test,Ndl050.jpg,NDL/Ndl050.jpg,reed or spitz nevus,0,0.9998804,0.99794066,0.9993954449892044,0.3,1,melanoma
+867,868,test,Ndl052.jpg,NDL/Ndl052.jpg,reed or spitz nevus,0,0.3620667,0.8508087,0.4842521846294403,0.3,1,melanoma
+868,869,train,Ndl054.jpg,NDL/Ndl054.jpg,reed or spitz nevus,0,0.5541723,0.95244837,0.6537413001060486,0.3,1,melanoma
+869,870,train,Ndl056.jpg,NDL/Ndl056.jpg,reed or spitz nevus,0,0.54626614,0.798999,0.6094493567943573,0.3,1,melanoma
+870,871,train,Ndl058.jpg,NDL/Ndl058.jpg,reed or spitz nevus,0,0.9916571,0.9937962,0.9921918660402298,0.3,1,melanoma
+871,872,test,Ndl060.jpg,NDL/Ndl060.jpg,reed or spitz nevus,0,0.99999994,0.99773616,0.9994339942932129,0.3,1,melanoma
+872,873,train,Ndl061.jpg,NDL/Ndl061.jpg,reed or spitz nevus,0,0.99971914,0.7722329,0.9428475797176361,0.3,1,melanoma
+873,874,test,NDL063.JPG,NDL/NDL063.JPG,reed or spitz nevus,0,0.49485913,0.39813563,0.47067825496196747,0.3,1,melanoma
+874,875,valid,Ndl068.jpg,NDL/Ndl068.jpg,reed or spitz nevus,0,0.39419115,0.41527212,0.39946138858795166,0.3,1,melanoma
+875,876,valid,Ndl069.jpg,NDL/Ndl069.jpg,reed or spitz nevus,0,0.56676877,0.59129226,0.5728996396064758,0.3,1,melanoma
+876,877,valid,Ndl071.jpg,NDL/Ndl071.jpg,reed or spitz nevus,0,0.37777343,0.3440531,0.3693433478474617,0.3,1,melanoma
+877,878,test,Ndl074.jpg,NDL/Ndl074.jpg,reed or spitz nevus,0,0.64702976,0.38012755,0.5803042054176331,0.3,1,melanoma
+878,879,valid,Ndl079.jpg,NDL/Ndl079.jpg,reed or spitz nevus,0,0.90398854,0.9278496,0.9099538028240204,0.3,1,melanoma
+879,880,test,Ndl081.jpg,NDL/Ndl081.jpg,reed or spitz nevus,0,0.61230254,0.98142743,0.7045837640762329,0.3,1,melanoma
+880,881,test,Ndl083.jpg,NDL/Ndl083.jpg,reed or spitz nevus,0,0.693905,0.9526457,0.7585901767015457,0.3,1,melanoma
+881,882,valid,Ngl029.jpg,NGL/Ngl029.jpg,reed or spitz nevus,0,0.8475142,0.93662906,0.8697929233312607,0.3,1,melanoma
+882,883,valid,Ngl031.jpg,NGL/Ngl031.jpg,reed or spitz nevus,0,1.0,0.999446,0.9998614937067032,0.3,1,melanoma
+883,884,test,Ngl033.jpg,NGL/Ngl033.jpg,reed or spitz nevus,0,0.9999983,0.9991794,0.9997935593128204,0.3,1,melanoma
+884,885,train,Ngl037.jpg,NGL/Ngl037.jpg,reed or spitz nevus,0,0.9816721,0.9198444,0.9662151783704758,0.3,1,melanoma
+885,886,train,Ngl060.jpg,NGL/Ngl060.jpg,reed or spitz nevus,0,0.49748328,0.4206433,0.47827328741550446,0.3,1,melanoma
+886,887,test,Ngl078.jpg,NGL/Ngl078.jpg,reed or spitz nevus,0,0.50034654,0.44395882,0.4862496107816696,0.3,1,melanoma
+887,888,test,Nil004.jpg,NIL/Nil004.jpg,reed or spitz nevus,0,0.9675674,0.6969212,0.8999058455228806,0.3,1,melanoma
+888,889,test,Nil023.jpg,NIL/Nil023.jpg,reed or spitz nevus,0,0.74158865,0.7878017,0.7531419098377228,0.3,1,melanoma
+889,890,test,Nil029.jpg,NIL/Nil029.jpg,reed or spitz nevus,0,0.40178168,0.78567874,0.4977559447288513,0.3,1,melanoma
+890,891,train,Nil041.jpg,NIL/Nil041.jpg,reed or spitz nevus,0,0.66349447,0.9203564,0.727709949016571,0.3,1,melanoma
+891,892,valid,Nil058.jpg,NIL/Nil058.jpg,reed or spitz nevus,0,0.8736347,0.8885476,0.877362921833992,0.3,1,melanoma
+892,893,train,Nll100.jpg,NLL/Nll100.jpg,reed or spitz nevus,0,0.43351936,0.4984068,0.4497412219643593,0.3,1,melanoma
+893,894,valid,Nml010.jpg,NML/Nml010.jpg,reed or spitz nevus,0,0.99878573,0.99787056,0.9985569417476654,0.3,1,melanoma
+894,895,valid,Nml012.jpg,NML/Nml012.jpg,reed or spitz nevus,0,0.9555741,0.97739905,0.9610303342342377,0.3,1,melanoma
+895,896,valid,Nml016.jpg,NML/Nml016.jpg,reed or spitz nevus,0,0.46421456,0.34444022,0.434270977973938,0.3,1,melanoma
+896,897,test,Nml049.jpg,NML/Nml049.jpg,reed or spitz nevus,0,0.48453435,0.90506214,0.5896662995219231,0.3,1,melanoma
+897,898,train,NML092.jpg,NML/NML092.jpg,reed or spitz nevus,0,0.87355363,0.99660254,0.904315859079361,0.3,1,melanoma
+898,899,train,Nml094.jpg,NML/Nml094.jpg,reed or spitz nevus,0,0.4202729,0.64173007,0.47563718259334564,0.3,1,melanoma
+899,900,valid,Nml096.jpg,NML/Nml096.jpg,reed or spitz nevus,0,0.5618186,0.93488586,0.655085414648056,0.3,1,melanoma
+900,901,test,Ael421.jpg,Ael/Ael421.jpg,reed or spitz nevus,0,0.45263198,0.51293594,0.46770796924829483,0.3,1,melanoma
+901,902,valid,Acl207.jpg,A3l/Acl207.jpg,reed or spitz nevus,0,0.32276317,0.57561564,0.38597629219293594,0.3,1,melanoma
+902,903,train,Acl225.jpg,A3l/Acl225.jpg,reed or spitz nevus,0,0.35757932,0.38693386,0.36491795629262924,0.3,1,melanoma
+903,904,test,Acl295.jpg,A3l/Acl295.jpg,reed or spitz nevus,0,0.3050405,0.352427,0.31688713282346725,0.3,1,melanoma
+904,905,test,Adl358.jpg,Adl/Adl358.jpg,reed or spitz nevus,0,0.76633686,0.45564932,0.688664972782135,0.3,1,melanoma
+905,906,valid,Adl395.jpg,Adl/Adl395.jpg,reed or spitz nevus,0,0.46432233,0.53991294,0.4832199811935425,0.3,1,melanoma
+906,907,train,Adl399.jpg,Adl/Adl399.jpg,reed or spitz nevus,0,0.7579963,0.7215673,0.7488890588283539,0.3,1,melanoma
+907,908,test,Ael401.jpg,Ael/Ael401.jpg,reed or spitz nevus,0,1.0,0.97547114,0.9938677847385406,0.3,1,melanoma
+908,909,test,Ael405.jpg,Ael/Ael405.jpg,reed or spitz nevus,0,0.317069,0.43800038,0.3473018407821655,0.3,1,melanoma
+909,910,test,Ael407.jpg,Ael/Ael407.jpg,reed or spitz nevus,0,0.33494976,0.44394073,0.36219750344753265,0.3,1,melanoma
+910,911,test,Ael465.jpg,Ael/Ael465.jpg,reed or spitz nevus,0,0.35751244,0.49141356,0.39098772406578064,0.3,1,melanoma
+911,912,test,Ael484.jpg,Ael/Ael484.jpg,reed or spitz nevus,0,0.51658726,0.5256178,0.5188448876142502,0.3,1,melanoma
+912,913,train,gzl58.jpg,Gzl/gzl58.jpg,reed or spitz nevus,0,0.25218105,0.47648862,0.30825794488191605,0.3,1,melanoma
+913,914,train,gzl14.jpg,Gzl/gzl14.jpg,reed or spitz nevus,0,0.27650353,0.45479625,0.3210767135024071,0.3,1,melanoma
+914,915,test,Gal191.jpg,Gal/Gal191.jpg,reed or spitz nevus,0,0.35510042,0.45186806,0.379292331635952,0.3,1,melanoma
+915,916,test,Gal222.jpg,Gal/Gal222.jpg,reed or spitz nevus,0,0.65205324,0.7280843,0.6710610091686249,0.3,1,melanoma
+916,917,train,Gal238.jpg,Gal/Gal238.jpg,reed or spitz nevus,0,0.5289764,0.5861552,0.543271079659462,0.3,1,melanoma
+917,918,valid,FAL070.JPG,FAL/FAL070.JPG,reed or spitz nevus,0,0.46415862,0.9483411,0.5852042362093925,0.3,1,melanoma
+918,919,test,Fbl018.jpg,FBL/Fbl018.jpg,reed or spitz nevus,0,0.3172341,0.4614236,0.3532814756035805,0.3,1,melanoma
+919,920,test,Fbl040.jpg,FBL/Fbl040.jpg,reed or spitz nevus,0,0.9994757,0.9357504,0.9835443943738937,0.3,1,melanoma
+920,921,train,FBL042.JPG,FBL/FBL042.JPG,reed or spitz nevus,0,0.35080928,0.70248365,0.43872787058353424,0.3,1,melanoma
+921,922,test,Fel038.jpg,FEL/Fel038.jpg,reed or spitz nevus,0,0.86121887,0.80838525,0.848010465502739,0.3,1,melanoma
+922,923,train,Fel074.jpg,FEL/Fel074.jpg,reed or spitz nevus,0,0.53366625,0.81492597,0.6039811819791794,0.3,1,melanoma
+923,924,test,Fel080.jpg,FEL/Fel080.jpg,reed or spitz nevus,0,0.33101165,0.38266838,0.3439258337020874,0.3,1,melanoma
+924,925,valid,Ffl034.jpg,FFL/Ffl034.jpg,reed or spitz nevus,0,0.6942786,0.44718456,0.6325050890445709,0.3,1,melanoma
+925,926,test,Ffl084.jpg,FFL/Ffl084.jpg,reed or spitz nevus,0,0.43091345,0.9706996,0.5658599883317947,0.3,1,melanoma
+926,927,train,Fll077.jpg,Fll/Fll077.jpg,reed or spitz nevus,0,1.0,0.9772746,0.9943186491727829,0.3,1,melanoma
+927,928,train,Ggl026.jpg,Ggl/Ggl026.jpg,reed or spitz nevus,0,0.3679941,0.9326402,0.509155623614788,0.3,1,melanoma
+928,929,valid,Ggl010.jpg,Ggl/Ggl010.jpg,reed or spitz nevus,0,0.26467097,0.75678045,0.38769833743572235,0.3,1,melanoma
+929,930,train,Fgl023.jpg,Fgl/Fgl023.jpg,reed or spitz nevus,0,0.4771093,0.91262543,0.5859883427619934,0.3,1,melanoma
+930,931,train,Fgl037.jpg,Fgl/Fgl037.jpg,reed or spitz nevus,0,0.98280424,0.96529686,0.9784273952245712,0.3,1,melanoma
+931,932,train,Fgl074.jpg,Fgl/Fgl074.jpg,reed or spitz nevus,0,0.9976623,0.6688346,0.9154553860425949,0.3,1,melanoma
+932,933,valid,Fgl087.jpg,Fgl/Fgl087.jpg,reed or spitz nevus,0,0.56425333,0.994659,0.6718547493219376,0.3,1,melanoma
+933,934,train,newl030.jpg,New/newl030.jpg,reed or spitz nevus,0,0.52603054,0.95420825,0.6330749690532684,0.3,1,melanoma
+934,935,train,newl034.jpg,New/newl034.jpg,reed or spitz nevus,0,0.9957444,0.8391257,0.9565897285938263,0.3,1,melanoma
+935,936,test,newl039.jpg,New/newl039.jpg,reed or spitz nevus,0,0.4785672,0.37248904,0.4520476683974266,0.3,1,melanoma
+936,937,test,Nel021.jpg,NEL/Nel021.jpg,seborrheic keratosis,0,0.70225406,0.498966,0.6514320448040962,0.3,1,melanoma
+937,938,test,Nel023.jpg,NEL/Nel023.jpg,seborrheic keratosis,0,0.83280885,0.8089878,0.8268535882234573,0.3,1,melanoma
+938,939,valid,Nfl006.jpg,NFL/Nfl006.jpg,seborrheic keratosis,0,0.84749085,0.9793029,0.8804438561201096,0.3,1,melanoma
+939,940,test,Nfl008.jpg,NFL/Nfl008.jpg,seborrheic keratosis,0,0.5905044,0.8317396,0.6508132070302963,0.3,1,melanoma
+940,941,valid,Nfl010.jpg,NFL/Nfl010.jpg,seborrheic keratosis,0,0.5228014,0.94054466,0.6272372156381607,0.3,1,melanoma
+941,942,train,Nfl012.jpg,NFL/Nfl012.jpg,seborrheic keratosis,0,0.4998072,0.9498841,0.6123264357447624,0.3,1,melanoma
+942,943,test,Nfl014.jpg,NFL/Nfl014.jpg,seborrheic keratosis,0,0.4502323,0.7669518,0.5294121727347374,0.3,1,melanoma
+943,944,test,Nfl016.jpg,NFL/Nfl016.jpg,seborrheic keratosis,0,0.8431556,0.9347093,0.8660440444946289,0.3,1,melanoma
+944,945,train,Nfl018.jpg,NFL/Nfl018.jpg,seborrheic keratosis,0,0.6562909,0.9976382,0.7416277229785919,0.3,1,melanoma
+945,946,train,Nfl020.jpg,NFL/Nfl020.jpg,seborrheic keratosis,0,0.62353766,0.9433542,0.7034917920827866,0.3,1,melanoma
+946,947,test,Nfl022.jpg,NFL/Nfl022.jpg,seborrheic keratosis,0,1.0,0.9970828,0.9992707073688507,0.3,1,melanoma
+947,948,train,Nfl024.jpg,NFL/Nfl024.jpg,seborrheic keratosis,0,0.52554655,0.5969615,0.5434002876281738,0.3,1,melanoma
+948,949,train,Nfl026.jpg,NFL/Nfl026.jpg,seborrheic keratosis,0,0.6142806,0.99132323,0.7085412442684174,0.3,1,melanoma
+949,950,valid,NFL028.JPG,NFL/NFL028.JPG,seborrheic keratosis,0,0.49679106,0.9397378,0.6075277477502823,0.3,1,melanoma
+950,951,train,Nml114.jpg,NML/Nml114.jpg,seborrheic keratosis,0,0.50348765,0.57660544,0.5217670947313309,0.3,1,melanoma
+951,952,test,Acl227.jpg,A3l/Acl227.jpg,seborrheic keratosis,0,0.46919164,0.4503617,0.46448415517807007,0.3,1,melanoma
+952,953,test,Acl229.jpg,A3l/Acl229.jpg,seborrheic keratosis,0,0.99747074,0.92777747,0.980047419667244,0.3,1,melanoma
+953,954,test,Acl261.jpg,A3l/Acl261.jpg,seborrheic keratosis,0,0.5841924,0.73721695,0.6224485337734222,0.3,1,melanoma
+954,955,valid,Ael409.jpg,Ael/Ael409.jpg,seborrheic keratosis,0,1.0,0.88340056,0.9708501398563385,0.3,1,melanoma
+955,956,test,Ael427.jpg,Ael/Ael427.jpg,seborrheic keratosis,0,0.71794677,0.6275617,0.6953504979610443,0.3,1,melanoma
+956,957,test,Ael488.jpg,Ael/Ael488.jpg,seborrheic keratosis,0,0.3323845,0.44405875,0.360303059220314,0.3,1,melanoma
+957,958,valid,Acl205.jpg,A3l/Acl205.jpg,seborrheic keratosis,0,1.0,0.92325187,0.9808129668235779,0.3,1,melanoma
+958,959,test,gzl18.jpg,Gzl/gzl18.jpg,seborrheic keratosis,0,0.26855135,0.37298906,0.2946607768535614,0.3,0,non_melanoma
+959,960,test,gzl30.jpg,Gzl/gzl30.jpg,seborrheic keratosis,0,0.9324359,0.99859685,0.9489761590957642,0.3,1,melanoma
+960,961,valid,gzl46.jpg,Gzl/gzl46.jpg,seborrheic keratosis,0,0.26948923,0.35450396,0.2907429113984108,0.3,0,non_melanoma
+961,962,test,Gal130.jpg,Gal/Gal130.jpg,seborrheic keratosis,0,0.9999811,0.97220075,0.9930360168218613,0.3,1,melanoma
+962,963,train,Gal173.jpg,Gal/Gal173.jpg,seborrheic keratosis,0,0.4839223,0.8646021,0.5790922492742538,0.3,1,melanoma
+963,964,train,Gal134.jpg,Gal/Gal134.jpg,seborrheic keratosis,0,0.94408554,0.9701639,0.9506051242351532,0.3,1,melanoma
+964,965,test,Fal048.jpg,FAL/Fal048.jpg,seborrheic keratosis,0,0.978003,0.9690593,0.9757670909166336,0.3,1,melanoma
+965,966,valid,FFL052.JPG,FFL/FFL052.JPG,seborrheic keratosis,0,1.0,0.9918608,0.9979652017354965,0.3,1,melanoma
+966,967,valid,Ffl070.jpg,FFL/Ffl070.jpg,seborrheic keratosis,0,0.99493533,0.91872036,0.9758815914392471,0.3,1,melanoma
+967,968,test,Fdl032.jpg,FDL/Fdl032.jpg,seborrheic keratosis,0,1.0,0.6895364,0.9223840981721878,0.3,1,melanoma
+968,969,valid,Fdl058.jpg,FDL/Fdl058.jpg,seborrheic keratosis,0,1.0,0.9977007,0.9994251728057861,0.3,1,melanoma
+969,970,test,Fdl071.jpg,FDL/Fdl071.jpg,seborrheic keratosis,0,1.0,0.88974726,0.9724368155002594,0.3,1,melanoma
+970,971,test,Fdl074.jpg,FDL/Fdl074.jpg,seborrheic keratosis,0,0.9995279,0.4969111,0.8738736808300018,0.3,1,melanoma
+971,972,train,Ggl022.jpg,Ggl/Ggl022.jpg,seborrheic keratosis,0,0.3231737,0.85351926,0.45576009154319763,0.3,1,melanoma
+972,973,train,Ggl018.jpg,Ggl/Ggl018.jpg,seborrheic keratosis,0,0.27013186,0.46982384,0.3200548514723778,0.3,1,melanoma
+973,974,train,Ggl020.jpg,Ggl/Ggl020.jpg,seborrheic keratosis,0,0.5937723,0.78778493,0.6422754526138306,0.3,1,melanoma
+974,975,test,Ggl046.jpg,Ggl/Ggl046.jpg,seborrheic keratosis,0,0.38296542,0.7022878,0.46279601007699966,0.3,1,melanoma
+975,976,valid,Ggl066.jpg,Ggl/Ggl066.jpg,seborrheic keratosis,0,0.3094697,0.737777,0.4165465235710144,0.3,1,melanoma
+976,977,train,Ggl086.jpg,Ggl/Ggl086.jpg,seborrheic keratosis,0,0.24752787,0.41082087,0.2883511185646057,0.3,0,non_melanoma
+977,978,train,Fll104.jpg,Fll/Fll104.jpg,seborrheic keratosis,0,0.51873034,0.9166428,0.6182084530591965,0.3,1,melanoma
+978,979,train,Fhl048.jpg,Fhl/Fhl048.jpg,seborrheic keratosis,0,0.9951237,0.8025663,0.9469843357801437,0.3,1,melanoma
+979,980,train,Fil080.jpg,Fil/Fil080.jpg,seborrheic keratosis,0,0.37796405,0.36239243,0.3740711435675621,0.3,1,melanoma
+980,981,train,Fdl060.jpg,FDL/Fdl060.jpg,seborrheic keratosis,0,1.0,0.9969293,0.9992323219776154,0.3,1,melanoma
+981,982,train,Nel044.jpg,NEL/Nel044.jpg,vascular lesion,0,0.69551855,0.9707158,0.7643178701400757,0.3,1,melanoma
+982,983,test,NEL055.JPG,NEL/NEL055.JPG,vascular lesion,0,0.9870496,0.69493973,0.9140221178531647,0.3,1,melanoma
+983,984,train,Nel056.jpg,NEL/Nel056.jpg,vascular lesion,0,0.9803589,0.9860252,0.9817754775285721,0.3,1,melanoma
+984,985,train,Nel059.jpg,NEL/Nel059.jpg,vascular lesion,0,0.5148387,0.44637924,0.4977238327264786,0.3,1,melanoma
+985,986,test,Nel061.jpg,NEL/Nel061.jpg,vascular lesion,0,0.6431125,0.57993865,0.6273190230131149,0.3,1,melanoma
+986,987,train,Nel062.jpg,NEL/Nel062.jpg,vascular lesion,0,0.46783683,0.40611258,0.45240576565265656,0.3,1,melanoma
+987,988,valid,Nel064.jpg,NEL/Nel064.jpg,vascular lesion,0,0.36167106,0.89944994,0.4961157813668251,0.3,1,melanoma
+988,989,train,Nel066.jpg,NEL/Nel066.jpg,vascular lesion,0,1.0,0.87267035,0.9681675881147385,0.3,1,melanoma
+989,990,train,Nel068.jpg,NEL/Nel068.jpg,vascular lesion,0,0.58864427,0.6780869,0.6110049188137054,0.3,1,melanoma
+990,991,train,Nel071.jpg,NEL/Nel071.jpg,vascular lesion,0,0.3625268,0.49309686,0.39516931772232056,0.3,1,melanoma
+991,992,test,Nel073.jpg,NEL/Nel073.jpg,vascular lesion,0,0.47032297,0.58387494,0.498710960149765,0.3,1,melanoma
+992,993,test,Nel075.jpg,NEL/Nel075.jpg,vascular lesion,0,0.99977505,0.999637,0.9997405409812927,0.3,1,melanoma
+993,994,valid,Nel078.jpg,NEL/Nel078.jpg,vascular lesion,0,0.39153528,0.39269447,0.3918250799179077,0.3,1,melanoma
+994,995,test,Nel081.jpg,NEL/Nel081.jpg,vascular lesion,0,0.3381359,0.40752745,0.3554837852716446,0.3,1,melanoma
+995,996,test,Ngl082.jpg,NGL/Ngl082.jpg,vascular lesion,0,0.8543908,0.837072,0.8500611037015915,0.3,1,melanoma
+996,997,valid,Nml041.jpg,NML/Nml041.jpg,vascular lesion,0,0.4034468,0.7558056,0.4915364980697632,0.3,1,melanoma
+997,998,test,Nml108.jpg,NML/Nml108.jpg,vascular lesion,0,0.85742784,0.9960567,0.8920850455760956,0.3,1,melanoma
+998,999,valid,Acl237.jpg,A3l/Acl237.jpg,vascular lesion,0,0.9672754,0.5391003,0.8602316081523895,0.3,1,melanoma
+999,1000,test,Ael459.jpg,Ael/Ael459.jpg,vascular lesion,0,0.5180429,0.9408367,0.6237413734197617,0.3,1,melanoma
+1000,1001,valid,Ael519bis.jpg,Ael/Ael519bis.jpg,vascular lesion,0,0.29580772,0.40420908,0.32290805876255035,0.3,1,melanoma
+1001,1002,test,gzl74.jpg,Gzl/gzl74.jpg,vascular lesion,0,0.29101193,0.84011126,0.42828676104545593,0.3,1,melanoma
+1002,1003,train,Ggl012.jpg,Ggl/Ggl012.jpg,vascular lesion,0,0.42751884,0.44977635,0.4330832213163376,0.3,1,melanoma
+1003,1004,test,Ggl014.jpg,Ggl/Ggl014.jpg,vascular lesion,0,0.6462641,0.91756076,0.7140882462263107,0.3,1,melanoma
+1004,1005,valid,Ggl016.jpg,Ggl/Ggl016.jpg,vascular lesion,0,0.41020802,0.4624954,0.42327985912561417,0.3,1,melanoma
+1005,1006,valid,Ggl032.jpg,Ggl/Ggl032.jpg,vascular lesion,0,0.24501923,0.36241436,0.2743680104613304,0.3,0,non_melanoma
+1006,1007,test,Fhl058.jpg,Fhl/Fhl058.jpg,vascular lesion,0,0.99906135,0.9673999,0.991145983338356,0.3,1,melanoma
+1007,1008,train,Fhl060.jpg,Fhl/Fhl060.jpg,vascular lesion,0,0.6857475,0.78571737,0.7107399702072144,0.3,1,melanoma
+1008,1009,test,Fil082.jpg,Fil/Fil082.jpg,vascular lesion,0,0.7077825,0.98531926,0.7771666944026947,0.3,1,melanoma
+1009,1010,test,newl016.jpg,New/newl016.jpg,vascular lesion,0,0.37681046,0.49920443,0.4074089527130127,0.3,1,melanoma
+1010,1011,test,Adl389.jpg,Adl/Adl389.jpg,melanoma,1,0.48737863,0.5784005,0.5101340934634209,0.3,1,melanoma

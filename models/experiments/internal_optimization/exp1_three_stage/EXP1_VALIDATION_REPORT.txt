@@ -1,0 +1,6 @@
+EXPERIMENT 1 — 3-stage fine-tuning (validation only)
+Eff time_s=11896.7 stages=[{'stage': 'head', 'epochs_run': 12}, {'stage': 'partial', 'epochs_run': 12}, {'stage': 'final', 'epochs_run': 9}]
+Mob time_s=10747.5 stages=[{'stage': 'head', 'epochs_run': 18}, {'stage': 'partial', 'epochs_run': 12}, {'stage': 'final', 'epochs_run': 12}]
+Ensemble w=0.5/0.5 thr=0.3
+Val ensemble acc=0.9100 sens=0.9419 spec=0.8772 f1=0.9139 auc=0.9686 pr=0.9718
+Test set was not loaded. PH2 was not used.

@@ -1,0 +1,23 @@
+{
+  "efficientnet_weight": 0.5,
+  "mobilenet_weight": 0.5,
+  "threshold": 0.3,
+  "rule": "sens>=0.85 and spec>=0.70, max F1",
+  "validation": {
+    "threshold": 0.3,
+    "accuracy": 0.9100204498977505,
+    "precision": 0.8875379939209727,
+    "recall": 0.9419354838709677,
+    "sensitivity": 0.9419354838709677,
+    "specificity": 0.8771784232365145,
+    "f1": 0.9139280125195618,
+    "auc": 0.9685524026234773,
+    "pr_auc": 0.9717840793373366,
+    "tp": 1168,
+    "fp": 148,
+    "tn": 1057,
+    "fn": 72,
+    "n_positive": 1240,
+    "n_negative": 1205
+  }
+}

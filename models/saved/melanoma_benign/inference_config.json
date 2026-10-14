@@ -1,0 +1,20 @@
+{
+  "decision_threshold": 0.5,
+  "hybrid_method": "soft_voting",
+  "weights": {
+    "efficientnet": 0.85,
+    "mobilenet": 0.15
+  },
+  "trained_on": [
+    "melanoma_benign"
+  ],
+  "labels": {
+    "0": "Benign",
+    "1": "Melanoma"
+  },
+  "threshold_tuned_on": "validation",
+  "ensemble_tuned_on": "validation",
+  "cache_version": "mb-0.50",
+  "not_production": true,
+  "probability_is_clinically_calibrated": false
+}

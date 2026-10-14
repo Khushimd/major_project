@@ -1,0 +1,80 @@
+{
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign",
+  "seed": 42,
+  "label_smoothing": 0.05,
+  "variants": [
+    {
+      "id": "W_1.00",
+      "benign": 1.0,
+      "melanoma": 1.0,
+      "role": "control/reference"
+    },
+    {
+      "id": "W_1.05",
+      "benign": 1.0,
+      "melanoma": 1.05,
+      "role": "moderate candidate"
+    },
+    {
+      "id": "W_1.10",
+      "benign": 1.0,
+      "melanoma": 1.1,
+      "role": "moderate candidate"
+    },
+    {
+      "id": "W_1.15",
+      "benign": 1.0,
+      "melanoma": 1.15,
+      "role": "moderate candidate"
+    }
+  ],
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "threshold": 0.5,
+  "ensemble_search": false,
+  "threshold_search": false,
+  "oversampling": false,
+  "only_intended_change": "predefined moderate melanoma class weights",
+  "stages": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "constraints": {
+    "specificity": 0.82,
+    "precision": 0.78,
+    "f1": 0.8,
+    "accuracy": 0.82
+  },
+  "test_used_for_tuning": false,
+  "preprocess_cache": "read-only reuse of frozen baseline JPEG cache",
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "seed": 42,
+    "gpu": []
+  }
+}

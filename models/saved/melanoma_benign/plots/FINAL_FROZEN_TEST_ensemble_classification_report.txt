@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+      Benign     0.9097    0.8851    0.8972      1149
+    Melanoma     0.9026    0.9237    0.9130      1324
+
+    accuracy                         0.9058      2473
+   macro avg     0.9061    0.9044    0.9051      2473
+weighted avg     0.9059    0.9058    0.9057      2473

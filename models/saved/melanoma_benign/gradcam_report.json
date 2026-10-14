@@ -1,0 +1,64 @@
+{
+  "status": "ok",
+  "label": "AI Attention Visualization",
+  "n_examples": 4,
+  "issues": [],
+  "cases": [
+    {
+      "kind": "true_positive_melanoma",
+      "image_id": "ISIC_0061345",
+      "true_label": 1,
+      "predicted_label": 1,
+      "ai_estimated_probability": 0.9999314665794372,
+      "ok": true,
+      "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_original.jpg",
+      "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_heatmap.jpg",
+      "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0061345_true_positive_melanoma_overlay.jpg",
+      "caption": "AI Attention Visualization",
+      "not_cancer_area": true,
+      "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+    },
+    {
+      "kind": "true_negative_benign",
+      "image_id": "ISIC_4247550",
+      "true_label": 0,
+      "predicted_label": 0,
+      "ai_estimated_probability": 0.0913166593760252,
+      "ok": true,
+      "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_original.jpg",
+      "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_heatmap.jpg",
+      "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_4247550_true_negative_benign_overlay.jpg",
+      "caption": "AI Attention Visualization",
+      "not_cancer_area": true,
+      "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+    },
+    {
+      "kind": "false_positive",
+      "image_id": "ISIC_9161937",
+      "true_label": 0,
+      "predicted_label": 1,
+      "ai_estimated_probability": 0.9550632983446121,
+      "ok": true,
+      "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_original.jpg",
+      "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_heatmap.jpg",
+      "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_9161937_false_positive_overlay.jpg",
+      "caption": "AI Attention Visualization",
+      "not_cancer_area": true,
+      "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+    },
+    {
+      "kind": "false_negative",
+      "image_id": "ISIC_0020491",
+      "true_label": 1,
+      "predicted_label": 0,
+      "ai_estimated_probability": 0.24757760092616082,
+      "ok": true,
+      "original": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_original.jpg",
+      "heatmap": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_heatmap.jpg",
+      "overlay": "C:\\Projects\\major-project\\models\\saved\\melanoma_benign\\gradcam\\ISIC_0020491_false_negative_overlay.jpg",
+      "caption": "AI Attention Visualization",
+      "not_cancer_area": true,
+      "note": "Heatmap is model attention, not a confirmed cancer boundary and does not prove malignancy."
+    }
+  ]
+}

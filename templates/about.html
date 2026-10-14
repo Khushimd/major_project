@@ -1,51 +1,29 @@
 {% extends "base.html" %}
-{% block title %}About — {{ app_title }}{% endblock %}
-
+{% block title %}About — Melanoma CDSS{% endblock %}
 {% block content %}
-<section class="section">
-  <div class="container narrow">
-    <div class="section-head">
-      <h2>About Melanoma CDSS</h2>
-      <p>An AI-powered clinical decision support system for melanoma detection and AJCC stage prediction.</p>
+<section class="lp-section lp-about" style="padding-top: 72px;">
+  <div class="lp-wrap lp-about-grid">
+    <div>
+      <p class="lp-kicker">About</p>
+      <h2>Designed to Support Clinical Decisions</h2>
     </div>
-
-    <article class="prose">
-      <h3>Objective</h3>
+    <div class="lp-about-copy">
       <p>
-        Support clinicians with deep-learning classification of dermoscopic lesions
-        (Benign vs Malignant), visual explanations via Grad-CAM, rule-based AJCC staging,
-        and automatic diagnostic PDF reports.
+        Melanoma CDSS is an AI-assisted decision support tool used during an in-person consultation.
+        The doctor enters patient details, uploads a dermoscopic image, and reviews the AI-assisted
+        prediction with the patient present.
       </p>
-
-      <h3>Models</h3>
-      <ul>
-        <li><strong>EfficientNetB0</strong> — transfer learning + fine-tuning</li>
-        <li><strong>MobileNetV2</strong> — lightweight transfer learning + fine-tuning</li>
-        <li><strong>Hybrid</strong> — combines both models (soft vote 0.7 × EfficientNet + 0.3 × MobileNet; optional majority / highest-frequency voting)</li>
-      </ul>
-
-      <h3>Dataset</h3>
       <p>
-        Primary: <strong>SIIM-ISIC 2020</strong>. The data layer is modular so
-        <strong>HAM10000</strong> can be added by switching <code>ACTIVE_DATASET</code> in config.
+        Grad-CAM heatmaps appear only when the prediction is melanoma, to show model attention.
+        Rule-based AJCC staging uses clinical and pathology information entered by the doctor.
+        The generated report can later be opened by the patient with the phone number recorded at the visit.
       </p>
-
-      <h3>Explainability</h3>
-      <p>
-        Grad-CAM heatmaps are generated <em>only</em> when the prediction is Malignant.
-        Benign predictions display: “No malignant regions detected.”
-      </p>
-
-      <h3>AJCC Staging</h3>
-      <p>
-        If malignant, clinical parameters (Breslow thickness, ulceration, mitotic rate,
-        lymph node involvement, metastasis) drive AJCC 8th Edition stage groups
-        (Stage 0–IV) with risk level, recommendation, and follow-up guidance.
-      </p>
-
-      <h3>Disclaimer</h3>
-      <p class="text-danger">{{ disclaimer }}</p>
-    </article>
+      <p>{{ disclaimer }}</p>
+      <div class="lp-hero-actions">
+        <a class="lp-cta lp-cta-primary" href="{{ url_for('auth.login', role='doctor') }}">Doctor login</a>
+        <a class="lp-cta lp-cta-secondary" href="{{ url_for('auth.login', role='patient') }}">Patient login</a>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

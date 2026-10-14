@@ -1,0 +1,26 @@
+{
+  "efficientnet_weight": 0.75,
+  "mobilenet_weight": 0.25,
+  "selection_rule": "max validation ROC-AUC, then PR-AUC",
+  "roc_auc": 0.9717514388970687,
+  "pr_auc": 0.9749002462509873,
+  "threshold": 0.3,
+  "threshold_rule": "sens>=0.85 and spec>=0.70, max F1",
+  "validation": {
+    "threshold": 0.3,
+    "accuracy": 0.9137014314928426,
+    "precision": 0.8966846569005397,
+    "recall": 0.9379032258064516,
+    "sensitivity": 0.9379032258064516,
+    "specificity": 0.8887966804979253,
+    "f1": 0.9168309026409145,
+    "auc": 0.9717514388970687,
+    "pr_auc": 0.9749002462509873,
+    "tp": 1163,
+    "fp": 134,
+    "tn": 1071,
+    "fn": 77,
+    "n_positive": 1240,
+    "n_negative": 1205
+  }
+}

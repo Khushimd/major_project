@@ -1,0 +1,22 @@
+{
+  "frozen_baseline_untouched": true,
+  "dataset_unchanged": true,
+  "splits_unchanged": true,
+  "validation_fns_not_oversampled": true,
+  "no_val_test_augmentation": true,
+  "no_threshold_search": true,
+  "no_ensemble_search": true,
+  "no_class_weight_change": true,
+  "no_oversampling": true,
+  "no_undersampling": true,
+  "ham10000": false,
+  "ph2_tuning": false,
+  "derm7pt_tuning": false,
+  "production_unchanged": true,
+  "dashboard_unchanged": true,
+  "threshold": 0.5,
+  "ensemble": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  }
+}

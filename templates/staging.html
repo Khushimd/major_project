@@ -13,7 +13,7 @@
       <p class="prediction-kicker">Current classification</p>
       <h2 class="prediction-label">Malignant</h2>
       <p class="prediction-confidence">
-        {{ '%.0f'|format((record.confidence or 0) * 100) }}% confidence
+        {{ '%.1f'|format((record.confidence or 0) * 100) }}% confidence
       </p>
     </div>
 

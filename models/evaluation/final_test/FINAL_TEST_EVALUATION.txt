@@ -1,0 +1,116 @@
+------------------------------------------
+FINAL FROZEN TEST EVALUATION
+------------------------------------------
+
+Dataset:
+    Melanoma vs Benign
+
+Test images:
+    2473
+
+Actual melanoma:
+    1324
+
+Actual benign:
+    1149
+
+Model:
+    EfficientNetB0 + MobileNetV2
+
+Training loss:
+    BCE + label smoothing 0.05
+
+Ensemble:
+    0.75 EfficientNetB0
+    0.25 MobileNetV2
+
+Threshold:
+    0.30
+
+Preprocessing:
+    Exact Experiment 2-C / Variant A preprocessing
+
+Model files loaded:
+    C:\Projects\major-project\models\experiments\internal_optimization\exp2_loss_comparison\exp2c_bce_smooth\efficientnetb0_bce_smooth.keras
+    sha256=02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87
+    C:\Projects\major-project\models\experiments\internal_optimization\exp2_loss_comparison\exp2c_bce_smooth\mobilenetv2_bce_smooth.keras
+    sha256=ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f
+
+------------------------------------------
+RESULTS
+------------------------------------------
+
+Accuracy: 0.9228
+Sensitivity: 0.9524
+Specificity: 0.8886
+Precision: 0.9078
+F1: 0.9296
+ROC-AUC: 0.9799
+PR-AUC: 0.9836
+
+TP: 1261
+TN: 1021
+FP: 128
+FN: 63
+
+------------------------------------------
+CONFUSION MATRIX
+------------------------------------------
+
+                 Predicted Benign    Predicted Melanoma
+Actual Benign    1021               128
+Actual Melanoma  63                 1261
+
+Melanoma: TP=1261 FN=63 sensitivity=0.9524
+Benign:   TN=1021 FP=128 specificity=0.8886
+
+------------------------------------------
+PREDICTION DISTRIBUTION
+------------------------------------------
+
+Predicted melanoma: 1389
+Predicted benign: 1084
+
+Probability statistics:
+    overall min/max/mean/median = 0.1513/1.0000/0.5121/0.3530
+    actual melanoma min/max/mean/median = 0.1881/1.0000/0.7514/0.8926
+    actual benign min/max/mean/median = 0.1513/0.9547/0.2364/0.2176
+
+------------------------------------------
+INTEGRITY CHECKS
+------------------------------------------
+
+Test count: PASS (2473)
+Label counts: PASS (melanoma=1324, benign=1149)
+Prediction count: PASS (2473)
+Missing predictions: 0
+Duplicate predictions: 0
+Threshold: 0.30 (frozen, not tuned)
+Ensemble weights: 0.75 / 0.25 (frozen, not tuned)
+Test leakage: none
+Training performed: no
+PH2 used: no
+
+------------------------------------------
+FILES
+------------------------------------------
+
+C:\Projects\major-project\models\evaluation\final_test\FINAL_TEST_EVALUATION.txt
+C:\Projects\major-project\models\evaluation\final_test\FINAL_TEST_EVALUATION.json
+C:\Projects\major-project\models\evaluation\final_test\final_test_predictions.csv
+C:\Projects\major-project\models\evaluation\final_test\confusion_matrix.png
+C:\Projects\major-project\models\evaluation\final_test\roc_curve.png
+C:\Projects\major-project\models\evaluation\final_test\precision_recall_curve.png
+C:\Projects\major-project\models\evaluation\final_test\probability_distribution.json
+C:\Projects\major-project\models\evaluation\final_test\roc_curve_data.csv
+C:\Projects\major-project\models\evaluation\final_test\pr_curve_data.csv
+C:\Projects\major-project\models\evaluation\final_test\true_positives.csv
+C:\Projects\major-project\models\evaluation\final_test\true_negatives.csv
+C:\Projects\major-project\models\evaluation\final_test\false_positives.csv
+C:\Projects\major-project\models\evaluation\final_test\false_negatives.csv
+
+------------------------------------------
+FINAL STATUS
+------------------------------------------
+
+Final frozen test evaluation completed.

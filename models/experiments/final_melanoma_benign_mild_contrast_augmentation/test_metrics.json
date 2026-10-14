@@ -1,0 +1,11 @@
+{
+  "evaluated_once": false,
+  "post_test_tuning": false,
+  "threshold": 0.5,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "metrics": null,
+  "reason": "Validation did not both meet constraints and improve accuracy/recall/precision without hurting any of those three. Test not evaluated."
+}

@@ -1,30 +1,61 @@
 {
-  "best_model": "ensemble",
+  "best_model": "mobilenet",
   "selection_criteria": [
+    "pr_auc",
     "f1",
     "auc"
   ],
   "metrics": {
     "efficientnet": {
-      "accuracy": 0.6365465888508754,
-      "precision": 0.030087527352297593,
-      "recall": 0.625,
-      "f1": 0.05741127348643006,
-      "auc": 0.6668738708535882
+      "threshold": 0.5,
+      "accuracy": 0.9060813242173443,
+      "precision": 0.45132743362831856,
+      "recall": 0.204,
+      "sensitivity": 0.204,
+      "specificity": 0.9754843811783314,
+      "f1": 0.2809917355371901,
+      "auc": 0.8429434559114275,
+      "pr_auc": 0.35116647208825247,
+      "tp": 51,
+      "fp": 62,
+      "tn": 2467,
+      "fn": 199,
+      "n_positive": 250,
+      "n_negative": 2529
     },
     "mobilenet": {
-      "accuracy": 0.9822901992352586,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "auc": 0.6385742023802873
+      "threshold": 0.5,
+      "accuracy": 0.9089600575746671,
+      "precision": 0.4892086330935252,
+      "recall": 0.272,
+      "sensitivity": 0.272,
+      "specificity": 0.9719256623171214,
+      "f1": 0.3496143958868895,
+      "auc": 0.81985290628707,
+      "pr_auc": 0.37565325121565885,
+      "tp": 68,
+      "fp": 71,
+      "tn": 2458,
+      "fn": 182,
+      "n_positive": 250,
+      "n_negative": 2529
     },
     "ensemble": {
-      "accuracy": 0.7923123364862146,
-      "precision": 0.0390625,
-      "recall": 0.45454545454545453,
-      "f1": 0.07194244604316546,
-      "auc": 0.6688923655733735
+      "threshold": 0.5,
+      "accuracy": 0.9107592659229938,
+      "precision": 0.5098039215686274,
+      "recall": 0.208,
+      "sensitivity": 0.208,
+      "specificity": 0.9802293396599446,
+      "f1": 0.29545454545454547,
+      "auc": 0.850290233293792,
+      "pr_auc": 0.37093369488053446,
+      "tp": 52,
+      "fp": 50,
+      "tn": 2479,
+      "fn": 198,
+      "n_positive": 250,
+      "n_negative": 2529
     }
   }
 }

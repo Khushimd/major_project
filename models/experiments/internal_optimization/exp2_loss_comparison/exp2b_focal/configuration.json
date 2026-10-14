@@ -1,0 +1,37 @@
+{
+  "key": "exp2b_focal",
+  "loss": "focal",
+  "label": "EXP2-B Focal Loss (alpha=0.5, gamma=2.0)",
+  "seed": 42,
+  "input_size": 224,
+  "augmentation": "identical to Experiment 1: get_tf_data_augmentation_fn, train only, no JPEG",
+  "finetune": [
+    {
+      "name": "head",
+      "lr": 0.001,
+      "epochs": 25,
+      "unfreeze": 0,
+      "batch": 16
+    },
+    {
+      "name": "partial",
+      "lr": 0.0001,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    },
+    {
+      "name": "final",
+      "lr": 1e-05,
+      "epochs": 12,
+      "unfreeze": 20,
+      "batch": 8
+    }
+  ],
+  "focal_alpha": 0.5,
+  "focal_gamma": 2.0,
+  "label_smoothing": 0.0,
+  "retrained": true,
+  "test_loaded": false,
+  "ph2_used": false
+}

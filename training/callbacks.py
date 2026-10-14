@@ -27,14 +27,15 @@ def get_callbacks(
 
     callbacks = [
         keras.callbacks.EarlyStopping(
-            monitor="val_auc",
+            monitor="val_pr_auc",
             mode="max",
             patience=config.PATIENCE_EARLY_STOP,
             restore_best_weights=True,
             verbose=1,
         ),
         keras.callbacks.ReduceLROnPlateau(
-            monitor="val_loss",
+            monitor="val_pr_auc",
+            mode="max",
             factor=config.REDUCE_LR_FACTOR,
             patience=config.PATIENCE_REDUCE_LR,
             min_lr=config.MIN_LR,
@@ -42,7 +43,7 @@ def get_callbacks(
         ),
         keras.callbacks.ModelCheckpoint(
             filepath=str(ckpt_path),
-            monitor="val_auc",
+            monitor="val_pr_auc",
             mode="max",
             save_best_only=True,
             verbose=1,

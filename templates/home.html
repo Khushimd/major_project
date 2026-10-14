@@ -1,24 +1,297 @@
 {% extends "base.html" %}
-{% block title %}Home — {{ app_title }}{% endblock %}
-{% block main_class %}home-main{% endblock %}
+{% block title %}Melanoma CDSS — AI for Safer Skin Health{% endblock %}
 
 {% block content %}
-<section class="hero hero-simple">
-  <div class="container">
-    <p class="eyebrow">Clinical Decision Support</p>
-    <h1 class="brand-hero">Melanoma<em>CDSS</em></h1>
-    <p class="lead">
-      Upload a skin lesion image to check if it looks benign or malignant.
-    </p>
-    <div class="hero-actions">
-      <a href="{{ url_for('upload') }}" class="btn btn-cta btn-lg">Start analysis</a>
-      <a href="{{ url_for('history') }}" class="btn btn-ghost btn-lg">View history</a>
+<section class="lp-hero" id="home">
+  <div class="lp-hero-bg" aria-hidden="true"></div>
+  <img
+    class="lp-hero-bleed"
+    src="{{ url_for('static', filename='img/hero-consultation.png') }}"
+    alt=""
+  />
+  <div class="lp-wrap lp-hero-grid">
+    <div class="lp-hero-copy">
+      <p class="lp-badge"><i class="bi bi-heart-pulse"></i> AI-ASSISTED DERMOSCOPIC ANALYSIS</p>
+      <h1>Melanoma clinical<br /><span>decision support</span></h1>
+      <p class="lp-lede">
+        A dermoscopic image analysis tool used during an in-person consultation.
+        The doctor uploads an image, reviews the AI-assisted prediction, and generates
+        a report the patient can later open with their phone number.
+      </p>
+      <div class="lp-hero-actions">
+        <a class="lp-cta lp-cta-primary" href="{{ url_for('auth.login', role='doctor') }}">
+          <i class="bi bi-stethoscope"></i>
+          <span>
+            <strong>Doctor login</strong>
+            <small>Access clinical dashboard</small>
+          </span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+        <a class="lp-cta lp-cta-secondary" href="{{ url_for('auth.login', role='patient') }}">
+          <i class="bi bi-person"></i>
+          <span>
+            <strong>Patient login</strong>
+            <small>Reports or book a visit</small>
+          </span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+      <p class="lp-disclaimer">
+        <i class="bi bi-check-circle"></i>
+        This system is intended as a clinical decision support tool only and should not replace professional medical diagnosis.
+      </p>
     </div>
-    <ol class="simple-steps">
-      <li><span>1</span> Upload image</li>
-      <li><span>2</span> Get result</li>
-      <li><span>3</span> Download report</li>
+
+    <div class="lp-hero-visual">
+      <p class="lp-script" aria-hidden="true">Supporting<br />early detection<br />for a healthier<br />tomorrow</p>
+      <aside class="lp-float lp-float-top">
+        <i class="bi bi-cpu"></i>
+        <div>
+          <strong>AI + Clinical Expertise</strong>
+          <span>Better insights.<br />Better decisions.</span>
+        </div>
+      </aside>
+      <p class="lp-side-script" aria-hidden="true">Skin health<br />matters</p>
+    </div>
+  </div>
+
+  <div class="lp-wrap lp-feature-grid">
+    <article class="lp-feature teal">
+      <span class="lp-icon"><i class="bi bi-camera"></i></span>
+      <div>
+        <h3>Dermoscopic Analysis</h3>
+        <p>Upload an image and get instant AI-assisted prediction.</p>
+      </div>
+    </article>
+    <article class="lp-feature blue">
+      <span class="lp-icon"><i class="bi bi-bar-chart-line"></i></span>
+      <div>
+        <h3>Explainable AI</h3>
+        <p>View Grad-CAM heatmaps for melanoma predictions.</p>
+      </div>
+    </article>
+    <article class="lp-feature lilac">
+      <span class="lp-icon"><i class="bi bi-file-earmark-medical"></i></span>
+      <div>
+        <h3>Clinical Staging</h3>
+        <p>Enter clinical details and get AJCC stage (rule-based).</p>
+      </div>
+    </article>
+    <article class="lp-feature mint">
+      <span class="lp-icon"><i class="bi bi-shield-check"></i></span>
+      <div>
+        <h3>Secure &amp; Private</h3>
+        <p>Patients can access their reports using their phone number.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="lp-section lp-about" id="about">
+  <div class="lp-wrap">
+    <div class="lp-about-intro">
+      <p class="lp-kicker">About melanoma</p>
+      <h2>What melanoma is, and how it affects people</h2>
+      <p class="lp-section-lede">
+        Melanoma is a serious form of skin cancer. Understanding the disease, how it develops, and why early
+        detection matters helps patients and clinicians act sooner.
+      </p>
+    </div>
+    <div class="lp-about-lead">
+      <p>
+        Melanoma begins in <strong>melanocytes</strong>, the cells that produce melanin — the pigment that gives
+        skin its colour. It often starts as a new mole or as a change in an existing one. Unlike many other skin
+        cancers, melanoma can grow quickly and spread to lymph nodes and other organs if it is not recognised early.
+      </p>
+      <p>
+        Anyone can develop melanoma. Risk is higher with intense sun or UV exposure, fair skin, many moles, a
+        previous skin cancer, or a family history of melanoma. The impact is not only medical: delayed diagnosis
+        can mean more invasive treatment, greater uncertainty, and a heavier burden on patients and families.
+      </p>
+    </div>
+    <div class="lp-about-cards">
+      <article>
+        <span class="lp-icon"><i class="bi bi-info-circle"></i></span>
+        <h3>What it is</h3>
+        <p>A cancer of pigment-producing skin cells. It may look like a dark, irregular, or changing spot on the skin, including areas not often exposed to the sun.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-heart-pulse"></i></span>
+        <h3>How it affects the body</h3>
+        <p>If untreated, melanoma can invade deeper layers of skin and travel through the blood or lymph system. Later-stage disease is harder to treat and can affect organs far from the original lesion.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-eye"></i></span>
+        <h3>Warning signs</h3>
+        <p>Watch for the ABCDE signs: Asymmetry, irregular Border, uneven Colour, Diameter larger than a pencil eraser, and Evolving size, shape, or symptoms such as itching or bleeding.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-clock-history"></i></span>
+        <h3>Why early detection matters</h3>
+        <p>Melanoma found early is often treatable. Catching a suspicious lesion during a consultation — before it spreads — can change the course of care and the outcome for the patient.</p>
+      </article>
+    </div>
+    <p class="lp-about-note">
+      This information is educational. It is not a diagnosis. A qualified healthcare professional should assess any concerning skin change.
+    </p>
+  </div>
+</section>
+
+<section class="lp-section" id="how-it-works">
+  <div class="lp-wrap">
+    <p class="lp-kicker">Workflow</p>
+    <h2>How it works</h2>
+    <p class="lp-section-lede">Built for the consultation room — not a virtual waiting list.</p>
+    <ol class="lp-steps">
+      <li>
+        <span>01</span>
+        <h3>Patient Consultation</h3>
+        <p>The doctor begins the analysis while the patient is present.</p>
+      </li>
+      <li>
+        <span>02</span>
+        <h3>Dermoscopic Analysis</h3>
+        <p>The doctor uploads the patient's dermoscopic image.</p>
+      </li>
+      <li>
+        <span>03</span>
+        <h3>AI-Assisted Assessment</h3>
+        <p>The system provides a melanoma prediction and probability. Grad-CAM is shown only for melanoma predictions.</p>
+      </li>
+      <li>
+        <span>04</span>
+        <h3>Clinical Report</h3>
+        <p>The doctor adds clinical information, staging details and remarks, then generates the patient's report.</p>
+      </li>
     </ol>
+  </div>
+</section>
+
+<section class="lp-section lp-about" id="features">
+  <div class="lp-wrap">
+    <div class="lp-about-intro">
+      <p class="lp-kicker">Features</p>
+      <h2>Heatmaps, staging, reports, and appointments</h2>
+      <p class="lp-section-lede">
+        Melanoma CDSS is a student-built clinical decision support project for in-person dermatology visits.
+        It helps the doctor review an image with the patient in the room — then record staging and a report the patient can open later.
+      </p>
+    </div>
+    <div class="lp-about-lead">
+      <p>
+        The project combines a dermoscopic image model, explainable visual attention, rule-based AJCC staging,
+        PDF report generation, and appointment handling. The doctor remains responsible for clinical judgement.
+        The system does not replace diagnosis or decide treatment on its own.
+      </p>
+    </div>
+    <div class="lp-about-cards">
+      <article>
+        <span class="lp-icon"><i class="bi bi-thermometer-sun"></i></span>
+        <h3>Heatmap visibility</h3>
+        <p>When the prediction is melanoma, a Grad-CAM heatmap is shown so the doctor can see which regions of the image the model attended to. Heatmaps are hidden for non-melanoma predictions. They illustrate model attention — they are not proof of disease.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-diagram-3"></i></span>
+        <h3>AJCC rule-based staging</h3>
+        <p>AJCC stage is calculated from clinical and pathology values entered by the doctor, using published staging rules. The image classifier does not choose the stage. Staging is available when the AI-assisted prediction is melanoma.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-file-earmark-pdf"></i></span>
+        <h3>PDF reports</h3>
+        <p>After the consultation, the doctor can generate a PDF report with the image, prediction, heatmap (when shown), AJCC stage, and remarks. The patient later opens and downloads that report using the phone number recorded at the visit.</p>
+      </article>
+      <article>
+        <span class="lp-icon"><i class="bi bi-calendar2-check"></i></span>
+        <h3>Appointments</h3>
+        <p>Patients can request an in-person appointment. Doctors can confirm, reschedule, complete, or cancel requests from the clinical dashboard — so the analysis happens during a real consultation, not through a virtual waiting list.</p>
+      </article>
+    </div>
+    <div class="lp-about-lead lp-features-more">
+      <h3>More about the project</h3>
+      <p>
+        This Clinical Decision Support System was developed as an academic major project to support safer skin-health
+        assessment. A doctor logs in, starts the visit, uploads a dermoscopic image, reviews the AI-assisted class
+        and probability, inspects the Grad-CAM heatmap when melanoma is predicted, enters clinical details for
+        rule-based AJCC staging, and generates the patient’s PDF report. Patients use a separate login to view only
+        their own reports and to manage appointments.
+      </p>
+      <p>
+        Role-based access keeps doctor tools (analysis, staging, model analytics) separate from the patient portal.
+        The public landing page does not display internal model scores; those remain inside the authenticated
+        doctor workspace.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-team" id="contact">
+  <div class="lp-wrap">
+    <div class="lp-team-head">
+      <h2>Meet Our Team</h2>
+      <p class="lp-section-lede">The team behind the Melanoma Clinical Decision Support System</p>
+      <p class="lp-team-aside" aria-hidden="true">Different<br />perspectives.<br />A common purpose.<br />Better skin health.</p>
+    </div>
+    <div class="lp-team-guide-wrap">
+      <article class="lp-team-card lp-team-card-guide">
+        <span class="lp-avatar lp-avatar-guide" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
+        <h3>Prof. Krishna V</h3>
+        <p class="lp-team-role">Project Guide &amp; Mentor</p>
+        <p class="lp-team-bio">Provided continuous guidance and mentorship throughout the project, offering valuable insights into research, methodology, technical development, and clinical considerations that helped shape and strengthen the final system.</p>
+      </article>
+    </div>
+    <div class="lp-team-grid">
+      <article class="lp-team-card">
+        <span class="lp-avatar lp-avatar-photo">
+          <img src="{{ url_for('static', filename='img/team/khushi.jpg') }}" alt="Khushi M D" />
+        </span>
+        <h3>Khushi M D</h3>
+        <p class="lp-team-role">AI Model, Frontend &amp; Dashboard Development</p>
+        <p class="lp-team-bio">Focused on developing the AI melanoma detection model, implementing Grad-CAM explainability, and creating intuitive frontend interfaces and doctor and patient dashboards. Works on transforming AI insights into clear, accessible, and user-friendly clinical workflows.</p>
+        <a class="lp-team-phone" href="tel:+916362680297"><i class="bi bi-telephone"></i> +91 6362680297</a>
+        <a class="lp-team-call" href="tel:+916362680297"><i class="bi bi-telephone-fill"></i> Call</a>
+      </article>
+      <article class="lp-team-card">
+        <span class="lp-avatar lp-avatar-photo">
+          <img src="{{ url_for('static', filename='img/team/archana.jpg') }}" alt="Archana R" />
+        </span>
+        <h3>Archana R</h3>
+        <p class="lp-team-role">Backend &amp; Database Development</p>
+        <p class="lp-team-bio">Focused on developing the backend system, managing databases and authentication, and connecting application components to ensure secure and reliable data management. Works on maintaining efficient data flow and supporting the overall functionality of the clinical application.</p>
+        <a class="lp-team-phone" href="tel:+919535188433"><i class="bi bi-telephone"></i> +91 9535188433</a>
+        <a class="lp-team-call" href="tel:+919535188433"><i class="bi bi-telephone-fill"></i> Call</a>
+      </article>
+      <article class="lp-team-card">
+        <span class="lp-avatar lp-avatar-photo">
+          <img src="{{ url_for('static', filename='img/team/anusha.jpg') }}" alt="Anusha M" />
+        </span>
+        <h3>Anusha M</h3>
+        <p class="lp-team-role">Research &amp; Documentation</p>
+        <p class="lp-team-bio">Focused on conducting project research, preparing technical documentation, organizing methodology, and presenting the clinical and technical aspects of the system. Works on maintaining clear project documentation and communicating the research findings and system objectives effectively.</p>
+        <a class="lp-team-phone" href="tel:+918197595495"><i class="bi bi-telephone"></i> +91 8197595495</a>
+        <a class="lp-team-call" href="tel:+918197595495"><i class="bi bi-telephone-fill"></i> Call</a>
+      </article>
+      <article class="lp-team-card">
+        <span class="lp-avatar lp-avatar-photo">
+          <img src="{{ url_for('static', filename='img/team/vyshnavi.jpg') }}" alt="Vyshnavi R K" />
+        </span>
+        <h3>Vyshnavi R K</h3>
+        <p class="lp-team-role">System Integration &amp; Testing</p>
+        <p class="lp-team-bio">Focused on integrating system components, conducting functional testing, and validating application workflows to ensure smooth, reliable, and consistent system performance. Works on identifying issues, verifying system functionality, and ensuring seamless interaction between different modules.</p>
+        <a class="lp-team-phone" href="tel:+919449118250"><i class="bi bi-telephone"></i> +91 9449118250</a>
+        <a class="lp-team-call" href="tel:+919449118250"><i class="bi bi-telephone-fill"></i> Call</a>
+      </article>
+    </div>
+    <p class="lp-team-note"><i class="bi bi-people"></i> Have questions about our project? Feel free to contact our team.</p>
+  </div>
+</section>
+
+<section class="lp-cta-band">
+  <div class="lp-wrap lp-cta-inner">
+    <h2>AI-assisted melanoma analysis, designed for real clinical consultations.</h2>
+    <div class="lp-hero-actions">
+      <a class="lp-cta lp-cta-primary" href="{{ url_for('auth.login', role='doctor') }}">Doctor login</a>
+      <a class="lp-cta lp-cta-secondary" href="{{ url_for('auth.login', role='patient') }}">Patient login</a>
+    </div>
   </div>
 </section>
 {% endblock %}

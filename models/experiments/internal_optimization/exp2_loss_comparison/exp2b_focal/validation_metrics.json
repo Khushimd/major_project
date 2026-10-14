@@ -1,0 +1,375 @@
+{
+  "key": "exp2b_focal",
+  "loss": "focal",
+  "label": "EXP2-B Focal Loss (alpha=0.5, gamma=2.0)",
+  "evaluated_on": "validation_only",
+  "test_used": false,
+  "ph2_used": false,
+  "oom": false,
+  "wall_seconds": 21498.95814704895,
+  "efficientnet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2b_focal\\efficientnetb0_focal.keras",
+    "training_seconds": 13608.969558954239,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 13
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 11
+      },
+      {
+        "stage": "final",
+        "epochs_run": 12
+      }
+    ],
+    "reused_from": null,
+    "validation_at_0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.498159509202454,
+      "precision": 0.7407407407407407,
+      "recall": 0.016129032258064516,
+      "sensitivity": 0.016129032258064516,
+      "specificity": 0.9941908713692946,
+      "f1": 0.03157063930544594,
+      "auc": 0.594095167982867,
+      "pr_auc": 0.6022539694759252,
+      "tp": 20,
+      "fp": 7,
+      "tn": 1198,
+      "fn": 1220,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "validation_operating": {
+      "threshold": 0.45,
+      "accuracy": 0.5071574642126789,
+      "precision": 0.5071574642126789,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0,
+      "f1": 0.6729986431478969,
+      "auc": 0.594095167982867,
+      "pr_auc": 0.6022539694759252,
+      "tp": 1240,
+      "fp": 1205,
+      "tn": 0,
+      "fn": 0,
+      "n_positive": 1240,
+      "n_negative": 1205
+    }
+  },
+  "mobilenet": {
+    "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2b_focal\\mobilenetv2_focal.keras",
+    "training_seconds": 7889.071109294891,
+    "stage_epochs": [
+      {
+        "stage": "head",
+        "epochs_run": 13
+      },
+      {
+        "stage": "partial",
+        "epochs_run": 10
+      },
+      {
+        "stage": "final",
+        "epochs_run": 9
+      }
+    ],
+    "reused_from": null,
+    "validation_at_0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.49284253578732107,
+      "precision": 0.0,
+      "recall": 0.0,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "auc": 0.3427509704189533,
+      "pr_auc": 0.43405747356584184,
+      "tp": 0,
+      "fp": 0,
+      "tn": 1205,
+      "fn": 1240,
+      "n_positive": 1240,
+      "n_negative": 1205
+    },
+    "validation_operating": {
+      "threshold": 0.3,
+      "accuracy": 0.5071574642126789,
+      "precision": 0.5071574642126789,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0,
+      "f1": 0.6729986431478969,
+      "auc": 0.3427509704189533,
+      "pr_auc": 0.43405747356584184,
+      "tp": 1240,
+      "fp": 1205,
+      "tn": 0,
+      "fn": 0,
+      "n_positive": 1240,
+      "n_negative": 1205
+    }
+  },
+  "ensemble": {
+    "efficientnet_weight": 1.0,
+    "mobilenet_weight": 0.0,
+    "selection_rule": "max validation ROC-AUC, then PR-AUC",
+    "roc_auc": 0.594095167982867,
+    "pr_auc": 0.6022539694759252,
+    "threshold": 0.45,
+    "threshold_rule": "max F1 on validation grid (fallback)",
+    "validation": {
+      "threshold": 0.45,
+      "accuracy": 0.5071574642126789,
+      "precision": 0.5071574642126789,
+      "recall": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 0.0,
+      "f1": 0.6729986431478969,
+      "auc": 0.594095167982867,
+      "pr_auc": 0.6022539694759252,
+      "tp": 1240,
+      "fp": 1205,
+      "tn": 0,
+      "fn": 0,
+      "n_positive": 1240,
+      "n_negative": 1205
+    }
+  },
+  "weight_candidates": [
+    {
+      "efficientnet_weight": 0.0,
+      "mobilenet_weight": 1.0,
+      "roc_auc": 0.3427509704189533,
+      "pr_auc": 0.43405747356584184,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.05,
+      "mobilenet_weight": 0.95,
+      "roc_auc": 0.4903995449069737,
+      "pr_auc": 0.5134306351677818,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.1,
+      "mobilenet_weight": 0.9,
+      "roc_auc": 0.5455434346138401,
+      "pr_auc": 0.5547885825597576,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.15,
+      "mobilenet_weight": 0.85,
+      "roc_auc": 0.5650863338241199,
+      "pr_auc": 0.5716920290350194,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.2,
+      "mobilenet_weight": 0.8,
+      "roc_auc": 0.5742383884352831,
+      "pr_auc": 0.580640275133519,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.25,
+      "mobilenet_weight": 0.75,
+      "roc_auc": 0.5796516530584929,
+      "pr_auc": 0.5861042582895051,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.3,
+      "mobilenet_weight": 0.7,
+      "roc_auc": 0.5829995984473296,
+      "pr_auc": 0.5895862389975458,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.35,
+      "mobilenet_weight": 0.65,
+      "roc_auc": 0.5852656940168652,
+      "pr_auc": 0.5922430724308255,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.4,
+      "mobilenet_weight": 0.6,
+      "roc_auc": 0.5869860125819837,
+      "pr_auc": 0.5941243579158234,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.45,
+      "mobilenet_weight": 0.55,
+      "roc_auc": 0.5882699772453487,
+      "pr_auc": 0.5955772661187528,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.5,
+      "mobilenet_weight": 0.5,
+      "roc_auc": 0.5893782626154463,
+      "pr_auc": 0.5968649796231227,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.55,
+      "mobilenet_weight": 0.45,
+      "roc_auc": 0.5902416008566457,
+      "pr_auc": 0.5977852290318504,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.6,
+      "mobilenet_weight": 0.4,
+      "roc_auc": 0.5909697496988354,
+      "pr_auc": 0.5985938478403399,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.65,
+      "mobilenet_weight": 0.35,
+      "roc_auc": 0.5915339312006425,
+      "pr_auc": 0.5993048655847952,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.7,
+      "mobilenet_weight": 0.3,
+      "roc_auc": 0.5920713425244277,
+      "pr_auc": 0.5998973370818597,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.75,
+      "mobilenet_weight": 0.25,
+      "roc_auc": 0.5925485209476643,
+      "pr_auc": 0.6004761629054772,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.8,
+      "mobilenet_weight": 0.2,
+      "roc_auc": 0.5929360192745282,
+      "pr_auc": 0.6009050725138451,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.85,
+      "mobilenet_weight": 0.15,
+      "roc_auc": 0.5932559229018872,
+      "pr_auc": 0.6013455203939821,
+      "accuracy_at_0.5": 0.49284253578732107,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 1.0,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.9,
+      "mobilenet_weight": 0.1,
+      "roc_auc": 0.5935550796412795,
+      "pr_auc": 0.6016799886267471,
+      "accuracy_at_0.5": 0.49243353783231086,
+      "sensitivity_at_0.5": 0.0,
+      "specificity_at_0.5": 0.9991701244813278,
+      "precision_at_0.5": 0.0,
+      "f1_at_0.5": 0.0
+    },
+    {
+      "efficientnet_weight": 0.95,
+      "mobilenet_weight": 0.05,
+      "roc_auc": 0.593870298487485,
+      "pr_auc": 0.6020356107199205,
+      "accuracy_at_0.5": 0.49406952965235174,
+      "sensitivity_at_0.5": 0.0032258064516129032,
+      "specificity_at_0.5": 0.9991701244813278,
+      "precision_at_0.5": 0.8,
+      "f1_at_0.5": 0.00642570281124498
+    },
+    {
+      "efficientnet_weight": 1.0,
+      "mobilenet_weight": 0.0,
+      "roc_auc": 0.594095167982867,
+      "pr_auc": 0.6022539694759252,
+      "accuracy_at_0.5": 0.498159509202454,
+      "sensitivity_at_0.5": 0.016129032258064516,
+      "specificity_at_0.5": 0.9941908713692946,
+      "precision_at_0.5": 0.7407407407407407,
+      "f1_at_0.5": 0.03157063930544594
+    }
+  ]
+}

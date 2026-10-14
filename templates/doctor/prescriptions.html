@@ -1,0 +1,41 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('prescriptions') }}{% endblock %}
+{% block heading %}Prescriptions{% endblock %}
+{% block subhead %}Only you can issue medicines. The AI never prescribes.{% endblock %}
+{% block content %}
+<form method="post" class="form-pane mb-4">
+  <label class="form-label">Patient</label>
+  <select class="form-select mb-3" name="patient_id" required>
+    {% for p in patients %}<option value="{{ p.id }}">{{ p.full_name }}</option>{% endfor %}
+  </select>
+  <label class="form-label">Diagnosis</label>
+  <input class="form-control mb-3" name="diagnosis" />
+  <div id="medRows">
+    <div class="row g-2 mb-2">
+      <div class="col-md-3"><input class="form-control" name="medicine" placeholder="Medicine" required /></div>
+      <div class="col-md-2"><input class="form-control" name="dosage" placeholder="Dosage" /></div>
+      <div class="col-md-2"><input class="form-control" name="frequency" placeholder="Frequency" /></div>
+      <div class="col-md-2"><input class="form-control" name="duration" placeholder="Duration" /></div>
+      <div class="col-md-3"><input class="form-control" name="instructions" placeholder="Instructions" /></div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-ghost btn-sm mb-3" onclick="addMed()">Add medicine</button>
+  <label class="form-label">Notes</label>
+  <textarea class="form-control mb-3" name="notes"></textarea>
+  <button class="btn btn-cta" type="submit">Issue prescription</button>
+</form>
+{% for rx in prescriptions %}
+<div class="form-pane mb-2"><strong>{{ rx.code }}</strong> · {{ rx.patient_name }} · {{ rx.created_at }}</div>
+{% endfor %}
+{% endblock %}
+{% block scripts %}
+<script>
+function addMed(){
+  const wrap=document.getElementById('medRows');
+  const row=wrap.firstElementChild.cloneNode(true);
+  row.querySelectorAll('input').forEach(i=>i.value='');
+  wrap.appendChild(row);
+}
+</script>
+{% endblock %}

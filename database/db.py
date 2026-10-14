@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS prediction_cache (
     malignant_prob REAL NOT NULL,
     benign_prob REAL NOT NULL,
     model_used TEXT,
+    cache_version TEXT,
     updated_at TEXT NOT NULL
 );
 
@@ -98,6 +99,14 @@ class Database:
                 "staging_recommendation": "ALTER TABLE predictions ADD COLUMN staging_recommendation TEXT",
                 "staging_follow_up": "ALTER TABLE predictions ADD COLUMN staging_follow_up TEXT",
             }
+            cache_cols = {
+                r[1]
+                for r in conn.execute("PRAGMA table_info(prediction_cache)").fetchall()
+            }
+            if "cache_version" not in cache_cols:
+                conn.execute(
+                    "ALTER TABLE prediction_cache ADD COLUMN cache_version TEXT"
+                )
             for col, sql in migrations.items():
                 if col not in cols:
                     conn.execute(sql)
@@ -117,7 +126,8 @@ class Database:
             "staging_follow_up", "gradcam_path", "report_path",
             "doctor_notes", "breslow_thickness", "ulceration",
             "mitotic_rate", "lymph_node_involvement", "metastasis",
-            "created_at",
+            "created_at", "owner_user_id", "assigned_doctor_id",
+            "review_status", "report_code",
         ]
         record = dict(record)
         record.setdefault("created_at", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
@@ -140,6 +150,8 @@ class Database:
             "staging_details", "staging_recommendation", "staging_follow_up",
             "report_path", "doctor_notes", "breslow_thickness", "ulceration",
             "mitotic_rate", "lymph_node_involvement", "metastasis",
+            "owner_user_id", "assigned_doctor_id", "review_status", "report_code",
+            "gradcam_path",
         }
         updates = {k: v for k, v in fields.items() if k in allowed}
         if not updates:
@@ -159,7 +171,12 @@ class Database:
                 "SELECT * FROM prediction_cache WHERE image_hash = ?",
                 (image_hash,),
             ).fetchone()
-        return dict(row) if row else None
+        if not row:
+            return None
+        cached = dict(row)
+        if cached.get("cache_version") != config.get_prediction_cache_version():
+            return None
+        return cached
 
     def upsert_prediction_cache(self, payload: Dict[str, Any]) -> None:
         with self._connect() as conn:
@@ -167,14 +184,15 @@ class Database:
                 """
                 INSERT INTO prediction_cache
                     (image_hash, prediction, confidence, malignant_prob,
-                     benign_prob, model_used, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                     benign_prob, model_used, cache_version, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(image_hash) DO UPDATE SET
                     prediction=excluded.prediction,
                     confidence=excluded.confidence,
                     malignant_prob=excluded.malignant_prob,
                     benign_prob=excluded.benign_prob,
                     model_used=excluded.model_used,
+                    cache_version=excluded.cache_version,
                     updated_at=excluded.updated_at
                 """,
                 (
@@ -184,6 +202,7 @@ class Database:
                     payload["malignant_prob"],
                     payload["benign_prob"],
                     payload.get("model_used"),
+                    payload.get("cache_version", config.get_prediction_cache_version()),
                     datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 ),
             )

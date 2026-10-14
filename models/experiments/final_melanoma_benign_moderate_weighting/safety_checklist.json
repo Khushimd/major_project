@@ -1,0 +1,20 @@
+{
+  "baseline_files_untouched_before_start": true,
+  "final_dataset_untouched": true,
+  "splits_frozen": true,
+  "test_not_used_for_selection": true,
+  "test_evaluated_only_after_validation_selection": true,
+  "threshold": 0.5,
+  "ensemble": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "oversampling": false,
+  "undersampling": false,
+  "ham10000": false,
+  "ph2_tuning": false,
+  "derm7pt_tuning": false,
+  "dashboard_changes": false,
+  "production_model_changes": false,
+  "cache_jpgs": 16254
+}

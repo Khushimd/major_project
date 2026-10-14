@@ -1,0 +1,6 @@
+{% macro nav(active='') %}
+  <a class="{% if active=='dashboard' %}active{% endif %}" href="{{ url_for('patient.dashboard') }}"><i class="bi bi-grid"></i> Dashboard</a>
+  <a class="{% if active=='appointments' %}active{% endif %}" href="{{ url_for('patient.appointments') }}"><i class="bi bi-calendar-check"></i> Appointments</a>
+  <a class="{% if active=='reports' %}active{% endif %}" href="{{ url_for('patient.reports') }}"><i class="bi bi-file-earmark-text"></i> My Reports</a>
+  <a class="{% if active=='profile' %}active{% endif %}" href="{{ url_for('patient.profile') }}"><i class="bi bi-person"></i> Profile</a>
+{% endmacro %}

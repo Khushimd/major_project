@@ -1,0 +1,89 @@
+{
+  "purpose": "Reduce false negatives on the frozen baseline test set using TTA only.",
+  "not_training": true,
+  "production_unchanged": true,
+  "test_used_for_tuning": false,
+  "dataset": "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign",
+  "n_test": 2437,
+  "n_melanoma": 1041,
+  "n_benign": 1396,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "threshold": 0.5,
+  "views": [
+    "identity",
+    "hflip",
+    "vflip",
+    "rot90",
+    "bright_0.90",
+    "bright_1.10"
+  ],
+  "suitable_for_fn_reduction": [
+    "horizontal flip",
+    "vertical flip",
+    "90-degree rotate",
+    "mild brightness down/up"
+  ],
+  "not_used": [
+    "random erasing / cutout",
+    "synthetic hair",
+    "large hue shift",
+    "360-degree random rotation"
+  ],
+  "baseline_no_tta": {
+    "threshold": 0.5,
+    "accuracy": 0.8342224045958145,
+    "precision": 0.8007554296506137,
+    "recall": 0.8146013448607109,
+    "sensitivity": 0.8146013448607109,
+    "specificity": 0.8488538681948424,
+    "f1": 0.8076190476190476,
+    "auc": 0.9126790142826079,
+    "pr_auc": 0.8884757664753524,
+    "tp": 848,
+    "fp": 211,
+    "tn": 1185,
+    "fn": 193,
+    "n_positive": 1041,
+    "n_negative": 1396
+  },
+  "tta_mean": {
+    "threshold": 0.5,
+    "accuracy": 0.8317603610997127,
+    "precision": 0.795688847235239,
+    "recall": 0.8155619596541787,
+    "sensitivity": 0.8155619596541787,
+    "specificity": 0.8438395415472779,
+    "f1": 0.8055028462998103,
+    "auc": 0.9133657575232104,
+    "pr_auc": 0.8901671243634198,
+    "tp": 849,
+    "fp": 218,
+    "tn": 1178,
+    "fn": 192,
+    "n_positive": 1041,
+    "n_negative": 1396
+  },
+  "tta_max_sensitivity": {
+    "threshold": 0.5,
+    "accuracy": 0.8067295855560115,
+    "precision": 0.7287319422150883,
+    "recall": 0.8722382324687801,
+    "sensitivity": 0.8722382324687801,
+    "specificity": 0.7578796561604585,
+    "f1": 0.7940533449934412,
+    "auc": 0.9073536576302816,
+    "pr_auc": 0.8835151114137312,
+    "tp": 908,
+    "fp": 338,
+    "tn": 1058,
+    "fn": 133,
+    "n_positive": 1041,
+    "n_negative": 1396
+  },
+  "fn_delta_mean": -1,
+  "fn_delta_max": -60,
+  "elapsed_seconds": 819.3796343803406
+}

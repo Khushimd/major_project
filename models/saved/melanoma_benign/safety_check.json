@@ -1,0 +1,83 @@
+{
+  "old_production_models_not_overwritten": true,
+  "old_production_metrics_not_overwritten": true,
+  "old_threshold_not_reused": true,
+  "old_ensemble_weights_not_reused": true,
+  "trained_on_melanoma_benign_only": true,
+  "dicm_class_0_not_used": true,
+  "train_split_unchanged": true,
+  "val_split_unchanged": true,
+  "test_split_unchanged": true,
+  "test_not_used_for_tuning": true,
+  "ph2_not_used_for_tuning": true,
+  "no_val_test_augmentation": true,
+  "no_duplicated_images": true,
+  "threshold_from_validation_only": true,
+  "ensemble_weights_from_validation_only": true,
+  "production_application_not_modified": true,
+  "active_dataset_unchanged": "combined",
+  "production_snapshot_before": {
+    "efficientnet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+      "exists": true,
+      "size": 18362343,
+      "mtime": 1789839256.1543894
+    },
+    "mobilenet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+      "exists": true,
+      "size": 10946920,
+      "mtime": 1789844318.7423635
+    },
+    "eval_metrics": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\evaluation_metrics.json",
+      "exists": true,
+      "size": 5931,
+      "mtime": 1789844696.4895136
+    },
+    "inference_config": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\inference_config.json",
+      "exists": true,
+      "size": 1174,
+      "mtime": 1789844696.5169592
+    },
+    "ensemble_meta": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\ensemble_meta.json",
+      "exists": true,
+      "size": 637,
+      "mtime": 1789844696.4908445
+    }
+  },
+  "production_snapshot_after": {
+    "efficientnet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+      "exists": true,
+      "size": 18362343,
+      "mtime": 1789839256.1543894
+    },
+    "mobilenet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+      "exists": true,
+      "size": 10946920,
+      "mtime": 1789844318.7423635
+    },
+    "eval_metrics": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\evaluation_metrics.json",
+      "exists": true,
+      "size": 5931,
+      "mtime": 1789844696.4895136
+    },
+    "inference_config": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\inference_config.json",
+      "exists": true,
+      "size": 1174,
+      "mtime": 1789844696.5169592
+    },
+    "ensemble_meta": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\ensemble_meta.json",
+      "exists": true,
+      "size": 637,
+      "mtime": 1789844696.4908445
+    }
+  }
+}

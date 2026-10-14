@@ -1,0 +1,88 @@
+{
+  "title": "FINAL FROZEN TEST EVALUATION",
+  "dataset": "Melanoma vs Benign",
+  "test_images": 2473,
+  "actual_melanoma": 1324,
+  "actual_benign": 1149,
+  "model": "EfficientNetB0 + MobileNetV2",
+  "training_loss": "BCE + label smoothing 0.05",
+  "ensemble_weights": {
+    "efficientnetb0": 0.75,
+    "mobilenetv2": 0.25
+  },
+  "threshold": 0.3,
+  "preprocessing": "process_for_model: hair removal + light denoise + resize 224 + /255; no CLAHE; no lesion crop; ImageNet preprocess inside the saved models",
+  "model_files": {
+    "efficientnetb0": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\efficientnetb0_bce_smooth.keras",
+      "sha256": "02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87"
+    },
+    "mobilenetv2": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\mobilenetv2_bce_smooth.keras",
+      "sha256": "ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f"
+    }
+  },
+  "metrics": {
+    "threshold": 0.3,
+    "accuracy": 0.9227658714112414,
+    "precision": 0.9078473722102232,
+    "recall": 0.952416918429003,
+    "sensitivity": 0.952416918429003,
+    "specificity": 0.8885987815491732,
+    "f1": 0.9295982307408772,
+    "auc": 0.9799372368984983,
+    "pr_auc": 0.983594112309723,
+    "tp": 1261,
+    "fp": 128,
+    "tn": 1021,
+    "fn": 63,
+    "n_positive": 1324,
+    "n_negative": 1149
+  },
+  "predicted_melanoma": 1389,
+  "predicted_benign": 1084,
+  "probability_distribution": {
+    "overall": {
+      "min": 0.15127084031701088,
+      "max": 0.9999778419733047,
+      "mean": 0.5121143146930582,
+      "median": 0.3529999926686287,
+      "n": 2473
+    },
+    "actual_melanoma": {
+      "min": 0.18808521330356598,
+      "max": 0.9999778419733047,
+      "mean": 0.7513835492214678,
+      "median": 0.892633780837059,
+      "n": 1324
+    },
+    "actual_benign": {
+      "min": 0.15127084031701088,
+      "max": 0.9546626955270767,
+      "mean": 0.2364028555846038,
+      "median": 0.21759188175201416,
+      "n": 1149
+    }
+  },
+  "integrity": {
+    "test_count": true,
+    "label_counts": true,
+    "prediction_count": true,
+    "missing_predictions": 0,
+    "duplicate_predictions": 0,
+    "threshold": 0.3,
+    "ensemble_weights": [
+      0.75,
+      0.25
+    ],
+    "test_leakage": false,
+    "training_performed": false,
+    "threshold_tuning": false,
+    "ensemble_weight_tuning": false,
+    "ph2_used": false,
+    "derm7pt_used": false
+  },
+  "production_or_live_app_modified": false,
+  "experiments_1_2_3_modified": false,
+  "frozen_test_split_modified": false
+}

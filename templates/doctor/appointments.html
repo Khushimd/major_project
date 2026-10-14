@@ -1,0 +1,85 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('appointments') }}{% endblock %}
+{% block heading %}Appointments{% endblock %}
+{% block subhead %}Patients who requested a visit. Accept a request when you can see them.{% endblock %}
+{% block content %}
+<div class="form-pane mb-4">
+  <h3>Appointment requests</h3>
+  <div class="history-table-wrap">
+    <table class="table history-table mb-0">
+      <thead><tr><th>Patient</th><th>Phone</th><th>Date</th><th>Time</th><th>Reason</th><th></th></tr></thead>
+      <tbody>
+      {% for a in pending %}
+      <tr>
+        <td>{{ a.patient_name }}</td>
+        <td>{{ a.patient_phone or '—' }}</td>
+        <td>{{ a.appt_date }}</td>
+        <td>{{ a.time_label or a.appt_time }}</td>
+        <td>{{ a.reason or '—' }}</td>
+        <td>
+          <form method="post" class="d-flex gap-1">
+            <input type="hidden" name="appt_id" value="{{ a.id }}" />
+            <button class="btn btn-cta btn-sm" name="status" value="accepted">Accept</button>
+            <button class="btn btn-ghost btn-sm" name="status" value="declined">Decline</button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6">No new appointment requests.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3 class="section-title">Scheduled visits</h3>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Patient</th><th>Date</th><th>Time</th><th>Reason</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for a in appointments %}
+    <tr>
+      <td>{{ a.patient_name }}</td>
+      <td>{{ a.appt_date }}</td>
+      <td>{{ a.time_label or a.appt_time }}</td>
+      <td>{{ a.reason }}</td>
+      <td>{{ a.status }}</td>
+      <td>
+        <form method="post" class="appt-update {% if a.status == 'rescheduled' %}is-reschedule{% endif %}">
+          <input type="hidden" name="appt_id" value="{{ a.id }}" />
+          <select name="status" class="form-select form-select-sm appt-status">
+            {% for s in ['confirmed','rescheduled','completed','cancelled'] %}
+            <option {% if a.status==s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+          <div class="reschedule-fields">
+            <input class="form-control form-control-sm" type="date" name="appt_date" min="{{ today }}" value="{{ a.appt_date }}" />
+            <div class="slot-grid slot-grid-compact">
+              {% for s in hour_slots %}
+              <label class="slot-btn {% if s.value in (a.taken_times or []) %}is-taken{% endif %}">
+                <input type="radio" name="appt_time" value="{{ s.value }}" {% if a.appt_time==s.value %}checked{% endif %} {% if s.value in (a.taken_times or []) %}disabled{% endif %}>
+                <span>{{ s.label }}</span>
+              </label>
+              {% endfor %}
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm">Update</button>
+        </form>
+      </td>
+    </tr>
+    {% else %}<tr><td colspan="6">None.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll(".appt-update").forEach((form) => {
+  const status = form.querySelector(".appt-status");
+  const sync = () => form.classList.toggle("is-reschedule", status.value === "rescheduled");
+  status.addEventListener("change", sync);
+  sync();
+});
+</script>
+{% endblock %}

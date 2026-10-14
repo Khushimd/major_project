@@ -1,0 +1,297 @@
+{
+  "efficientnet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_class_weighted\\efficientnetb0_class_weighted.keras",
+  "mobilenet_path": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_class_weighted\\mobilenetv2_class_weighted.keras",
+  "class_weights": {
+    "formula": "weight(class) = N / (number_of_classes * class_count)",
+    "source": "training set only",
+    "N": 11379,
+    "n_classes": 2,
+    "benign_count": 6676,
+    "melanoma_count": 4703,
+    "benign_weight": 0.8522318753744758,
+    "melanoma_weight": 1.2097597278332979,
+    "keras_class_weight": {
+      "0": 0.8522318753744758,
+      "1": 1.2097597278332979
+    },
+    "oversampling": false,
+    "undersampling": false,
+    "validation_or_test_used": false
+  },
+  "ensemble": {
+    "efficientnet_weight": 0.5,
+    "mobilenet_weight": 0.5,
+    "selection_rule": "max validation ROC-AUC, then validation F1 at 0.50",
+    "roc_auc": 0.9091770705539919,
+    "f1_at_0.5": 0.7984969469234382
+  },
+  "threshold": {
+    "threshold": 0.45,
+    "rule": "max validation F1 on the predefined 0.20-0.70 grid; ties by ROC-AUC then closeness to 0.50"
+  },
+  "validation": {
+    "efficientnet": {
+      "threshold": 0.45,
+      "accuracy": 0.7940935192780968,
+      "precision": 0.6930763740185582,
+      "recall": 0.9309683604985618,
+      "sensitivity": 0.9309683604985618,
+      "specificity": 0.6917562724014337,
+      "f1": 0.7945990180032734,
+      "auc": 0.9050605332701024,
+      "pr_auc": 0.8803188698023192,
+      "tp": 971,
+      "fp": 430,
+      "tn": 965,
+      "fn": 72,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    "mobilenet": {
+      "threshold": 0.45,
+      "accuracy": 0.8199343724364233,
+      "precision": 0.8296943231441049,
+      "recall": 0.7286673058485139,
+      "sensitivity": 0.7286673058485139,
+      "specificity": 0.8881720430107527,
+      "f1": 0.7759060745278203,
+      "auc": 0.9003120307082204,
+      "pr_auc": 0.877376833265685,
+      "tp": 760,
+      "fp": 156,
+      "tn": 1239,
+      "fn": 283,
+      "n_positive": 1043,
+      "n_negative": 1395
+    },
+    "ensemble_operating": {
+      "threshold": 0.45,
+      "accuracy": 0.8215750615258408,
+      "precision": 0.761168384879725,
+      "recall": 0.8494726749760306,
+      "sensitivity": 0.8494726749760306,
+      "specificity": 0.8007168458781362,
+      "f1": 0.8028998640688718,
+      "auc": 0.9091770705539919,
+      "pr_auc": 0.886431162979093,
+      "tp": 886,
+      "fp": 278,
+      "tn": 1117,
+      "fn": 157,
+      "n_positive": 1043,
+      "n_negative": 1395
+    }
+  },
+  "test": {
+    "efficientnet": {
+      "threshold": 0.45,
+      "accuracy": 0.8005744768157571,
+      "precision": 0.7038941954445261,
+      "recall": 0.920268972142171,
+      "sensitivity": 0.920268972142171,
+      "specificity": 0.7113180515759312,
+      "f1": 0.79766860949209,
+      "auc": 0.9083583120704415,
+      "pr_auc": 0.8765437615563043,
+      "tp": 958,
+      "fp": 403,
+      "tn": 993,
+      "fn": 83,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "mobilenet": {
+      "threshold": 0.45,
+      "accuracy": 0.8178087812884695,
+      "precision": 0.8442906574394463,
+      "recall": 0.7031700288184438,
+      "sensitivity": 0.7031700288184438,
+      "specificity": 0.9032951289398281,
+      "f1": 0.7672955974842768,
+      "auc": 0.9035025969629159,
+      "pr_auc": 0.8769546194280387,
+      "tp": 732,
+      "fp": 135,
+      "tn": 1261,
+      "fn": 309,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "ensemble": {
+      "threshold": 0.45,
+      "accuracy": 0.8272466146901929,
+      "precision": 0.7690972222222222,
+      "recall": 0.851104707012488,
+      "sensitivity": 0.851104707012488,
+      "specificity": 0.8094555873925502,
+      "f1": 0.8080255357957137,
+      "auc": 0.9121319592963565,
+      "pr_auc": 0.8857626022922268,
+      "tp": 886,
+      "fp": 266,
+      "tn": 1130,
+      "fn": 155,
+      "n_positive": 1041,
+      "n_negative": 1396
+    }
+  },
+  "timing": {
+    "efficientnet_seconds": 17485.944189310074,
+    "mobilenet_seconds": 11271.428495883942,
+    "total_seconds": 28926.569360494614
+  },
+  "efficientnet_best_epoch": 12,
+  "mobilenet_best_epoch": 36,
+  "score_distributions": {
+    "test_all": {
+      "n": 2437,
+      "mean": 0.5009913574686372,
+      "median": 0.41245998442173004,
+      "min": 0.07950927363708615,
+      "max": 0.9988316893577576,
+      "p10": 0.15980594605207443,
+      "p90": 0.9845012187957763
+    },
+    "test_melanoma": {
+      "n": 1041,
+      "mean": 0.7618940515330958,
+      "median": 0.8547012805938721,
+      "min": 0.11918272078037262,
+      "max": 0.9988316893577576,
+      "p10": 0.3708174228668213,
+      "p90": 0.9948606789112091
+    },
+    "test_benign": {
+      "n": 1396,
+      "mean": 0.306435695204238,
+      "median": 0.22546420991420746,
+      "min": 0.07950927363708615,
+      "max": 0.9975705146789551,
+      "p10": 0.14115035161376,
+      "p90": 0.6103551462292671
+    },
+    "predicted_counts": {
+      "melanoma": 1152,
+      "benign": 1285
+    },
+    "true_counts": {
+      "melanoma": 1041,
+      "benign": 1396
+    }
+  },
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "seed": 42,
+    "gpu": []
+  },
+  "frozen_baseline": {
+    "source": "C:\\Projects\\major-project\\models\\experiments\\final_melanoma_benign_baseline\\training_summary.json",
+    "rerun": false,
+    "test_ensemble": {
+      "threshold": 0.5,
+      "accuracy": 0.8342224045958145,
+      "precision": 0.8007554296506137,
+      "recall": 0.8146013448607109,
+      "sensitivity": 0.8146013448607109,
+      "specificity": 0.8488538681948424,
+      "f1": 0.8076190476190476,
+      "auc": 0.9126790142826079,
+      "pr_auc": 0.8884757664753524,
+      "tp": 848,
+      "fp": 211,
+      "tn": 1185,
+      "fn": 193,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "efficientnet_weight": 0.7,
+    "mobilenet_weight": 0.3,
+    "threshold": 0.5,
+    "test_efficientnet": {
+      "threshold": 0.5,
+      "accuracy": 0.8198604842018876,
+      "precision": 0.7508333333333334,
+      "recall": 0.8655139289145053,
+      "sensitivity": 0.8655139289145053,
+      "specificity": 0.7858166189111748,
+      "f1": 0.8041053101294066,
+      "auc": 0.9092545876925702,
+      "pr_auc": 0.8818625249654634,
+      "tp": 901,
+      "fp": 299,
+      "tn": 1097,
+      "fn": 140,
+      "n_positive": 1041,
+      "n_negative": 1396
+    },
+    "test_mobilenet": {
+      "threshold": 0.5,
+      "accuracy": 0.8067295855560115,
+      "precision": 0.8544776119402985,
+      "recall": 0.659942363112392,
+      "sensitivity": 0.659942363112392,
+      "specificity": 0.916189111747851,
+      "f1": 0.7447154471544716,
+      "auc": 0.9004593885645552,
+      "pr_auc": 0.8760760448738362,
+      "tp": 687,
+      "fp": 117,
+      "tn": 1279,
+      "fn": 354,
+      "n_positive": 1041,
+      "n_negative": 1396
+    }
+  },
+  "quoted_baseline": {
+    "accuracy": 0.834,
+    "precision": 0.801,
+    "sensitivity": 0.815,
+    "specificity": 0.849,
+    "f1": 0.808,
+    "auc": 0.913,
+    "pr_auc": 0.888,
+    "tp": 848,
+    "fp": 211,
+    "tn": 1185,
+    "fn": 193,
+    "efficientnet_weight": 0.7,
+    "mobilenet_weight": 0.3,
+    "threshold": 0.5
+  },
+  "test_used_for_tuning": false,
+  "post_test_tuning": false,
+  "derm7pt_used": false,
+  "interpretation": {
+    "verdict": "trade-off, not a clear improvement",
+    "detail": "Some metrics improved and others worsened; class weighting shifted the operating point.",
+    "deltas": {
+      "accuracy": -0.006975789905621643,
+      "sensitivity": 0.036503362151777075,
+      "specificity": -0.03939828080229224,
+      "precision": -0.03165820742839154,
+      "f1": 0.0004064881766661088,
+      "auc": -0.0005470549862514051,
+      "pr_auc": -0.002713164183125616
+    },
+    "improved": [
+      "sensitivity",
+      "f1"
+    ],
+    "worsened": [
+      "accuracy",
+      "specificity",
+      "precision",
+      "auc",
+      "pr_auc"
+    ],
+    "sensitivity_up": true,
+    "specificity_within_2pts": false,
+    "f1_up": true,
+    "ranking_up": false,
+    "note": "Internal frozen-test comparison only. Not clinically validated. Scores are AI probability estimates, not calibrated clinical probabilities. Derm7pt was not used."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "splits": {
+    "train": {
+      "total": 11611,
+      "melanoma": 5966,
+      "benign": 5645,
+      "melanoma_pct": 51.38,
+      "benign_pct": 48.62,
+      "patients": 2061,
+      "lesions": 2851,
+      "groups": 3952
+    },
+    "val": {
+      "total": 2445,
+      "melanoma": 1240,
+      "benign": 1205,
+      "melanoma_pct": 50.72,
+      "benign_pct": 49.28,
+      "patients": 470,
+      "lesions": 602,
+      "groups": 848
+    },
+    "test": {
+      "total": 2473,
+      "melanoma": 1324,
+      "benign": 1149,
+      "melanoma_pct": 53.54,
+      "benign_pct": 46.46,
+      "patients": 435,
+      "lesions": 638,
+      "groups": 848
+    }
+  },
+  "overlaps": {
+    "train_vs_val": {
+      "patient_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "lesion_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "image_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "group_id": {
+        "overlap_n": 0
+      }
+    },
+    "train_vs_test": {
+      "patient_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "lesion_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "image_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "group_id": {
+        "overlap_n": 0
+      }
+    },
+    "val_vs_test": {
+      "patient_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "lesion_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "image_id": {
+        "overlap_n": 0,
+        "overlap_ids": []
+      },
+      "group_id": {
+        "overlap_n": 0
+      }
+    }
+  },
+  "patient_overlap": 0,
+  "lesion_overlap": 0,
+  "image_overlap": 0,
+  "clean": true,
+  "test_frozen": true,
+  "test_must_not_be_used_for": [
+    "threshold tuning",
+    "ensemble weight selection",
+    "hyperparameter tuning",
+    "model selection",
+    "augmentation decisions"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras": {
+    "sha256": "f6b0e94b5e6a00ee5d621f95abb7246193dc65de8e6a5e7f355243e95d69b613",
+    "size": 18362343
+  },
+  "C:\\Projects\\major-project\\models\\saved\\inference_config.json": {
+    "sha256": "40c1b51ea0caf60d48e7fa8ee1a794f65778146713523ae36b6a4bea5ea26cc5",
+    "size": 1174
+  },
+  "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras": {
+    "sha256": "f510a80c5d3f593f9b071a198d67da1bc5376010a9569ef1ef6796d20a5abf89",
+    "size": 10946920
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\train.csv": {
+    "sha256": "e3440c2ff0910461bb153deaaf476c3cac5173d3da29b82e5875f9ccd07c8528",
+    "size": 2594766
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\train.csv": {
+    "sha256": "73b1b10e28f24d679cb95698e0c3bd6172a9187cd7b7146ec174168c0b89a99a",
+    "size": 1796854
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign\\train.csv": {
+    "sha256": "2ebe2c446f0d9ec6a847a8cac369d7160279e03bfb24ea1752080e0457254fc8",
+    "size": 1234582
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\val.csv": {
+    "sha256": "3c220925eac9e33af08143789537ca9722adb18b2c7796c0aaf1968729e61b6e",
+    "size": 553360
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\val.csv": {
+    "sha256": "f6ff80b017b15810bf795089cd474d2cefafbe03cba0c0c3f2065cba9c798226",
+    "size": 379292
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign\\val.csv": {
+    "sha256": "244749c613d8283b89125412a4dc81d134d5abee24de53ad7969e6b77673273f",
+    "size": 261208
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\test.csv": {
+    "sha256": "c989727b3565feb4c57065cfbbb06e41d512d43e70961ccb2a4a3be774f7a323",
+    "size": 556116
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\test.csv": {
+    "sha256": "27d27e79f5ff3566e2c41f7a6f7bd635bd8e01bae2bbb0222b27dd1bde141a5b",
+    "size": 382050
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign\\test.csv": {
+    "sha256": "b0dce5fbc6e3f8a2519a1911f3d9d614aa32f4f26d0793722e644f09d8ad4cd6",
+    "size": 262736
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\final_melanoma_benign\\manifest.csv": {
+    "sha256": "3eded386faa650488ff7cfb0d01ec240a00d78108e3cb632c186d7e28de968d9",
+    "size": 3703796
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\melanoma_benign\\manifest.csv": {
+    "sha256": "1b619892e5e1ffa202040e8672deb820bcb99641739f509546320ccdc082882a",
+    "size": 2557916
+  },
+  "C:\\Projects\\major-project\\dataset\\processed\\dicm_clean_melanoma_benign\\manifest.csv": {
+    "sha256": "d8d8cf1cb753beb07c671e5ec4e0b781833b2bfd7931959d5aa5272903441573",
+    "size": 1758292
+  }
+}

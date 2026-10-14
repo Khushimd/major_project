@@ -1,0 +1,11 @@
+{
+  "benign_weight": 1.0,
+  "melanoma_weight": 1.15,
+  "keras_class_weight": {
+    "0": 1.0,
+    "1": 1.15
+  },
+  "formula": "predefined moderate ratio; not inverse-frequency balanced weights",
+  "oversampling": false,
+  "undersampling": false
+}

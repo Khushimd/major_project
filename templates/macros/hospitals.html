@@ -1,0 +1,30 @@
+{% macro picker(hospitals, name='hospital', value='', required=true, extra_class='mb-3', placeholder='Type hospital, city, or branch…') %}
+<div class="hospital-picker {{ extra_class }}" data-hospital-picker>
+  <input
+    class="form-control hospital-picker-input"
+    type="text"
+    name="{{ name }}"
+    value="{{ value }}"
+    {% if required %}required{% endif %}
+    autocomplete="off"
+    placeholder="{{ placeholder }}"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls="hospital-picker-list"
+  />
+  <ul class="hospital-picker-menu" id="hospital-picker-list" role="listbox" hidden>
+    {% for h in hospitals %}
+    <li
+      role="option"
+      data-name="{{ h.name }}"
+      data-search="{{ (h.name ~ ' ' ~ (h.address or ''))|lower }}"
+    >
+      <strong>{{ h.name }}</strong>
+      {% if h.address %}<span>{{ h.address }}</span>{% endif %}
+    </li>
+    {% endfor %}
+    <li class="hospital-picker-empty" hidden>No matching hospital. Try another city or name.</li>
+  </ul>
+</div>
+{% endmacro %}

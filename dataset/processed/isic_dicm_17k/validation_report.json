@@ -1,0 +1,280 @@
+{
+  "dataset": "ISIC-DICM-17K",
+  "image_dir": "C:\\Projects\\major-project\\images",
+  "label_source": [
+    "C:\\Projects\\major-project\\dataset\\isic_dicm_17k\\train-set-metadata.csv",
+    "C:\\Projects\\major-project\\dataset\\isic_dicm_17k\\valid-set-metadata.csv"
+  ],
+  "label_column": "class",
+  "total_images": 17060,
+  "melanoma": 8530,
+  "non_melanoma": 8530,
+  "training": {
+    "total": 11859,
+    "melanoma": 5875,
+    "non_melanoma": 5984,
+    "melanoma_pct": 49.54,
+    "non_melanoma_pct": 50.46
+  },
+  "validation": {
+    "total": 2616,
+    "melanoma": 1334,
+    "non_melanoma": 1282,
+    "melanoma_pct": 50.99,
+    "non_melanoma_pct": 49.01
+  },
+  "test": {
+    "total": 2585,
+    "melanoma": 1321,
+    "non_melanoma": 1264,
+    "melanoma_pct": 51.1,
+    "non_melanoma_pct": 48.9
+  },
+  "grouping": {
+    "priority": [
+      "patient_id",
+      "lesion_id",
+      "isic_id"
+    ],
+    "groups": 9480,
+    "patients_filled": 8392,
+    "lesions_filled": 12541
+  },
+  "leakage": {
+    "patient_overlap": 0,
+    "lesion_overlap": 0,
+    "image_overlap": 0,
+    "clean": true,
+    "detail": {
+      "splits": {
+        "train": {
+          "images": 11859,
+          "melanoma": 5875,
+          "non_melanoma": 5984,
+          "melanoma_pct": 49.54,
+          "patients": 2662,
+          "lesions": 6476,
+          "groups": 6636
+        },
+        "val": {
+          "images": 2616,
+          "melanoma": 1334,
+          "non_melanoma": 1282,
+          "melanoma_pct": 50.99,
+          "patients": 579,
+          "lesions": 1365,
+          "groups": 1422
+        },
+        "test": {
+          "images": 2585,
+          "melanoma": 1321,
+          "non_melanoma": 1264,
+          "melanoma_pct": 51.1,
+          "patients": 569,
+          "lesions": 1347,
+          "groups": 1422
+        }
+      },
+      "overlaps": {
+        "train_vs_val": {
+          "patient_id": {
+            "left": "train",
+            "right": "val",
+            "left_n": 2662,
+            "right_n": 579,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "lesion_id": {
+            "left": "train",
+            "right": "val",
+            "left_n": 6476,
+            "right_n": 1365,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_id": {
+            "left": "train",
+            "right": "val",
+            "left_n": 11859,
+            "right_n": 2616,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_path": {
+            "left": "train",
+            "right": "val",
+            "left_n": 11859,
+            "right_n": 2616,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "group_id": {
+            "left": "train",
+            "right": "val",
+            "left_n": 6636,
+            "right_n": 1422,
+            "overlap_n": 0,
+            "overlap_examples": []
+          }
+        },
+        "train_vs_test": {
+          "patient_id": {
+            "left": "train",
+            "right": "test",
+            "left_n": 2662,
+            "right_n": 569,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "lesion_id": {
+            "left": "train",
+            "right": "test",
+            "left_n": 6476,
+            "right_n": 1347,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_id": {
+            "left": "train",
+            "right": "test",
+            "left_n": 11859,
+            "right_n": 2585,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_path": {
+            "left": "train",
+            "right": "test",
+            "left_n": 11859,
+            "right_n": 2585,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "group_id": {
+            "left": "train",
+            "right": "test",
+            "left_n": 6636,
+            "right_n": 1422,
+            "overlap_n": 0,
+            "overlap_examples": []
+          }
+        },
+        "val_vs_test": {
+          "patient_id": {
+            "left": "val",
+            "right": "test",
+            "left_n": 579,
+            "right_n": 569,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "lesion_id": {
+            "left": "val",
+            "right": "test",
+            "left_n": 1365,
+            "right_n": 1347,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_id": {
+            "left": "val",
+            "right": "test",
+            "left_n": 2616,
+            "right_n": 2585,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "image_path": {
+            "left": "val",
+            "right": "test",
+            "left_n": 2616,
+            "right_n": 2585,
+            "overlap_n": 0,
+            "overlap_examples": []
+          },
+          "group_id": {
+            "left": "val",
+            "right": "test",
+            "left_n": 1422,
+            "right_n": 1422,
+            "overlap_n": 0,
+            "overlap_examples": []
+          }
+        }
+      },
+      "patient_overlap": 0,
+      "lesion_overlap": 0,
+      "image_overlap": 0,
+      "clean": true
+    }
+  },
+  "old_dataset_overlap": {
+    "dicm_ids": 17060,
+    "siim_isic_2020": {
+      "images_on_disk": 8584,
+      "overlap_n": 1381,
+      "overlap_examples": [
+        "ISIC_0086632",
+        "ISIC_0149698",
+        "ISIC_0164329",
+        "ISIC_0170960",
+        "ISIC_0174983",
+        "ISIC_0181374",
+        "ISIC_0187428",
+        "ISIC_0188432",
+        "ISIC_0204275",
+        "ISIC_0207268",
+        "ISIC_0208967",
+        "ISIC_0217267",
+        "ISIC_0218575",
+        "ISIC_0220461",
+        "ISIC_0229832",
+        "ISIC_0232101",
+        "ISIC_0232274",
+        "ISIC_0239070",
+        "ISIC_0239810",
+        "ISIC_0244197"
+      ]
+    },
+    "ham10000": {
+      "images_on_disk": 20030,
+      "overlap_n": 1910,
+      "overlap_examples": [
+        "ISIC_0024310",
+        "ISIC_0024313",
+        "ISIC_0024315",
+        "ISIC_0024323",
+        "ISIC_0024326",
+        "ISIC_0024333",
+        "ISIC_0024335",
+        "ISIC_0024336",
+        "ISIC_0024351",
+        "ISIC_0024352",
+        "ISIC_0024363",
+        "ISIC_0024367",
+        "ISIC_0024381",
+        "ISIC_0024385",
+        "ISIC_0024399",
+        "ISIC_0024400",
+        "ISIC_0024410",
+        "ISIC_0024434",
+        "ISIC_0024446",
+        "ISIC_0024448"
+      ]
+    },
+    "note": "Overlaps are expected because ISIC-DICM-17K is curated from the ISIC archive. Old datasets stay unused in the new training set. Use these IDs later if an external validation must exclude shared images."
+  },
+  "missing_images": 0,
+  "missing_labels": 0,
+  "seed": 42,
+  "split_dir": "C:\\Projects\\major-project\\dataset\\processed\\isic_dicm_17k",
+  "old_splits_untouched": "C:\\Projects\\major-project\\dataset\\processed\\splits",
+  "production_models_untouched": [
+    "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+    "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras"
+  ],
+  "active_dataset_unchanged": "combined",
+  "preprocessing": "Same as live inference process_for_model: hair removal + light denoise + resize 224 + scale to [0,1]. CLAHE is not applied (inference skips it). EfficientNetB0/MobileNetV2 still apply ImageNet preprocess inside the model.",
+  "augmentation_train_only": "Existing mild dermoscopy aug: horizontal/vertical flip, small rotation, small zoom, small translation, moderate contrast/brightness. No oversampling. No val/test aug. BCE later at train time."
+}

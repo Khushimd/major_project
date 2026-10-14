@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "macros/hospitals.html" import picker %}
+{% block body_class %}auth-doctor{% endblock %}
+{% block title %}Create doctor account — {{ app_title }}{% endblock %}
+{% block content %}
+<section class="auth-hero">
+  <div class="container auth-grid">
+    <div class="auth-intro">
+      <p class="eyebrow">Clinician portal</p>
+      <h2>Create a doctor account</h2>
+      <p>Register with your hospital, education, email, phone, and password. After that, sign in with email or phone plus password.</p>
+    </div>
+    <div>
+      <form method="post" class="form-pane auth-card" autocomplete="on">
+        <input type="hidden" name="role" value="doctor" />
+        <label class="form-label">Name</label>
+        <input class="form-control mb-3" name="full_name" required minlength="2" autocomplete="name" placeholder="Dr. Full name" />
+        <label class="form-label">Hospital name</label>
+        {{ picker(hospitals, placeholder='Type Kidwai, HCG, Cytecare, Manipal…') }}
+        <label class="form-label">Education</label>
+        <select class="form-select mb-3" name="specialization" required>
+          <option value="" disabled selected>Select qualification</option>
+          {% for q in qualifications %}
+          <option value="{{ q }}">{{ q }}</option>
+          {% endfor %}
+        </select>
+        <label class="form-label">Email</label>
+        <input class="form-control mb-3" type="email" name="email" required autocomplete="email" placeholder="you@hospital.org" />
+        <label class="form-label">Phone</label>
+        <input class="form-control mb-3" type="tel" name="phone" required autocomplete="tel" placeholder="10-digit mobile number" />
+        <label class="form-label">Password</label>
+        <input class="form-control mb-3" type="password" name="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters" />
+        <button class="btn btn-doctor w-100" type="submit">Create doctor account</button>
+        <div class="auth-links">
+          <a href="{{ url_for('auth.login', role='doctor') }}">Already registered? Sign in</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

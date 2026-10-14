@@ -1,0 +1,71 @@
+{% extends "dash_base.html" %}
+{% from "macros/patient_nav.html" import nav %}
+{% block sidebar %}{{ nav('dashboard') }}{% endblock %}
+{% block heading %}Welcome, {{ user.full_name }}{% endblock %}
+{% block subhead %}Search a hospital, book a visit, and view reports after consultation.{% endblock %}
+{% block content %}
+{% if notices %}
+<div class="appt-banner appt-banner-notice mb-3">
+  <i class="bi bi-bell-fill"></i>
+  <div>
+    <strong>Notifications</strong>
+    {% for n in notices %}
+    <p class="mb-1">{{ n.title }}{% if n.body %} — {{ n.body }}{% endif %}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if confirmed_appts %}
+<div class="appt-banner appt-banner-booked mb-3">
+  <i class="bi bi-calendar2-check-fill"></i>
+  <div>
+    <strong>Your appointment is booked</strong>
+    {% for a in confirmed_appts %}
+    <p class="mb-1">{{ a.doctor_name }} on {{ a.appt_date }} at {{ a.time_label or a.appt_time }}{% if a.status == 'rescheduled' %} (rescheduled){% endif %}.</p>
+    {% endfor %}
+    <a href="{{ url_for('patient.appointments') }}">View appointments</a>
+  </div>
+</div>
+{% endif %}
+
+{% if pending_appts %}
+<div class="appt-banner appt-banner-pending mb-3">
+  <i class="bi bi-hourglass-split"></i>
+  <div>
+    <strong>Your appointment request is booked</strong>
+    {% for a in pending_appts %}
+    <p class="mb-1">{{ a.doctor_name }} on {{ a.appt_date }} at {{ a.time_label or a.appt_time }}. Waiting for the doctor to accept.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="hero-action">
+  <a class="btn btn-cta btn-lg" href="{{ url_for('patient.appointments') }}">Book an appointment</a>
+  <p class="hint mb-0">Create or complete your profile, search the hospital you want, then choose a doctor.</p>
+</div>
+
+<div class="form-pane mb-4">
+  <h3>Profile</h3>
+  <table class="report-table">
+    <tr><th>Name</th><td>{{ user.full_name }}</td></tr>
+    <tr><th>Phone</th><td>{{ user.phone or '—' }}</td></tr>
+    <tr><th>Age / gender</th><td>{{ (user.profile or {}).age or '—' }} / {{ (user.profile or {}).sex or '—' }}</td></tr>
+  </table>
+  <a class="btn btn-ghost mt-2" href="{{ url_for('patient.profile') }}">Edit profile</a>
+</div>
+
+<div class="form-pane">
+  <h3>Latest report</h3>
+  {% if latest %}
+    <p class="mb-1">Date: {{ latest.created_at }}</p>
+    <p class="mb-1">Doctor's assessment: {{ latest.final_diagnosis or '—' }}</p>
+    <p class="mb-3">AJCC stage: {{ latest.ajcc_stage or '—' }}</p>
+    <a class="btn btn-cta" href="{{ url_for('patient.report_detail', case_id=latest.id) }}">View report</a>
+    <a class="btn btn-ghost" href="{{ url_for('patient.download_report', case_id=latest.id) }}">Download PDF</a>
+  {% else %}
+    <p class="mb-0">No completed reports yet. After your consultation, the report will appear here.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{
+  "selected_experiment": "experiment_A_bce_smoothing",
+  "selection_rule": "validation ensemble ROC-AUC, then PR-AUC, then F1 at the validation-selected threshold",
+  "test_used": false,
+  "winner": {
+    "key": "experiment_A_bce_smoothing",
+    "efficientnet_weight": 0.6,
+    "mobilenet_weight": 0.4,
+    "threshold": 0.5,
+    "threshold_rule": "sens>=0.80 and spec>=0.65, max F1",
+    "validation": {
+      "threshold": 0.5,
+      "accuracy": 0.7784290738569754,
+      "precision": 0.7894736842105263,
+      "recall": 0.8562992125984252,
+      "sensitivity": 0.8562992125984252,
+      "specificity": 0.663768115942029,
+      "f1": 0.8215297450424929,
+      "auc": 0.8706678648864544,
+      "pr_auc": 0.9112694045319568,
+      "tp": 870,
+      "fp": 232,
+      "tn": 458,
+      "fn": 146,
+      "n_positive": 1016,
+      "n_negative": 690
+    }
+  },
+  "candidates": [
+    {
+      "key": "experiment_A_bce_smoothing",
+      "roc_auc": 0.8706678648864544,
+      "pr_auc": 0.9112694045319568,
+      "f1": 0.8215297450424929,
+      "threshold": 0.5,
+      "weights": [
+        0.6,
+        0.4
+      ]
+    },
+    {
+      "key": "experiment_B_weighted_bce_smoothing",
+      "roc_auc": 0.8649563505648752,
+      "pr_auc": 0.9064130217387998,
+      "f1": 0.8123809523809524,
+      "threshold": 0.45,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    }
+  ]
+}

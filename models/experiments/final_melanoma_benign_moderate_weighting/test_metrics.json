@@ -1,0 +1,12 @@
+{
+  "evaluated_once": false,
+  "post_test_tuning": false,
+  "threshold": 0.5,
+  "ensemble_weights": {
+    "efficientnet": 0.7,
+    "mobilenet": 0.3
+  },
+  "selected_id": "retained_baseline",
+  "metrics": null,
+  "reason": "No constrained validation winner; test not used to pick a weight. Baseline retained."
+}

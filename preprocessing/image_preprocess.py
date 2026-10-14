@@ -103,17 +103,19 @@ class ImagePreprocessor:
 
     def process_for_model(self, image: np.ndarray) -> np.ndarray:
         """
-        Inference preprocessing matching training:
-        RGB resize → float32 / 255.0  (no CLAHE / hair removal).
+        Inference preprocessing for the CNN.
 
-        Heavy cosmetic preprocessing shifts the distribution and collapses
-        malignant probabilities toward benign.
+        Applies DullRazor-style hair removal + light denoising, then
+        resize and /255. CLAHE is skipped to avoid domain shift.
         """
         if image is None or image.size == 0:
             raise ValueError("Empty or invalid image provided for model input.")
         img = image.copy()
         if len(img.shape) == 2:
             img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+        if self.apply_hair_removal:
+            img = self.remove_hair(img)
+        img = self.denoise(img)
         img = self.resize(img, self.target_size)
         return self.normalize(img, to_unit=True)
 
@@ -127,22 +129,146 @@ class ImagePreprocessor:
         processed = self.process_for_model(image)
         return np.expand_dims(processed.astype(np.float32), axis=0)
 
+    def lesion_focused_view(self, image: np.ndarray) -> np.ndarray:
+        """
+        Hair-cleaned lesion crop with mild CLAHE.
+
+        Used as a second inference view when hair occlusion is significant so
+        the CNN sees the pigment network rather than hair strokes.
+        """
+        if image is None or image.size == 0:
+            raise ValueError("Empty or invalid image provided for lesion view.")
+        img = image.copy()
+        if len(img.shape) == 2:
+            img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+        if img.dtype != np.uint8:
+            img = np.clip(img, 0, 255).astype(np.uint8)
+
+        # Aggressive hair wipe dedicated to this view (NS inpaint).
+        gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+        blackhat = np.zeros_like(gray, dtype=np.uint8)
+        for ksize in (5, 9, 13, 17, 21, 25, 31):
+            kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (ksize, ksize))
+            blackhat = np.maximum(
+                blackhat, cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, kernel)
+            )
+        thr = max(8, int(np.percentile(blackhat, 85)))
+        _, hmask = cv2.threshold(blackhat, thr, 255, cv2.THRESH_BINARY)
+        hmask = cv2.dilate(
+            hmask, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=1
+        )
+        cleaned = cv2.inpaint(img, hmask, inpaintRadius=7, flags=cv2.INPAINT_NS)
+
+        lab = cv2.cvtColor(cleaned, cv2.COLOR_RGB2LAB)
+        _, lesion = cv2.threshold(
+            lab[:, :, 0], 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU
+        )
+        lesion = cv2.morphologyEx(
+            lesion, cv2.MORPH_CLOSE, np.ones((15, 15), np.uint8)
+        )
+        ys, xs = np.where(lesion > 0)
+        if len(xs) > 50:
+            pad = max(
+                15,
+                int(0.12 * max(int(xs.max() - xs.min()), int(ys.max() - ys.min()))),
+            )
+            h, w = cleaned.shape[:2]
+            y0, y1 = max(0, int(ys.min()) - pad), min(h, int(ys.max()) + pad)
+            x0, x1 = max(0, int(xs.min()) - pad), min(w, int(xs.max()) + pad)
+            crop = cleaned[y0:y1, x0:x1]
+        else:
+            crop = cleaned
+
+        crop = self.apply_clahe_contrast(crop)
+        # Do not denoise after CLAHE — it washes out pigment texture the CNN needs.
+        crop = self.resize(crop, self.target_size)
+        return self.normalize(crop, to_unit=True)
+
+    def prepare_multiview_batches(
+        self, image: np.ndarray
+    ) -> Tuple[list, float]:
+        """
+        Build one or more model inputs for occlusion-robust inference.
+
+        Always includes the standard hair-removed full frame. When hair
+        coverage is material, also includes a lesion-focused CLAHE crop.
+        Caller should take the max malignant score across views.
+        """
+        _, hair_ratio = self.hair_artifact_mask(image)
+        views = [self.process_for_model(image)]
+        if hair_ratio >= 0.05:
+            views.append(self.lesion_focused_view(image))
+            logger.info(
+                "Hair-aware multi-view enabled (hair_ratio=%.3f, views=%d)",
+                hair_ratio,
+                len(views),
+            )
+        return views, hair_ratio
+
     # ------------------------------------------------------------------
     # Individual steps
     # ------------------------------------------------------------------
     @staticmethod
+    def hair_artifact_mask(image: np.ndarray) -> Tuple[np.ndarray, float]:
+        """Detect dark linear hair artifacts; return (mask uint8, coverage ratio)."""
+        if image is None or image.size == 0:
+            return np.zeros((1, 1), dtype=np.uint8), 0.0
+
+        img = image.copy()
+        if img.dtype != np.uint8:
+            img = np.clip(img, 0, 255).astype(np.uint8)
+        if len(img.shape) == 2:
+            gray = img
+        else:
+            gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+
+        # Wide multi-scale black-hat: catches fine vellus and thick terminal hairs.
+        blackhat = np.zeros_like(gray, dtype=np.uint8)
+        for ksize in (5, 9, 13, 17, 21, 25, 31):
+            kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (ksize, ksize))
+            bh = cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, kernel)
+            blackhat = np.maximum(blackhat, bh)
+
+        thr = max(8, int(np.percentile(blackhat, 85)))
+        _, mask = cv2.threshold(blackhat, thr, 255, cv2.THRESH_BINARY)
+        # Drop speckles, then thicken shafts for inpainting coverage.
+        mask = cv2.morphologyEx(
+            mask, cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2, 2))
+        )
+        mask = cv2.dilate(
+            mask, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=1
+        )
+        hair_ratio = float(mask.mean()) / 255.0
+        return mask, hair_ratio
+
+    @staticmethod
     def remove_hair(image: np.ndarray) -> np.ndarray:
         """
-        Remove hair artifacts using black-hat morphological filtering
-        followed by inpainting (common dermoscopic technique).
+        DullRazor-style hair removal for dermoscopic images.
+
+        Multi-scale black-hat detects thin and thick hairs; Telea for light
+        hair and Navier-Stokes inpainting for heavy occlusion.
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (17, 17))
-        blackhat = cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, kernel)
-        _, mask = cv2.threshold(blackhat, 10, 255, cv2.THRESH_BINARY)
-        mask = cv2.dilate(mask, np.ones((3, 3), np.uint8), iterations=1)
-        cleaned = cv2.inpaint(image, mask, inpaintRadius=3, flags=cv2.INPAINT_TELEA)
-        return cleaned
+        if image is None or image.size == 0:
+            return image
+
+        img = image.copy()
+        if img.dtype != np.uint8:
+            img = np.clip(img, 0, 255).astype(np.uint8)
+
+        mask, hair_ratio = ImagePreprocessor.hair_artifact_mask(img)
+        if hair_ratio < 0.002:
+            return img
+
+        # Heavier hair → larger radius + NS inpaint (preserves structure better).
+        if hair_ratio >= 0.10:
+            radius, flags = 7, cv2.INPAINT_NS
+        elif hair_ratio >= 0.05:
+            radius, flags = 5, cv2.INPAINT_NS
+        else:
+            radius, flags = 3, cv2.INPAINT_TELEA
+
+        return cv2.inpaint(img, mask, inpaintRadius=radius, flags=flags)
 
     @staticmethod
     def denoise(image: np.ndarray) -> np.ndarray:
@@ -233,13 +359,13 @@ def load_and_preprocess(
     Returns:
         (original_rgb, model_input_float, quality_report)
 
-    model_input_float matches training preprocessing (resize + /255).
+    model_input_float includes hair removal + light denoising, then resize + /255.
     """
     bgr = cv2.imread(path)
     if bgr is None:
         raise FileNotFoundError(f"Cannot load image: {path}")
     rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
     quality = ImagePreprocessor.check_quality(rgb)
-    preprocessor = ImagePreprocessor(target_size=target_size)
+    preprocessor = ImagePreprocessor(target_size=target_size, apply_hair_removal=True)
     processed = preprocessor.process_for_model(rgb)
     return rgb, processed, quality

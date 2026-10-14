@@ -1,16 +1,26 @@
 {
   "weights": {
-    "efficientnet": 0.7,
-    "mobilenet": 0.3
+    "efficientnet": 0.85,
+    "mobilenet": 0.15
   },
   "method": "soft_voting",
   "type": "hybrid",
   "description": "Combination of EfficientNetB0 and MobileNetV2",
   "metrics": {
-    "accuracy": 0.7923123364862146,
-    "precision": 0.0390625,
-    "recall": 0.45454545454545453,
-    "f1": 0.07194244604316546,
-    "auc": 0.6688923655733735
+    "threshold": 0.3,
+    "accuracy": 0.8695804195804195,
+    "precision": 0.34673366834170855,
+    "recall": 0.549800796812749,
+    "sensitivity": 0.549800796812749,
+    "specificity": 0.9003449597546953,
+    "f1": 0.4252696456086287,
+    "auc": 0.8641066244794681,
+    "pr_auc": 0.44439487874554273,
+    "tp": 138,
+    "fp": 260,
+    "tn": 2349,
+    "fn": 113,
+    "n_positive": 251,
+    "n_negative": 2609
   }
 }

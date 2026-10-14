@@ -1,0 +1,13 @@
+===== MELANOMA vs BENIGN TRAINING REPORT =====
+INTERNAL TEST is the frozen 2473-image split.
+EXTERNAL PH2 TEST is separate and was not used for tuning.
+Ensemble Eff/Mob: 0.85/0.15
+Validation threshold: 0.5 (sens>=0.85 and spec>=0.70, max F1)
+Val ensemble: acc=0.8986 sens=0.9153 spec=0.8813
+Test ensemble: acc=0.9058 sens=0.9237 spec=0.8851
+PH2 ensemble: acc=0.2100 sens=1.0000 spec=0.0125
+100-image demo accuracy: 0.9000 (demonstration only)
+Grad-CAM: ok
+New files under: C:\Projects\major-project\models\saved\melanoma_benign
+Production models and ACTIVE_DATASET were not changed.
+Decision-support only. Not a guaranteed diagnosis.

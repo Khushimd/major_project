@@ -1,0 +1,290 @@
+{
+  "title": "Derm7pt external validation of the frozen old Exp2-C model",
+  "methodological_statement": "The previously frozen production model was evaluated on the frozen Derm7pt external cohort without retraining, fine-tuning, threshold optimization, ensemble-weight optimization, or probability calibration.",
+  "datetime_utc": "2026-09-29T11:11:44.737177+00:00",
+  "started_utc": "2026-09-29T11:03:38.373950+00:00",
+  "model_files": {
+    "efficientnetb0": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\efficientnetb0_bce_smooth.keras",
+      "sha256": "02755e9c69e9f885b71696a278f807c9a93c29b88d59f7d252002f8bbbb62f87"
+    },
+    "mobilenetv2": {
+      "path": "C:\\Projects\\major-project\\models\\experiments\\internal_optimization\\exp2_loss_comparison\\exp2c_bce_smooth\\mobilenetv2_bce_smooth.keras",
+      "sha256": "ad049149423ad1a5a73f9b1bd6dabd0765968ae532472b8afd5757eb7f33146f"
+    }
+  },
+  "ensemble_weights": {
+    "efficientnet": 0.75,
+    "mobilenet": 0.25
+  },
+  "threshold": 0.3,
+  "preprocessing": "ImagePreprocessor.process_for_model: hair removal + light denoise + resize 224 + /255; no CLAHE; no lesion crop; ImageNet preprocess inside the saved models. Cache format matches the original Exp2-C frozen-test evaluation (JPEG of the processed array, then TF decode/resize/255).",
+  "cohort": {
+    "n_input_cases": 1011,
+    "n_evaluated": 987,
+    "n_melanoma": 252,
+    "n_non_melanoma": 735,
+    "n_excluded": 24,
+    "clinical_images_used": false
+  },
+  "old_internal_test_quoted_not_recomputed": {
+    "test_images": 2473,
+    "accuracy": 0.9228,
+    "sensitivity": 0.9524,
+    "specificity": 0.8886,
+    "label_caveat": "DICM class=1 was the positive class. This is not a clean melanoma-vs-benign result."
+  },
+  "derm7pt_external": {
+    "metrics": {
+      "threshold": 0.3,
+      "accuracy": 0.2765957446808511,
+      "precision": 0.2603734439834025,
+      "recall": 0.996031746031746,
+      "sensitivity": 0.996031746031746,
+      "specificity": 0.029931972789115645,
+      "f1": 0.4128289473684211,
+      "auc": 0.6999622071050643,
+      "pr_auc": 0.47750407008021833,
+      "tp": 251,
+      "fp": 713,
+      "tn": 22,
+      "fn": 1,
+      "n_positive": 252,
+      "n_negative": 735
+    },
+    "confusion_matrix": {
+      "tn": 22,
+      "fp": 713,
+      "fn": 1,
+      "tp": 251
+    },
+    "predicted_melanoma": 964,
+    "predicted_non_melanoma": 23,
+    "score_distribution": {
+      "overall": {
+        "n": 987,
+        "min": 0.23862314224243164,
+        "max": 0.9999418705701828,
+        "mean": 0.625698625297864,
+        "median": 0.5754534602165222
+      },
+      "actual_melanoma": {
+        "n": 252,
+        "min": 0.23862314224243164,
+        "max": 0.9999418705701828,
+        "mean": 0.7451229694462012,
+        "median": 0.7558005154132843
+      },
+      "actual_non_melanoma": {
+        "n": 735,
+        "min": 0.2506236955523491,
+        "max": 0.9999187141656876,
+        "mean": 0.584753135875577,
+        "median": 0.5343261435627937
+      }
+    }
+  },
+  "diagnosis_breakdown": [
+    {
+      "original_diagnosis": "basal cell carcinoma",
+      "n_cases": 42,
+      "true_melanoma": 0,
+      "true_non_melanoma": 42,
+      "predicted_melanoma": 42,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.7721000044118791,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "blue nevus",
+      "n_cases": 28,
+      "true_melanoma": 0,
+      "true_non_melanoma": 28,
+      "predicted_melanoma": 28,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.6273984776011535,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "clark nevus",
+      "n_cases": 399,
+      "true_melanoma": 0,
+      "true_non_melanoma": 399,
+      "predicted_melanoma": 384,
+      "predicted_non_melanoma": 15,
+      "mean_ensemble_score": 0.5423768730857468,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "combined nevus",
+      "n_cases": 13,
+      "true_melanoma": 0,
+      "true_non_melanoma": 13,
+      "predicted_melanoma": 13,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.649078919337346,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "congenital nevus",
+      "n_cases": 17,
+      "true_melanoma": 0,
+      "true_non_melanoma": 17,
+      "predicted_melanoma": 17,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.6355189553955022,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "dermal nevus",
+      "n_cases": 33,
+      "true_melanoma": 0,
+      "true_non_melanoma": 33,
+      "predicted_melanoma": 32,
+      "predicted_non_melanoma": 1,
+      "mean_ensemble_score": 0.5941852712721536,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "dermatofibroma",
+      "n_cases": 20,
+      "true_melanoma": 0,
+      "true_non_melanoma": 20,
+      "predicted_melanoma": 19,
+      "predicted_non_melanoma": 1,
+      "mean_ensemble_score": 0.48036970794200895,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "lentigo",
+      "n_cases": 24,
+      "true_melanoma": 0,
+      "true_non_melanoma": 24,
+      "predicted_melanoma": 23,
+      "predicted_non_melanoma": 1,
+      "mean_ensemble_score": 0.4924621054281791,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "melanoma (in situ)",
+      "n_cases": 64,
+      "true_melanoma": 64,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 63,
+      "predicted_non_melanoma": 1,
+      "mean_ensemble_score": 0.6962965709390119,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "melanoma (less than 0.76 mm)",
+      "n_cases": 102,
+      "true_melanoma": 102,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 102,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.7392042830002075,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "melanoma (0.76 to 1.5 mm)",
+      "n_cases": 53,
+      "true_melanoma": 53,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 53,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.8098604832336588,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "melanoma (more than 1.5 mm)",
+      "n_cases": 28,
+      "true_melanoma": 28,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 28,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.8062720881508929,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "melanoma metastasis",
+      "n_cases": 4,
+      "true_melanoma": 4,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 4,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.45020318031311035,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "recurrent nevus",
+      "n_cases": 6,
+      "true_melanoma": 0,
+      "true_non_melanoma": 6,
+      "predicted_melanoma": 6,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.5153805377582709,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "reed or spitz nevus",
+      "n_cases": 79,
+      "true_melanoma": 0,
+      "true_non_melanoma": 79,
+      "predicted_melanoma": 79,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.6332097255353686,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "seborrheic keratosis",
+      "n_cases": 45,
+      "true_melanoma": 0,
+      "true_non_melanoma": 45,
+      "predicted_melanoma": 42,
+      "predicted_non_melanoma": 3,
+      "mean_ensemble_score": 0.7076358472307523,
+      "sample_size_note": "descriptive_counts_and_mean_score_only"
+    },
+    {
+      "original_diagnosis": "vascular lesion",
+      "n_cases": 29,
+      "true_melanoma": 0,
+      "true_non_melanoma": 29,
+      "predicted_melanoma": 28,
+      "predicted_non_melanoma": 1,
+      "mean_ensemble_score": 0.6259970153714048,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    },
+    {
+      "original_diagnosis": "melanoma",
+      "n_cases": 1,
+      "true_melanoma": 1,
+      "true_non_melanoma": 0,
+      "predicted_melanoma": 1,
+      "predicted_non_melanoma": 0,
+      "mean_ensemble_score": 0.5101340934634209,
+      "sample_size_note": "descriptive_only_sample_too_small"
+    }
+  ],
+  "integrity": {
+    "inference_runs": 1,
+    "training_performed": false,
+    "threshold_tuning": false,
+    "ensemble_weight_tuning": false,
+    "calibration": false,
+    "audit_redone": false,
+    "old_internal_result_recomputed": false,
+    "threshold_used": 0.3,
+    "weights_used": [
+      0.75,
+      0.25
+    ]
+  },
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5"
+  }
+}

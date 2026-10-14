@@ -1,0 +1,30 @@
+ISIC-DICM-17K dataset validation report
+Total images: 17060
+Melanoma: 8530
+Non-melanoma: 8530
+
+Training:
+- total 11859
+- melanoma 5875
+- non-melanoma 5984
+- melanoma % 49.54
+
+Validation:
+- total 2616
+- melanoma 1334
+- non-melanoma 1282
+- melanoma % 50.99
+
+Test:
+- total 2585
+- melanoma 1321
+- non-melanoma 1264
+- melanoma % 51.1
+
+Patient overlap: 0
+Lesion overlap: 0
+Duplicate/image overlap: 0
+Missing images: 0
+Missing labels: 0
+SIIM overlap (unused): 1381
+HAM10000 overlap (unused): 1910

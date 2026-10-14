@@ -1,0 +1,109 @@
+{% extends "dash_base.html" %}
+{% from "macros/patient_nav.html" import nav %}
+{% block sidebar %}{{ nav('reports') }}{% endblock %}
+{% block heading %}Report {{ record.report_code or record.id }}{% endblock %}
+{% block content %}
+<article class="report-sheet">
+  <header class="report-letterhead">
+    <p class="report-hospital">{{ clinician.hospital if clinician and clinician.hospital != '—' else 'Smart Skin Health' }}</p>
+    <p class="report-dept">Department of Dermatology &amp; Dermato-Oncology</p>
+    <p class="report-kind">Skin lesion consultation report</p>
+  </header>
+
+  <h3>Consulting doctor</h3>
+  <div class="clinician-block">
+    <p class="clinician-name">{{ clinician.name if clinician else (record.doctor_name or '—') }}</p>
+    <table class="report-table">
+      <tr><th>Doctor phone</th><td>{{ clinician.phone if clinician else '—' }}</td></tr>
+      <tr><th>Doctor email</th><td>{{ clinician.email if clinician else '—' }}</td></tr>
+      <tr><th>Education</th><td>{{ clinician.qualification if clinician else '—' }}</td></tr>
+    </table>
+  </div>
+
+  <p class="note">AI-assisted decision support — not a substitute for clinical diagnosis.</p>
+  <h3>Patient information</h3>
+  <table class="report-table">
+    <tr><th>Name</th><td>{{ record.patient_name }}</td></tr>
+    <tr><th>Patient ID</th><td>{{ record.patient_id }}</td></tr>
+    <tr><th>Age / gender</th><td>{{ record.age or '—' }} / {{ record.sex or '—' }}</td></tr>
+    <tr><th>Report date</th><td>{{ record.created_at }}</td></tr>
+  </table>
+
+  {% if images.original or images.gradcam %}
+  <h3>Imaging</h3>
+  <div class="images {% if images.original and images.gradcam %}{% else %}single{% endif %}">
+    {% if images.original %}
+    <figure>
+      <img src="{{ images.original }}" alt="Lesion" />
+      <figcaption>Dermoscopic image</figcaption>
+    </figure>
+    {% endif %}
+    {% if images.gradcam %}
+    <figure>
+      <img src="{{ images.gradcam }}" alt="Grad-CAM heatmap" />
+      <figcaption>Grad-CAM heatmap</figcaption>
+    </figure>
+    {% endif %}
+  </div>
+  {% if images.gradcam %}
+  <p class="hint">
+    Grad-CAM highlights image regions that contributed to the model's prediction.
+    It represents model attention and should not be interpreted as definitive evidence of malignancy.
+  </p>
+  {% endif %}
+  {% endif %}
+
+  <h3>Clinical stage</h3>
+  <table class="report-table">
+    <tr><th>AJCC stage</th><td>{{ record.ajcc_stage or 'Not recorded' }}</td></tr>
+    <tr><th>TNM</th><td>{% if record.t_category or record.n_category or record.m_category %}{{ record.t_category or '' }} {{ record.n_category or '' }} {{ record.m_category or '' }}{% else %}—{% endif %}</td></tr>
+    <tr><th>Risk level</th><td>{{ record.risk_level or '—' }}</td></tr>
+    {% if record.staging_details %}
+    <tr><th>Details</th><td>{{ record.staging_details }}</td></tr>
+    {% endif %}
+    {% if record.staging_recommendation %}
+    <tr><th>Recommendation</th><td>{{ record.staging_recommendation }}</td></tr>
+    {% endif %}
+    {% if record.staging_follow_up %}
+    <tr><th>Follow-up</th><td>{{ record.staging_follow_up }}</td></tr>
+    {% endif %}
+  </table>
+
+  {% if prescription and (prescription['items'] or prescription.notes) %}
+  <h3>Prescription</h3>
+  <p class="hint">Medicines prescribed by your doctor. Follow the dosage and duration below.</p>
+  {% if prescription.diagnosis %}
+  <p class="mb-2"><strong>Diagnosis:</strong> {{ prescription.diagnosis }}</p>
+  {% endif %}
+  <div class="history-table-wrap mb-3">
+    <table class="table history-table mb-0">
+      <thead>
+        <tr><th>Medicine</th><th>Dosage</th><th>Frequency</th><th>Duration</th><th>Instructions</th></tr>
+      </thead>
+      <tbody>
+        {% for item in prescription['items'] %}
+        <tr>
+          <td>{{ item.medicine }}</td>
+          <td>{{ item.dosage or '—' }}</td>
+          <td>{{ item.frequency or '—' }}</td>
+          <td>{{ item.duration or '—' }}</td>
+          <td>{{ item.instructions or '—' }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% if prescription.notes %}
+  <p class="mb-3"><strong>Notes:</strong> {{ prescription.notes }}</p>
+  {% endif %}
+  {% endif %}
+
+  <h3>Doctor's assessment</h3>
+  <table class="report-table">
+    <tr><th>Clinical impression</th><td>{{ review.final_diagnosis if review and review.final_diagnosis else '—' }}</td></tr>
+    <tr><th>Recommendations</th><td>{{ review.recommendations if review and review.recommendations else '—' }}</td></tr>
+    <tr><th>Follow-up notes</th><td>{{ review.follow_up_notes if review and review.follow_up_notes else (review.doctor_notes if review else (record.doctor_notes or '—')) }}</td></tr>
+  </table>
+  <a class="btn btn-cta" href="{{ url_for('patient.download_report', case_id=record.id) }}">Download report</a>
+</article>
+{% endblock %}

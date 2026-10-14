@@ -1,0 +1,59 @@
+{
+  "dataset": "melanoma_benign",
+  "labels": {
+    "0": "Benign",
+    "1": "Melanoma"
+  },
+  "frozen_splits": {
+    "train": {
+      "total": 11611,
+      "melanoma": 5966,
+      "benign": 5645
+    },
+    "val": {
+      "total": 2445,
+      "melanoma": 1240,
+      "benign": 1205
+    },
+    "test": {
+      "total": 2473,
+      "melanoma": 1324,
+      "benign": 1149
+    }
+  },
+  "production_snapshot": {
+    "efficientnet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\efficientnetb0_melanoma.keras",
+      "exists": true,
+      "size": 18362343,
+      "mtime": 1789839256.1543894
+    },
+    "mobilenet": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\mobilenetv2_melanoma.keras",
+      "exists": true,
+      "size": 10946920,
+      "mtime": 1789844318.7423635
+    },
+    "eval_metrics": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\evaluation_metrics.json",
+      "exists": true,
+      "size": 5931,
+      "mtime": 1789844696.4895136
+    },
+    "inference_config": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\inference_config.json",
+      "exists": true,
+      "size": 1174,
+      "mtime": 1789844696.5169592
+    },
+    "ensemble_meta": {
+      "path": "C:\\Projects\\major-project\\models\\saved\\ensemble_meta.json",
+      "exists": true,
+      "size": 637,
+      "mtime": 1789844696.4908445
+    }
+  },
+  "active_dataset": "combined",
+  "old_threshold_not_reused": true,
+  "old_ensemble_not_reused": true
+}

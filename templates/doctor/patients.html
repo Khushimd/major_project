@@ -1,0 +1,29 @@
+{% extends "dash_base.html" %}
+{% from "macros/doctor_nav.html" import nav %}
+{% block sidebar %}{{ nav('patients') }}{% endblock %}
+{% block heading %}Patients{% endblock %}
+{% block subhead %}Historical record of patients you have analyzed. This is not a waiting list.{% endblock %}
+{% block content %}
+<form class="mb-3" method="get">
+  <input class="form-control" style="max-width:360px" name="q" value="{{ q }}" placeholder="Search name, phone, or patient ID" />
+</form>
+<div class="history-table-wrap">
+  <table class="table history-table mb-0">
+    <thead><tr><th>Patient ID</th><th>Name</th><th>Phone</th><th>Age / gender</th><th>Analyses</th><th></th></tr></thead>
+    <tbody>
+      {% for p in patients %}
+      <tr>
+        <td>{{ p.chart_id or ('P' ~ p.id) }}</td>
+        <td><a href="{{ url_for('doctor.patient_detail', patient_id=p.id) }}">{{ p.full_name }}</a></td>
+        <td>{{ p.phone or '—' }}</td>
+        <td>{{ p.age or '—' }} / {{ p.sex or '—' }}</td>
+        <td>{{ p.case_count }}</td>
+        <td><a href="{{ url_for('doctor.analyze', patient_id=p.id) }}">New analysis</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6">No patients yet. Start a new analysis from the dashboard.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
